@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>AgriFunds Farm Lending Case Study</title>
 <style>
+.pw-wrap{position:relative; display:block} .pw-wrap input{width:100%; padding-right:3.4rem !important; box-sizing:border-box} .pw-eye{position:absolute; right:6px; top:50%; transform:translateY(-50%); width:40px; height:40px; border:0; border-radius:10px; background:transparent; color:var(--muted,#555); display:grid; place-items:center; cursor:pointer; padding:0; min-height:0 !important} .pw-eye:hover{color:var(--ink,#111); background:color-mix(in srgb, currentColor 10%, transparent)} .pw-eye:focus-visible{outline:3px solid #B98CFF; outline-offset:1px} .pw-eye svg{width:20px; height:20px} .pw-eye .i-hide{display:none} .pw-eye[aria-pressed="true"] .i-show{display:none} .pw-eye[aria-pressed="true"] .i-hide{display:block}
+
 html.cs-locked body>*:not(#csGate){visibility:hidden}
 #csGate{position:fixed; inset:0; z-index:9999; display:grid; place-items:center; padding:16px; background:var(--bg,#F9F9EF)}
 #csGate[hidden]{display:none}
@@ -17,7 +19,8 @@ html.cs-locked body>*:not(#csGate){visibility:hidden}
 #csGate .g-err{color:#B42318; font-size:.9rem; min-height:1.2em} :root[data-theme="dark"] #csGate .g-err{color:#FF9A8F}
 #csGate .g-row{display:flex; gap:.6rem; flex-wrap:wrap}
 #csGate button,#csGate a.g-back{font:inherit; font-weight:600; min-height:46px; padding:.6rem 1.2rem; border-radius:999px; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center}
-#csGate button{border:0; background:linear-gradient(180deg,#5E2A96,#4A1D7A); color:#fff} #csGate a.g-back{border:1px solid var(--line-strong,#bbb); color:var(--ink,#111)}
+#csGate button.pw-eye{background:transparent; min-height:0}
+#csGate button:not(.pw-eye){border:0; background:linear-gradient(180deg,#5E2A96,#4A1D7A); color:#fff} #csGate a.g-back{border:1px solid var(--line-strong,#bbb); color:var(--ink,#111)}
 </style>
 <script>
 (function(){
@@ -29,11 +32,11 @@ html.cs-locked body>*:not(#csGate){visibility:hidden}
     var g=document.createElement("div"); g.id="csGate"; g.setAttribute("role","dialog"); g.setAttribute("aria-modal","true"); g.setAttribute("aria-labelledby","gateT");
     g.innerHTML='<form novalidate><span class="g-ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>'+
       '<h1 id="gateT">This case study is protected</h1><p>It includes client work shared in confidence. Enter the password to continue, or get in touch to request it.</p>'+
-      '<label for="gateP">Password</label><input id="gateP" type="password" autocomplete="current-password" required>'+
+      '<label for="gateP">Password</label><span class="pw-wrap"><input id="gateP" type="password" autocomplete="current-password" required><button class="pw-eye" type="button" id="gateEye" aria-controls="gateP" aria-pressed="false" aria-label="Show password"><svg class="i-show" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><svg class="i-hide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3l18 18M10.6 5.1A10.4 10.4 0 0 1 12 5c6.4 0 10 7 10 7a17.6 17.6 0 0 1-3.2 4.1M6.6 6.6C3.9 8.3 2 12 2 12s3.6 7 10 7a9.7 9.7 0 0 0 5.4-1.6M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg></button></span>'+
       '<p class="g-err" id="gateE" role="alert" aria-live="assertive"></p>'+
       '<div class="g-row"><button type="submit">View case study</button><a class="g-back" href="home.html#contact">Request access</a></div></form>';
     document.body.appendChild(g);
-    var f=g.querySelector("form"), i=g.querySelector("input"), e=g.querySelector("#gateE"); i.focus();
+    var f=g.querySelector("form"), i=g.querySelector("input"), e=g.querySelector("#gateE"); function pwToggle(b,i){b.addEventListener("click",function(){var s=i.type==="password";i.type=s?"text":"password";b.setAttribute("aria-pressed",String(s));b.setAttribute("aria-label",s?"Hide password":"Show password");i.focus()})} pwToggle(g.querySelector("#gateEye"),i); i.focus();
     function hex(b){return Array.prototype.map.call(new Uint8Array(b),function(x){return("0"+x.toString(16)).slice(-2)}).join("")}
     f.addEventListener("submit",function(ev){ev.preventDefault();
       var v=i.value; if(!v){e.textContent="Please enter the password."; i.focus(); return}
@@ -950,6 +953,7 @@ a.btn:hover svg,.more-btn[aria-expanded="false"]:hover svg{animation:nudgeDown 1
 #work .impact span{display:block; font-size:.8rem; line-height:1.3; color:rgba(249,249,239,.62); margin-top:.25rem}
 #work .bento .case .read-more{margin-top:.6rem}
 @media (max-width:760px){#work .bento{grid-template-columns:1fr}}
+.pw-wrap{position:relative; display:block} .pw-wrap input{width:100%; padding-right:3.4rem !important; box-sizing:border-box} .pw-eye{position:absolute; right:6px; top:50%; transform:translateY(-50%); width:40px; height:40px; border:0; border-radius:10px; background:transparent; color:var(--muted,#555); display:grid; place-items:center; cursor:pointer; padding:0; min-height:0 !important} .pw-eye:hover{color:var(--ink,#111); background:color-mix(in srgb, currentColor 10%, transparent)} .pw-eye:focus-visible{outline:3px solid #B98CFF; outline-offset:1px} .pw-eye svg{width:20px; height:20px} .pw-eye .i-hide{display:none} .pw-eye[aria-pressed="true"] .i-show{display:none} .pw-eye[aria-pressed="true"] .i-hide{display:block}
 .cs-pass{border:0; padding:0; background:transparent; max-width:min(440px,calc(100vw - 32px)); width:100%}
 .cs-pass::backdrop{background:rgba(4,14,9,.62); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px)}
 .cs-pass form{background:var(--surface); color:var(--ink); border:1px solid var(--line); border-radius:22px; padding:2rem 1.75rem 1.6rem; display:grid; gap:.85rem; box-shadow:0 30px 70px rgba(0,0,0,.3)}
@@ -964,6 +968,20 @@ a.btn:hover svg,.more-btn[aria-expanded="false"]:hover svg{animation:nudgeDown 1
 #work .bento .case-body,#work .bento .case.c1 .case-body,#work .bento .case.c2 .case-body,#work .bento .case.c5 .case-body{padding:1.6rem 1.8rem 1.8rem}
 #work .bento .case.has-link{cursor:pointer}
 #work .case h3 .lock{display:inline-block; width:16px; height:16px; margin-left:.45rem; vertical-align:-1px; opacity:.6}
+.visa-pill{max-width:none; color:#F9F9EF; display:inline-flex; align-items:center; gap:.55rem; margin:1rem 0 0; padding:.5rem 1rem; border-radius:999px; border:1px solid rgba(255,255,255,.25); font-size:.95rem; font-weight:500}
+.visa-pill svg{width:20px; height:20px; flex:none}
+.visa-card{position:relative; width:min(240px,calc(100% - 1.5rem)); margin:.75rem 0 1.5rem; padding-top:1.5rem}
+.visa-card img{display:block; width:100%; height:auto; border-radius:14px; box-shadow:0 12px 30px rgba(6,34,22,.18)}
+.visa-card figcaption{margin-top:.75rem; font-weight:600; font-size:.95rem}
+.visa-stamp{position:absolute; top:.25rem; right:-2rem; width:96px; height:96px; color:#8B1E2D; transform:rotate(-14deg); filter:drop-shadow(0 6px 14px rgba(0,0,0,.3)); font-family:var(--body);
+  animation:stamp-press .7s cubic-bezier(.2,1.4,.3,1) both}
+@keyframes stamp-press{0%{opacity:0; transform:rotate(-14deg) scale(1.6)} 100%{opacity:1; transform:rotate(-14deg) scale(1)}}
+@media (max-width:480px){.visa-stamp{right:-.5rem; width:96px; height:96px}}
+@media (prefers-reduced-motion:reduce){.visa-stamp{animation:none}}
+.socials a.li-btn{display:inline-flex; align-items:center; gap:.6rem; background:#0A66C2 !important; color:#fff !important; border:1px solid #0A66C2 !important; border-radius:999px; padding:.7rem 1.4rem; font-weight:600; box-shadow:0 6px 18px rgba(10,102,194,.35) !important; -webkit-backdrop-filter:none; backdrop-filter:none}
+.socials a.li-btn svg{width:20px; height:20px}
+.socials a.li-btn:hover{background:#004182 !important; border-color:#004182 !important; color:#fff !important}
+.socials a.li-btn:focus-visible{outline:3px solid #fff; outline-offset:3px}
 /* Credential badges row (replaces the old stats row): keeps the top rule, no dividers */
 .badge-row{list-style:none; margin:0; padding:1.4rem 0 0; display:flex; flex-wrap:wrap; gap:.6rem .4rem; flex-wrap:nowrap; align-items:center; justify-content:space-between; border-top:1px solid var(--line-strong)}
 .bdg{transition:transform .35s cubic-bezier(.2,1.4,.3,1), color .3s; flex:0 1 auto; min-width:0; width:clamp(100px,8.9vw,124px); aspect-ratio:1; position:relative; transition:transform .35s cubic-bezier(.2,1.4,.3,1)}
