@@ -4,8 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Guru Samman Samaroh Case Study</title>
+<script>
+/* Always show pages inside the site shell, so music keeps playing across pages */
+(function(){var inShell=false;try{inShell=window.parent!==window&&!!window.parent.__musicShell}catch(e){}
+if(inShell||location.protocol==="file:")return;
+var name=location.pathname.split("/").pop()||"";
+location.replace("index.html"+(name&&name!=="home.html"?"#/"+name:location.hash));})();
+</script>
 <style>
-.pw-wrap{position:relative; display:block} .pw-wrap input{width:100%; padding-right:3.4rem !important; box-sizing:border-box} .pw-eye{position:absolute; right:6px; top:50%; transform:translateY(-50%); width:40px; height:40px; border:0; border-radius:10px; background:transparent; color:var(--muted,#555); display:grid; place-items:center; cursor:pointer; padding:0; min-height:0 !important} .pw-eye:hover{color:var(--ink,#111); background:color-mix(in srgb, currentColor 10%, transparent)} .pw-eye:focus-visible{outline:3px solid #B98CFF; outline-offset:1px} .pw-eye svg{width:20px; height:20px} .pw-eye .i-hide{display:none} .pw-eye[aria-pressed="true"] .i-show{display:none} .pw-eye[aria-pressed="true"] .i-hide{display:block}
+.pw-wrap{position:relative; display:block} .pw-wrap input{width:100%; padding-right:3.4rem !important; box-sizing:border-box} .pw-eye{position:absolute; right:6px; top:50%; transform:translateY(-50%); width:40px; height:40px; border:0; border-radius:10px; background:transparent; color:var(--muted,#555); display:grid; place-items:center; cursor:pointer; padding:0; min-height:0 !important} .pw-eye:hover{color:var(--ink,#111); background:color-mix(in srgb, currentColor 10%, transparent)} .pw-eye:focus-visible{outline:3px solid #B98CFF; outline-offset:1px} .pw-eye svg{width:20px; height:20px; flex:none} .pw-wrap .pw-eye{padding:0 !important; min-width:0} .pw-eye .i-show{display:none} .pw-eye[aria-pressed="true"] .i-hide{display:none} .pw-eye[aria-pressed="true"] .i-show{display:block}
 
 html.cs-locked body>*:not(#csGate){visibility:hidden}
 #csGate{position:fixed; inset:0; z-index:9999; display:grid; place-items:center; padding:16px; background:var(--bg,#F9F9EF)}
@@ -24,6 +31,15 @@ html.cs-locked body>*:not(#csGate){visibility:hidden}
 </style>
 <script>
 (function(){
+  window.__sha256=window.__sha256||function(str){var K=[0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2];
+var b=unescape(encodeURIComponent(str)),l=b.length,w=[],i,j,H=[0x6a09e667,0xbb67ae85,0x3c6ef372,0xa54ff53a,0x510e527f,0x9b05688c,0x1f83d9ab,0x5be0cd19];
+for(i=0;i<l;i++)w[i>>2]|=(b.charCodeAt(i)&255)<<(24-(i%4)*8);w[l>>2]|=0x80<<(24-(l%4)*8);var n=((l+8>>6)+1)*16;w[n-1]=l*8;for(i=0;i<n;i++)w[i]=w[i]|0;
+function r(x,c){return(x>>>c)|(x<<(32-c))}
+for(i=0;i<n;i+=16){var W=w.slice(i,i+16),a=H[0],bb=H[1],c=H[2],d=H[3],e=H[4],f=H[5],g=H[6],h=H[7];
+for(j=0;j<64;j++){if(j>=16){var s0=r(W[j-15],7)^r(W[j-15],18)^(W[j-15]>>>3),s1=r(W[j-2],17)^r(W[j-2],19)^(W[j-2]>>>10);W[j]=(W[j-16]+s0+W[j-7]+s1)|0}
+var t1=(h+(r(e,6)^r(e,11)^r(e,25))+((e&f)^(~e&g))+K[j]+W[j])|0,t2=((r(a,2)^r(a,13)^r(a,22))+((a&bb)^(a&c)^(bb&c)))|0;h=g;g=f;f=e;e=(d+t1)|0;d=c;c=bb;bb=a;a=(t1+t2)|0}
+H[0]=(H[0]+a)|0;H[1]=(H[1]+bb)|0;H[2]=(H[2]+c)|0;H[3]=(H[3]+d)|0;H[4]=(H[4]+e)|0;H[5]=(H[5]+f)|0;H[6]=(H[6]+g)|0;H[7]=(H[7]+h)|0}
+return H.map(function(x){return("00000000"+(x>>>0).toString(16)).slice(-8)}).join("")};
   var H="d1907250208e369e5ced51f1e7f37ddc152bc033c93878229454df2816578a34", K="sp-case-ok";
   var ok=false; try{ok=sessionStorage.getItem(K)===H||localStorage.getItem(K)===H}catch(e){}
   if(ok) return;
@@ -40,8 +56,8 @@ html.cs-locked body>*:not(#csGate){visibility:hidden}
     function hex(b){return Array.prototype.map.call(new Uint8Array(b),function(x){return("0"+x.toString(16)).slice(-2)}).join("")}
     f.addEventListener("submit",function(ev){ev.preventDefault();
       var v=i.value; if(!v){e.textContent="Please enter the password."; i.focus(); return}
-      crypto.subtle.digest("SHA-256",new TextEncoder().encode(v)).then(function(d){
-        if(hex(d)===H){ try{sessionStorage.setItem(K,H)}catch(x){} g.remove(); document.documentElement.classList.remove("cs-locked"); var m=document.getElementById("main"); if(m) m.focus(); }
+      Promise.resolve(window.__sha256(v.trim())).then(function(h){
+        if(h===H){ try{sessionStorage.setItem(K,H)}catch(x){} g.remove(); document.documentElement.classList.remove("cs-locked"); var m=document.getElementById("main"); if(m) m.focus(); }
         else{ e.textContent="That password isn’t right. Please try again."; i.select(); i.setAttribute("aria-invalid","true"); }
       });
     });
@@ -953,7 +969,7 @@ a.btn:hover svg,.more-btn[aria-expanded="false"]:hover svg{animation:nudgeDown 1
 #work .impact span{display:block; font-size:.8rem; line-height:1.3; color:rgba(249,249,239,.62); margin-top:.25rem}
 #work .bento .case .read-more{margin-top:.6rem}
 @media (max-width:760px){#work .bento{grid-template-columns:1fr}}
-.pw-wrap{position:relative; display:block} .pw-wrap input{width:100%; padding-right:3.4rem !important; box-sizing:border-box} .pw-eye{position:absolute; right:6px; top:50%; transform:translateY(-50%); width:40px; height:40px; border:0; border-radius:10px; background:transparent; color:var(--muted,#555); display:grid; place-items:center; cursor:pointer; padding:0; min-height:0 !important} .pw-eye:hover{color:var(--ink,#111); background:color-mix(in srgb, currentColor 10%, transparent)} .pw-eye:focus-visible{outline:3px solid #B98CFF; outline-offset:1px} .pw-eye svg{width:20px; height:20px} .pw-eye .i-hide{display:none} .pw-eye[aria-pressed="true"] .i-show{display:none} .pw-eye[aria-pressed="true"] .i-hide{display:block}
+.pw-wrap{position:relative; display:block} .pw-wrap input{width:100%; padding-right:3.4rem !important; box-sizing:border-box} .pw-eye{position:absolute; right:6px; top:50%; transform:translateY(-50%); width:40px; height:40px; border:0; border-radius:10px; background:transparent; color:var(--muted,#555); display:grid; place-items:center; cursor:pointer; padding:0; min-height:0 !important} .pw-eye:hover{color:var(--ink,#111); background:color-mix(in srgb, currentColor 10%, transparent)} .pw-eye:focus-visible{outline:3px solid #B98CFF; outline-offset:1px} .pw-eye svg{width:20px; height:20px; flex:none} .pw-wrap .pw-eye{padding:0 !important; min-width:0} .pw-eye .i-show{display:none} .pw-eye[aria-pressed="true"] .i-hide{display:none} .pw-eye[aria-pressed="true"] .i-show{display:block}
 .cs-pass{border:0; padding:0; background:transparent; max-width:min(440px,calc(100vw - 32px)); width:100%}
 .cs-pass::backdrop{background:rgba(4,14,9,.62); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px)}
 .cs-pass form{background:var(--surface); color:var(--ink); border:1px solid var(--line); border-radius:22px; padding:2rem 1.75rem 1.6rem; display:grid; gap:.85rem; box-shadow:0 30px 70px rgba(0,0,0,.3)}
@@ -1092,6 +1108,8 @@ a.btn:hover svg,.more-btn[aria-expanded="false"]:hover svg{animation:nudgeDown 1
   background:linear-gradient(180deg,#6E36AB 0%,#55238B 100%) !important; color:#fff !important; box-shadow:inset 0 1px 0 rgba(255,255,255,.22), 0 10px 26px rgba(74,29,122,.45) !important}
 .btn.btn-primary:focus-visible,.bar .hdr-cta:focus-visible{outline:3px solid #B98CFF !important; outline-offset:3px}
 :root[data-theme="dark"]{--pp-glow:rgba(150,100,230,.35)}
+#work .bento .case{transition:background-color .35s ease, border-color .35s ease, box-shadow .35s ease}
+#work .bento .case.has-link:hover,#work .bento .case.has-link:focus-within{background:#050505 !important; border-color:color-mix(in srgb, var(--tint) 55%, transparent) !important; box-shadow:0 18px 40px rgba(0,0,0,.45)}
 </style>
 <style>
 /* ================= Case study page ================= */
