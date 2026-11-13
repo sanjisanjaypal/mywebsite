@@ -1110,6 +1110,30 @@ a.btn:hover svg,.more-btn[aria-expanded="false"]:hover svg{animation:nudgeDown 1
 :root[data-theme="dark"]{--pp-glow:rgba(150,100,230,.35)}
 #work .bento .case{transition:background-color .35s ease, border-color .35s ease, box-shadow .35s ease}
 #work .bento .case.has-link:hover,#work .bento .case.has-link:focus-within{background:#050505 !important; border-color:color-mix(in srgb, var(--tint) 55%, transparent) !important; box-shadow:0 18px 40px rgba(0,0,0,.45)}
+
+/* ---------- Mobile-first refinements (phones) ---------- */
+.recs-hint{display:none; font-size:.875rem; color:var(--muted); margin:-.5rem 0 1rem}
+@media (max-width:759px){
+  /* Hero: left-aligned text reads faster on a narrow screen; thumb-sized buttons */
+  .hero-layout{text-align:left}
+  .hero .eyebrow{justify-self:start}
+  .hero h1{margin-inline:0}
+  .hero-copy{margin:2rem 0 0; max-width:none}
+  .hero .cta-row{flex-direction:column; align-items:stretch; gap:.75rem}
+  .hero .cta-row .btn{width:100%; justify-content:center; min-height:52px}
+  /* LinkedIn recommendations: swipe sideways instead of a very long scroll */
+  .recs{columns:auto; display:flex; gap:1rem; overflow-x:auto; scroll-snap-type:x mandatory; overscroll-behavior-x:contain; scrollbar-width:none;
+    margin-inline:calc(-1 * max(16px, env(safe-area-inset-left,0px))); padding:0 max(16px, env(safe-area-inset-left,0px)) .5rem; scroll-padding-inline:max(16px, env(safe-area-inset-left,0px))}
+  .recs::-webkit-scrollbar{display:none}
+  .recs > li{flex:0 0 86%; scroll-snap-align:start; margin:0 !important; break-inside:auto}
+  .recs-hint{display:block}
+  /* Floating controls: smaller, no volume slider (phones use their own volume keys) */
+  .vol-wrap{display:none !important}
+  .sound-dock{padding-top:0 !important; width:46px; bottom:calc(80px + env(safe-area-inset-bottom,0px)) !important; right:calc(21px + var(--sb,0px) + env(safe-area-inset-right,0px)) !important}
+  .a11y-fab{width:48px !important; height:48px !important; right:calc(20px + env(safe-area-inset-right,0px)); bottom:calc(20px + env(safe-area-inset-bottom,0px))}
+  .a11y-fab svg{width:26px; height:26px}
+  .a11y-panel{bottom:calc(80px + env(safe-area-inset-bottom,0px))}
+}
 </style>
 <style>
 /* ================= Case study page ================= */
@@ -1444,6 +1468,21 @@ footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between
   .mod-tab{flex:0 0 62%; scroll-snap-align:start}
   .mod-tab[aria-selected="true"]::after{display:none}
   .mod-panels{padding:1rem .9rem 1.25rem}
+}
+
+/* Phones: each finding becomes a small card instead of a wide table */
+@media (max-width:640px){
+  .cs-table-wrap{overflow:visible; border:0; background:none}
+  .cs-table{min-width:0; display:block}
+  .cs-table thead{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0)}
+  .cs-table tbody{display:grid; gap:.75rem}
+  .cs-table tr{display:grid; gap:.35rem; padding:1rem; border:1px solid var(--line); border-radius:16px; background:var(--surface)}
+  .cs-table td{display:block; padding:0; border:0 !important; width:auto !important}
+  .cs-table td:first-child{font-weight:600}
+  .cs-table td:not(:first-child)::before{display:block; font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin-top:.35rem}
+  .cs-table td:nth-child(2)::before{content:"Heuristic"}
+  .cs-table td:nth-child(3)::before{content:"Severity"}
+  .cs-table td:nth-child(4)::before{content:"Where the fix lives"}
 }
 .jmap{list-style:none; margin:1.5rem 0 0; padding:0; display:grid; grid-template-columns:repeat(8,minmax(0,1fr)); gap:.4rem; position:relative; counter-reset:j}
 .jmap::before{content:""; position:absolute; left:6%; right:6%; top:44px; border-top:2px dashed var(--line-strong)}
