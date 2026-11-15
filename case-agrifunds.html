@@ -50,7 +50,7 @@ return H.map(function(x){return("00000000"+(x>>>0).toString(16)).slice(-8)}).joi
       '<h1 id="gateT">This case study is protected</h1><p>It includes client work shared in confidence. Enter the password to continue, or get in touch to request it.</p>'+
       '<label for="gateP">Password</label><span class="pw-wrap"><input id="gateP" type="password" autocomplete="current-password" required><button class="pw-eye" type="button" id="gateEye" aria-controls="gateP" aria-pressed="false" aria-label="Show password"><svg class="i-show" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><svg class="i-hide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3l18 18M10.6 5.1A10.4 10.4 0 0 1 12 5c6.4 0 10 7 10 7a17.6 17.6 0 0 1-3.2 4.1M6.6 6.6C3.9 8.3 2 12 2 12s3.6 7 10 7a9.7 9.7 0 0 0 5.4-1.6M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg></button></span>'+
       '<p class="g-err" id="gateE" role="alert" aria-live="assertive"></p>'+
-      '<div class="g-row"><button type="submit">View case study</button><a class="g-back" href="home.html#contact">Request access</a></div></form>';
+      '<div class="g-row"><button type="submit">View case study</button><a class="g-back" href="contact.html">Request access</a></div></form>';
     document.body.appendChild(g);
     var f=g.querySelector("form"), i=g.querySelector("input"), e=g.querySelector("#gateE"); function pwToggle(b,i){b.addEventListener("click",function(){var s=i.type==="password";i.type=s?"text":"password";b.setAttribute("aria-pressed",String(s));b.setAttribute("aria-label",s?"Hide password":"Show password");i.focus()})} pwToggle(g.querySelector("#gateEye"),i); i.focus();
     function hex(b){return Array.prototype.map.call(new Uint8Array(b),function(x){return("0"+x.toString(16)).slice(-2)}).join("")}
@@ -1162,6 +1162,71 @@ a.btn:hover svg,.more-btn[aria-expanded="false"]:hover svg{animation:nudgeDown 1
 /* v2: standalone About page, generated from this same About section */
 .page-about #top,.page-about #work,.page-about #testimonials{display:none !important}
 .page-about #about{padding-top:clamp(2.5rem,6vw,4.5rem)}
+
+/* v2: an odd number of work cards; the last one spans the row with its graphic beside the text */
+@media (min-width:761px){
+  #work .bento > .case:last-child:nth-child(odd){grid-column:1/-1; display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}
+  #work .bento > .case:last-child:nth-child(odd) .art{aspect-ratio:auto; height:100%; min-height:320px; border-bottom:0; border-right:1px solid rgba(255,255,255,.06)}
+  #work .bento > .case:last-child:nth-child(odd) .case-body{justify-content:center; padding:2rem}
+}
+
+/* v2: email opens a new message; copy icon appears on hover or focus (always shown on touch) */
+.email-row{position:relative; gap:.35rem}
+.copy-ico{display:inline-grid; place-items:center; width:42px; height:42px; padding:0; border:0; border-radius:10px; background:transparent; color:inherit; cursor:pointer;
+  opacity:0; transform:translateX(-4px); transition:opacity .2s ease, transform .2s ease, background-color .2s ease}
+.band .copy-ico{color:var(--lime)}
+.copy-ico svg{width:22px; height:22px}
+.copy-ico .i-done{display:none}
+.copy-ico.is-done .i-copy{display:none} .copy-ico.is-done .i-done{display:block}
+.email-row:hover .copy-ico,.email-row:focus-within .copy-ico,.copy-ico.is-done{opacity:1; transform:none}
+.copy-ico:hover{background:color-mix(in srgb, currentColor 14%, transparent)}
+@media (hover:none){.copy-ico{opacity:1; transform:none}}
+@media (prefers-reduced-motion:reduce){.copy-ico{transition:none}}
+.email{user-select:text}
+/* v2: no rule above the big footer logo */
+footer.band:not(.cs-foot){border-top:0 !important}
+/* v2: About panel edges sit on the page grid */
+section#about{padding-left:max(16px, env(safe-area-inset-left,0px)); padding-right:max(16px, env(safe-area-inset-right,0px))}
+@media (min-width:720px){section#about{padding-left:max(40px, env(safe-area-inset-left,0px)); padding-right:max(40px, env(safe-area-inset-right,0px))}
+  #about>.wrap{padding-left:clamp(24px,4vw,48px); padding-right:clamp(24px,4vw,48px)}}
+#about>.wrap{max-width:1120px}
+@media (max-width:719px){#about>.wrap{padding-left:20px; padding-right:20px}}
+
+/* v2: the main area receives focus from script (skip link, after the intro); it is not a control, so no focus frame around the page */
+#main:focus{outline:none}
+
+/* v2: standalone Contact page, generated from this same contact section */
+.page-contact #top,.page-contact #work,.page-contact #about,.page-contact #testimonials{display:none !important}
+.page-contact #contact{padding-block:clamp(4rem,10vw,7rem)}
+.contact h1{font-size:clamp(2.4rem,6vw,4.5rem); font-weight:500; margin:0}
+
+/* v2: "Load more work": cards marked data-more stay hidden until asked for */
+#work .bento > .case[data-more]{display:none !important}
+#work.show-more .bento > .case[data-more]{display:flex !important}
+@media (min-width:761px){#work.show-more .bento > .case[data-more]:last-child:nth-child(odd){display:grid !important}}
+.more-row{display:flex; justify-content:center; margin-top:clamp(1.75rem,4vw,2.75rem)}
+.more-row[hidden]{display:none}
+.more-work{display:inline-flex; align-items:center; gap:.5rem; min-height:48px; padding:.7rem 1.5rem; border-radius:999px; border:1px solid rgba(221,243,170,.45); background:transparent; color:var(--lime); font:inherit; font-weight:600; cursor:pointer; transition:background-color .2s ease, border-color .2s ease}
+.more-work:hover{background:rgba(221,243,170,.1); border-color:var(--lime)}
+.more-work svg{width:18px; height:18px; transition:transform .2s ease}
+.more-work:hover svg{transform:translateY(2px)}
+#work .case.just-shown{animation:moreIn .5s cubic-bezier(.2,.7,.2,1) both}
+@keyframes moreIn{from{opacity:0; transform:translateY(16px)}}
+@media (prefers-reduced-motion:reduce){#work .case.just-shown{animation:none} .more-work svg{transition:none}}
+
+/* v2: tighter space between the LinkedIn button and the big footer logo */
+section#contact.block,.page-contact section#contact{padding-bottom:clamp(1.75rem,3.5vw,2.75rem)}
+footer.band:not(.cs-foot){padding-top:0}
+footer .foot-logo-wrap{padding-top:clamp(.5rem,1.5vw,1rem)}
+
+@media (min-width:761px){
+  #work .bento > .case.span-row{grid-column:1/-1; display:grid !important; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}
+  #work .bento > .case.span-row .art{aspect-ratio:auto; height:100%; min-height:320px; border-bottom:0; border-right:1px solid rgba(255,255,255,.06)}
+  #work .bento > .case.span-row .case-body{justify-content:center; padding:2rem}
+  #work .bento.js-span > .case:last-child:nth-child(odd):not(.span-row){grid-column:auto; grid-template-columns:none}
+  #work .bento.js-span > .case:last-child:nth-child(odd):not(.span-row) .art{aspect-ratio:16/9; height:auto; min-height:0; border-right:0; border-bottom:1px solid rgba(255,255,255,.06)}
+  #work .bento.js-span > .case:last-child:nth-child(odd):not(.span-row) .case-body{justify-content:flex-start; padding:1.25rem 1.4rem 1.4rem}
+}
 </style>
 <style>
 /* ================= Case study page ================= */
@@ -1534,16 +1599,17 @@ footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between
             <li><a href="case-advisor.html"><span class="sm-t">Advisor platform</span><span class="sm-d">Wealth management workspace</span></a></li>
             <li><a href="case-finguard.html"><span class="sm-t">FinGuard</span><span class="sm-d">Banking risk and investigations</span></a></li>
             <li><a href="case-agrifunds.html" aria-current="page"><span class="sm-t">AgriFunds</span><span class="sm-d">Farm lending customer portal</span></a></li>
+            <li><a href="case-aster.html"><span class="sm-t">Aster Bank</span><span class="sm-d">Wealth management eLearning</span></a></li>
             <li><a href="case-autolore.html"><span class="sm-t">AutoLore</span><span class="sm-d">Classic car museum kiosk</span></a></li>
             <li><a href="case-guru.html"><span class="sm-t">Guru Samman Samaroh</span><span class="sm-d">Event visualisation and design</span></a></li>
             <li class="sm-all"><a href="home.html#work">All work</a></li>
           </ul>
         </div>
         <a href="about.html">About</a>
-        <a href="home.html#contact" class="nav-contact">Get in touch</a>
+        <a href="contact.html" class="nav-contact">Get in touch</a>
       </div>
     </nav>
-    <a class="btn btn-primary hdr-cta" href="home.html#contact">Get in touch</a>
+    <a class="btn btn-primary hdr-cta" href="contact.html">Get in touch</a>
     <div class="hdr-tools">
       <button class="icon-btn" id="themeBtn" type="button" aria-label="Switch to dark theme">
         <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"></svg>
@@ -1749,7 +1815,7 @@ footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between
 </main>
 
 <footer class="band cs-foot">
-  <div class="wrap"><span>© <span id="yr">2026</span> Sanjay Pal</span><a class="foot-li" href="https://www.linkedin.com/in/sanjay-pal-hfi-cua%E2%84%A2-9959853/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.6 8.65 21 11.2 21 14.5V21h-4v-5.8c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.52-2.25 3.1V21H9z"/></svg>LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>
+  <div class="wrap"><span>© <span id="yr">2026</span> Sanjay Pal</span>
     <span id="themeNote" aria-live="polite"></span></div>
 </footer>
 
@@ -1897,6 +1963,46 @@ footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between
   g.addEventListener("mouseleave",()=>{if(wide.matches){tm=setTimeout(()=>set(false),200)}});
   g.addEventListener("focusout",e=>{if(!g.contains(e.relatedTarget)) set(false)});
   document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!m.hidden){set(false); t.focus()}});
+})();
+</script>
+<script>
+/* ---------- Tooltips: every image and icon says what it is on hover ----------
+   Images use their alt text; icon-only buttons and links use their accessible name (and follow it when it changes,
+   e.g. theme or mute); inline SVG icons with a label get an SVG <title>; work-card graphics get a short description. */
+(function(){
+  var SHAPES={house:"Graphic: a house, for property tax financing",growth:"Graphic: rising bars, for wealth growth",
+    shield:"Graphic: a shield, for financial crime protection",wheat:"Graphic: wheat, for farm lending",
+    car:"Graphic: a classic car, for a museum kiosk",learn:"Graphic: a screen with a play button, for eLearning",
+    trophy:"Graphic: a trophy, for honouring teachers",stage:"Graphic: an event stage",field:"Graphic: a farm field"};
+  function visibleText(el){
+    var c=el.cloneNode(true);
+    c.querySelectorAll(".sr-only,svg,img,canvas,title").forEach(function(n){n.remove()});
+    return (c.textContent||"").replace(/\s+/g," ").trim();
+  }
+  function srText(el){ var s=el.querySelector(".sr-only"); return s?s.textContent.replace(/\s+/g," ").trim():"" }
+  function apply(root){
+    if(!root||!root.querySelectorAll) return;
+    root.querySelectorAll("img").forEach(function(i){
+      if(i.hasAttribute("title")) return; var a=i.getAttribute("alt"); if(a) i.title=a; });
+    root.querySelectorAll('svg[role="img"][aria-label]').forEach(function(s){
+      var lab=s.getAttribute("aria-label"), t=s.querySelector(":scope > title");
+      if(!t){ t=document.createElementNS("http://www.w3.org/2000/svg","title"); s.insertBefore(t,s.firstChild) }
+      if(t.textContent!==lab) t.textContent=lab; });
+    root.querySelectorAll('button,a[href],[role="button"],[role="tab"]').forEach(function(b){
+      if(b.hasAttribute("title") && b.dataset.tip!=="auto") return;
+      if(!b.querySelector("svg,img,canvas")) return;            // only controls that show an icon
+      if(visibleText(b)) return;                                 // has visible words already
+      var name=b.getAttribute("aria-label")||srText(b)||(b.querySelector("img[alt]")||{}).alt||"";
+      if(!name) return;
+      if(b.title!==name){ b.title=name } b.dataset.tip="auto"; });
+    root.querySelectorAll(".art-glyph[data-shape]").forEach(function(g){
+      if(!g.title&&SHAPES[g.dataset.shape]) g.title=SHAPES[g.dataset.shape]; });
+  }
+  var queued=false;
+  function run(){ if(queued) return; queued=true; requestAnimationFrame(function(){ queued=false; apply(document) }) }
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",run); else run();
+  window.addEventListener("load",run);
+  try{ new MutationObserver(run).observe(document.documentElement,{subtree:true,childList:true,attributes:true,attributeFilter:["aria-label","alt"]}) }catch(e){}
 })();
 </script>
 

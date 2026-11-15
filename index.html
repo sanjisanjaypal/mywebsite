@@ -1091,6 +1091,71 @@ a.btn:hover svg,.more-btn[aria-expanded="false"]:hover svg{animation:nudgeDown 1
 /* v2: standalone About page, generated from this same About section */
 .page-about #top,.page-about #work,.page-about #testimonials{display:none !important}
 .page-about #about{padding-top:clamp(2.5rem,6vw,4.5rem)}
+
+/* v2: an odd number of work cards; the last one spans the row with its graphic beside the text */
+@media (min-width:761px){
+  #work .bento > .case:last-child:nth-child(odd){grid-column:1/-1; display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}
+  #work .bento > .case:last-child:nth-child(odd) .art{aspect-ratio:auto; height:100%; min-height:320px; border-bottom:0; border-right:1px solid rgba(255,255,255,.06)}
+  #work .bento > .case:last-child:nth-child(odd) .case-body{justify-content:center; padding:2rem}
+}
+
+/* v2: email opens a new message; copy icon appears on hover or focus (always shown on touch) */
+.email-row{position:relative; gap:.35rem}
+.copy-ico{display:inline-grid; place-items:center; width:42px; height:42px; padding:0; border:0; border-radius:10px; background:transparent; color:inherit; cursor:pointer;
+  opacity:0; transform:translateX(-4px); transition:opacity .2s ease, transform .2s ease, background-color .2s ease}
+.band .copy-ico{color:var(--lime)}
+.copy-ico svg{width:22px; height:22px}
+.copy-ico .i-done{display:none}
+.copy-ico.is-done .i-copy{display:none} .copy-ico.is-done .i-done{display:block}
+.email-row:hover .copy-ico,.email-row:focus-within .copy-ico,.copy-ico.is-done{opacity:1; transform:none}
+.copy-ico:hover{background:color-mix(in srgb, currentColor 14%, transparent)}
+@media (hover:none){.copy-ico{opacity:1; transform:none}}
+@media (prefers-reduced-motion:reduce){.copy-ico{transition:none}}
+.email{user-select:text}
+/* v2: no rule above the big footer logo */
+footer.band:not(.cs-foot){border-top:0 !important}
+/* v2: About panel edges sit on the page grid */
+section#about{padding-left:max(16px, env(safe-area-inset-left,0px)); padding-right:max(16px, env(safe-area-inset-right,0px))}
+@media (min-width:720px){section#about{padding-left:max(40px, env(safe-area-inset-left,0px)); padding-right:max(40px, env(safe-area-inset-right,0px))}
+  #about>.wrap{padding-left:clamp(24px,4vw,48px); padding-right:clamp(24px,4vw,48px)}}
+#about>.wrap{max-width:1120px}
+@media (max-width:719px){#about>.wrap{padding-left:20px; padding-right:20px}}
+
+/* v2: the main area receives focus from script (skip link, after the intro); it is not a control, so no focus frame around the page */
+#main:focus{outline:none}
+
+/* v2: standalone Contact page, generated from this same contact section */
+.page-contact #top,.page-contact #work,.page-contact #about,.page-contact #testimonials{display:none !important}
+.page-contact #contact{padding-block:clamp(4rem,10vw,7rem)}
+.contact h1{font-size:clamp(2.4rem,6vw,4.5rem); font-weight:500; margin:0}
+
+/* v2: "Load more work": cards marked data-more stay hidden until asked for */
+#work .bento > .case[data-more]{display:none !important}
+#work.show-more .bento > .case[data-more]{display:flex !important}
+@media (min-width:761px){#work.show-more .bento > .case[data-more]:last-child:nth-child(odd){display:grid !important}}
+.more-row{display:flex; justify-content:center; margin-top:clamp(1.75rem,4vw,2.75rem)}
+.more-row[hidden]{display:none}
+.more-work{display:inline-flex; align-items:center; gap:.5rem; min-height:48px; padding:.7rem 1.5rem; border-radius:999px; border:1px solid rgba(221,243,170,.45); background:transparent; color:var(--lime); font:inherit; font-weight:600; cursor:pointer; transition:background-color .2s ease, border-color .2s ease}
+.more-work:hover{background:rgba(221,243,170,.1); border-color:var(--lime)}
+.more-work svg{width:18px; height:18px; transition:transform .2s ease}
+.more-work:hover svg{transform:translateY(2px)}
+#work .case.just-shown{animation:moreIn .5s cubic-bezier(.2,.7,.2,1) both}
+@keyframes moreIn{from{opacity:0; transform:translateY(16px)}}
+@media (prefers-reduced-motion:reduce){#work .case.just-shown{animation:none} .more-work svg{transition:none}}
+
+/* v2: tighter space between the LinkedIn button and the big footer logo */
+section#contact.block,.page-contact section#contact{padding-bottom:clamp(1.75rem,3.5vw,2.75rem)}
+footer.band:not(.cs-foot){padding-top:0}
+footer .foot-logo-wrap{padding-top:clamp(.5rem,1.5vw,1rem)}
+
+@media (min-width:761px){
+  #work .bento > .case.span-row{grid-column:1/-1; display:grid !important; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}
+  #work .bento > .case.span-row .art{aspect-ratio:auto; height:100%; min-height:320px; border-bottom:0; border-right:1px solid rgba(255,255,255,.06)}
+  #work .bento > .case.span-row .case-body{justify-content:center; padding:2rem}
+  #work .bento.js-span > .case:last-child:nth-child(odd):not(.span-row){grid-column:auto; grid-template-columns:none}
+  #work .bento.js-span > .case:last-child:nth-child(odd):not(.span-row) .art{aspect-ratio:16/9; height:auto; min-height:0; border-right:0; border-bottom:1px solid rgba(255,255,255,.06)}
+  #work .bento.js-span > .case:last-child:nth-child(odd):not(.span-row) .case-body{justify-content:flex-start; padding:1.25rem 1.4rem 1.4rem}
+}
 </style>
 <style>
 html,body{margin:0; height:100%; overflow:hidden; background:var(--bg)}
@@ -1276,6 +1341,46 @@ document.documentElement.classList.add("site-loading");</script>
   });
   window.addEventListener("hashchange",()=>{try{f.contentWindow.location.replace(route())}catch(e){f.src=route()}});
   window.addEventListener("resize",scrollbar); setInterval(scrollbar,1500);
+})();
+</script>
+<script>
+/* ---------- Tooltips: every image and icon says what it is on hover ----------
+   Images use their alt text; icon-only buttons and links use their accessible name (and follow it when it changes,
+   e.g. theme or mute); inline SVG icons with a label get an SVG <title>; work-card graphics get a short description. */
+(function(){
+  var SHAPES={house:"Graphic: a house, for property tax financing",growth:"Graphic: rising bars, for wealth growth",
+    shield:"Graphic: a shield, for financial crime protection",wheat:"Graphic: wheat, for farm lending",
+    car:"Graphic: a classic car, for a museum kiosk",learn:"Graphic: a screen with a play button, for eLearning",
+    trophy:"Graphic: a trophy, for honouring teachers",stage:"Graphic: an event stage",field:"Graphic: a farm field"};
+  function visibleText(el){
+    var c=el.cloneNode(true);
+    c.querySelectorAll(".sr-only,svg,img,canvas,title").forEach(function(n){n.remove()});
+    return (c.textContent||"").replace(/\s+/g," ").trim();
+  }
+  function srText(el){ var s=el.querySelector(".sr-only"); return s?s.textContent.replace(/\s+/g," ").trim():"" }
+  function apply(root){
+    if(!root||!root.querySelectorAll) return;
+    root.querySelectorAll("img").forEach(function(i){
+      if(i.hasAttribute("title")) return; var a=i.getAttribute("alt"); if(a) i.title=a; });
+    root.querySelectorAll('svg[role="img"][aria-label]').forEach(function(s){
+      var lab=s.getAttribute("aria-label"), t=s.querySelector(":scope > title");
+      if(!t){ t=document.createElementNS("http://www.w3.org/2000/svg","title"); s.insertBefore(t,s.firstChild) }
+      if(t.textContent!==lab) t.textContent=lab; });
+    root.querySelectorAll('button,a[href],[role="button"],[role="tab"]').forEach(function(b){
+      if(b.hasAttribute("title") && b.dataset.tip!=="auto") return;
+      if(!b.querySelector("svg,img,canvas")) return;            // only controls that show an icon
+      if(visibleText(b)) return;                                 // has visible words already
+      var name=b.getAttribute("aria-label")||srText(b)||(b.querySelector("img[alt]")||{}).alt||"";
+      if(!name) return;
+      if(b.title!==name){ b.title=name } b.dataset.tip="auto"; });
+    root.querySelectorAll(".art-glyph[data-shape]").forEach(function(g){
+      if(!g.title&&SHAPES[g.dataset.shape]) g.title=SHAPES[g.dataset.shape]; });
+  }
+  var queued=false;
+  function run(){ if(queued) return; queued=true; requestAnimationFrame(function(){ queued=false; apply(document) }) }
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",run); else run();
+  window.addEventListener("load",run);
+  try{ new MutationObserver(run).observe(document.documentElement,{subtree:true,childList:true,attributes:true,attributeFilter:["aria-label","alt"]}) }catch(e){}
 })();
 </script>
 
