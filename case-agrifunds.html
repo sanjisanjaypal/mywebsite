@@ -286,7 +286,7 @@ section.block{padding-block:clamp(3.5rem,8vw,6rem); border-top:1px solid var(--l
 .socials a{display:inline-flex; align-items:center; gap:.5rem; min-height:48px; padding:.6rem 1.2rem; border:1px solid var(--line); border-radius:999px; text-decoration:none; font-weight:600; background:var(--surface)}
 .socials a:hover{border-color:var(--ink)}
 .socials svg{width:16px; height:16px}
-footer{border-top:1px solid var(--line); padding-block:2rem calc(6rem + env(safe-area-inset-bottom,0px)); color:var(--muted); font-size:.92rem}
+footer{border-top:1px solid var(--line); padding-block:2rem calc(1.75rem + env(safe-area-inset-bottom,0px)); color:var(--muted); font-size:.92rem}
 footer .wrap{display:flex; flex-wrap:wrap; gap:1rem; justify-content:space-between}
 
 /* Serif display tuning: lighter weights, tighter optical sizing */
@@ -628,7 +628,7 @@ html.is-loading .anim-in{animation-play-state:paused}
 .sound-btn:hover{background:var(--surface-2)}
 .vol-fixed .vol-wrap{display:none}
 .vol-fixed .sound-dock{padding-top:0}
-footer{padding-bottom:calc(16rem + env(safe-area-inset-bottom,0px)) !important}
+footer{padding-bottom:calc(1.75rem + env(safe-area-inset-bottom,0px)) !important}
 
 /* Accessibility widget */
 .a11y-fab{position:fixed; z-index:70; right:calc(20px + env(safe-area-inset-right,0px)); bottom:calc(20px + env(safe-area-inset-bottom,0px)); width:56px; height:56px; border-radius:999px; border:0; background:var(--btn-bg); color:var(--btn-fg); display:grid; place-items:center; cursor:pointer; box-shadow:0 10px 30px -10px rgba(0,0,0,.5)}
@@ -1134,6 +1134,34 @@ a.btn:hover svg,.more-btn[aria-expanded="false"]:hover svg{animation:nudgeDown 1
   .a11y-fab svg{width:26px; height:26px}
   .a11y-panel{bottom:calc(80px + env(safe-area-inset-bottom,0px))}
 }
+
+/* v2: current employer line in the hero */
+.now-at{width:fit-content; max-width:100%; display:inline-flex; align-items:center; flex-wrap:wrap; gap:.5rem; padding:.45rem .9rem; border-radius:999px; background:color-mix(in srgb, var(--btn-bg) 12%, transparent); border:1px solid color-mix(in srgb, var(--btn-bg) 40%, transparent); font-weight:500}
+.now-at a{display:inline-flex; align-items:center; gap:.25rem; font-weight:700; color:inherit; text-decoration:underline; text-underline-offset:3px}
+.now-at a svg{width:15px; height:15px}
+.now-dot{width:9px; height:9px; border-radius:50%; background:#22A55A; box-shadow:0 0 0 4px rgba(34,165,90,.18); flex:none}
+/* v2: visa mention, highlighted */
+.visa-note{width:fit-content; max-width:100%; display:inline-flex; align-items:center; gap:.6rem; margin:0 0 1.25rem; padding:.6rem 1rem .6rem .8rem; border-radius:12px; background:#FFF4F5; color:#7A1A28; border:1.5px solid #8B1E2D; font-size:1rem}
+.visa-note svg{width:22px; height:22px; flex:none}
+.visa-note b{font-weight:800}
+:root[data-theme="dark"] .visa-note{background:#3A1219; color:#FFD3D9; border-color:#E0697A}
+
+/* v2: About tabs reworked */
+.summary.summary-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:759px){.summary.summary-2{grid-template-columns:1fr}}
+.sub-h{font-size:1.15rem; font-weight:600; margin:2.75rem 0 1rem; display:flex; align-items:center; gap:.7rem}
+.sub-h::before{content:""; width:28px; height:3px; background:var(--ink); border-radius:2px}
+.prin-grid{list-style:none; margin:0; padding:0; display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
+.prin-grid li{padding:1.1rem 1.2rem; border:1px solid var(--line); border-radius:16px; background:var(--surface)}
+.prin-grid h5{margin:0 0 .4rem; font-size:1.05rem; font-weight:600}
+.prin-grid p{margin:0; color:var(--muted); font-size:.95rem; line-height:1.55}
+#panel-geo .chips{margin-top:0}
+
+/* v2: footer ends right after the copyright line; keep its text clear of the floating buttons on narrower screens */
+@media (max-width:1200px){footer > .wrap:last-child{padding-right:calc(84px + env(safe-area-inset-right,0px)) !important}}
+/* v2: standalone About page, generated from this same About section */
+.page-about #top,.page-about #work,.page-about #testimonials{display:none !important}
+.page-about #about{padding-top:clamp(2.5rem,6vw,4.5rem)}
 </style>
 <style>
 /* ================= Case study page ================= */
@@ -1255,7 +1283,7 @@ a.btn:hover svg,.more-btn[aria-expanded="false"]:hover svg{animation:nudgeDown 1
 .cs-next-in{display:grid; gap:1rem; justify-items:start}
 .cs-next h2{font-size:clamp(1.8rem,4vw,3rem); font-weight:400; max-width:20ch}
 .cs-next .cs-kicker{color:var(--lime)}
-footer.cs-foot{padding-block:1.75rem calc(6.5rem + env(safe-area-inset-bottom,0px)) !important; border-top:1px solid rgba(249,249,239,.12)}
+footer.cs-foot{padding-block:1.75rem calc(1.75rem + env(safe-area-inset-bottom,0px)) !important; border-top:1px solid rgba(249,249,239,.12)}
 footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:1rem; color:var(--on-forest-muted); font-size:.92rem}
 
 .lightbox{border:0; padding:0; max-width:min(1200px,94vw); max-height:92vh; background:transparent; overflow:visible}
@@ -1511,7 +1539,7 @@ footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between
             <li class="sm-all"><a href="home.html#work">All work</a></li>
           </ul>
         </div>
-        <a href="home.html#about">About</a>
+        <a href="about.html">About</a>
         <a href="home.html#contact" class="nav-contact">Get in touch</a>
       </div>
     </nav>

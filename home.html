@@ -222,7 +222,7 @@ section.block{padding-block:clamp(3.5rem,8vw,6rem); border-top:1px solid var(--l
 .socials a{display:inline-flex; align-items:center; gap:.5rem; min-height:48px; padding:.6rem 1.2rem; border:1px solid var(--line); border-radius:999px; text-decoration:none; font-weight:600; background:var(--surface)}
 .socials a:hover{border-color:var(--ink)}
 .socials svg{width:16px; height:16px}
-footer{border-top:1px solid var(--line); padding-block:2rem calc(6rem + env(safe-area-inset-bottom,0px)); color:var(--muted); font-size:.92rem}
+footer{border-top:1px solid var(--line); padding-block:2rem calc(1.75rem + env(safe-area-inset-bottom,0px)); color:var(--muted); font-size:.92rem}
 footer .wrap{display:flex; flex-wrap:wrap; gap:1rem; justify-content:space-between}
 
 /* Serif display tuning: lighter weights, tighter optical sizing */
@@ -564,7 +564,7 @@ html.is-loading .anim-in{animation-play-state:paused}
 .sound-btn:hover{background:var(--surface-2)}
 .vol-fixed .vol-wrap{display:none}
 .vol-fixed .sound-dock{padding-top:0}
-footer{padding-bottom:calc(16rem + env(safe-area-inset-bottom,0px)) !important}
+footer{padding-bottom:calc(1.75rem + env(safe-area-inset-bottom,0px)) !important}
 
 /* Accessibility widget */
 .a11y-fab{position:fixed; z-index:70; right:calc(20px + env(safe-area-inset-right,0px)); bottom:calc(20px + env(safe-area-inset-bottom,0px)); width:56px; height:56px; border-radius:999px; border:0; background:var(--btn-bg); color:var(--btn-fg); display:grid; place-items:center; cursor:pointer; box-shadow:0 10px 30px -10px rgba(0,0,0,.5)}
@@ -1070,6 +1070,34 @@ a.btn:hover svg,.more-btn[aria-expanded="false"]:hover svg{animation:nudgeDown 1
   .a11y-fab svg{width:26px; height:26px}
   .a11y-panel{bottom:calc(80px + env(safe-area-inset-bottom,0px))}
 }
+
+/* v2: current employer line in the hero */
+.now-at{width:fit-content; max-width:100%; display:inline-flex; align-items:center; flex-wrap:wrap; gap:.5rem; padding:.45rem .9rem; border-radius:999px; background:color-mix(in srgb, var(--btn-bg) 12%, transparent); border:1px solid color-mix(in srgb, var(--btn-bg) 40%, transparent); font-weight:500}
+.now-at a{display:inline-flex; align-items:center; gap:.25rem; font-weight:700; color:inherit; text-decoration:underline; text-underline-offset:3px}
+.now-at a svg{width:15px; height:15px}
+.now-dot{width:9px; height:9px; border-radius:50%; background:#22A55A; box-shadow:0 0 0 4px rgba(34,165,90,.18); flex:none}
+/* v2: visa mention, highlighted */
+.visa-note{width:fit-content; max-width:100%; display:inline-flex; align-items:center; gap:.6rem; margin:0 0 1.25rem; padding:.6rem 1rem .6rem .8rem; border-radius:12px; background:#FFF4F5; color:#7A1A28; border:1.5px solid #8B1E2D; font-size:1rem}
+.visa-note svg{width:22px; height:22px; flex:none}
+.visa-note b{font-weight:800}
+:root[data-theme="dark"] .visa-note{background:#3A1219; color:#FFD3D9; border-color:#E0697A}
+
+/* v2: About tabs reworked */
+.summary.summary-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:759px){.summary.summary-2{grid-template-columns:1fr}}
+.sub-h{font-size:1.15rem; font-weight:600; margin:2.75rem 0 1rem; display:flex; align-items:center; gap:.7rem}
+.sub-h::before{content:""; width:28px; height:3px; background:var(--ink); border-radius:2px}
+.prin-grid{list-style:none; margin:0; padding:0; display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
+.prin-grid li{padding:1.1rem 1.2rem; border:1px solid var(--line); border-radius:16px; background:var(--surface)}
+.prin-grid h5{margin:0 0 .4rem; font-size:1.05rem; font-weight:600}
+.prin-grid p{margin:0; color:var(--muted); font-size:.95rem; line-height:1.55}
+#panel-geo .chips{margin-top:0}
+
+/* v2: footer ends right after the copyright line; keep its text clear of the floating buttons on narrower screens */
+@media (max-width:1200px){footer > .wrap:last-child{padding-right:calc(84px + env(safe-area-inset-right,0px)) !important}}
+/* v2: standalone About page, generated from this same About section */
+.page-about #top,.page-about #work,.page-about #testimonials{display:none !important}
+.page-about #about{padding-top:clamp(2.5rem,6vw,4.5rem)}
 </style>
 </head>
 <body>
@@ -1164,7 +1192,7 @@ a.btn:hover svg,.more-btn[aria-expanded="false"]:hover svg{animation:nudgeDown 1
             <li class="sm-all"><a href="#work">All work</a></li>
           </ul>
         </div>
-        <a href="#about">About</a>
+        <a href="about.html">About</a>
         <a href="#contact" class="nav-contact">Get in touch</a>
       </div>
     </nav>
@@ -1187,9 +1215,9 @@ a.btn:hover svg,.more-btn[aria-expanded="false"]:hover svg{animation:nudgeDown 1
     <h1 class="anim-in" style="--d:90ms"><span data-cms="tde48104">I’m Sanjay Pal,</span> <span class="role" data-cms="tb050e76">a UX Designer.</span></h1>
     <div class="hero-grid">
       <div class="hero-copy anim-in" style="--d:180ms">
-        <p data-cms="t7642bc3">I turn complex, high-stakes workflows into products people trust. Lately that has meant fintech: one platform for property tax loans and liens at FinUnity, and an advisor workspace that halved the steps to run quarter-end reports.</p>
-        <p data-cms="te81ea2d">My work starts with research, through interviews, personas, heuristic reviews and journey maps, and carries through to wireframes, prototypes and design systems that teams can build on.</p>
-        <p data-cms="t1eb66ff">I bring the same user-centred thinking to physical spaces too, like Guru Samman Samaroh, an event I visualised and designed end to end for more than 300 guests.</p>
+        <p data-cms="tv2-brief1">I turn complex, high-stakes workflows into products people trust. Lately that has been fintech: a property tax loan platform at FinUnity and an advisor workspace that halved the steps to run quarter-end reports.</p>
+        <p class="now-at" data-cms="tv2-now"><span class="now-dot" aria-hidden="true"></span>Currently working with <a href="https://digital.compunnel.com/" target="_blank" rel="noopener">Compunnel Digital<span class="sr-only"> (opens in a new tab)</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></p>
+        <p data-cms="tv2-brief2">From research and journey maps to prototypes and design systems, and even live events like Guru Samman Samaroh for 300+ guests.</p>
         <div class="cta-row">
           <a class="btn btn-primary" href="#work">See selected work
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
@@ -1349,125 +1377,74 @@ a.btn:hover svg,.more-btn[aria-expanded="false"]:hover svg{animation:nudgeDown 1
     <div class="wrap">
       <div class="sec-head">
         <h2 class="sec-num" id="ab-h" data-cms="t6b21fb7">About</h2>
-        <p class="sec-lede" data-cms="te307321">Create products your users will want to use.</p>
+        <p class="sec-lede" data-cms="tv2-ab-lede">Who I am, what I offer and how I work.</p>
       </div>
       <div class="tablist" role="tablist" aria-label="About Sanjay">
-        <button class="tab" role="tab" id="tab-me" aria-controls="panel-me" aria-selected="true" tabindex="0" type="button">About Me</button>
-        <button class="tab" role="tab" id="tab-sum" aria-controls="panel-sum" aria-selected="false" tabindex="-1" type="button">Summary</button>
-        <button class="tab" role="tab" id="tab-served" aria-controls="panel-served" aria-selected="false" tabindex="-1" type="button">Served</button>
-        <button class="tab" role="tab" id="tab-geo" aria-controls="panel-geo" aria-selected="false" tabindex="-1" type="button">Countries</button>
-        <button class="tab" role="tab" id="tab-ind" aria-controls="panel-ind" aria-selected="false" tabindex="-1" type="button">Industries</button>
-        <button class="tab" role="tab" id="tab-how" aria-controls="panel-how-wrap" aria-selected="false" tabindex="-1" type="button">Process</button>
-        <button class="tab" role="tab" id="tab-prin" aria-controls="panel-prin-wrap" aria-selected="false" tabindex="-1" type="button">Principles</button>
+        <button class="tab" role="tab" id="tab-me" aria-controls="panel-me" aria-selected="true" tabindex="0" type="button">About me</button>
+        <button class="tab" role="tab" id="tab-sum" aria-controls="panel-sum" aria-selected="false" tabindex="-1" type="button">What I do</button>
+        <button class="tab" role="tab" id="tab-how" aria-controls="panel-how-wrap" aria-selected="false" tabindex="-1" type="button">How I work</button>
+        <button class="tab" role="tab" id="tab-geo" aria-controls="panel-geo" aria-selected="false" tabindex="-1" type="button">Industries &amp; regions</button>
       </div>
 
       <div role="tabpanel" id="panel-me" aria-labelledby="tab-me" tabindex="0">
         <div class="about-full">
-          <p class="about-lead" data-cms="tme-lead">I design around people first. Every project starts with who will use it, what they’re trying to get done, and what gets in their way.</p>
+          <p class="about-lead" data-cms="tv2-me-lead">I listen first. Before I open a design tool, I want to sit with the people who will use the product and see how they work today.</p>
           <figure class="about-photo">
             <img class="about-photo-shape" src="boardwalk-shape.webp" width="1200" height="331" alt="" aria-hidden="true">
             <img src="sanjay-boardwalk-curve.webp" width="1800" height="497" loading="lazy" alt="Sanjay walking away along a weathered wooden boardwalk towards a misty beach, a pier in the distance.">
           </figure>
           <div class="about-cols">
-            <p data-cms="tme-p1">Being user-centred means I don’t design from assumptions. I talk to users, watch how they work and test ideas with them early, so decisions rest on evidence. Research, journey mapping, information architecture and interaction design are how I turn what I learn into products people find easy to use.</p>
-            <p data-cms="tme-p2">A design is finished only when it works for everyone. Accessibility, clear content and consistent patterns are part of my process from the first sketch, not a check at the end. I also use AI to speed up research synthesis and prototyping, which leaves more time with the people we’re designing for.</p>
-            <p data-cms="tme-p3">The same thinking carries beyond screens. I design physical events too, from the venue layout to each guest’s journey through the space. For Guru Samman Samaroh 2019, I visualised and designed the entire setup for more than 300 visitors: where they arrive, how they move, where they sit and what they see. A good event, like a good interface, guides people without them noticing.</p>
-            <p data-cms="tme-p4">Outside work, music and visual storytelling keep me curious. They remind me that design is as much about how something feels as how it works.</p>
+            <p data-cms="tv2-me-p1">I enjoy the problems many people find dull: dense data tables, multi-step approvals, compliance rules. Making those feel calm and obvious is the part of the job I like most.</p>
+            <p data-cms="tv2-me-p2">Outside work, music and visual storytelling keep me curious. They remind me that design is as much about how something feels as how it works.</p>
           </div>
-          <figure class="visa-card">
-            <img src="us-visa.webp" width="520" height="344" loading="lazy" alt="Illustration of a US B1/B2 visa card for Sanjay Pal, with personal details blurred">
-            <svg class="visa-stamp" viewBox="0 0 200 200" role="img" aria-label="Stamp: Valid Visa till Feb 2027">
-              <defs><path id="vsTop" d="M34,100 a66,66 0 1,1 132,0"/><path id="vsBot" d="M35,100 a65,65 0 0,0 130,0"/>
-                <filter id="vsInk"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="4" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.3 1.5" result="m"/><feComposite in="SourceGraphic" in2="m" operator="in"/></filter></defs>
-              <circle cx="100" cy="100" r="97" fill="#fff"/>
-              <g filter="url(#vsInk)" fill="none" stroke="#8B1E2D">
-                <circle cx="100" cy="100" r="92" stroke-width="5"/>
-                <circle cx="100" cy="100" r="82" stroke-width="2"/>
-                <circle cx="100" cy="100" r="50" stroke-width="2" stroke-dasharray="3 4"/>
-                <g fill="#8B1E2D" stroke="none" font-family="inherit">
-                  <text font-size="19" font-weight="800" letter-spacing="3"><textPath href="#vsTop" startOffset="50%" text-anchor="middle">VALID VISA</textPath></text>
-                  <text font-size="16" font-weight="700" letter-spacing="3"><textPath href="#vsBot" startOffset="50%" text-anchor="middle" dominant-baseline="hanging">★ VALID TILL ★</textPath></text>
-                  <text x="100" y="97" text-anchor="middle" font-size="27" font-weight="800">FEB</text>
-                  <text x="100" y="125" text-anchor="middle" font-size="27" font-weight="800">2027</text>
-                </g>
-              </g>
-            </svg>
-            <figcaption data-cms="tvisa2">Valid Visa till Feb 2027</figcaption>
-          </figure>
-          <ul class="focus-list" aria-label="Skills">
-            <li data-cms="tme-sk1">User research</li><li data-cms="tme-sk2">Usability testing</li><li data-cms="tme-sk3">Journey mapping</li><li data-cms="tme-sk4">Information architecture</li><li data-cms="tme-sk5">Interaction design</li><li data-cms="tme-sk6">Design systems</li><li data-cms="tme-sk7">Accessibility</li><li data-cms="tme-sk8">AI in UX</li><li data-cms="tme-sk9">Event design</li><li data-cms="tme-sk10">Visual storytelling</li><li data-cms="tme-sk11">Music</li>
-          </ul>
+          <p class="visa-note" data-cms="tv2-visa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg><span><b>Valid US Visa</b> till Feb 2027</span></p>
         </div>
       </div>
 
       <div role="tabpanel" id="panel-sum" aria-labelledby="tab-sum" tabindex="0" hidden>
-        <h3 class="sec-lede panel-lede" data-cms="tae3e70a">What I deliver and how.</h3>
-      <div class="summary">
-        <div>
-          <h3 data-cms="t5cbd584">Services</h3>
-          <ul>
-            <li data-cms="te92d483-2">UX strategy</li>
-            <li data-cms="t987669b">Product and interaction design</li>
-            <li data-cms="tf83eaa5">User research and usability testing</li>
-            <li data-cms="t5231c0c-3">Design systems</li>
-            <li data-cms="t0fb82ea">AI-accelerated UX workflows</li>
-            <li data-cms="t14ad0e7">Design leadership and mentoring</li>
-          </ul>
+        <h3 class="sec-lede panel-lede" data-cms="tv2-do-lede">The services I offer, and what your team gets from each project.</h3>
+        <div class="summary summary-2">
+          <div>
+            <h3 data-cms="tv2-do-h1">Services</h3>
+            <ul>
+              <li data-cms="tv2-do-s1">UX strategy</li>
+              <li data-cms="tv2-do-s2">User research and usability testing</li>
+              <li data-cms="tv2-do-s3">Product and interaction design</li>
+              <li data-cms="tv2-do-s4">Design systems</li>
+              <li data-cms="tv2-do-s5">Design leadership and mentoring</li>
+            </ul>
+          </div>
+          <div>
+            <h3 data-cms="tv2-do-h2">Deliverables</h3>
+            <ul>
+              <li data-cms="tv2-do-d1">Research insights, personas and journey maps</li>
+              <li data-cms="tv2-do-d2">Information architecture and user flows</li>
+              <li data-cms="tv2-do-d3">Wireframes and interactive prototypes</li>
+              <li data-cms="tv2-do-d4">Component libraries with usage guidelines</li>
+              <li data-cms="tv2-do-d5">Accessible, developer-ready UI specifications</li>
+              <li data-cms="tv2-do-d6">Visual storytelling for stakeholders</li>
+            </ul>
+          </div>
         </div>
-        <div>
-          <h3 data-cms="td87a3ab">Deliverables</h3>
-          <ul>
-            <li data-cms="t5cd60d1">Research insights, personas and journey maps</li>
-            <li data-cms="t07db172">Information architecture and user flows</li>
-            <li data-cms="tbeae9f3">Wireframes and interactive prototypes</li>
-            <li data-cms="t455ec9a">Design systems and component libraries</li>
-            <li data-cms="tbb62297">Accessible, developer-ready UI specifications</li>
-            <li data-cms="t723a58b">Visual storytelling for stakeholders</li>
-          </ul>
-        </div>
-        <div>
-          <h3 data-cms="t6848ce5">Outcomes</h3>
-          <ul>
-            <li><strong>Simpler products:</strong> complex workflows turned into clear, guided experiences</li>
-            <li><strong>Faster delivery:</strong> AI-assisted research and prototyping shorten the path to a tested idea</li>
-            <li><strong>Fewer surprises:</strong> early testing with real users catches problems before build</li>
-            <li><strong>Consistency at scale:</strong> shared design systems keep products aligned</li>
-            <li><strong>Inclusive by default:</strong> accessibility designed in from the start</li>
-            <li><strong>Stronger teams:</strong> designers mentored to lead their own work</li>
-          </ul>
-        </div>
-      </div>
       </div>
 
-      <div role="tabpanel" id="panel-served" aria-labelledby="tab-served" tabindex="0" hidden>
-        <h3 class="sec-lede panel-lede" data-cms="t0ae8429">Brands and organisations I’ve designed for.</h3>
-        <ul class="logos" role="list" style="list-style:none;margin:0;padding:0" id="logoList"></ul>
-        <p class="note" data-cms="t28fe5b5">Client logos are placeholders until permissions are confirmed.</p>
+      <div role="tabpanel" id="panel-how-wrap" aria-labelledby="tab-how" tabindex="0" hidden>
+        <h3 class="sec-lede panel-lede" data-cms="tv2-how-lede">My process, step by step, and the principles behind it.</h3>
+        <div id="panel-how"></div>
+        <h4 class="sub-h" data-cms="tv2-prin-h">Principles I hold to</h4>
+        <ul class="prin-grid" id="panel-prin"></ul>
       </div>
 
       <div role="tabpanel" id="panel-geo" aria-labelledby="tab-geo" tabindex="0" hidden>
-        <h3 class="sec-lede panel-lede" data-cms="t55711fe">Clients across the US, UK, India and Singapore.</h3>
+        <h3 class="sec-lede panel-lede" data-cms="tv2-geo-lede">Clients across the US, UK, India and Singapore, in a wide range of industries.</h3>
         <div class="geo" id="geo">
           <canvas class="geo-canvas" id="geoCanvas" role="img" aria-label="Dotted world map highlighting client locations in California, Dallas, Florida, New York and Philadelphia in the United States, the United Kingdom, India and Singapore."></canvas>
           <div class="geo-pins" id="geoPins"></div>
           <div class="geo-pop" id="geoPop" role="tooltip" hidden></div>
         </div>
         <p class="note" data-cms="t1495c17">Hover or tap a highlighted cluster to see clients.</p>
-      </div>
-
-      <div role="tabpanel" id="panel-ind" aria-labelledby="tab-ind" tabindex="0" hidden>
-        <h3 class="sec-lede panel-lede" data-cms="t8532ae6">Experience across a diverse range of sectors.</h3>
+        <h4 class="sub-h" data-cms="tv2-ind-h">Industries</h4>
         <ul class="chips" id="chipList"></ul>
-      </div>
-
-      <div role="tabpanel" id="panel-how-wrap" aria-labelledby="tab-how" tabindex="0" hidden>
-        <h3 class="sec-lede panel-lede" data-cms="t804e21b">How I work, step by step.</h3>
-        <div id="panel-how"></div>
-      </div>
-
-      <div role="tabpanel" id="panel-prin-wrap" aria-labelledby="tab-prin" tabindex="0" hidden>
-        <h3 class="sec-lede panel-lede" data-cms="t0d0dd09">The principles behind every decision.</h3>
-        <div id="panel-prin"></div>
       </div>
 
       </div>
@@ -1479,37 +1456,10 @@ a.btn:hover svg,.more-btn[aria-expanded="false"]:hover svg{animation:nudgeDown 1
     <div class="wrap">
       <div class="sec-head">
         <h2 class="sec-num" id="ts-h" data-cms="t7f586e7">What others say</h2>
-        <p class="sec-lede" data-cms="t5f84b83">Words from clients, stakeholders and colleagues, in their emails, awards and LinkedIn recommendations.</p>
+        <p class="sec-lede" data-cms="tv2-ts-lede">Words from clients, stakeholders and colleagues.</p>
       </div>
       <div class="quotes" id="quoteList"></div>
 
-      <h3 class="recs-h" data-cms="trec-h">LinkedIn recommendations</h3>
-          <p class="recs-hint" aria-hidden="true">Swipe to read more →</p>
-      <ul class="recs">
-        <li class="rec"><blockquote><p>“Sanjay is one of the brightest and most talented people I’ve had the pleasure of working with and has an amazing ability to work in pressure. … [He] has great depth of understanding of innovation and what it takes for organizations to create an environment that supports innovation. He is truly an amazing resource.”</p></blockquote>
-          <div class="rec-who"><span class="avatar" style="background:#2C5FD3" aria-hidden="true">HG</span><span><b>Harish Gopinath</b><span>Digital Transformation · M&amp;A · SAP SuccessFactors</span><span class="rec-date">July 17, 2008 · Worked on the same team</span></span></div></li>
-        <li class="rec"><blockquote><p>“Sanjay is a detail oriented designer, and has immense creative flair. He is willing to think outside the box and create ideas that can have a good impact on the product. He is intelligent and smart professional … his hardwork and commitment are exceptional, as like his technical skills. He is a great team player.”</p></blockquote>
-          <div class="rec-who"><span class="avatar" style="background:#C9501F" aria-hidden="true">PD</span><span><b>Pankaj Dargan</b><span>Principal Product Designer · UX/UI Designer</span><span class="rec-date">May 13, 2009 · Worked on the same team</span></span></div></li>
-        <li class="rec"><blockquote><p>“Sanjay … can deliver you highly creative designs within very short period of time, flexible, meets customer’s requirement all the time, dedicated towards his responsibilities. … Sanjay is that kind of person which any team must have to make happy their clients.”</p></blockquote>
-          <div class="rec-who"><span class="avatar" style="background:#4A4A55" aria-hidden="true">KG</span><span><b>Kumar Gupta</b><span>UI/UX Analyst, State of Michigan DTMB (Client)</span><span class="rec-date">August 25, 2008 · Managed Sanjay directly</span></span></div></li>
-        <li class="rec"><blockquote><p>“He is the person with creative mind, Innovative Ideas &amp; Mind Blowing Concepts. … Very Creative and Self Motivated. … His designs are always unique and very impressive, meets customer’s requirement all the time, dedicated towards his responsibilities.”</p></blockquote>
-          <div class="rec-who"><span class="avatar" style="background:#027742" aria-hidden="true">LC</span><span><b>Lalit Choudhary</b><span>Senior UX Lead &amp; AI Product Designer</span><span class="rec-date">February 18, 2009 · Worked on the same team</span></span></div></li>
-        <li class="rec"><blockquote><p>“Sanjay is a very creative, sharp and focussed professional and a complete team player. I have always received full cooperation and timely and accurate delivery and enjoyed working with him.”</p></blockquote>
-          <div class="rec-who"><span class="avatar" style="background:#661614" aria-hidden="true">RG</span><span><b>Ritu Gupta</b><span>Digital Learning &amp; Transformation Professional</span><span class="rec-date">February 3, 2009 · Senior to Sanjay</span></span></div></li>
-        <li class="rec"><blockquote><p>“Sanjay is a competent, sincere and hard working professional. He is a creative person with full of innovative ideas. A valuable resource in the organization. He is having good and sound understanding in design. He always takes initiatives for any challenging task.”</p></blockquote>
-          <div class="rec-who"><span class="avatar" style="background:#7A4FCF" aria-hidden="true">PJ</span><span><b>Priyanka Jain</b><span>UI/UX Designer</span><span class="rec-date">February 18, 2009 · Worked on the same team</span></span></div></li>
-        <li class="rec"><blockquote><p>“Sanjay is one of the most energetic and dynamic people I have ever worked with. He is a very goal oriented and determinate. He has his own concepts and visualization in designing. … He has strong desire to learn and passionate for achievements. He has been fantastic in developing relationships and is a great team player.”</p></blockquote>
-          <div class="rec-who"><span class="avatar" style="background:#2C5FD3" aria-hidden="true">SK</span><span><b>Sachin Kumar</b><span>Principal Consultant, Capco</span><span class="rec-date">May 25, 2010 · Worked on the same team</span></span></div></li>
-        <li class="rec"><blockquote><p>“Sanjay is an excellent designer, and a very hard working person. He is also sincere, and very grounded person.”</p></blockquote>
-          <div class="rec-who"><span class="avatar" style="background:#C9501F" aria-hidden="true">AR</span><span><b>Abhijit Roy</b><span>Building teams that solve problems through technology</span><span class="rec-date">May 26, 2009 · Senior to Sanjay</span></span></div></li>
-        <li class="rec"><blockquote><p>“Sanjay is very hardworking, dedicated and sincere towards his roles and responsibilities. … I feel proud working with him. I truly appreciate his sincere efforts.”</p></blockquote>
-          <div class="rec-who"><span class="avatar" style="background:#4A4A55" aria-hidden="true">SA</span><span><b>Saurabh Agrawal</b><span>Program Manager · Product Manager · Certified ScrumMaster</span><span class="rec-date">March 16, 2012 · Worked on the same team</span></span></div></li>
-        <li class="rec"><blockquote><p>“Sanjay is very sincere towards his assignment and have always delivered his work on time. I appreciate his dedication and committment towards his work.”</p></blockquote>
-          <div class="rec-who"><span class="avatar" style="background:#027742" aria-hidden="true">RR</span><span><b>Riyaz Rizvi</b><span>Technology Transformation &amp; IT Operations Executive</span><span class="rec-date">May 13, 2009 · Worked on the same team</span></span></div></li>
-        <li class="rec"><blockquote><p>“Sanjay is a well oriented, most hardworking and skilled person in our organisation. Who work very sencerly and inovative way.”</p></blockquote>
-          <div class="rec-who"><span class="avatar" style="background:#661614" aria-hidden="true">AP</span><span><b>Anil Padihar</b><span>Web Developer</span><span class="rec-date">May 13, 2009 · Sanjay was senior to Anil</span></span></div></li>
-      </ul>
-      <p class="li-more"><a href="https://www.linkedin.com/in/sanjay-pal-hfi-cua%E2%84%A2-9959853/details/recommendations/" target="_blank" rel="noopener">Read all my recommendations on LinkedIn<span class="sr-only"> (opens in a new tab)</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></p>
       <h3 class="awards-h" data-cms="taw-h">Recognition</h3>
       <ul class="awards">
         <li><span class="aw-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg></span><span><b data-cms="taw1">Customer Delight Award</b><span data-cms="taw1d">Certificate of appreciation for being a client champion · November 2022</span></span></li>
@@ -1756,6 +1706,7 @@ window.__cmsReady=Promise.race([
 
   /* ---------- Clients ---------- */
   const logoList=document.getElementById("logoList");
+  if(logoList){
   const clients=Array.isArray(CMS.clients)&&CMS.clients.length?CMS.clients:Array.from({length:12},(_,i)=>"Client "+String(i+1).padStart(2,"0"));
   clients.forEach(name=>{
     const li=document.createElement("li"); li.className="logo-tile";
@@ -1763,6 +1714,7 @@ window.__cmsReady=Promise.race([
     li.innerHTML=`<span><span class="ph">${esc(name)}</span>${ph?'<br><span class="ph-sub">Logo placeholder</span>':''}</span>`;
     logoList.appendChild(li);
   });
+  }
 
   /* ---------- Industries ---------- */
   const ic={
@@ -1873,7 +1825,6 @@ window.__cmsReady=Promise.race([
     {t:"Iterate, iterate, iterate",g:"g-ink",a:"iterate",d:"It isn’t enough to run through a design process once. Learn from your users, learn from your team, and iterate. Your process will mature and you’ll be able to run through it easier and faster on each pass. Being agile means being set up to react to new information fast."}
   ];
   const prinDefault=[
-    {t:"Know your users",g:"g-blue",a:"users",d:"Start with user needs. Treat second-hand information about users with caution. Focus on user outcomes and design with data."},
     {t:"Clarity",g:"g-blue",a:"clarity",d:"Create structure and hierarchy. Give users responses to the actions they take. Make decisions easy by avoiding the paradox of choice."},
     {t:"Consistency",g:"g-orange",a:"consistency",d:"Avoid uniformity, but be consistent. Reuse well-tested design patterns. Use ubiquitous language to create familiarity."},
     {t:"Effectiveness",g:"g-orange",a:"effective",d:"Your design should work everywhere; responsive is not only screen size. Leverage technology to help users."},
@@ -1900,7 +1851,7 @@ window.__cmsReady=Promise.race([
   const how=mergeList(howDefault,CMS.process), prin=mergeList(prinDefault,CMS.principles);
   window.__cmsDefaults.process=howDefault.map(({t,d})=>({t,d})); window.__cmsDefaults.principles=prinDefault.map(({t,d})=>({t,d}));
   buildList(document.getElementById("panel-how"),how,"how","How I work");
-  buildList(document.getElementById("panel-prin"),prin,"prin","Principles");
+  document.getElementById("panel-prin").innerHTML=prin.map(it=>`<li><h5>${esc(it.t)}</h5><p>${esc(it.d)}</p></li>`).join("");
 
   const tabs=[...document.querySelectorAll(".tablist .tab")];
   function selectTab(i,focus){tabs.forEach((t,j)=>{const on=j===i; t.setAttribute("aria-selected",String(on)); t.tabIndex=on?0:-1; document.getElementById(t.getAttribute("aria-controls")).hidden=!on}); if(focus)tabs[i].focus()}
