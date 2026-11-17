@@ -1,0 +1,69 @@
+SANJAY PAL PORTFOLIO + CMS: INSTALL
+====================================
+
+What you need
+- Any hosting with PHP 7.4 or newer (PHP 8 recommended). No database.
+- Most shared hosting works as is: Hostinger, GoDaddy, Bluehost, cPanel, LiteSpeed or Apache.
+
+1. Upload
+   - Unzip this file on your computer.
+   - Upload EVERYTHING inside it (including the hidden .htaccess files) to the
+     folder your domain points to, usually public_html.
+   - Keep the folders exactly as they are.
+
+2. Make two folders writable
+   In your hosting File Manager, set these to 755 (or 775 if 755 does not work):
+   - the main site folder (public_html), so publishing can update the pages
+   - cms-data and uploads
+
+3. Create your admin account
+   - Open cms-data/SETUP-CODE.txt in the files you uploaded and copy the code.
+   - Go to https://sanjaypal.online/admin
+   - Enter the setup code, your name, a username and a password.
+   - The setup code works once; the file deletes itself afterwards.
+
+4. Check the private folder is private
+   - Open https://sanjaypal.online/cms-data/registry.json in a browser.
+   - You should see "Forbidden" or "Not Found". If you see text, your server
+     ignores .htaccess files: see "Nginx" below, or ask your host to block web
+     access to /cms-data. The admin also shows a red warning when this happens.
+
+Using the admin
+- Pages: click a page, then click any text, image, link or card in the preview.
+  Type over text directly. Select an item to move, copy, hide or delete it.
+  Switch to Browse to open tabs, menus and Load more while editing.
+- Case studies: reorder, show or hide, put under "Load more work", duplicate
+  into a new case study, or delete.
+- Lists: testimonials, process steps, principles, industries, map clients.
+- Media: upload images, MP3s and PDFs; replace any image from the editor.
+- Settings (administrators): colours, fonts, case-study password, share image,
+  background music.
+- History: every publish is saved; Restore brings a version back as a draft.
+- Users (administrators): add Editors (content and publishing) or
+  Administrators (everything).
+- Changes save as a draft automatically. Visitors see nothing until you
+  click Publish.
+
+Forgot your password?
+- Ask another administrator to set a new one under Users, or
+- In File Manager, delete cms-data/users.json, create a new file
+  cms-data/SETUP-CODE.txt containing any code you choose, then open /admin
+  and set up a new account with that code. Your content is not affected.
+
+Nginx (only if your host uses Nginx without .htaccess support)
+Add inside your server { } block:
+
+    location ^~ /cms-data/   { deny all; return 404; }
+    location ^~ /admin/lib/  { deny all; return 404; }
+    location ~* ^/uploads/.*\.(php|phtml|phar|html?|svg|js)$ { deny all; return 404; }
+    location = /admin { return 301 /admin/; }
+
+Security notes
+- Passwords are stored as one-way hashes; the admin locks a login for
+  15 minutes after 5 wrong attempts.
+- Sessions end after 8 hours, and every change is checked against a
+  per-session security token.
+- Uploaded files are checked for their real type and cannot run as code.
+- The case-study password is a light lock for portfolio pages, not
+  bank-grade security: anyone determined can read the page source.
+- Use HTTPS on your domain (most hosts offer a free certificate).
