@@ -1,0 +1,18 @@
+/* Editor highlights inside the admin preview */
+html.cms-editing:not(.cms-browse) [data-cms-k],
+html.cms-editing:not(.cms-browse) [data-cms-tn],
+html.cms-editing:not(.cms-browse) img[data-cms-a] { cursor: text; }
+html.cms-editing:not(.cms-browse) img[data-cms-a] { cursor: pointer; }
+html.cms-editing:not(.cms-browse) [data-cms-k]:hover,
+html.cms-editing:not(.cms-browse) [data-cms-tn]:hover,
+html.cms-editing:not(.cms-browse) img[data-cms-a]:hover,
+html.cms-editing:not(.cms-browse) article[data-cms-a]:hover {
+  outline: 2px dashed rgba(124, 58, 237, .75) !important; outline-offset: 3px; }
+html.cms-editing .cms-sel, html.cms-editing .cms-sel:hover { outline: 2px solid #7C3AED !important; outline-offset: 3px; box-shadow: 0 0 0 6px rgba(124, 58, 237, .18) !important; }
+html.cms-editing .cms-typing, html.cms-editing .cms-typing:hover { outline: 2px solid #16A34A !important; outline-offset: 3px; caret-color: #16A34A; cursor: text !important; }
+[data-cms-hidden] { opacity: .35 !important; position: relative; filter: grayscale(.6); }
+[data-cms-hidden]::after { content: "Hidden"; position: absolute; top: 6px; right: 6px; z-index: 50; font: 600 11px/1 system-ui, sans-serif;
+  letter-spacing: .04em; text-transform: uppercase; background: #111; color: #fff; padding: 4px 6px; border-radius: 4px; pointer-events: none; }
+/* intro and floating controls stay out of the way in the preview */
+.cms-editing #loader, .cms-editing .loader, .cms-editing #csGate { display: none !important; }
+.cms-editing.is-loading body { visibility: visible !important; }
