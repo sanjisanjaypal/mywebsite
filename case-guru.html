@@ -7,7 +7,7 @@
 <script>
 /* Always show pages inside the site shell, so music keeps playing across pages */
 (function(){var inShell=false;try{inShell=window.parent!==window&&!!window.parent.__musicShell}catch(e){}
-if(inShell||location.protocol==="file:")return;
+if(inShell||location.protocol==="file:"||window.__cmsPreview)return;
 var name=location.pathname.split("/").pop()||"";
 location.replace("index.html"+(name&&name!=="home.html"?"#/"+name:location.hash));})();
 </script>
@@ -1596,15 +1596,15 @@ footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between
           <a href="home.html#work">Work</a>
           <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="workMenu" aria-label="Case studies"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           <ul class="submenu" id="workMenu" hidden>
-            <li><a href="case-finunity.html"><span class="sm-t">FinUnity</span><span class="sm-d">Property tax financing platform</span></a></li>
-            <li><a href="case-advisor.html"><span class="sm-t">Advisor platform</span><span class="sm-d">Wealth management workspace</span></a></li>
-            <li><a href="case-finguard.html"><span class="sm-t">FinGuard</span><span class="sm-d">Banking risk and investigations</span></a></li>
-            <li><a href="case-agrifunds.html"><span class="sm-t">AgriFunds</span><span class="sm-d">Farm lending customer portal</span></a></li>
-            <li><a href="case-aster.html"><span class="sm-t">Aster Bank</span><span class="sm-d">Wealth management eLearning</span></a></li>
-            <li><a href="case-autolore.html"><span class="sm-t">AutoLore</span><span class="sm-d">Classic car museum kiosk</span></a></li>
-            <li><a href="case-guru.html" aria-current="page"><span class="sm-t">Guru Samman Samaroh</span><span class="sm-d">Event visualisation and design</span></a></li>
-            <li class="sm-all"><a href="home.html#work">All work</a></li>
-          </ul>
+<li><a href="case-finunity.html"><span class="sm-t">FinUnity</span><span class="sm-d">Property tax financing platform</span></a></li>
+<li><a href="case-advisor.html"><span class="sm-t">Advisor platform</span><span class="sm-d">Wealth management workspace</span></a></li>
+<li><a href="case-finguard.html"><span class="sm-t">FinGuard</span><span class="sm-d">Banking risk and investigations</span></a></li>
+<li><a href="case-agrifunds.html"><span class="sm-t">AgriFunds</span><span class="sm-d">Farm lending customer portal</span></a></li>
+<li><a href="case-aster.html"><span class="sm-t">Aster Bank</span><span class="sm-d">Wealth management eLearning</span></a></li>
+<li><a href="case-autolore.html"><span class="sm-t">AutoLore</span><span class="sm-d">Classic car museum kiosk</span></a></li>
+<li><a href="case-guru.html" aria-current="page"><span class="sm-t">Guru Samman Samaroh</span><span class="sm-d">Event visualisation and design</span></a></li>
+<li class="sm-all"><a href="home.html#work">All work</a></li>
+</ul>
         </div>
         <a href="about.html">About</a>
         <a href="contact.html" class="nav-contact">Get in touch</a>
@@ -1626,13 +1626,13 @@ footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between
     <h1>Guru Samman Samaroh 2019: designing a day to honour our teachers</h1>
     <p class="cs-lede">A full school ground, more than 300 guests, and the first alumni-led tribute in the school’s history. I visualised and designed every part of it, from the ground plan to the printed backdrop.</p>
     <dl class="cs-meta">
-      <div><dt>Event</dt><dd>Guru Samman Samaroh</dd></div>
-      <div><dt>Date</dt><dd>16 June 2019</dd></div>
-      <div><dt>Venue</dt><dd>Janta Inter College, Pokhrikhet, Pauri Garhwal</dd></div>
-      <div><dt>My role</dt><dd>Event visualisation and design</dd></div>
-      <div><dt>Duration</dt><dd>~90 days, May to July 2019</dd></div>
-      <div><dt>Audience</dt><dd>300+ guests</dd></div>
-    </dl>
+<div><dt>Event</dt><dd>Guru Samman Samaroh</dd></div>
+<div><dt>Date</dt><dd>16 June 2019</dd></div>
+<div><dt>Venue</dt><dd>Janta Inter College, Pokhrikhet, Pauri Garhwal</dd></div>
+<div><dt>My role</dt><dd>Event visualisation and design</dd></div>
+<div><dt>Duration</dt><dd>~90 days, May to July 2019</dd></div>
+<div><dt>Audience</dt><dd>300+ guests</dd></div>
+</dl>
   </div>
   <figure class="wrap cs-cover cs-cover-photo">
     <img src="cs3/audience.webp" width="1800" height="1200" alt="A packed audience of teachers, students and families seated under a blue canopy on either side of a red-carpet aisle lined with marigold-garlanded gold stanchions, with a video camera on a tripod in the aisle.">
@@ -1655,139 +1655,138 @@ footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between
     </nav>
 
     <article class="cs-body">
-      <section class="cs-sec" id="impact" aria-labelledby="h-impact">
-        <p class="cs-kicker">Impact</p>
-        <h2 id="h-impact">A full ground and a proud moment for the school</h2>
-        <ul class="cs-stats cs-stats-4">
-          <li><b>300+</b><span>guests filled the school ground</span></li>
-          <li><b>~90</b><span>days of planning, design and delivery, May to July 2019</span></li>
-          <li><b>1st</b><span>alumni-led tribute in the school’s history</span></li>
-          <li><b>Every</b><span>artefact designed and printed by me, from ground plan to backdrop</span></li>
-        </ul>
-        <p class="cs-tldr-label">In short</p>
-        <div class="cs-glance">
-          <div class="glance-card">
+<section class="cs-sec" id="impact" aria-labelledby="h-impact">
+<p class="cs-kicker">Impact</p>
+<h2 id="h-impact">A full ground and a proud moment for the school</h2>
+<ul class="cs-stats cs-stats-4">
+<li><b>300+</b><span>guests filled the school ground</span></li>
+<li><b>~90</b><span>days of planning, design and delivery, May to July 2019</span></li>
+<li><b>1st</b><span>alumni-led tribute in the school’s history</span></li>
+<li><b>Every</b><span>artefact designed and printed by me, from ground plan to backdrop</span></li>
+</ul>
+<p class="cs-tldr-label">In short</p>
+<div class="cs-glance">
+<div class="glance-card">
             <span class="glance-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"/></svg></span>
             <h3>Brief</h3>
             <p>Former and current students wanted to honour the teachers who shaped them, with an event worthy of the occasion.</p>
           </div>
-          <div class="glance-card">
+<div class="glance-card">
             <span class="glance-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M5 20V9l7-5 7 5v11"/><path d="M9 20v-6h6v6"/></svg></span>
             <h3>Approach</h3>
             <p>Treat the ground like an interface: plan zones and paths first, visualise the whole setup, then design every piece people would see and touch.</p>
           </div>
-          <div class="glance-card">
+<div class="glance-card">
             <span class="glance-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
             <h3>Result</h3>
             <p>A packed ground, teachers celebrated on stage, and a day enjoyed by teachers, students and families alike.</p>
           </div>
-        </div>
-      </section>
-
-      <section class="cs-sec" id="event" aria-labelledby="h-event">
-        <p class="cs-kicker">The event</p>
-        <h2 id="h-event">From a plan on paper to a full ground</h2>
-        <p>The finished setup on the day: a stage for the honoured teachers, a red-carpet aisle, and waterproof shaded seating for everyone who came.</p>
-        <div class="cs-goals">
-          <div><p class="g-k">Weatherproof shade</p><p>An outdoor venue needed protection, so a waterproof shade covered the stage and every seat, with fans to keep guests comfortable.</p></div>
-          <div><p class="g-k">Red-carpet concept</p><p>A grand red-carpet entrance, with stanchions and marigold garlands, so every teacher walked to the stage like a guest of honour.</p></div>
-          <div><p class="g-k">Pride of place</p><p>Reserved, signed seating near the stage put the teachers at the centre of the day.</p></div>
-        </div>
-        <div class="cs-gallery g-2">
-          <figure class="cs-fig "><button class="zoom" type="button" data-cap="The stage. Senior teachers seated in front of the backdrop I designed, with marked seating for them in front of the stage."><img src="cs3/stage.webp" width="1800" height="1200" loading="lazy" alt="Senior teachers seated on white sofas on a green-carpeted stage with a gold skirt, in front of a white backdrop banner reading Guru Samman Samaroh, 16 June 2019, Janta Inter College, Pokhrikhet, Pauri Garhwal, Uttarakhand. Marigold-garlanded gold stanchions stand in front, with a sign reading senior teachers."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-photo">Photo</span><b>The stage.</b> Senior teachers seated in front of the backdrop I designed, with marked seating for them in front of the stage.</figcaption></figure>
-          <figure class="cs-fig "><button class="zoom" type="button" data-cap="The setup, visualised. How the whole ground would come together, before anything was built."><img src="cs3/visual.webp" width="802" height="1100" loading="lazy" alt="Aerial visualisation of the venue at dusk: a red-carpet aisle runs between rows of white chairs with gold sashes towards a stage with a blue mountain-and-moon backdrop, framed by lit stone walls." style="object-position:50% 30%"><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-visualisation">Visualisation</span><b>The setup, visualised.</b> How the whole ground would come together, before anything was built.</figcaption></figure>
-        </div>
-      </section>
-
-      <section class="cs-sec" id="role" aria-labelledby="h-role">
-        <p class="cs-kicker">My role</p>
-        <h2 id="h-role">Event visualisation and design, end to end</h2>
-        <p>This was my first event design. As part of the alumni group organising the day, I owned how it would look and work, and saw every printed piece through to production. The work ran for about 90 days, from May to July 2019, with the event itself on 16 June.</p>
-        <ul class="cs-pains cs-collab" aria-label="What I did">
-          <li>Site study</li><li>Ground planning and zoning</li><li>Seating layout</li><li>Stage and backdrop design</li><li>Event visualisation</li><li>Posters and banners</li><li>Signage and place cards</li><li>Print production</li>
-        </ul>
-      </section>
-
-      <section class="cs-sec" id="context" aria-labelledby="h-context">
-        <p class="cs-kicker">Context</p>
-        <h2 id="h-context">A first for the school, organised by its own students</h2>
-        <p>Guru Samman Samaroh means “a ceremony to honour our teachers”. It was organised by the school’s former and current students, the first time alumni had come together to do something like this in the school’s history.</p>
-        <p>The venue was the school ground at Janta Inter College in Pokhrikhet, Pauri Garhwal: a hillside site bordered by a road, terraced fields and a stone wall. The audience would be broad, from senior teachers and their families to current students and villagers, so the space had to feel welcoming to everyone and still put the teachers clearly at its centre.</p>
-        <div class="cs-goals">
-          <div><p class="g-k">Goal</p><p>Honour the teachers with dignity, so they feel celebrated from the moment they arrive.</p></div>
-          <div><p class="g-k">Audience</p><p>300+ people of every age: teachers, students, alumni, families and the local community.</p></div>
-          <div><p class="g-k">Constraint</p><p>An outdoor hillside ground in mid-June, open to sun and monsoon rain, so weather protection, clear paths and sightlines to the stage mattered.</p></div>
-        </div>
-      </section>
-
-      <section class="cs-sec" id="process" aria-labelledby="h-process">
-        <p class="cs-kicker">Process</p>
-        <h2 id="h-process">Designing a space the way I design a product</h2>
-        <ol class="cs-steps">
-          <li><span class="step-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="5.5"/><path d="M15 15l5 5"/></svg></span><b>Study the site</b></li>
-          <li><span class="step-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M10 10v10"/></svg></span><b>Plan the ground</b></li>
-          <li><span class="step-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span><b>Visualise the setup</b></li>
-          <li><span class="step-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l5 9-5 9-5-9z"/><circle cx="12" cy="12" r="1.6"/></svg></span><b>Design the artefacts</b></li>
-          <li><span class="step-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M6 14h12v7H6z"/></svg></span><b>Print production</b></li>
-          <li><span class="step-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><b>Set up on the day</b></li>
-        </ol>
-      </section>
-
-      <section class="cs-sec" id="plan" aria-labelledby="h-plan">
-        <p class="cs-kicker">Ground plan</p>
-        <h2 id="h-plan">Deciding what goes where, before anything was built</h2>
-        <p>I started with the ground itself. The sketch maps the road, the terraced field and the stone wall, then places the stage, the VIP seating and the guest blocks around a single central aisle.</p>
-        <div class="cs-row">
+</div>
+</section>
+<section class="cs-sec" id="event" aria-labelledby="h-event">
+<p class="cs-kicker">The event</p>
+<h2 id="h-event">From a plan on paper to a full ground</h2>
+<p>The finished setup on the day: a stage for the honoured teachers, a red-carpet aisle, and waterproof shaded seating for everyone who came.</p>
+<div class="cs-goals">
+<div><p class="g-k">Weatherproof shade</p><p>An outdoor venue needed protection, so a waterproof shade covered the stage and every seat, with fans to keep guests comfortable.</p></div>
+<div><p class="g-k">Red-carpet concept</p><p>A grand red-carpet entrance, with stanchions and marigold garlands, so every teacher walked to the stage like a guest of honour.</p></div>
+<div><p class="g-k">Pride of place</p><p>Reserved, signed seating near the stage put the teachers at the centre of the day.</p></div>
+</div>
+<div class="cs-gallery g-2">
+<figure class="cs-fig "><button class="zoom" type="button" data-cap="The stage. Senior teachers seated in front of the backdrop I designed, with marked seating for them in front of the stage."><img src="cs3/stage.webp" width="1800" height="1200" loading="lazy" alt="Senior teachers seated on white sofas on a green-carpeted stage with a gold skirt, in front of a white backdrop banner reading Guru Samman Samaroh, 16 June 2019, Janta Inter College, Pokhrikhet, Pauri Garhwal, Uttarakhand. Marigold-garlanded gold stanchions stand in front, with a sign reading senior teachers."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-photo">Photo</span><b>The stage.</b> Senior teachers seated in front of the backdrop I designed, with marked seating for them in front of the stage.</figcaption></figure>
+<figure class="cs-fig "><button class="zoom" type="button" data-cap="The setup, visualised. How the whole ground would come together, before anything was built."><img src="cs3/visual.webp" width="802" height="1100" loading="lazy" alt="Aerial visualisation of the venue at dusk: a red-carpet aisle runs between rows of white chairs with gold sashes towards a stage with a blue mountain-and-moon backdrop, framed by lit stone walls." style="object-position:50% 30%"><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-visualisation">Visualisation</span><b>The setup, visualised.</b> How the whole ground would come together, before anything was built.</figcaption></figure>
+</div>
+</section>
+<section class="cs-sec" id="role" aria-labelledby="h-role">
+<p class="cs-kicker">My role</p>
+<h2 id="h-role">Event visualisation and design, end to end</h2>
+<p>This was my first event design. As part of the alumni group organising the day, I owned how it would look and work, and saw every printed piece through to production. The work ran for about 90 days, from May to July 2019, with the event itself on 16 June.</p>
+<ul class="cs-pains cs-collab" aria-label="What I did">
+<li>Site study</li>
+<li>Ground planning and zoning</li>
+<li>Seating layout</li>
+<li>Stage and backdrop design</li>
+<li>Event visualisation</li>
+<li>Posters and banners</li>
+<li>Signage and place cards</li>
+<li>Print production</li>
+</ul>
+</section>
+<section class="cs-sec" id="context" aria-labelledby="h-context">
+<p class="cs-kicker">Context</p>
+<h2 id="h-context">A first for the school, organised by its own students</h2>
+<p>Guru Samman Samaroh means “a ceremony to honour our teachers”. It was organised by the school’s former and current students, the first time alumni had come together to do something like this in the school’s history.</p>
+<p>The venue was the school ground at Janta Inter College in Pokhrikhet, Pauri Garhwal: a hillside site bordered by a road, terraced fields and a stone wall. The audience would be broad, from senior teachers and their families to current students and villagers, so the space had to feel welcoming to everyone and still put the teachers clearly at its centre.</p>
+<div class="cs-goals">
+<div><p class="g-k">Goal</p><p>Honour the teachers with dignity, so they feel celebrated from the moment they arrive.</p></div>
+<div><p class="g-k">Audience</p><p>300+ people of every age: teachers, students, alumni, families and the local community.</p></div>
+<div><p class="g-k">Constraint</p><p>An outdoor hillside ground in mid-June, open to sun and monsoon rain, so weather protection, clear paths and sightlines to the stage mattered.</p></div>
+</div>
+</section>
+<section class="cs-sec" id="process" aria-labelledby="h-process">
+<p class="cs-kicker">Process</p>
+<h2 id="h-process">Designing a space the way I design a product</h2>
+<ol class="cs-steps">
+<li><span class="step-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="5.5"/><path d="M15 15l5 5"/></svg></span><b>Study the site</b></li>
+<li><span class="step-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M10 10v10"/></svg></span><b>Plan the ground</b></li>
+<li><span class="step-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span><b>Visualise the setup</b></li>
+<li><span class="step-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l5 9-5 9-5-9z"/><circle cx="12" cy="12" r="1.6"/></svg></span><b>Design the artefacts</b></li>
+<li><span class="step-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M6 14h12v7H6z"/></svg></span><b>Print production</b></li>
+<li><span class="step-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><b>Set up on the day</b></li>
+</ol>
+</section>
+<section class="cs-sec" id="plan" aria-labelledby="h-plan">
+<p class="cs-kicker">Ground plan</p>
+<h2 id="h-plan">Deciding what goes where, before anything was built</h2>
+<p>I started with the ground itself. The sketch maps the road, the terraced field and the stone wall, then places the stage, the VIP seating and the guest blocks around a single central aisle.</p>
+<div class="cs-row">
           <figure class="cs-fig "><button class="zoom" type="button" data-cap="Ground plan sketch. Zones, seating and paths, labelled."><img src="cs3/sketch.webp" width="801" height="1100" loading="lazy" alt="Pencil sketch of the venue layout labelled stage, VIP seating, road, terraced field, stone wall and ground floor level, with rows of chairs either side of a central aisle."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-plan">Plan</span><b>Ground plan sketch.</b> Zones, seating and paths, labelled.</figcaption></figure>
           <ol class="decisions">
-            <li><b>Stage against the back wall</b><span>A solid wall behind the stage gave the backdrop a frame and kept every seat facing one focal point.</span></li>
-            <li><b>A red-carpet welcome</b><span>A red carpet from the entrance steps straight to the stage, lined with gold stanchions and marigolds, gave the teachers a grand walk of honour, the kind of welcome usually reserved for big-city events, so they felt proud from the moment they arrived.</span></li>
-            <li><b>Raised VIP seating near the stage</b><span>Guests of honour sat on the terrace beside the stage, close to the action and visible to the crowd.</span></li>
-            <li><b>Guest blocks on both sides</b><span>Rows either side of the aisle kept sightlines to the stage short and clear.</span></li>
-            <li><b>Safe and comfortable outdoors</b><span>Because the event was in the open, I planned a waterproof shade over the stage and all the seating, with ceiling fans, so guests stayed protected from sun and rain.</span></li>
-          </ol>
+<li><b>Stage against the back wall</b><span>A solid wall behind the stage gave the backdrop a frame and kept every seat facing one focal point.</span></li>
+<li><b>A red-carpet welcome</b><span>A red carpet from the entrance steps straight to the stage, lined with gold stanchions and marigolds, gave the teachers a grand walk of honour, the kind of welcome usually reserved for big-city events, so they felt proud from the moment they arrived.</span></li>
+<li><b>Raised VIP seating near the stage</b><span>Guests of honour sat on the terrace beside the stage, close to the action and visible to the crowd.</span></li>
+<li><b>Guest blocks on both sides</b><span>Rows either side of the aisle kept sightlines to the stage short and clear.</span></li>
+<li><b>Safe and comfortable outdoors</b><span>Because the event was in the open, I planned a waterproof shade over the stage and all the seating, with ceiling fans, so guests stayed protected from sun and rain.</span></li>
+</ol>
         </div>
-      </section>
-
-      <section class="cs-sec" id="identity" aria-labelledby="h-identity">
-        <p class="cs-kicker">Visual identity</p>
-        <h2 id="h-identity">One look across print, décor and dress</h2>
-        <p>I designed and had printed every artefact guests would see, and planned a colour theme and dress code to go with them, so the day looked like one event rather than a collection of rented parts.</p>
-        <ul class="cs-methods">
-          <li><b>Stage backdrop</b><span>An emblem, the event name in Hindi with a decorative flourish, a credit to the former and current students, the date and the full venue name, set in deep blue on white.</span></li>
-          <li><b>Posters and banners</b><span>Announcing the event to the school and the surrounding villages in the same style.</span></li>
-          <li><b>Signage and place cards</b><span>Hindi cards on the stanchions marked seating for teachers and senior teachers, so guests of honour were guided without needing to ask.</span></li>
-          <li><b>Dress code</b><span>A planned dress code for the organising team, so hosts were easy to spot and looked part of the same event as the stage and print.</span></li>
-        </ul>
-        <h3 class="cs-sub">Colour theme</h3>
-        <p>One colour theme was planned for the whole event and carried through the stage, décor, print and dress code.</p>
-        <ul class="swatches" aria-label="Event colour theme">
-          <li><span style="background:#1F3F9A"></span><b>Royal blue</b><small>Titles and print</small></li>
-          <li><span style="background:#FFFFFF"></span><b>White</b><small>Backdrop, seating</small></li>
-          <li><span style="background:#C9A23A"></span><b>Gold</b><small>Stage skirt, stanchions</small></li>
-          <li><span style="background:#D7352F"></span><b>Red</b><small>Ceremonial aisle</small></li>
-          <li><span style="background:#F08A1C"></span><b>Marigold</b><small>Garlands</small></li>
-        </ul>
-      </section>
-
-      <section class="cs-sec" id="day" aria-labelledby="h-day">
-        <p class="cs-kicker">On the day</p>
-        <h2 id="h-day">A ground full of people, all facing the teachers</h2>
-        <p>On 16 June 2019 the ground filled with more than 300 people. Teachers, students and families sat on both sides of the aisle under the canopy, with more watching from the terraces, while the honoured teachers took their places on stage.</p>
-        <figure class="cs-fig "><button class="zoom" type="button" data-cap="The audience. Teachers, students and families filled every row, with the aisle kept clear for the ceremony."><img src="cs3/audience.webp" width="1800" height="1200" loading="lazy" alt="A packed audience under a blue canopy on either side of a red-carpet aisle, with a cameraman filming from the aisle."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-photo">Photo</span><b>The audience.</b> Teachers, students and families filled every row, with the aisle kept clear for the ceremony.</figcaption></figure>
-      </section>
-
-      <section class="cs-sec" id="reflection" aria-labelledby="h-reflection">
-        <p class="cs-kicker">Reflection</p>
-        <h2 id="h-reflection">What designing an event taught me</h2>
-        <p>Being part of this initiative was a proud moment. As my first event design, it also showed me how much of UX carries over to physical spaces.</p>
-        <ul class="cs-learn">
-          <li><b>Plan the journey first.</b> Deciding where people arrive, walk and sit made every later decision easier, just like mapping a user flow.</li>
-          <li><b>Hierarchy works in space too.</b> The stage, the aisle and the reserved seating told everyone who the day was for, without a word.</li>
-          <li><b>Own the details end to end.</b> Designing and printing every artefact myself kept the whole event consistent.</li>
-        </ul>
-      </section>
-    </article>
+</section>
+<section class="cs-sec" id="identity" aria-labelledby="h-identity">
+<p class="cs-kicker">Visual identity</p>
+<h2 id="h-identity">One look across print, décor and dress</h2>
+<p>I designed and had printed every artefact guests would see, and planned a colour theme and dress code to go with them, so the day looked like one event rather than a collection of rented parts.</p>
+<ul class="cs-methods">
+<li><b>Stage backdrop</b><span>An emblem, the event name in Hindi with a decorative flourish, a credit to the former and current students, the date and the full venue name, set in deep blue on white.</span></li>
+<li><b>Posters and banners</b><span>Announcing the event to the school and the surrounding villages in the same style.</span></li>
+<li><b>Signage and place cards</b><span>Hindi cards on the stanchions marked seating for teachers and senior teachers, so guests of honour were guided without needing to ask.</span></li>
+<li><b>Dress code</b><span>A planned dress code for the organising team, so hosts were easy to spot and looked part of the same event as the stage and print.</span></li>
+</ul>
+<h3 class="cs-sub">Colour theme</h3>
+<p>One colour theme was planned for the whole event and carried through the stage, décor, print and dress code.</p>
+<ul class="swatches" aria-label="Event colour theme">
+<li><span style="background:#1F3F9A"></span><b>Royal blue</b><small>Titles and print</small></li>
+<li><span style="background:#FFFFFF"></span><b>White</b><small>Backdrop, seating</small></li>
+<li><span style="background:#C9A23A"></span><b>Gold</b><small>Stage skirt, stanchions</small></li>
+<li><span style="background:#D7352F"></span><b>Red</b><small>Ceremonial aisle</small></li>
+<li><span style="background:#F08A1C"></span><b>Marigold</b><small>Garlands</small></li>
+</ul>
+</section>
+<section class="cs-sec" id="day" aria-labelledby="h-day">
+<p class="cs-kicker">On the day</p>
+<h2 id="h-day">A ground full of people, all facing the teachers</h2>
+<p>On 16 June 2019 the ground filled with more than 300 people. Teachers, students and families sat on both sides of the aisle under the canopy, with more watching from the terraces, while the honoured teachers took their places on stage.</p>
+<figure class="cs-fig "><button class="zoom" type="button" data-cap="The audience. Teachers, students and families filled every row, with the aisle kept clear for the ceremony."><img src="cs3/audience.webp" width="1800" height="1200" loading="lazy" alt="A packed audience under a blue canopy on either side of a red-carpet aisle, with a cameraman filming from the aisle."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-photo">Photo</span><b>The audience.</b> Teachers, students and families filled every row, with the aisle kept clear for the ceremony.</figcaption></figure>
+</section>
+<section class="cs-sec" id="reflection" aria-labelledby="h-reflection">
+<p class="cs-kicker">Reflection</p>
+<h2 id="h-reflection">What designing an event taught me</h2>
+<p>Being part of this initiative was a proud moment. As my first event design, it also showed me how much of UX carries over to physical spaces.</p>
+<ul class="cs-learn">
+<li><b>Plan the journey first.</b> Deciding where people arrive, walk and sit made every later decision easier, just like mapping a user flow.</li>
+<li><b>Hierarchy works in space too.</b> The stage, the aisle and the reserved seating told everyone who the day was for, without a word.</li>
+<li><b>Own the details end to end.</b> Designing and printing every artefact myself kept the whole event consistent.</li>
+</ul>
+</section>
+</article>
   </div>
 
   <section class="band cs-next" aria-labelledby="h-next">
@@ -1795,9 +1794,9 @@ footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between
       <p class="cs-kicker">Next</p>
       <h2 id="h-next">See how FinUnity got one platform for loans and liens</h2>
       <div class="cta-row">
-        <a class="btn btn-primary" href="case-finunity.html">Read the FinUnity case study</a>
-        <a class="btn" href="home.html#work">Back to all work</a>
-      </div>
+<a class="btn btn-primary" href="case-finunity.html">Read the FinUnity case study</a>
+<a class="btn" href="home.html#work">Back to all work</a>
+</div>
     </div>
   </section>
 </main>
@@ -1877,6 +1876,21 @@ footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between
     const h=document.documentElement.scrollHeight-innerHeight; prog.style.width=(h>0?Math.min(100,scrollY/h*100):0)+"%";
   }
   addEventListener("scroll",onScroll,{passive:true}); onScroll();
+
+  /* "On this page" follows the sections actually on the page (sections can be added, hidden or reordered in /admin) */
+  (function(){
+    const toc=document.getElementById("csToc"); if(!toc) return;
+    const secs=[...document.querySelectorAll(".cs-body > section.cs-sec")], seen=new Set(), old=new Map();
+    toc.querySelectorAll("li").forEach(li=>{const a=li.querySelector("a"); if(a) old.set(a.getAttribute("href"),li)});
+    const frag=document.createDocumentFragment();
+    secs.forEach(sec=>{
+      let id=sec.id||"section"; while(seen.has(id)) id+="-2"; seen.add(id); if(sec.id!==id) sec.id=id;
+      let li=old.get("#"+id);
+      if(li){ old.delete("#"+id) } else { const k=sec.querySelector(".cs-kicker, h2"); li=document.createElement("li"); const a=document.createElement("a"); a.href="#"+id; a.textContent=k?k.textContent.trim():id; li.appendChild(a) }
+      frag.appendChild(li);
+    });
+    toc.replaceChildren(frag);
+  })();
 
   /* "On this page" highlights the section being read */
   const links=[...document.querySelectorAll("#csToc a")];

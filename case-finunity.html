@@ -7,7 +7,7 @@
 <script>
 /* Always show pages inside the site shell, so music keeps playing across pages */
 (function(){var inShell=false;try{inShell=window.parent!==window&&!!window.parent.__musicShell}catch(e){}
-if(inShell||location.protocol==="file:")return;
+if(inShell||location.protocol==="file:"||window.__cmsPreview)return;
 var name=location.pathname.split("/").pop()||"";
 location.replace("index.html"+(name&&name!=="home.html"?"#/"+name:location.hash));})();
 </script>
@@ -1445,15 +1445,15 @@ footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between
           <a href="home.html#work">Work</a>
           <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="workMenu" aria-label="Case studies"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           <ul class="submenu" id="workMenu" hidden>
-            <li><a href="case-finunity.html" aria-current="page"><span class="sm-t">FinUnity</span><span class="sm-d">Property tax financing platform</span></a></li>
-            <li><a href="case-advisor.html"><span class="sm-t">Advisor platform</span><span class="sm-d">Wealth management workspace</span></a></li>
-            <li><a href="case-finguard.html"><span class="sm-t">FinGuard</span><span class="sm-d">Banking risk and investigations</span></a></li>
-            <li><a href="case-agrifunds.html"><span class="sm-t">AgriFunds</span><span class="sm-d">Farm lending customer portal</span></a></li>
-            <li><a href="case-aster.html"><span class="sm-t">Aster Bank</span><span class="sm-d">Wealth management eLearning</span></a></li>
-            <li><a href="case-autolore.html"><span class="sm-t">AutoLore</span><span class="sm-d">Classic car museum kiosk</span></a></li>
-            <li><a href="case-guru.html"><span class="sm-t">Guru Samman Samaroh</span><span class="sm-d">Event visualisation and design</span></a></li>
-            <li class="sm-all"><a href="home.html#work">All work</a></li>
-          </ul>
+<li><a href="case-finunity.html" aria-current="page"><span class="sm-t">FinUnity</span><span class="sm-d">Property tax financing platform</span></a></li>
+<li><a href="case-advisor.html"><span class="sm-t">Advisor platform</span><span class="sm-d">Wealth management workspace</span></a></li>
+<li><a href="case-finguard.html"><span class="sm-t">FinGuard</span><span class="sm-d">Banking risk and investigations</span></a></li>
+<li><a href="case-agrifunds.html"><span class="sm-t">AgriFunds</span><span class="sm-d">Farm lending customer portal</span></a></li>
+<li><a href="case-aster.html"><span class="sm-t">Aster Bank</span><span class="sm-d">Wealth management eLearning</span></a></li>
+<li><a href="case-autolore.html"><span class="sm-t">AutoLore</span><span class="sm-d">Classic car museum kiosk</span></a></li>
+<li><a href="case-guru.html"><span class="sm-t">Guru Samman Samaroh</span><span class="sm-d">Event visualisation and design</span></a></li>
+<li class="sm-all"><a href="home.html#work">All work</a></li>
+</ul>
         </div>
         <a href="about.html">About</a>
         <a href="contact.html" class="nav-contact">Get in touch</a>
@@ -1476,12 +1476,12 @@ footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between
     <h1>One platform for property tax financing at FinUnity</h1>
     <p class="cs-lede">A user-centred redesign that replaced a patchwork of disconnected tools for loans and liens, and has met its KPIs since launch.</p>
     <dl class="cs-meta">
-      <div><dt>Client</dt><dd>FinUnity</dd></div>
-      <div><dt>Industry</dt><dd>Financial services</dd></div>
-      <div><dt>My role</dt><dd>UX designer</dd></div>
-      <div><dt>Team</dt><dd>2 UX designers</dd></div>
-      <div><dt>Timeline</dt><dd>Ongoing, 2+ years</dd></div>
-    </dl>
+<div><dt>Client</dt><dd>FinUnity</dd></div>
+<div><dt>Industry</dt><dd>Financial services</dd></div>
+<div><dt>My role</dt><dd>UX designer</dd></div>
+<div><dt>Team</dt><dd>2 UX designers</dd></div>
+<div><dt>Timeline</dt><dd>Ongoing, 2+ years</dd></div>
+</dl>
   </div>
   <figure class="wrap cs-cover cs-cover-art">
     <img src="cs/thumb-finunity-illus.webp" width="1672" height="941" style="object-position:50% 45%" alt="Illustration of a suburban home with a property tax bill, stacks of gold coins and a house key in front, under panels showing a loan timeline with a check mark, a stamped lien document and a rising bar chart.">
@@ -1505,192 +1505,193 @@ footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between
     </nav>
 
     <article class="cs-body">
-      <section class="cs-sec" id="impact" aria-labelledby="h-impact">
-        <p class="cs-kicker">Impact</p>
-        <h2 id="h-impact">Launched, supported and meeting its KPIs</h2>
-        <ul class="cs-stats cs-stats-4">
-          <li><b>1</b><span>platform in place of many disconnected tools</span></li>
-          <li><b>On KPI</b><span>after launch</span></li>
-          <li><b>6 months</b><span>of post-launch support</span></li>
-          <li><b>2+ years</b><span>of ongoing partnership</span></li>
-        </ul>
-        <p class="cs-tldr-label">In short</p>
-        <div class="cs-glance">
-          <div class="glance-card">
+<section class="cs-sec" id="impact" aria-labelledby="h-impact">
+<p class="cs-kicker">Impact</p>
+<h2 id="h-impact">Launched, supported and meeting its KPIs</h2>
+<ul class="cs-stats cs-stats-4">
+<li><b>1</b><span>platform in place of many disconnected tools</span></li>
+<li><b>On KPI</b><span>after launch</span></li>
+<li><b>6 months</b><span>of post-launch support</span></li>
+<li><b>2+ years</b><span>of ongoing partnership</span></li>
+</ul>
+<p class="cs-tldr-label">In short</p>
+<div class="cs-glance">
+<div class="glance-card">
             <span class="glance-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg></span>
             <h3>Problem</h3>
             <p>Agents juggled many disconnected third-party tools, so everyday tasks were slow, manual and hard to keep consistent.</p>
           </div>
-          <div class="glance-card">
+<div class="glance-card">
             <span class="glance-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18c3-8 7-12 16-14"/><path d="M14 4h6v6"/></svg></span>
             <h3>Approach</h3>
             <p>Heuristic evaluation, a week-long on-site workshop, user interviews and journey mapping, followed by wireframes, a design system and high-fidelity UI.</p>
           </div>
-          <div class="glance-card">
+<div class="glance-card">
             <span class="glance-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
             <h3>Result</h3>
             <p>One platform for loan and lien work, validated through usability testing and performing to its KPIs during six months of post-launch support.</p>
           </div>
-        </div>
-        <blockquote class="cs-quote" style="margin-top:2rem"><p>“I want to personally recognize Sanjay for the professionalism and all the hard work he did. Everyone is very excited and looks forward to using this application.”</p></blockquote>
-        <p class="cs-quote-src">Client stakeholder, FinUnity</p>
-      </section>
-
-      <section class="cs-sec" id="solution" aria-labelledby="h-solution">
-        <p class="cs-kicker">Solution</p>
-        <h2 id="h-solution">What we shipped</h2>
-        <p>High-fidelity screens, validated through conclusive usability testing before launch. Every module was built from one shared design system.</p>
-        <ul class="cs-highlights">
-          <li><b>Personal dashboard</b><span>Tasks, calendar and reminders in one view, with clear status for each task.</span></li>
-          <li><b>Property parcel view</b><span>A satellite map of the parcel next to its tax and value details.</span></li>
-          <li><b>Loan pipeline</b><span>Colour-coded status badges make the queue easy to scan.</span></li>
-          <li><b>Consistent everywhere</b><span>The same components and patterns across every module.</span></li>
-        </ul>
-        <div class="cs-gallery g-final">
-          <figure class="f-wide"><button class="zoom" type="button" data-cap="Personal dashboard with tasks, calendar and reminders."><img src="cs/ui-dashboard.webp" width="549" height="324" loading="lazy" alt="Dashboard with a calendar, a task list showing status badges, and reminders."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption>Personal dashboard: tasks, calendar and reminders</figcaption></figure>
-          <figure><button class="zoom" type="button" data-cap="Property parcel view with satellite map and financial details."><img src="cs/ui-parcel.webp" width="443" height="241" loading="lazy" alt="Property parcel screen with a satellite map outlining the parcel and a panel of tax and value details."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption>Property parcel with map and tax details</figcaption></figure>
-          <figure><button class="zoom" type="button" data-cap="Select event dialog."><img src="cs/ui-event.webp" width="443" height="237" loading="lazy" alt="Dialog for selecting an event, with event status and assignment fields."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption>Event selection</figcaption></figure>
-          <figure><button class="zoom" type="button" data-cap="Search landing page."><img src="cs/ui-login.webp" width="269" height="148" loading="lazy" alt="FinUnity search landing page with an illustration."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption>Search landing</figcaption></figure>
-          <figure><button class="zoom" type="button" data-cap="Loan pipeline list with status badges."><img src="cs/ui-pipeline.webp" width="274" height="148" loading="lazy" alt="Loan pipeline table with colour-coded status badges."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption>Loan pipeline</figcaption></figure>
-        </div>
-      </section>
-
-      <section class="cs-sec" id="role" aria-labelledby="h-role">
-        <p class="cs-kicker">My role</p>
-        <h2 id="h-role">UX designer, from discovery to final UI</h2>
-        <p>I was one of two UX designers on the project, working with a business analyst and FinUnity’s stakeholders. Together we covered the whole design process:</p>
-        <ol class="cs-steps">
-          <li><span class="step-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="5.5"/><path d="M15 15l5 5"/><path d="M8 11.5l1.5 1.5 3-3"/></svg></span><b>User research</b></li>
-          <li><span class="step-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h10v7H8l-4 3z"/><path d="M14 9h6v7l-3-2h-5v-2"/></svg></span><b>User interviews</b></li>
-          <li><span class="step-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2"/><circle cx="18" cy="6" r="2"/><path d="M8 18h6a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h6"/></svg></span><b>Journey mapping</b></li>
-          <li><span class="step-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8h18M7 12h4v5H7zM14 12h4M14 15h4"/></svg></span><b>Wireframing</b></li>
-          <li><span class="step-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="4" rx="1"/><rect x="3" y="17" width="6" height="4" rx="1"/><rect x="15" y="17" width="6" height="4" rx="1"/><path d="M12 7v5M6 17v-2.5h12V17"/></svg></span><b>Screen flows</b></li>
-          <li><span class="step-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l5 9-5 9-5-9z"/><path d="M12 3v7"/><circle cx="12" cy="12" r="1.6"/></svg></span><b>Visual design</b></li>
-        </ol>
-        <ul class="cs-pains cs-collab" aria-label="Who we worked with">
-          <li>2 UX designers</li><li>Business analyst</li><li>Client stakeholders</li><li>FinUnity agents and users</li>
-        </ul>
-      </section>
-
-      <section class="cs-sec" id="challenge" aria-labelledby="h-challenge">
-        <p class="cs-kicker">Challenge</p>
-        <h2 id="h-challenge">Too many tools, none of them connected</h2>
-        <p>FinUnity is a tax financing company and a top choice for residential and commercial property owners in Texas, helping tens of thousands of Texans save their property from foreclosure. Its employees relied on many third-party applications that didn’t talk to each other. Agents re-entered information by hand and moved between systems constantly, so simple tasks took far longer than they should.</p>
-        <ul class="cs-pains" aria-label="Problems with the existing setup">
-          <li>Higher cost of ownership</li>
-          <li>Dependencies across disconnected systems</li>
-          <li>Inconsistent user experience</li>
-          <li>High management and maintenance cost</li>
-          <li>Business processes out of step with the tools</li>
-          <li>Low scalability</li>
-        </ul>
-        <div class="cs-callout">
+</div>
+<blockquote class="cs-quote" style="margin-top:2rem"><p>“I want to personally recognize Sanjay for the professionalism and all the hard work he did. Everyone is very excited and looks forward to using this application.”</p></blockquote>
+<p class="cs-quote-src">Client stakeholder, FinUnity</p>
+</section>
+<section class="cs-sec" id="solution" aria-labelledby="h-solution">
+<p class="cs-kicker">Solution</p>
+<h2 id="h-solution">What we shipped</h2>
+<p>High-fidelity screens, validated through conclusive usability testing before launch. Every module was built from one shared design system.</p>
+<ul class="cs-highlights">
+<li><b>Personal dashboard</b><span>Tasks, calendar and reminders in one view, with clear status for each task.</span></li>
+<li><b>Property parcel view</b><span>A satellite map of the parcel next to its tax and value details.</span></li>
+<li><b>Loan pipeline</b><span>Colour-coded status badges make the queue easy to scan.</span></li>
+<li><b>Consistent everywhere</b><span>The same components and patterns across every module.</span></li>
+</ul>
+<div class="cs-gallery g-final">
+<figure class="f-wide"><button class="zoom" type="button" data-cap="Personal dashboard with tasks, calendar and reminders."><img src="cs/ui-dashboard.webp" width="549" height="324" loading="lazy" alt="Dashboard with a calendar, a task list showing status badges, and reminders."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption>Personal dashboard: tasks, calendar and reminders</figcaption></figure>
+<figure><button class="zoom" type="button" data-cap="Property parcel view with satellite map and financial details."><img src="cs/ui-parcel.webp" width="443" height="241" loading="lazy" alt="Property parcel screen with a satellite map outlining the parcel and a panel of tax and value details."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption>Property parcel with map and tax details</figcaption></figure>
+<figure><button class="zoom" type="button" data-cap="Select event dialog."><img src="cs/ui-event.webp" width="443" height="237" loading="lazy" alt="Dialog for selecting an event, with event status and assignment fields."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption>Event selection</figcaption></figure>
+<figure><button class="zoom" type="button" data-cap="Search landing page."><img src="cs/ui-login.webp" width="269" height="148" loading="lazy" alt="FinUnity search landing page with an illustration."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption>Search landing</figcaption></figure>
+<figure><button class="zoom" type="button" data-cap="Loan pipeline list with status badges."><img src="cs/ui-pipeline.webp" width="274" height="148" loading="lazy" alt="Loan pipeline table with colour-coded status badges."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption>Loan pipeline</figcaption></figure>
+</div>
+</section>
+<section class="cs-sec" id="role" aria-labelledby="h-role">
+<p class="cs-kicker">My role</p>
+<h2 id="h-role">UX designer, from discovery to final UI</h2>
+<p>I was one of two UX designers on the project, working with a business analyst and FinUnity’s stakeholders. Together we covered the whole design process:</p>
+<ol class="cs-steps">
+<li><span class="step-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="5.5"/><path d="M15 15l5 5"/><path d="M8 11.5l1.5 1.5 3-3"/></svg></span><b>User research</b></li>
+<li><span class="step-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h10v7H8l-4 3z"/><path d="M14 9h6v7l-3-2h-5v-2"/></svg></span><b>User interviews</b></li>
+<li><span class="step-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2"/><circle cx="18" cy="6" r="2"/><path d="M8 18h6a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h6"/></svg></span><b>Journey mapping</b></li>
+<li><span class="step-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8h18M7 12h4v5H7zM14 12h4M14 15h4"/></svg></span><b>Wireframing</b></li>
+<li><span class="step-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="4" rx="1"/><rect x="3" y="17" width="6" height="4" rx="1"/><rect x="15" y="17" width="6" height="4" rx="1"/><path d="M12 7v5M6 17v-2.5h12V17"/></svg></span><b>Screen flows</b></li>
+<li><span class="step-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l5 9-5 9-5-9z"/><path d="M12 3v7"/><circle cx="12" cy="12" r="1.6"/></svg></span><b>Visual design</b></li>
+</ol>
+<ul class="cs-pains cs-collab" aria-label="Who we worked with">
+<li>2 UX designers</li>
+<li>Business analyst</li>
+<li>Client stakeholders</li>
+<li>FinUnity agents and users</li>
+</ul>
+</section>
+<section class="cs-sec" id="challenge" aria-labelledby="h-challenge">
+<p class="cs-kicker">Challenge</p>
+<h2 id="h-challenge">Too many tools, none of them connected</h2>
+<p>FinUnity is a tax financing company and a top choice for residential and commercial property owners in Texas, helping tens of thousands of Texans save their property from foreclosure. Its employees relied on many third-party applications that didn’t talk to each other. Agents re-entered information by hand and moved between systems constantly, so simple tasks took far longer than they should.</p>
+<ul class="cs-pains" aria-label="Problems with the existing setup">
+<li>Higher cost of ownership</li>
+<li>Dependencies across disconnected systems</li>
+<li>Inconsistent user experience</li>
+<li>High management and maintenance cost</li>
+<li>Business processes out of step with the tools</li>
+<li>Low scalability</li>
+</ul>
+<div class="cs-callout">
           <p class="cs-callout-label">The goal</p>
           <p>A single system that serves every segment of the business, with full coverage of loan and lien processes across CRM, underwriting, processing, servicing, the workflow engine and other modules.</p>
         </div>
-      </section>
-
-      <section class="cs-sec" id="heuristics" aria-labelledby="h-heuristics">
-        <p class="cs-kicker">Discovery</p>
-        <h2 id="h-heuristics">A heuristic evaluation set the agenda</h2>
-        <p>Before redesigning anything, we evaluated the legacy system against established usability heuristics. The main recommendation: build a system that is truly user-centred, with a strong user experience at its core.</p>
-        <figure class="cs-fig">
+</section>
+<section class="cs-sec" id="heuristics" aria-labelledby="h-heuristics">
+<p class="cs-kicker">Discovery</p>
+<h2 id="h-heuristics">A heuristic evaluation set the agenda</h2>
+<p>Before redesigning anything, we evaluated the legacy system against established usability heuristics. The main recommendation: build a system that is truly user-centred, with a strong user experience at its core.</p>
+<figure class="cs-fig">
           <button class="zoom" type="button" data-cap="Annotated heuristic evaluation of the legacy underwriting screen."><img src="cs/heuristic.webp" width="545" height="447" loading="lazy" alt="Screenshot of the legacy underwriting screen with orange callouts marking nine usability issues."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button>
           <figcaption>Annotated review of the legacy underwriting screen.</figcaption>
         </figure>
-        <details class="cs-more">
+<details class="cs-more">
           <summary>See all nine findings</summary>
         <ul class="cs-findings">
-          <li><b>Visibility of system status</b><p>Next and previous buttons were barely noticeable, so users couldn't tell what action they had just performed.</p></li>
-          <li><b>Match with the real world</b><p>The menu said “Landing” for what is known worldwide as a dashboard.</p></li>
-          <li><b>User control and freedom</b><p>The view-history popup could only be closed with its small cross icon, not by clicking outside it.</p></li>
-          <li><b>Consistency and standards</b><p>Links looked like tabs, “Show Advanced Search” was styled differently again, and font sizes varied.</p></li>
-          <li><b>Error prevention</b><p>Read-only fields could be edited by mistake with no warning message at all.</p></li>
-          <li><b>Recognition rather than recall</b><p>A search area carried over from the previous page was hard to recognise on the crowded screen.</p></li>
-          <li><b>Flexibility and efficiency</b><p>The page was so busy that it was difficult to recognise and use.</p></li>
-          <li><b>Aesthetic and minimalist design</b><p>Too much information on one page made it hard to perceive what mattered.</p></li>
-          <li><b>Help and documentation</b><p>There were no visual or documented hints to help people use the system.</p></li>
-        </ul>
+<li><b>Visibility of system status</b><p>Next and previous buttons were barely noticeable, so users couldn't tell what action they had just performed.</p></li>
+<li><b>Match with the real world</b><p>The menu said “Landing” for what is known worldwide as a dashboard.</p></li>
+<li><b>User control and freedom</b><p>The view-history popup could only be closed with its small cross icon, not by clicking outside it.</p></li>
+<li><b>Consistency and standards</b><p>Links looked like tabs, “Show Advanced Search” was styled differently again, and font sizes varied.</p></li>
+<li><b>Error prevention</b><p>Read-only fields could be edited by mistake with no warning message at all.</p></li>
+<li><b>Recognition rather than recall</b><p>A search area carried over from the previous page was hard to recognise on the crowded screen.</p></li>
+<li><b>Flexibility and efficiency</b><p>The page was so busy that it was difficult to recognise and use.</p></li>
+<li><b>Aesthetic and minimalist design</b><p>Too much information on one page made it hard to perceive what mattered.</p></li>
+<li><b>Help and documentation</b><p>There were no visual or documented hints to help people use the system.</p></li>
+</ul>
         </details>
-        <h3 class="cs-sub">How the findings shaped the design</h3>
-        <ul class="cs-map">
-          <li><span class="from">“Landing” in the menu</span><span class="to">Use the words people already know, like Dashboard</span></li>
-          <li><span class="from">Inconsistent tabs, links and font sizes</span><span class="to">One set of components and type sizes from the design system</span></li>
-          <li><span class="from">Busy, crowded screens</span><span class="to">Clear hierarchy that puts the next task first</span></li>
-          <li><span class="from">No feedback after actions</span><span class="to">Visible status for every task and action</span></li>
-        </ul>
-      </section>
-
-      <section class="cs-sec" id="research" aria-labelledby="h-research">
-        <p class="cs-kicker">Research</p>
-        <h2 id="h-research">Learning the business, side by side with users</h2>
-        <div class="cs-two">
-          <div>
+<h3 class="cs-sub">How the findings shaped the design</h3>
+<ul class="cs-map">
+<li><span class="from">“Landing” in the menu</span><span class="to">Use the words people already know, like Dashboard</span></li>
+<li><span class="from">Inconsistent tabs, links and font sizes</span><span class="to">One set of components and type sizes from the design system</span></li>
+<li><span class="from">Busy, crowded screens</span><span class="to">Clear hierarchy that puts the next task first</span></li>
+<li><span class="from">No feedback after actions</span><span class="to">Visible status for every task and action</span></li>
+</ul>
+</section>
+<section class="cs-sec" id="research" aria-labelledby="h-research">
+<p class="cs-kicker">Research</p>
+<h2 id="h-research">Learning the business, side by side with users</h2>
+<div class="cs-two">
+<div>
             <h3>On-site workshop</h3>
             <p>Once the statement of work was signed, we studied the existing systems, use cases and stories. We then ran a one-week workshop at the client’s office in Dallas, Texas, to understand the business in depth, along with the users’ pain points, needs and system requirements.</p>
           </div>
-          <div>
+<div>
             <h3>User interviews</h3>
             <p>We picked FinUnity users of different ages and grouped them to build personas. Interviews about their pain points gave us a rich set of insights, and they were essential for designing a system that would also help FinUnity reach its business goals.</p>
           </div>
-        </div>
-        <ul class="cs-facts">
-          <li><b>1 week</b><span>on-site workshop</span></li>
-          <li><b>Dallas</b><span>Texas, at the client’s office</span></li>
-          <li><b>Personas</b><span>built from users of different ages</span></li>
-        </ul>
-      </section>
-
-      <section class="cs-sec" id="journey" aria-labelledby="h-journey">
-        <p class="cs-kicker">Synthesis</p>
-        <h2 id="h-journey">Mapping the journey from acquisition to release</h2>
-        <p>We combined in-person interviews, surveys and user reviews into a customer journey map. It showed the ideal journey for the new system and where the old one broke down, closed knowledge gaps between the team and stakeholders, and marked each touchpoint by intent and task, including people’s emotions and expectations.</p>
-        <figure class="cs-fig">
+</div>
+<ul class="cs-facts">
+<li><b>1 week</b><span>on-site workshop</span></li>
+<li><b>Dallas</b><span>Texas, at the client’s office</span></li>
+<li><b>Personas</b><span>built from users of different ages</span></li>
+</ul>
+</section>
+<section class="cs-sec" id="journey" aria-labelledby="h-journey">
+<p class="cs-kicker">Synthesis</p>
+<h2 id="h-journey">Mapping the journey from acquisition to release</h2>
+<p>We combined in-person interviews, surveys and user reviews into a customer journey map. It showed the ideal journey for the new system and where the old one broke down, closed knowledge gaps between the team and stakeholders, and marked each touchpoint by intent and task, including people’s emotions and expectations.</p>
+<figure class="cs-fig">
           <button class="zoom" type="button" data-cap="Journey map of the loan and lien lifecycle."><img src="cs/journey.webp" width="1015" height="382" loading="lazy" alt="Journey map flowing from acquisitions and onboarding through payment postings, redemption, underwriting, collection and foreclosure to REO and release."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button>
           <figcaption>The loan and lien lifecycle, from acquisition to release.</figcaption>
         </figure>
-        <ol class="cs-flow" aria-label="Main stages of the journey">
-          <li>Acquisitions</li><li>Onboarding</li><li>Payment postings</li><li>Underwriting</li><li>Collection</li><li>Foreclosure</li><li>REO</li><li>Release</li>
-        </ol>
-      </section>
-
-      <section class="cs-sec" id="ideation" aria-labelledby="h-ideation">
-        <p class="cs-kicker">Ideas to wireframes</p>
-        <h2 id="h-ideation">Balancing user needs with business goals</h2>
-        <p>With stakeholders, we sketched flows on paper, organised features on sticky notes and turned the strongest ideas into wireframes.</p>
-        <div class="cs-gallery g3">
-          <figure><button class="zoom" type="button" data-cap="Brainstorm: paper sketches of screens and flows."><img src="cs/brainstorm.webp" width="228" height="297" loading="lazy" alt="Hand-drawn sketches of screen layouts and flows with notes."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption>Brainstorm</figcaption></figure>
-          <figure><button class="zoom" type="button" data-cap="Wireframes: an early account details form."><img src="cs/wireframe-form.webp" width="388" height="297" loading="lazy" alt="Greyscale wireframe of an account details form with application and loan setup fields."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption>Wireframes</figcaption></figure>
-          <figure><button class="zoom" type="button" data-cap="Organise: features sorted on sticky notes."><img src="cs/organize.webp" width="298" height="297" loading="lazy" alt="Coloured sticky notes grouped into feature columns on a desk next to a laptop."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption>Organise</figcaption></figure>
-        </div>
-        <p>We then built low-fidelity wireframes with the business analyst and the client, and tested them with users to validate our thinking before any visual design.</p>
-        <div class="cs-gallery g3">
-          <figure><button class="zoom" type="button" data-cap="Loan list wireframe."><img src="cs/wf-list.webp" width="339" height="183" loading="lazy" alt="Wireframe of a loan list table."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption>Loan list</figcaption></figure>
-          <figure><button class="zoom" type="button" data-cap="Loan list with status filters open."><img src="cs/wf-filter.webp" width="337" height="183" loading="lazy" alt="Wireframe of the loan list with a status filter menu open."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption>Filtering by status</figcaption></figure>
-          <figure><button class="zoom" type="button" data-cap="Account details wireframe."><img src="cs/wf-detail.webp" width="308" height="193" loading="lazy" alt="Wireframe of an account details page with grouped form fields."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption>Account details</figcaption></figure>
-        </div>
-      </section>
-
-      <section class="cs-sec" id="design-system" aria-labelledby="h-ds">
-        <p class="cs-kicker">Foundations</p>
-        <h2 id="h-ds">A design system to keep every module consistent</h2>
-        <p>With many modules to cover, consistency had to be designed in. We built a design system of principles, brand guidelines, components and patterns, giving designers and developers a shared vocabulary and making the whole process more efficient.</p>
-        <div class="cs-gallery g-ds">
-          <figure><button class="zoom" type="button" data-cap="Design system introduction page."><img src="cs/ds-intro.webp" width="280" height="245" loading="lazy" alt="Design system introduction page with an illustration and links to principles, brand, components and patterns."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption>Introduction and guidelines</figcaption></figure>
-          <figure><button class="zoom" type="button" data-cap="Overview of the design system's pages and components."><img src="cs/ds-board.webp" width="719" height="235" loading="lazy" alt="Board showing many design system pages and component sheets side by side."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption>Components and patterns</figcaption></figure>
-        </div>
-      </section>
-
-      <section class="cs-sec" id="reflection" aria-labelledby="h-reflection">
-        <p class="cs-kicker">Reflection</p>
-        <h2 id="h-reflection">What I took away</h2>
-        <ul class="cs-learn">
-          <li><b>Evaluate before you redesign.</b> The heuristic review gave everyone a shared, evidence-based list of problems to solve.</li>
-          <li><b>Go where the work happens.</b> A week on site with the people who use the system every day showed us more than any document could.</li>
-          <li><b>Consistency scales.</b> A design system kept many modules feeling like one product as the platform grew.</li>
-        </ul>
-      </section>
-    </article>
+<ol class="cs-flow" aria-label="Main stages of the journey">
+<li>Acquisitions</li>
+<li>Onboarding</li>
+<li>Payment postings</li>
+<li>Underwriting</li>
+<li>Collection</li>
+<li>Foreclosure</li>
+<li>REO</li>
+<li>Release</li>
+</ol>
+</section>
+<section class="cs-sec" id="ideation" aria-labelledby="h-ideation">
+<p class="cs-kicker">Ideas to wireframes</p>
+<h2 id="h-ideation">Balancing user needs with business goals</h2>
+<p>With stakeholders, we sketched flows on paper, organised features on sticky notes and turned the strongest ideas into wireframes.</p>
+<div class="cs-gallery g3">
+<figure><button class="zoom" type="button" data-cap="Brainstorm: paper sketches of screens and flows."><img src="cs/brainstorm.webp" width="228" height="297" loading="lazy" alt="Hand-drawn sketches of screen layouts and flows with notes."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption>Brainstorm</figcaption></figure>
+<figure><button class="zoom" type="button" data-cap="Wireframes: an early account details form."><img src="cs/wireframe-form.webp" width="388" height="297" loading="lazy" alt="Greyscale wireframe of an account details form with application and loan setup fields."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption>Wireframes</figcaption></figure>
+<figure><button class="zoom" type="button" data-cap="Organise: features sorted on sticky notes."><img src="cs/organize.webp" width="298" height="297" loading="lazy" alt="Coloured sticky notes grouped into feature columns on a desk next to a laptop."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption>Organise</figcaption></figure>
+</div>
+<p>We then built low-fidelity wireframes with the business analyst and the client, and tested them with users to validate our thinking before any visual design.</p>
+<div class="cs-gallery g3">
+<figure><button class="zoom" type="button" data-cap="Loan list wireframe."><img src="cs/wf-list.webp" width="339" height="183" loading="lazy" alt="Wireframe of a loan list table."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption>Loan list</figcaption></figure>
+<figure><button class="zoom" type="button" data-cap="Loan list with status filters open."><img src="cs/wf-filter.webp" width="337" height="183" loading="lazy" alt="Wireframe of the loan list with a status filter menu open."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption>Filtering by status</figcaption></figure>
+<figure><button class="zoom" type="button" data-cap="Account details wireframe."><img src="cs/wf-detail.webp" width="308" height="193" loading="lazy" alt="Wireframe of an account details page with grouped form fields."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption>Account details</figcaption></figure>
+</div>
+</section>
+<section class="cs-sec" id="design-system" aria-labelledby="h-ds">
+<p class="cs-kicker">Foundations</p>
+<h2 id="h-ds">A design system to keep every module consistent</h2>
+<p>With many modules to cover, consistency had to be designed in. We built a design system of principles, brand guidelines, components and patterns, giving designers and developers a shared vocabulary and making the whole process more efficient.</p>
+<div class="cs-gallery g-ds">
+<figure><button class="zoom" type="button" data-cap="Design system introduction page."><img src="cs/ds-intro.webp" width="280" height="245" loading="lazy" alt="Design system introduction page with an illustration and links to principles, brand, components and patterns."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption>Introduction and guidelines</figcaption></figure>
+<figure><button class="zoom" type="button" data-cap="Overview of the design system's pages and components."><img src="cs/ds-board.webp" width="719" height="235" loading="lazy" alt="Board showing many design system pages and component sheets side by side."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption>Components and patterns</figcaption></figure>
+</div>
+</section>
+<section class="cs-sec" id="reflection" aria-labelledby="h-reflection">
+<p class="cs-kicker">Reflection</p>
+<h2 id="h-reflection">What I took away</h2>
+<ul class="cs-learn">
+<li><b>Evaluate before you redesign.</b> The heuristic review gave everyone a shared, evidence-based list of problems to solve.</li>
+<li><b>Go where the work happens.</b> A week on site with the people who use the system every day showed us more than any document could.</li>
+<li><b>Consistency scales.</b> A design system kept many modules feeling like one product as the platform grew.</li>
+</ul>
+</section>
+</article>
   </div>
 
   <section class="band cs-next" aria-labelledby="h-next">
@@ -1698,9 +1699,9 @@ footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between
       <p class="cs-kicker">Next</p>
       <h2 id="h-next">See how an advisor platform went from back-office grids to a workspace</h2>
       <div class="cta-row">
-        <a class="btn btn-primary" href="case-advisor.html">Read the Advisor platform case study</a>
-        <a class="btn" href="home.html#work">Back to all work</a>
-      </div>
+<a class="btn btn-primary" href="case-advisor.html">Read the Advisor platform case study</a>
+<a class="btn" href="home.html#work">Back to all work</a>
+</div>
     </div>
   </section>
 </main>
@@ -1780,6 +1781,21 @@ footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between
     const h=document.documentElement.scrollHeight-innerHeight; prog.style.width=(h>0?Math.min(100,scrollY/h*100):0)+"%";
   }
   addEventListener("scroll",onScroll,{passive:true}); onScroll();
+
+  /* "On this page" follows the sections actually on the page (sections can be added, hidden or reordered in /admin) */
+  (function(){
+    const toc=document.getElementById("csToc"); if(!toc) return;
+    const secs=[...document.querySelectorAll(".cs-body > section.cs-sec")], seen=new Set(), old=new Map();
+    toc.querySelectorAll("li").forEach(li=>{const a=li.querySelector("a"); if(a) old.set(a.getAttribute("href"),li)});
+    const frag=document.createDocumentFragment();
+    secs.forEach(sec=>{
+      let id=sec.id||"section"; while(seen.has(id)) id+="-2"; seen.add(id); if(sec.id!==id) sec.id=id;
+      let li=old.get("#"+id);
+      if(li){ old.delete("#"+id) } else { const k=sec.querySelector(".cs-kicker, h2"); li=document.createElement("li"); const a=document.createElement("a"); a.href="#"+id; a.textContent=k?k.textContent.trim():id; li.appendChild(a) }
+      frag.appendChild(li);
+    });
+    toc.replaceChildren(frag);
+  })();
 
   /* "On this page" highlights the section being read */
   const links=[...document.querySelectorAll("#csToc a")];

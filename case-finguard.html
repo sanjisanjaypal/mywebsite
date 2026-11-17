@@ -7,7 +7,7 @@
 <script>
 /* Always show pages inside the site shell, so music keeps playing across pages */
 (function(){var inShell=false;try{inShell=window.parent!==window&&!!window.parent.__musicShell}catch(e){}
-if(inShell||location.protocol==="file:")return;
+if(inShell||location.protocol==="file:"||window.__cmsPreview)return;
 var name=location.pathname.split("/").pop()||"";
 location.replace("index.html"+(name&&name!=="home.html"?"#/"+name:location.hash));})();
 </script>
@@ -1612,15 +1612,15 @@ footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between
           <a href="home.html#work">Work</a>
           <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="workMenu" aria-label="Case studies"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           <ul class="submenu" id="workMenu" hidden>
-            <li><a href="case-finunity.html"><span class="sm-t">FinUnity</span><span class="sm-d">Property tax financing platform</span></a></li>
-            <li><a href="case-advisor.html"><span class="sm-t">Advisor platform</span><span class="sm-d">Wealth management workspace</span></a></li>
-            <li><a href="case-finguard.html" aria-current="page"><span class="sm-t">FinGuard</span><span class="sm-d">Banking risk and investigations</span></a></li>
-            <li><a href="case-agrifunds.html"><span class="sm-t">AgriFunds</span><span class="sm-d">Farm lending customer portal</span></a></li>
-            <li><a href="case-aster.html"><span class="sm-t">Aster Bank</span><span class="sm-d">Wealth management eLearning</span></a></li>
-            <li><a href="case-autolore.html"><span class="sm-t">AutoLore</span><span class="sm-d">Classic car museum kiosk</span></a></li>
-            <li><a href="case-guru.html"><span class="sm-t">Guru Samman Samaroh</span><span class="sm-d">Event visualisation and design</span></a></li>
-            <li class="sm-all"><a href="home.html#work">All work</a></li>
-          </ul>
+<li><a href="case-finunity.html"><span class="sm-t">FinUnity</span><span class="sm-d">Property tax financing platform</span></a></li>
+<li><a href="case-advisor.html"><span class="sm-t">Advisor platform</span><span class="sm-d">Wealth management workspace</span></a></li>
+<li><a href="case-finguard.html" aria-current="page"><span class="sm-t">FinGuard</span><span class="sm-d">Banking risk and investigations</span></a></li>
+<li><a href="case-agrifunds.html"><span class="sm-t">AgriFunds</span><span class="sm-d">Farm lending customer portal</span></a></li>
+<li><a href="case-aster.html"><span class="sm-t">Aster Bank</span><span class="sm-d">Wealth management eLearning</span></a></li>
+<li><a href="case-autolore.html"><span class="sm-t">AutoLore</span><span class="sm-d">Classic car museum kiosk</span></a></li>
+<li><a href="case-guru.html"><span class="sm-t">Guru Samman Samaroh</span><span class="sm-d">Event visualisation and design</span></a></li>
+<li class="sm-all"><a href="home.html#work">All work</a></li>
+</ul>
         </div>
         <a href="about.html">About</a>
         <a href="contact.html" class="nav-contact">Get in touch</a>
@@ -1642,12 +1642,12 @@ footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between
     <h1>FinGuard: helping bank investigators see risk, and the reason for it, at a glance</h1>
     <p class="cs-lede">A case management platform for a bank’s financial intelligence unit. I designed how analysts triage alerts, search across customers and accounts, and decide on a case from a single risk profile.</p>
     <dl class="cs-meta">
-      <div><dt>Product</dt><dd>FinGuard (white-labelled)</dd></div>
-      <div><dt>Domain</dt><dd>AML, KYC and due diligence</dd></div>
-      <div><dt>Year</dt><dd>2015 to 2016</dd></div>
-      <div><dt>My role</dt><dd>UX research and design</dd></div>
-      <div><dt>Platform</dt><dd>Desktop web app</dd></div>
-    </dl>
+<div><dt>Product</dt><dd>FinGuard (white-labelled)</dd></div>
+<div><dt>Domain</dt><dd>AML, KYC and due diligence</dd></div>
+<div><dt>Year</dt><dd>2015 to 2016</dd></div>
+<div><dt>My role</dt><dd>UX research and design</dd></div>
+<div><dt>Platform</dt><dd>Desktop web app</dd></div>
+</dl>
   </div>
   <figure class="wrap cs-cover cs-cover-art">
     <img src="cs4/thumb-finguard-photo.webp" width="1672" height="941" alt="A classical bank building protected by a glowing glass shield, with a magnifying glass over gold coins and an approved document, a risk gauge in the low zone, and a network graph with one highlighted node.">
@@ -1670,155 +1670,186 @@ footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between
     </nav>
 
     <article class="cs-body">
-      <section class="cs-sec" id="impact" aria-labelledby="h-impact">
-        <p class="cs-kicker">Impact</p>
-        <h2 id="h-impact">From scattered checks to one explainable view of customer risk</h2>
-        <ul class="cs-stats">
-          <li><b>5</b><span>risk dimensions behind one score: attribute, watchlist, negative news, network and activity</span></li>
-          <li><b>3</b><span>record types in one search: customers, alerts and cases, and accounts</span></li>
-          <li><b>1</b><span>page to decide on a customer, with evidence, documents and audit trail</span></li>
-        </ul>
-        <p class="cs-tldr-label">In short</p>
-        <div class="cs-glance">
-          <div class="glance-card">
+<section class="cs-sec" id="impact" aria-labelledby="h-impact">
+<p class="cs-kicker">Impact</p>
+<h2 id="h-impact">From scattered checks to one explainable view of customer risk</h2>
+<ul class="cs-stats">
+<li><b>5</b><span>risk dimensions behind one score: attribute, watchlist, negative news, network and activity</span></li>
+<li><b>3</b><span>record types in one search: customers, alerts and cases, and accounts</span></li>
+<li><b>1</b><span>page to decide on a customer, with evidence, documents and audit trail</span></li>
+</ul>
+<p class="cs-tldr-label">In short</p>
+<div class="cs-glance">
+<div class="glance-card">
             <span class="glance-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
             <h3>Problem</h3>
             <p>Analysts had to clear alerts against regulatory deadlines while risk signals, documents and history lived in different places.</p>
           </div>
-          <div class="glance-card">
+<div class="glance-card">
             <span class="glance-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16M7 16V9M12 16V5M17 16v-4"/></svg></span>
             <h3>Approach</h3>
             <p>Map the investigation workflow with the people who do it, then design around their real decision: close, escalate or open a case.</p>
           </div>
-          <div class="glance-card">
+<div class="glance-card">
             <span class="glance-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
             <h3>Result</h3>
             <p>A dashboard, search and risk profile that show not only how risky a customer is, but why, with every change recorded.</p>
           </div>
-        </div>
-      </section>
-
-      <section class="cs-sec" id="context" aria-labelledby="h-context">
-        <p class="cs-kicker">Context</p>
-        <h2 id="h-context">High stakes, tight deadlines, many systems</h2>
-        <p>Banks must spot money laundering and fraud, know who their customers are, and prove to regulators how every decision was made. Inside the bank, a financial intelligence unit (FIU) reviews alerts raised by monitoring systems, carries out customer due diligence, and escalates suspicious activity.</p>
-        <p>FinGuard brought that work into one tool: alerts, cases, onboarding reviews and periodic reviews, each scored for risk.</p>
-        <ul class="cs-pains" aria-label="Pain points">
-          <li>Risk signals spread across watchlists, news, KYC files and transaction data</li>
-          <li>A score with no explanation, which analysts could not defend</li>
-          <li>Deadlines on every alert and review, with aging hard to see</li>
-          <li>Manual search for a customer’s other accounts and open items</li>
-          <li>Quality checks done after the fact, in separate reports</li>
-        </ul>
-        <div class="cs-goals">
-          <div><p class="g-k">Business goal</p><p>Clear more alerts on time without lowering the quality of decisions.</p></div>
-          <div><p class="g-k">User goal</p><p>Reach a defensible decision on a customer quickly, with the evidence in front of me.</p></div>
-          <div><p class="g-k">Regulatory need</p><p>Every score, document and change must be explainable and traceable.</p></div>
-        </div>
-      </section>
-
-      <section class="cs-sec" id="users" aria-labelledby="h-users">
-        <p class="cs-kicker">Users</p>
-        <h2 id="h-users">Three roles, one queue</h2>
-        <ul class="cs-personas">
-          <li><b>FIU analyst</b><span>Works an assigned queue of alerts and cases every day. Needs to know which customer to open first, and to see the evidence behind a score before closing or escalating it.</span></li>
-          <li><b>Quality reviewer</b><span>Samples completed work against quality KPIs. Needs to retrace what an analyst saw and changed, and when.</span></li>
-          <li><b>Team lead</b><span>Balances workload across analysts. Needs volume, aging and quality trends on one screen to spot bottlenecks before deadlines slip.</span></li>
-        </ul>
-      </section>
-
-      <section class="cs-sec" id="research" aria-labelledby="h-research">
-        <p class="cs-kicker">Research</p>
-        <h2 id="h-research">Learning the investigation, not just the interface</h2>
-        <p>Financial crime teams handle confidential data and work to strict procedures, so research had to respect both: masked or sample data only, sessions scheduled around queue deadlines, and compliance in the room.</p>
-        <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="skRough"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="2" seed="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.8"/></filter></defs></svg><ul class="cs-research"><li><figure><svg class="sk" viewBox="0 0 320 200" role="img" aria-label="Sketch of an interview with stakeholder quotes on sticky notes"><rect class="sk-paper" width="320" height="200" rx="6"/><g class="sk-lines"><path d="M14 28H306"/><path d="M14 50H306"/><path d="M14 72H306"/><path d="M14 94H306"/><path d="M14 116H306"/><path d="M14 138H306"/><path d="M14 160H306"/><path d="M14 182H306"/></g><g class="sk-ink" filter="url(#skRough)"><g transform="translate(48 120) scale(1)"><circle cx="0" cy="0" r="9"/><path d="M-14 34c0-12 6-20 14-20s14 8 14 20"/></g><g transform="translate(108 120) scale(1)"><circle cx="0" cy="0" r="9"/><path d="M-14 34c0-12 6-20 14-20s14 8 14 20"/></g><path d="M70 150h20"/><path d="M28 168h100"/><path d="M38 96c-10-20 4-38 26-34" stroke-dasharray="3 3"/><g transform="rotate(-3 225.0 44.0)"><rect class="sk-note" x="150" y="22" width="150" height="44" rx="2"/><text x="158" y="40" font-family="Caveat, 'Segoe Print', cursive" font-size="15">“Every alert has</text><text x="158" y="56" font-family="Caveat, 'Segoe Print', cursive" font-size="15">a deadline.”</text></g><g transform="rotate(2 230.0 100.0)"><rect class="sk-note" x="160" y="78" width="140" height="44" rx="2"/><text x="168" y="96" font-family="Caveat, 'Segoe Print', cursive" font-size="15">“Regulators</text><text x="168" y="112" font-family="Caveat, 'Segoe Print', cursive" font-size="15">always ask why.”</text></g><g transform="rotate(-2 225.0 156.0)"><rect class="sk-note" x="150" y="134" width="150" height="44" rx="2"/><text x="158" y="152" font-family="Caveat, 'Segoe Print', cursive" font-size="15">“Data lives in</text><text x="158" y="168" font-family="Caveat, 'Segoe Print', cursive" font-size="15">too many places.”</text></g><text x="18" y="190" font-family="Caveat, 'Segoe Print', cursive" font-size="16" font-weight="700">Compliance · QA · IT</text></g></svg></figure><b>Stakeholder interviews</b><span>Compliance leadership, quality assurance and technology, to understand regulatory obligations, KPIs and data sources.</span></li><li><figure><svg class="sk" viewBox="0 0 320 200" role="img" aria-label="Sketch of an analyst at two monitors with observation notes"><rect class="sk-paper" width="320" height="200" rx="6"/><g class="sk-lines"><path d="M14 28H306"/><path d="M14 50H306"/><path d="M14 72H306"/><path d="M14 94H306"/><path d="M14 116H306"/><path d="M14 138H306"/><path d="M14 160H306"/><path d="M14 182H306"/></g><g class="sk-ink" filter="url(#skRough)"><rect x="26" y="42" width="120" height="78" rx="4"/><rect x="156" y="42" width="120" height="78" rx="4"/><path d="M74 120v16M58 136h32M204 120v16M188 136h32"/><path d="M32 52h22M58 52h22M84 52h22M110 52h22" stroke-width="3"/><path d="M164 54h60M164 66h90M164 78h70M164 90h80" /><g transform="translate(150 150) scale(0.8)"><circle cx="0" cy="0" r="9"/><path d="M-14 34c0-12 6-20 14-20s14 8 14 20"/></g><text x="22" y="30" font-family="Caveat, 'Segoe Print', cursive" font-size="16">tabs open: <tspan font-weight="700">卌 ||</tspan></text><text x="186" y="30" font-family="Caveat, 'Segoe Print', cursive" font-size="16">copy → Excel!</text><path d="M262 32c8 4 8 10 0 14" /><text x="186" y="174" font-family="Caveat, 'Segoe Print', cursive" font-size="16">searches the same</text><text x="186" y="190" font-family="Caveat, 'Segoe Print', cursive" font-size="16">name 3 times</text><path d="M180 168l-12-10"/></g></svg></figure><b>Contextual inquiry</b><span>Observing analysts work real alerts end to end, noting every system, tab and spreadsheet they touched.</span></li><li><figure><svg class="sk" viewBox="0 0 320 200" role="img" aria-label="Flowchart sketch of the investigation task from alert to close or escalate"><rect class="sk-paper" width="320" height="200" rx="6"/><g class="sk-lines"><path d="M14 28H306"/><path d="M14 50H306"/><path d="M14 72H306"/><path d="M14 94H306"/><path d="M14 116H306"/><path d="M14 138H306"/><path d="M14 160H306"/><path d="M14 182H306"/></g><g class="sk-ink" filter="url(#skRough)"><rect x="16" y="26" width="70" height="30" rx="5"/><text x="51.0" y="46" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Alert</text><path d="M86 41h16m-6-5 6 5-6 5"/><rect x="102" y="26" width="92" height="30" rx="5"/><text x="148.0" y="46" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Open profile</text><path d="M194 41h16m-6-5 6 5-6 5"/><rect x="210" y="26" width="94" height="30" rx="5"/><text x="257.0" y="46" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Check lists</text><path d="M257 56v16m-5-6 5 6 5-6"/><rect x="196" y="74" width="108" height="30" rx="5"/><text x="250.0" y="94" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Find accounts</text><path d="M196 89h-18m6-5-6 5 6 5"/><path d="M128 70l36 24-36 24-36-24z"/><text x="128" y="99" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Risky?</text><path d="M100 112l-30 30m6 0-6 0 0-6"/><path d="M156 112l30 30m-6 0 6 0 0-6"/><rect x="16" y="146" width="96" height="30" rx="5"/><text x="64.0" y="166" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Close</text><rect x="150" y="146" width="110" height="30" rx="5"/><text x="205.0" y="166" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Escalate / case</text><text x="196" y="134" font-family="Caveat, 'Segoe Print', cursive" font-size="15" class="sk-red">← slowest step</text></g></svg></figure><b>Task analysis</b><span>Breaking an investigation into steps, decisions and hand-offs, from alert to disposition.</span></li><li><figure><svg class="sk" viewBox="0 0 320 200" role="img" aria-label="Sketch of an annotated alert report with highlighted terms"><rect class="sk-paper" width="320" height="200" rx="6"/><g class="sk-lines"><path d="M14 28H306"/><path d="M14 50H306"/><path d="M14 72H306"/><path d="M14 94H306"/><path d="M14 116H306"/><path d="M14 138H306"/><path d="M14 160H306"/><path d="M14 182H306"/></g><g class="sk-ink" filter="url(#skRough)"><path d="M20 20h140l24 24v146H20z"/><path d="M160 20v24h24"/><path d="M34 56h120"/><path d="M34 70h100"/><path d="M34 84h130"/><path d="M34 98h80"/><path d="M34 112h120"/><path d="M34 126h110"/><path d="M34 140h90"/><path d="M34 154h126"/><path d="M34 168h70"/><rect class="sk-hl" x="32" y="78" width="80" height="12"/><rect class="sk-hl" x="32" y="134" width="64" height="12"/><ellipse cx="130" cy="112" rx="26" ry="10" class="sk-red"/><text x="200" y="70" font-family="Caveat, 'Segoe Print', cursive" font-size="17">“CDD”, “EDD”,</text><text x="200" y="88" font-family="Caveat, 'Segoe Print', cursive" font-size="17">“Risk DNA”</text><path d="M196 78c-30 0-50 6-82 6"/><text x="200" y="128" font-family="Caveat, 'Segoe Print', cursive" font-size="17" class="sk-red">use their words,</text><text x="200" y="146" font-family="Caveat, 'Segoe Print', cursive" font-size="17" class="sk-red">not ours</text><path d="M196 122c-20-6-30-8-38-8"/></g></svg></figure><b>Artefact review</b><span>Existing alert reports, case notes and KYC checklists, to learn the vocabulary users already trust.</span></li><li><figure><svg class="sk" viewBox="0 0 320 200" role="img" aria-label="Sketch of three persona cards above a journey map with an emotion curve"><rect class="sk-paper" width="320" height="200" rx="6"/><g class="sk-lines"><path d="M14 28H306"/><path d="M14 50H306"/><path d="M14 72H306"/><path d="M14 94H306"/><path d="M14 116H306"/><path d="M14 138H306"/><path d="M14 160H306"/><path d="M14 182H306"/></g><g class="sk-ink" filter="url(#skRough)"><rect x="16" y="22" width="88" height="68" rx="5"/><circle cx="38" cy="46" r="10"/><path d="M56 42h38M56 54h30"/><text x="60" y="80" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Analyst</text><rect x="116" y="22" width="88" height="68" rx="5"/><circle cx="138" cy="46" r="10"/><path d="M156 42h38M156 54h30"/><text x="160" y="80" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Reviewer</text><rect x="216" y="22" width="88" height="68" rx="5"/><circle cx="238" cy="46" r="10"/><path d="M256 42h38M256 54h30"/><text x="260" y="80" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Team lead</text><path d="M20 170H300" /><circle cx="30" cy="170" r="3" class="sk-dot"/><circle cx="80" cy="170" r="3" class="sk-dot"/><circle cx="130" cy="170" r="3" class="sk-dot"/><circle cx="180" cy="170" r="3" class="sk-dot"/><circle cx="230" cy="170" r="3" class="sk-dot"/><circle cx="280" cy="170" r="3" class="sk-dot"/><path class="sk-red" d="M30 124C60 118 70 120 80 128S120 160 130 158 170 150 180 138 220 116 280 112" stroke-width="2"/><text x="104" y="190" font-family="Caveat, 'Segoe Print', cursive" font-size="14">gather evidence 😟</text><text x="236" y="106" font-family="Caveat, 'Segoe Print', cursive" font-size="14">decide 🙂</text></g></svg></figure><b>Personas and journey map</b><span>Three roles and the alert lifecycle, shared with stakeholders to agree what to fix first.</span></li><li><figure><svg class="sk" viewBox="0 0 320 200" role="img" aria-label="Sketch of a paper prototype being tested with tasks and a think-aloud quote"><rect class="sk-paper" width="320" height="200" rx="6"/><g class="sk-lines"><path d="M14 28H306"/><path d="M14 50H306"/><path d="M14 72H306"/><path d="M14 94H306"/><path d="M14 116H306"/><path d="M14 138H306"/><path d="M14 160H306"/><path d="M14 182H306"/></g><g class="sk-ink" filter="url(#skRough)"><rect x="18" y="22" width="170" height="160" rx="6"/><rect x="30" y="34" width="44" height="54" rx="3" class="sk-fill"/><path d="M84 40h90M84 52h70M84 64h80M30 100h146M30 112h146"/><rect x="30" y="124" width="24" height="10"/><rect x="60" y="124" width="24" height="10"/><rect x="90" y="124" width="24" height="10"/><rect x="120" y="124" width="24" height="10"/><rect x="150" y="124" width="24" height="10"/><path d="M30 148h120M30 160h90"/><path d="M120 138l14 30 5-12 12-3z" class="sk-fill"/><text x="200" y="40" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Task 1: explain</text><text x="200" y="56" font-family="Caveat, 'Segoe Print', cursive" font-size="15">the score</text><text x="200" y="82" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Task 2: find</text><text x="200" y="98" font-family="Caveat, 'Segoe Print', cursive" font-size="15">related accounts</text><path d="M198 132c0-16 12-22 54-22s56 6 56 22-14 22-56 22c-8 0-14 0-20-1l-14 14 4-15c-16-4-24-10-24-20z"/><text x="210" y="128" font-family="Caveat, 'Segoe Print', cursive" font-size="15">“Oh, it’s the</text><text x="216" y="144" font-family="Caveat, 'Segoe Print', cursive" font-size="15">address!”</text></g></svg></figure><b>Usability testing</b><span>Clickable prototypes with sample customers, testing whether analysts could explain a score and find related accounts.</span></li></ul><p class="cs-fine sk-note-src">Sketches are recreated to illustrate each activity; quotes are paraphrased and no customer data is shown.</p>
-        <h3 class="cs-sub">The alert lifecycle</h3>
-        <ol class="cs-flow" aria-label="Stages of an investigation">
-          <li>Alert raised</li><li>Triage</li><li>Investigate customer</li><li>Gather evidence</li><li>Decide</li><li>Quality review</li><li>Report or close</li>
-        </ol>
-      </section>
-
-      <section class="cs-sec" id="insights" aria-labelledby="h-insights">
-        <p class="cs-kicker">Insights</p>
-        <h2 id="h-insights">What we learned, and the principle each one became</h2>
-        <div class="cs-callout">
+</div>
+</section>
+<section class="cs-sec" id="context" aria-labelledby="h-context">
+<p class="cs-kicker">Context</p>
+<h2 id="h-context">High stakes, tight deadlines, many systems</h2>
+<p>Banks must spot money laundering and fraud, know who their customers are, and prove to regulators how every decision was made. Inside the bank, a financial intelligence unit (FIU) reviews alerts raised by monitoring systems, carries out customer due diligence, and escalates suspicious activity.</p>
+<p>FinGuard brought that work into one tool: alerts, cases, onboarding reviews and periodic reviews, each scored for risk.</p>
+<ul class="cs-pains" aria-label="Pain points">
+<li>Risk signals spread across watchlists, news, KYC files and transaction data</li>
+<li>A score with no explanation, which analysts could not defend</li>
+<li>Deadlines on every alert and review, with aging hard to see</li>
+<li>Manual search for a customer’s other accounts and open items</li>
+<li>Quality checks done after the fact, in separate reports</li>
+</ul>
+<div class="cs-goals">
+<div><p class="g-k">Business goal</p><p>Clear more alerts on time without lowering the quality of decisions.</p></div>
+<div><p class="g-k">User goal</p><p>Reach a defensible decision on a customer quickly, with the evidence in front of me.</p></div>
+<div><p class="g-k">Regulatory need</p><p>Every score, document and change must be explainable and traceable.</p></div>
+</div>
+</section>
+<section class="cs-sec" id="users" aria-labelledby="h-users">
+<p class="cs-kicker">Users</p>
+<h2 id="h-users">Three roles, one queue</h2>
+<ul class="cs-personas">
+<li><b>FIU analyst</b><span>Works an assigned queue of alerts and cases every day. Needs to know which customer to open first, and to see the evidence behind a score before closing or escalating it.</span></li>
+<li><b>Quality reviewer</b><span>Samples completed work against quality KPIs. Needs to retrace what an analyst saw and changed, and when.</span></li>
+<li><b>Team lead</b><span>Balances workload across analysts. Needs volume, aging and quality trends on one screen to spot bottlenecks before deadlines slip.</span></li>
+</ul>
+</section>
+<section class="cs-sec" id="research" aria-labelledby="h-research">
+<p class="cs-kicker">Research</p>
+<h2 id="h-research">Learning the investigation, not just the interface</h2>
+<p>Financial crime teams handle confidential data and work to strict procedures, so research had to respect both: masked or sample data only, sessions scheduled around queue deadlines, and compliance in the room.</p>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="skRough"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="2" seed="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.8"/></filter></defs></svg>
+<ul class="cs-research">
+<li><figure><svg class="sk" viewBox="0 0 320 200" role="img" aria-label="Sketch of an interview with stakeholder quotes on sticky notes"><rect class="sk-paper" width="320" height="200" rx="6"/><g class="sk-lines"><path d="M14 28H306"/><path d="M14 50H306"/><path d="M14 72H306"/><path d="M14 94H306"/><path d="M14 116H306"/><path d="M14 138H306"/><path d="M14 160H306"/><path d="M14 182H306"/></g><g class="sk-ink" filter="url(#skRough)"><g transform="translate(48 120) scale(1)"><circle cx="0" cy="0" r="9"/><path d="M-14 34c0-12 6-20 14-20s14 8 14 20"/></g><g transform="translate(108 120) scale(1)"><circle cx="0" cy="0" r="9"/><path d="M-14 34c0-12 6-20 14-20s14 8 14 20"/></g><path d="M70 150h20"/><path d="M28 168h100"/><path d="M38 96c-10-20 4-38 26-34" stroke-dasharray="3 3"/><g transform="rotate(-3 225.0 44.0)"><rect class="sk-note" x="150" y="22" width="150" height="44" rx="2"/><text x="158" y="40" font-family="Caveat, 'Segoe Print', cursive" font-size="15">“Every alert has</text><text x="158" y="56" font-family="Caveat, 'Segoe Print', cursive" font-size="15">a deadline.”</text></g><g transform="rotate(2 230.0 100.0)"><rect class="sk-note" x="160" y="78" width="140" height="44" rx="2"/><text x="168" y="96" font-family="Caveat, 'Segoe Print', cursive" font-size="15">“Regulators</text><text x="168" y="112" font-family="Caveat, 'Segoe Print', cursive" font-size="15">always ask why.”</text></g><g transform="rotate(-2 225.0 156.0)"><rect class="sk-note" x="150" y="134" width="150" height="44" rx="2"/><text x="158" y="152" font-family="Caveat, 'Segoe Print', cursive" font-size="15">“Data lives in</text><text x="158" y="168" font-family="Caveat, 'Segoe Print', cursive" font-size="15">too many places.”</text></g><text x="18" y="190" font-family="Caveat, 'Segoe Print', cursive" font-size="16" font-weight="700">Compliance · QA · IT</text></g></svg></figure><b>Stakeholder interviews</b><span>Compliance leadership, quality assurance and technology, to understand regulatory obligations, KPIs and data sources.</span></li>
+<li><figure><svg class="sk" viewBox="0 0 320 200" role="img" aria-label="Sketch of an analyst at two monitors with observation notes"><rect class="sk-paper" width="320" height="200" rx="6"/><g class="sk-lines"><path d="M14 28H306"/><path d="M14 50H306"/><path d="M14 72H306"/><path d="M14 94H306"/><path d="M14 116H306"/><path d="M14 138H306"/><path d="M14 160H306"/><path d="M14 182H306"/></g><g class="sk-ink" filter="url(#skRough)"><rect x="26" y="42" width="120" height="78" rx="4"/><rect x="156" y="42" width="120" height="78" rx="4"/><path d="M74 120v16M58 136h32M204 120v16M188 136h32"/><path d="M32 52h22M58 52h22M84 52h22M110 52h22" stroke-width="3"/><path d="M164 54h60M164 66h90M164 78h70M164 90h80" /><g transform="translate(150 150) scale(0.8)"><circle cx="0" cy="0" r="9"/><path d="M-14 34c0-12 6-20 14-20s14 8 14 20"/></g><text x="22" y="30" font-family="Caveat, 'Segoe Print', cursive" font-size="16">tabs open: <tspan font-weight="700">卌 ||</tspan></text><text x="186" y="30" font-family="Caveat, 'Segoe Print', cursive" font-size="16">copy → Excel!</text><path d="M262 32c8 4 8 10 0 14" /><text x="186" y="174" font-family="Caveat, 'Segoe Print', cursive" font-size="16">searches the same</text><text x="186" y="190" font-family="Caveat, 'Segoe Print', cursive" font-size="16">name 3 times</text><path d="M180 168l-12-10"/></g></svg></figure><b>Contextual inquiry</b><span>Observing analysts work real alerts end to end, noting every system, tab and spreadsheet they touched.</span></li>
+<li><figure><svg class="sk" viewBox="0 0 320 200" role="img" aria-label="Flowchart sketch of the investigation task from alert to close or escalate"><rect class="sk-paper" width="320" height="200" rx="6"/><g class="sk-lines"><path d="M14 28H306"/><path d="M14 50H306"/><path d="M14 72H306"/><path d="M14 94H306"/><path d="M14 116H306"/><path d="M14 138H306"/><path d="M14 160H306"/><path d="M14 182H306"/></g><g class="sk-ink" filter="url(#skRough)"><rect x="16" y="26" width="70" height="30" rx="5"/><text x="51.0" y="46" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Alert</text><path d="M86 41h16m-6-5 6 5-6 5"/><rect x="102" y="26" width="92" height="30" rx="5"/><text x="148.0" y="46" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Open profile</text><path d="M194 41h16m-6-5 6 5-6 5"/><rect x="210" y="26" width="94" height="30" rx="5"/><text x="257.0" y="46" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Check lists</text><path d="M257 56v16m-5-6 5 6 5-6"/><rect x="196" y="74" width="108" height="30" rx="5"/><text x="250.0" y="94" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Find accounts</text><path d="M196 89h-18m6-5-6 5 6 5"/><path d="M128 70l36 24-36 24-36-24z"/><text x="128" y="99" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Risky?</text><path d="M100 112l-30 30m6 0-6 0 0-6"/><path d="M156 112l30 30m-6 0 6 0 0-6"/><rect x="16" y="146" width="96" height="30" rx="5"/><text x="64.0" y="166" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Close</text><rect x="150" y="146" width="110" height="30" rx="5"/><text x="205.0" y="166" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Escalate / case</text><text x="196" y="134" font-family="Caveat, 'Segoe Print', cursive" font-size="15" class="sk-red">← slowest step</text></g></svg></figure><b>Task analysis</b><span>Breaking an investigation into steps, decisions and hand-offs, from alert to disposition.</span></li>
+<li><figure><svg class="sk" viewBox="0 0 320 200" role="img" aria-label="Sketch of an annotated alert report with highlighted terms"><rect class="sk-paper" width="320" height="200" rx="6"/><g class="sk-lines"><path d="M14 28H306"/><path d="M14 50H306"/><path d="M14 72H306"/><path d="M14 94H306"/><path d="M14 116H306"/><path d="M14 138H306"/><path d="M14 160H306"/><path d="M14 182H306"/></g><g class="sk-ink" filter="url(#skRough)"><path d="M20 20h140l24 24v146H20z"/><path d="M160 20v24h24"/><path d="M34 56h120"/><path d="M34 70h100"/><path d="M34 84h130"/><path d="M34 98h80"/><path d="M34 112h120"/><path d="M34 126h110"/><path d="M34 140h90"/><path d="M34 154h126"/><path d="M34 168h70"/><rect class="sk-hl" x="32" y="78" width="80" height="12"/><rect class="sk-hl" x="32" y="134" width="64" height="12"/><ellipse cx="130" cy="112" rx="26" ry="10" class="sk-red"/><text x="200" y="70" font-family="Caveat, 'Segoe Print', cursive" font-size="17">“CDD”, “EDD”,</text><text x="200" y="88" font-family="Caveat, 'Segoe Print', cursive" font-size="17">“Risk DNA”</text><path d="M196 78c-30 0-50 6-82 6"/><text x="200" y="128" font-family="Caveat, 'Segoe Print', cursive" font-size="17" class="sk-red">use their words,</text><text x="200" y="146" font-family="Caveat, 'Segoe Print', cursive" font-size="17" class="sk-red">not ours</text><path d="M196 122c-20-6-30-8-38-8"/></g></svg></figure><b>Artefact review</b><span>Existing alert reports, case notes and KYC checklists, to learn the vocabulary users already trust.</span></li>
+<li><figure><svg class="sk" viewBox="0 0 320 200" role="img" aria-label="Sketch of three persona cards above a journey map with an emotion curve"><rect class="sk-paper" width="320" height="200" rx="6"/><g class="sk-lines"><path d="M14 28H306"/><path d="M14 50H306"/><path d="M14 72H306"/><path d="M14 94H306"/><path d="M14 116H306"/><path d="M14 138H306"/><path d="M14 160H306"/><path d="M14 182H306"/></g><g class="sk-ink" filter="url(#skRough)"><rect x="16" y="22" width="88" height="68" rx="5"/><circle cx="38" cy="46" r="10"/><path d="M56 42h38M56 54h30"/><text x="60" y="80" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Analyst</text><rect x="116" y="22" width="88" height="68" rx="5"/><circle cx="138" cy="46" r="10"/><path d="M156 42h38M156 54h30"/><text x="160" y="80" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Reviewer</text><rect x="216" y="22" width="88" height="68" rx="5"/><circle cx="238" cy="46" r="10"/><path d="M256 42h38M256 54h30"/><text x="260" y="80" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Team lead</text><path d="M20 170H300" /><circle cx="30" cy="170" r="3" class="sk-dot"/><circle cx="80" cy="170" r="3" class="sk-dot"/><circle cx="130" cy="170" r="3" class="sk-dot"/><circle cx="180" cy="170" r="3" class="sk-dot"/><circle cx="230" cy="170" r="3" class="sk-dot"/><circle cx="280" cy="170" r="3" class="sk-dot"/><path class="sk-red" d="M30 124C60 118 70 120 80 128S120 160 130 158 170 150 180 138 220 116 280 112" stroke-width="2"/><text x="104" y="190" font-family="Caveat, 'Segoe Print', cursive" font-size="14">gather evidence 😟</text><text x="236" y="106" font-family="Caveat, 'Segoe Print', cursive" font-size="14">decide 🙂</text></g></svg></figure><b>Personas and journey map</b><span>Three roles and the alert lifecycle, shared with stakeholders to agree what to fix first.</span></li>
+<li><figure><svg class="sk" viewBox="0 0 320 200" role="img" aria-label="Sketch of a paper prototype being tested with tasks and a think-aloud quote"><rect class="sk-paper" width="320" height="200" rx="6"/><g class="sk-lines"><path d="M14 28H306"/><path d="M14 50H306"/><path d="M14 72H306"/><path d="M14 94H306"/><path d="M14 116H306"/><path d="M14 138H306"/><path d="M14 160H306"/><path d="M14 182H306"/></g><g class="sk-ink" filter="url(#skRough)"><rect x="18" y="22" width="170" height="160" rx="6"/><rect x="30" y="34" width="44" height="54" rx="3" class="sk-fill"/><path d="M84 40h90M84 52h70M84 64h80M30 100h146M30 112h146"/><rect x="30" y="124" width="24" height="10"/><rect x="60" y="124" width="24" height="10"/><rect x="90" y="124" width="24" height="10"/><rect x="120" y="124" width="24" height="10"/><rect x="150" y="124" width="24" height="10"/><path d="M30 148h120M30 160h90"/><path d="M120 138l14 30 5-12 12-3z" class="sk-fill"/><text x="200" y="40" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Task 1: explain</text><text x="200" y="56" font-family="Caveat, 'Segoe Print', cursive" font-size="15">the score</text><text x="200" y="82" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Task 2: find</text><text x="200" y="98" font-family="Caveat, 'Segoe Print', cursive" font-size="15">related accounts</text><path d="M198 132c0-16 12-22 54-22s56 6 56 22-14 22-56 22c-8 0-14 0-20-1l-14 14 4-15c-16-4-24-10-24-20z"/><text x="210" y="128" font-family="Caveat, 'Segoe Print', cursive" font-size="15">“Oh, it’s the</text><text x="216" y="144" font-family="Caveat, 'Segoe Print', cursive" font-size="15">address!”</text></g></svg></figure><b>Usability testing</b><span>Clickable prototypes with sample customers, testing whether analysts could explain a score and find related accounts.</span></li>
+</ul>
+<p class="cs-fine sk-note-src">Sketches are recreated to illustrate each activity; quotes are paraphrased and no customer data is shown.</p>
+<h3 class="cs-sub">The alert lifecycle</h3>
+<ol class="cs-flow" aria-label="Stages of an investigation">
+<li>Alert raised</li>
+<li>Triage</li>
+<li>Investigate customer</li>
+<li>Gather evidence</li>
+<li>Decide</li>
+<li>Quality review</li>
+<li>Report or close</li>
+</ol>
+</section>
+<section class="cs-sec" id="insights" aria-labelledby="h-insights">
+<p class="cs-kicker">Insights</p>
+<h2 id="h-insights">What we learned, and the principle each one became</h2>
+<div class="cs-callout">
           <p class="cs-callout-label">Key insight</p>
           <p>Analysts didn’t need more data. They needed to see <em>why</em> a customer was risky, in a way they could defend to a reviewer or a regulator.</p>
         </div>
-        <ul class="cs-map">
-          <li><span class="from">A single score hides its causes</span><span class="to">Break risk into five named dimensions, each with its own evidence</span></li>
-          <li><span class="from">Analysts open the wrong case first</span><span class="to">Rank the queue by risk and due date, with status in the row</span></li>
-          <li><span class="from">Related accounts and items are found by hand</span><span class="to">One search that returns customers, items and accounts together</span></li>
-          <li><span class="from">Reviewers can’t retrace decisions</span><span class="to">A change log and risk history on every profile</span></li>
-          <li><span class="from">Leads learn about backlogs too late</span><span class="to">Aging and quality on the dashboard, next to volume</span></li>
-        </ul>
-      </section>
-
-      <section class="cs-sec" id="solution" aria-labelledby="h-solution">
-        <p class="cs-kicker">Solution</p>
-        <h2 id="h-solution">Three screens that follow the investigation</h2>
-        <p>Triage on the dashboard, find everything with search, decide on the profile. Numbers on each screen match the notes beside it.</p>
-        <div class="mod-tabs" role="tablist" aria-label="Solution screens"><button class="mod-tab" role="tab" type="button" id="tab-dashboard" aria-controls="tp-dashboard" aria-selected="true" tabindex="0" data-hash="dashboard"><img src="cs4/dashboard.webp" alt="" width="1600" height="975" loading="lazy"><b>Analyst dashboard</b><span>Workload, aging, quality and a risk-ranked queue.</span></button><button class="mod-tab" role="tab" type="button" id="tab-search" aria-controls="tp-search" aria-selected="false" tabindex="-1" data-hash="search"><img src="cs4/search.webp" alt="" width="1600" height="1405" loading="lazy"><b>Advanced search</b><span>One query across entities, items and accounts.</span></button><button class="mod-tab" role="tab" type="button" id="tab-profile" aria-controls="tp-profile" aria-selected="false" tabindex="-1" data-hash="profile"><img src="cs4/entity.webp" alt="" width="1305" height="1545" loading="lazy"><b>Entity risk profile</b><span>The score, the evidence and the audit trail.</span></button></div>
-        <div class="mod-panels">
+<ul class="cs-map">
+<li><span class="from">A single score hides its causes</span><span class="to">Break risk into five named dimensions, each with its own evidence</span></li>
+<li><span class="from">Analysts open the wrong case first</span><span class="to">Rank the queue by risk and due date, with status in the row</span></li>
+<li><span class="from">Related accounts and items are found by hand</span><span class="to">One search that returns customers, items and accounts together</span></li>
+<li><span class="from">Reviewers can’t retrace decisions</span><span class="to">A change log and risk history on every profile</span></li>
+<li><span class="from">Leads learn about backlogs too late</span><span class="to">Aging and quality on the dashboard, next to volume</span></li>
+</ul>
+</section>
+<section class="cs-sec" id="solution" aria-labelledby="h-solution">
+<p class="cs-kicker">Solution</p>
+<h2 id="h-solution">Three screens that follow the investigation</h2>
+<p>Triage on the dashboard, find everything with search, decide on the profile. Numbers on each screen match the notes beside it.</p>
+<div class="mod-tabs" role="tablist" aria-label="Solution screens"><button class="mod-tab" role="tab" type="button" id="tab-dashboard" aria-controls="tp-dashboard" aria-selected="true" tabindex="0" data-hash="dashboard"><img src="cs4/dashboard.webp" alt="" width="1600" height="975" loading="lazy"><b>Analyst dashboard</b><span>Workload, aging, quality and a risk-ranked queue.</span></button><button class="mod-tab" role="tab" type="button" id="tab-search" aria-controls="tp-search" aria-selected="false" tabindex="-1" data-hash="search"><img src="cs4/search.webp" alt="" width="1600" height="1405" loading="lazy"><b>Advanced search</b><span>One query across entities, items and accounts.</span></button><button class="mod-tab" role="tab" type="button" id="tab-profile" aria-controls="tp-profile" aria-selected="false" tabindex="-1" data-hash="profile"><img src="cs4/entity.webp" alt="" width="1305" height="1545" loading="lazy"><b>Entity risk profile</b><span>The score, the evidence and the audit trail.</span></button></div>
+<div class="mod-panels">
           <div class="tab-panel" role="tabpanel" id="tp-dashboard" aria-labelledby="tab-dashboard" tabindex="0">
             <h3 class="tp-title">Analyst dashboard: what needs me first?</h3>
-            <div class="cs-row r-pins"><figure class="cs-fig "><button class="zoom pinned" type="button" data-cap="Analyst dashboard. Workload, aging and quality up top; a risk-ranked queue below."><img src="cs4/dashboard.webp" width="1600" height="975" loading="lazy" alt="FIU analyst dashboard with items by status, an aging chart, a quality score chart, and a list of open cases with risk bars, risk scores, status and due dates."><span class="pin" style="left:8%;top:12%" aria-hidden="true">1</span><span class="pin" style="left:40.7%;top:24.6%" aria-hidden="true">2</span><span class="pin" style="left:74%;top:12%" aria-hidden="true">3</span><span class="pin" style="left:8.6%;top:50.6%" aria-hidden="true">4</span><span class="pin" style="left:42.5%;top:60%" aria-hidden="true">5</span><span class="pin" style="left:55.4%;top:66%" aria-hidden="true">6</span><span class="pin" style="left:81%;top:55.8%" aria-hidden="true">7</span><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Analyst dashboard.</b> Workload, aging and quality up top; a risk-ranked queue below.</figcaption></figure><ol class="decisions"><li><b>Workload at a glance</b><span>Items by status shows how much is open this month and how much is closed.</span></li><li><b>Aging by work type</b><span>Hours outstanding for alerts, cases, onboarding reviews and periodic reviews, so nothing quietly breaches its deadline.</span></li><li><b>Quality score by KPI</b><span>Team leads see quality trends next to volume, not in a separate report.</span></li><li><b>Cases and alerts as tabs</b><span>Counts on each tab tell analysts how big each queue is before they open it.</span></li><li><b>Risk DNA strip</b><span>Five small bars, one per risk dimension, show <em>why</em> a customer scored high without opening the profile.</span></li><li><b>Score with a word</b><span>Every score carries High, Medium or Low in text, so colour is never the only signal.</span></li><li><b>Status and due date in the row</b><span>Awaiting documentation, DD research or newly assigned, with open and due dates to sort by urgency.</span></li></ol></div>
+            <div class="cs-row r-pins"><figure class="cs-fig "><button class="zoom pinned" type="button" data-cap="Analyst dashboard. Workload, aging and quality up top; a risk-ranked queue below."><img src="cs4/dashboard.webp" width="1600" height="975" loading="lazy" alt="FIU analyst dashboard with items by status, an aging chart, a quality score chart, and a list of open cases with risk bars, risk scores, status and due dates."><span class="pin" style="left:8%;top:12%" aria-hidden="true">1</span><span class="pin" style="left:40.7%;top:24.6%" aria-hidden="true">2</span><span class="pin" style="left:74%;top:12%" aria-hidden="true">3</span><span class="pin" style="left:8.6%;top:50.6%" aria-hidden="true">4</span><span class="pin" style="left:42.5%;top:60%" aria-hidden="true">5</span><span class="pin" style="left:55.4%;top:66%" aria-hidden="true">6</span><span class="pin" style="left:81%;top:55.8%" aria-hidden="true">7</span><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Analyst dashboard.</b> Workload, aging and quality up top; a risk-ranked queue below.</figcaption></figure><ol class="decisions">
+<li><b>Workload at a glance</b><span>Items by status shows how much is open this month and how much is closed.</span></li>
+<li><b>Aging by work type</b><span>Hours outstanding for alerts, cases, onboarding reviews and periodic reviews, so nothing quietly breaches its deadline.</span></li>
+<li><b>Quality score by KPI</b><span>Team leads see quality trends next to volume, not in a separate report.</span></li>
+<li><b>Cases and alerts as tabs</b><span>Counts on each tab tell analysts how big each queue is before they open it.</span></li>
+<li><b>Risk DNA strip</b><span>Five small bars, one per risk dimension, show <em>why</em> a customer scored high without opening the profile.</span></li>
+<li><b>Score with a word</b><span>Every score carries High, Medium or Low in text, so colour is never the only signal.</span></li>
+<li><b>Status and due date in the row</b><span>Awaiting documentation, DD research or newly assigned, with open and due dates to sort by urgency.</span></li>
+</ol></div>
           </div>
           <div class="tab-panel" role="tabpanel" id="tp-search" aria-labelledby="tab-search" tabindex="0" hidden>
             <h3 class="tp-title">Advanced search: everything about this customer</h3>
-            <div class="cs-row r-pins"><figure class="cs-fig "><button class="zoom pinned" type="button" data-cap="Advanced search. One query, results grouped by entities, items and accounts."><img src="cs4/search.webp" width="1600" height="1405" loading="lazy" alt="Advanced search results for Kevin White with filter facets for accounts, account types, items and item types, then grouped results for entities, items and accounts."><span class="pin" style="left:67.8%;top:2.4%" aria-hidden="true">1</span><span class="pin" style="left:18.75%;top:14.2%" aria-hidden="true">2</span><span class="pin" style="left:6.9%;top:22.8%" aria-hidden="true">3</span><span class="pin" style="left:11.9%;top:41.6%" aria-hidden="true">4</span><span class="pin" style="left:12.5%;top:70.2%" aria-hidden="true">5</span><span class="pin" style="left:91.5%;top:22.8%" aria-hidden="true">6</span><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Advanced search.</b> One query, results grouped by entities, items and accounts.</figcaption></figure><ol class="decisions"><li><b>One search box, everywhere</b><span>Name, case or account number from the header, with Advanced Search one click away.</span></li><li><b>Facets in banking language</b><span>Personal or business account; money market, savings, checking, deposit or certificate; alert, case, onboarding or periodic review; structuring or foreign transaction.</span></li><li><b>Entities first</b><span>Every record for a person in one table, with the review type (risk DNA, CDD or EDD) shown on each row.</span></li><li><b>Related items</b><span>Open alerts and cases for the same person, with their risk bars, status, due date and owner.</span></li><li><b>Related accounts</b><span>Account type, relationship manager, address, tax ID and whether the account is active.</span></li><li><b>A clear action on every row</b><span>View or Open, always in the last column, so the next step is never hidden.</span></li></ol></div>
+            <div class="cs-row r-pins"><figure class="cs-fig "><button class="zoom pinned" type="button" data-cap="Advanced search. One query, results grouped by entities, items and accounts."><img src="cs4/search.webp" width="1600" height="1405" loading="lazy" alt="Advanced search results for Kevin White with filter facets for accounts, account types, items and item types, then grouped results for entities, items and accounts."><span class="pin" style="left:67.8%;top:2.4%" aria-hidden="true">1</span><span class="pin" style="left:18.75%;top:14.2%" aria-hidden="true">2</span><span class="pin" style="left:6.9%;top:22.8%" aria-hidden="true">3</span><span class="pin" style="left:11.9%;top:41.6%" aria-hidden="true">4</span><span class="pin" style="left:12.5%;top:70.2%" aria-hidden="true">5</span><span class="pin" style="left:91.5%;top:22.8%" aria-hidden="true">6</span><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Advanced search.</b> One query, results grouped by entities, items and accounts.</figcaption></figure><ol class="decisions">
+<li><b>One search box, everywhere</b><span>Name, case or account number from the header, with Advanced Search one click away.</span></li>
+<li><b>Facets in banking language</b><span>Personal or business account; money market, savings, checking, deposit or certificate; alert, case, onboarding or periodic review; structuring or foreign transaction.</span></li>
+<li><b>Entities first</b><span>Every record for a person in one table, with the review type (risk DNA, CDD or EDD) shown on each row.</span></li>
+<li><b>Related items</b><span>Open alerts and cases for the same person, with their risk bars, status, due date and owner.</span></li>
+<li><b>Related accounts</b><span>Account type, relationship manager, address, tax ID and whether the account is active.</span></li>
+<li><b>A clear action on every row</b><span>View or Open, always in the last column, so the next step is never hidden.</span></li>
+</ol></div>
           </div>
           <div class="tab-panel" role="tabpanel" id="tp-profile" aria-labelledby="tab-profile" tabindex="0" hidden>
             <h3 class="tp-title">Entity risk profile: is this customer a risk, and why?</h3>
-            <div class="cs-row r-pins"><figure class="cs-fig "><button class="zoom pinned" type="button" data-cap="Entity risk profile. Everything an investigator needs to decide, on one page."><img src="cs4/entity.webp" width="1305" height="1545" loading="lazy" alt="Entity details for Kevin White: a deep-teal risk card scoring 95, labelled High Risk, associated accounts, a document centre with KYC files, tabs for five risk dimensions with segmented bars, attribute risk details, a risk-over-time chart and a change log."><span class="pin" style="left:12.5%;top:20.5%" aria-hidden="true">1</span><span class="pin" style="left:44.4%;top:19.2%" aria-hidden="true">2</span><span class="pin" style="left:72.6%;top:10.2%" aria-hidden="true">3</span><span class="pin" style="left:49.8%;top:32%" aria-hidden="true">4</span><span class="pin" style="left:26.4%;top:39.8%" aria-hidden="true">5</span><span class="pin" style="left:74.7%;top:65%" aria-hidden="true">6</span><span class="pin" style="left:6.9%;top:78.9%" aria-hidden="true">7</span><span class="pin" style="left:88%;top:5.9%" aria-hidden="true">8</span><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Entity risk profile.</b> Everything an investigator needs to decide, on one page.</figcaption></figure><ol class="decisions"><li><b>Risk card</b><span>Initials, a score of 95 and the words High Risk on a calm deep-teal card, with previous and next to move through a queue. The number and label carry the risk, so the card itself doesn’t need to alarm.</span></li><li><b>Associated accounts</b><span>Every account the customer holds, so investigators see the whole relationship.</span></li><li><b>Document centre</b><span>KYC intake, driving licence and passport with upload dates and a clear validated switch; Notes and Tasks sit beside it.</span></li><li><b>Five risk dimensions</b><span>Attribute, watchlist, negative news, network and activity risk, each a tab with its own segmented bar.</span></li><li><b>Evidence, not just a score</b><span>The attribute tab lists what drove the score: name and address variations, phone and email checks, home-to-bank distance. The factor in question is outlined.</span></li><li><b>Risk over time</b><span>A trend line shows when risk rose, not only where it is today.</span></li><li><b>Change log</b><span>Who changed what and when, ready for audit.</span></li><li><b>Save and reprocess</b><span>Analysts can refresh the score after adding evidence, without leaving the page.</span></li></ol></div>
+            <div class="cs-row r-pins"><figure class="cs-fig "><button class="zoom pinned" type="button" data-cap="Entity risk profile. Everything an investigator needs to decide, on one page."><img src="cs4/entity.webp" width="1305" height="1545" loading="lazy" alt="Entity details for Kevin White: a deep-teal risk card scoring 95, labelled High Risk, associated accounts, a document centre with KYC files, tabs for five risk dimensions with segmented bars, attribute risk details, a risk-over-time chart and a change log."><span class="pin" style="left:12.5%;top:20.5%" aria-hidden="true">1</span><span class="pin" style="left:44.4%;top:19.2%" aria-hidden="true">2</span><span class="pin" style="left:72.6%;top:10.2%" aria-hidden="true">3</span><span class="pin" style="left:49.8%;top:32%" aria-hidden="true">4</span><span class="pin" style="left:26.4%;top:39.8%" aria-hidden="true">5</span><span class="pin" style="left:74.7%;top:65%" aria-hidden="true">6</span><span class="pin" style="left:6.9%;top:78.9%" aria-hidden="true">7</span><span class="pin" style="left:88%;top:5.9%" aria-hidden="true">8</span><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Entity risk profile.</b> Everything an investigator needs to decide, on one page.</figcaption></figure><ol class="decisions">
+<li><b>Risk card</b><span>Initials, a score of 95 and the words High Risk on a calm deep-teal card, with previous and next to move through a queue. The number and label carry the risk, so the card itself doesn’t need to alarm.</span></li>
+<li><b>Associated accounts</b><span>Every account the customer holds, so investigators see the whole relationship.</span></li>
+<li><b>Document centre</b><span>KYC intake, driving licence and passport with upload dates and a clear validated switch; Notes and Tasks sit beside it.</span></li>
+<li><b>Five risk dimensions</b><span>Attribute, watchlist, negative news, network and activity risk, each a tab with its own segmented bar.</span></li>
+<li><b>Evidence, not just a score</b><span>The attribute tab lists what drove the score: name and address variations, phone and email checks, home-to-bank distance. The factor in question is outlined.</span></li>
+<li><b>Risk over time</b><span>A trend line shows when risk rose, not only where it is today.</span></li>
+<li><b>Change log</b><span>Who changed what and when, ready for audit.</span></li>
+<li><b>Save and reprocess</b><span>Analysts can refresh the score after adding evidence, without leaving the page.</span></li>
+</ol></div>
           </div>
         </div>
-        <h3 class="cs-sub">Visual language</h3>
-        <ul class="cs-methods">
-          <li><b>Risk colours are reserved</b><span>Red flags high risk; teal carries focus and medium risk; structure stays in greys and black.</span></li>
-          <li><b>Dense, but scannable</b><span>Experts read tables all day, so rows are compact with clear labels, generous line spacing and right-hand actions.</span></li>
-          <li><b>One accent for action</b><span>Teal marks the active tab and the primary buttons, a calm, trustworthy banking tone that keeps the next step easy to find.</span></li>
-        </ul>
-      </section>
-
-      <section class="cs-sec" id="compliance" aria-labelledby="h-compliance">
-        <p class="cs-kicker">Compliance by design</p>
-        <h2 id="h-compliance">Built for auditors as much as for analysts</h2>
-        <ul class="cs-methods">
-          <li><b>Explainable scores</b><span>Every score breaks down into dimensions and named factors an analyst can cite.</span></li>
-          <li><b>Audit trail</b><span>The change log records the user, the action and the date on every profile.</span></li>
-          <li><b>Document validation</b><span>KYC files show who uploaded them, when, and whether they were validated.</span></li>
-          <li><b>Due diligence levels</b><span>Records show the review type, such as customer or enhanced due diligence, so the right checks are applied.</span></li>
-          <li><b>Not colour alone</b><span>Risk is shown with numbers and words as well as colour, for accessibility and for printed evidence packs.</span></li>
-          <li><b>Privacy in research</b><span>Prototypes and tests used sample data, never real customer records.</span></li>
-        </ul>
-      </section>
-
-      <section class="cs-sec" id="measure" aria-labelledby="h-measure">
-        <p class="cs-kicker">Measuring success</p>
-        <h2 id="h-measure">The metrics a financial crime team cares about</h2>
-        <p>These are the signals I’d track to prove the design worked, each tied to a goal above.</p>
-        <ul class="cs-heart">
-          <li><b>Speed</b><span>Analysts reach a decision faster.</span><em>Average time from opening an alert to disposition.</em></li>
-          <li><b>Timeliness</b><span>Fewer items breach their deadline.</span><em>Share of alerts and reviews closed within SLA; aging hours by type.</em></li>
-          <li><b>Quality</b><span>Decisions hold up on review.</span><em>Quality score pass rate and rework rate.</em></li>
-          <li><b>Confidence</b><span>Analysts can explain a score.</span><em>Task success in usability tests; post-task confidence rating.</em></li>
-          <li><b>Efficiency</b><span>Less hunting across systems.</span><em>Searches and screens per investigation.</em></li>
-        </ul>
-      </section>
-
-      <section class="cs-sec" id="reflection" aria-labelledby="h-reflection">
-        <p class="cs-kicker">Reflection</p>
-        <h2 id="h-reflection">What I learned, and what I’d do today</h2>
-        <ul class="cs-learn">
-          <li><b>Explainability is the feature.</b> In regulated work, a number without a reason is a liability. Designing the “why” mattered more than the score itself.</li>
-          <li><b>Design for the reviewer too.</b> The audit trail and risk history turned a working tool into evidence a bank could stand behind.</li>
-          <li><b>Today I’d raise contrast.</b> Some light grey text on white would not pass WCAG 2.2 AA. I’d darken it and add pattern fills to the risk bars.</li>
-          <li><b>And add assisted triage.</b> With today’s AI, I’d explore summarising a customer’s risk in plain language, with the analyst always making the final call.</li>
-        </ul>
-        <p class="cs-fine">Screens are shown for portfolio purposes with sample data. The product and client have been white-labelled as FinGuard.</p>
-      </section>
-    </article>
+<h3 class="cs-sub">Visual language</h3>
+<ul class="cs-methods">
+<li><b>Risk colours are reserved</b><span>Red flags high risk; teal carries focus and medium risk; structure stays in greys and black.</span></li>
+<li><b>Dense, but scannable</b><span>Experts read tables all day, so rows are compact with clear labels, generous line spacing and right-hand actions.</span></li>
+<li><b>One accent for action</b><span>Teal marks the active tab and the primary buttons, a calm, trustworthy banking tone that keeps the next step easy to find.</span></li>
+</ul>
+</section>
+<section class="cs-sec" id="compliance" aria-labelledby="h-compliance">
+<p class="cs-kicker">Compliance by design</p>
+<h2 id="h-compliance">Built for auditors as much as for analysts</h2>
+<ul class="cs-methods">
+<li><b>Explainable scores</b><span>Every score breaks down into dimensions and named factors an analyst can cite.</span></li>
+<li><b>Audit trail</b><span>The change log records the user, the action and the date on every profile.</span></li>
+<li><b>Document validation</b><span>KYC files show who uploaded them, when, and whether they were validated.</span></li>
+<li><b>Due diligence levels</b><span>Records show the review type, such as customer or enhanced due diligence, so the right checks are applied.</span></li>
+<li><b>Not colour alone</b><span>Risk is shown with numbers and words as well as colour, for accessibility and for printed evidence packs.</span></li>
+<li><b>Privacy in research</b><span>Prototypes and tests used sample data, never real customer records.</span></li>
+</ul>
+</section>
+<section class="cs-sec" id="measure" aria-labelledby="h-measure">
+<p class="cs-kicker">Measuring success</p>
+<h2 id="h-measure">The metrics a financial crime team cares about</h2>
+<p>These are the signals I’d track to prove the design worked, each tied to a goal above.</p>
+<ul class="cs-heart">
+<li><b>Speed</b><span>Analysts reach a decision faster.</span><em>Average time from opening an alert to disposition.</em></li>
+<li><b>Timeliness</b><span>Fewer items breach their deadline.</span><em>Share of alerts and reviews closed within SLA; aging hours by type.</em></li>
+<li><b>Quality</b><span>Decisions hold up on review.</span><em>Quality score pass rate and rework rate.</em></li>
+<li><b>Confidence</b><span>Analysts can explain a score.</span><em>Task success in usability tests; post-task confidence rating.</em></li>
+<li><b>Efficiency</b><span>Less hunting across systems.</span><em>Searches and screens per investigation.</em></li>
+</ul>
+</section>
+<section class="cs-sec" id="reflection" aria-labelledby="h-reflection">
+<p class="cs-kicker">Reflection</p>
+<h2 id="h-reflection">What I learned, and what I’d do today</h2>
+<ul class="cs-learn">
+<li><b>Explainability is the feature.</b> In regulated work, a number without a reason is a liability. Designing the “why” mattered more than the score itself.</li>
+<li><b>Design for the reviewer too.</b> The audit trail and risk history turned a working tool into evidence a bank could stand behind.</li>
+<li><b>Today I’d raise contrast.</b> Some light grey text on white would not pass WCAG 2.2 AA. I’d darken it and add pattern fills to the risk bars.</li>
+<li><b>And add assisted triage.</b> With today’s AI, I’d explore summarising a customer’s risk in plain language, with the analyst always making the final call.</li>
+</ul>
+<p class="cs-fine">Screens are shown for portfolio purposes with sample data. The product and client have been white-labelled as FinGuard.</p>
+</section>
+</article>
   </div>
 
   <section class="band cs-next" aria-labelledby="h-next">
@@ -1826,9 +1857,9 @@ footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between
       <p class="cs-kicker">Next</p>
       <h2 id="h-next">See how FinUnity got one platform for loans and liens</h2>
       <div class="cta-row">
-        <a class="btn btn-primary" href="case-finunity.html">Read the FinUnity case study</a>
-        <a class="btn" href="home.html#work">Back to all work</a>
-      </div>
+<a class="btn btn-primary" href="case-finunity.html">Read the FinUnity case study</a>
+<a class="btn" href="home.html#work">Back to all work</a>
+</div>
     </div>
   </section>
 </main>
@@ -1908,6 +1939,21 @@ footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between
     const h=document.documentElement.scrollHeight-innerHeight; prog.style.width=(h>0?Math.min(100,scrollY/h*100):0)+"%";
   }
   addEventListener("scroll",onScroll,{passive:true}); onScroll();
+
+  /* "On this page" follows the sections actually on the page (sections can be added, hidden or reordered in /admin) */
+  (function(){
+    const toc=document.getElementById("csToc"); if(!toc) return;
+    const secs=[...document.querySelectorAll(".cs-body > section.cs-sec")], seen=new Set(), old=new Map();
+    toc.querySelectorAll("li").forEach(li=>{const a=li.querySelector("a"); if(a) old.set(a.getAttribute("href"),li)});
+    const frag=document.createDocumentFragment();
+    secs.forEach(sec=>{
+      let id=sec.id||"section"; while(seen.has(id)) id+="-2"; seen.add(id); if(sec.id!==id) sec.id=id;
+      let li=old.get("#"+id);
+      if(li){ old.delete("#"+id) } else { const k=sec.querySelector(".cs-kicker, h2"); li=document.createElement("li"); const a=document.createElement("a"); a.href="#"+id; a.textContent=k?k.textContent.trim():id; li.appendChild(a) }
+      frag.appendChild(li);
+    });
+    toc.replaceChildren(frag);
+  })();
 
   /* "On this page" highlights the section being read */
   const links=[...document.querySelectorAll("#csToc a")];

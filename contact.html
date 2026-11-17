@@ -5,7 +5,7 @@
 <script>
 /* Always show pages inside the site shell, so music keeps playing across pages */
 (function(){var inShell=false;try{inShell=window.parent!==window&&!!window.parent.__musicShell}catch(e){}
-if(inShell||location.protocol==="file:")return;
+if(inShell||location.protocol==="file:"||window.__cmsPreview)return;
 var name=location.pathname.split("/").pop()||"";
 location.replace("index.html"+(name&&name!=="home.html"?"#/"+name:location.hash));})();
 </script>
@@ -1249,15 +1249,15 @@ footer .foot-logo-wrap{padding-top:clamp(.5rem,1.5vw,1rem)}
           <a href="home.html#work">Work</a>
           <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="workMenu" aria-label="Case studies"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           <ul class="submenu" id="workMenu" hidden>
-            <li><a href="case-finunity.html"><span class="sm-t">FinUnity</span><span class="sm-d">Property tax financing platform</span></a></li>
-            <li><a href="case-advisor.html"><span class="sm-t">Advisor platform</span><span class="sm-d">Wealth management workspace</span></a></li>
-            <li><a href="case-finguard.html"><span class="sm-t">FinGuard</span><span class="sm-d">Banking risk and investigations</span></a></li>
-            <li><a href="case-agrifunds.html"><span class="sm-t">AgriFunds</span><span class="sm-d">Farm lending customer portal</span></a></li>
-            <li><a href="case-aster.html"><span class="sm-t">Aster Bank</span><span class="sm-d">Wealth management eLearning</span></a></li>
-            <li><a href="case-autolore.html"><span class="sm-t">AutoLore</span><span class="sm-d">Classic car museum kiosk</span></a></li>
-            <li><a href="case-guru.html"><span class="sm-t">Guru Samman Samaroh</span><span class="sm-d">Event visualisation and design</span></a></li>
-            <li class="sm-all"><a href="home.html#work">All work</a></li>
-          </ul>
+<li><a href="case-finunity.html"><span class="sm-t">FinUnity</span><span class="sm-d">Property tax financing platform</span></a></li>
+<li><a href="case-advisor.html"><span class="sm-t">Advisor platform</span><span class="sm-d">Wealth management workspace</span></a></li>
+<li><a href="case-finguard.html"><span class="sm-t">FinGuard</span><span class="sm-d">Banking risk and investigations</span></a></li>
+<li><a href="case-agrifunds.html"><span class="sm-t">AgriFunds</span><span class="sm-d">Farm lending customer portal</span></a></li>
+<li><a href="case-aster.html"><span class="sm-t">Aster Bank</span><span class="sm-d">Wealth management eLearning</span></a></li>
+<li><a href="case-autolore.html"><span class="sm-t">AutoLore</span><span class="sm-d">Classic car museum kiosk</span></a></li>
+<li><a href="case-guru.html"><span class="sm-t">Guru Samman Samaroh</span><span class="sm-d">Event visualisation and design</span></a></li>
+<li class="sm-all"><a href="home.html#work">All work</a></li>
+</ul>
         </div>
         <a href="about.html">About</a>
         <a href="contact.html" class="nav-contact" aria-current="page">Get in touch</a>
@@ -1282,18 +1282,18 @@ footer .foot-logo-wrap{padding-top:clamp(.5rem,1.5vw,1rem)}
     <h1 class="anim-in" style="--d:90ms"><span data-cms="tde48104">I’m Sanjay Pal,</span> <span class="role" data-cms="tb050e76">a UX Designer.</span></h1>
     <div class="hero-grid">
       <div class="hero-copy anim-in" style="--d:180ms">
-        <p data-cms="tv2-brief1">I turn complex, high-stakes workflows into products people trust. Lately that has been fintech: a property tax loan platform at FinUnity and an advisor workspace that halved the steps to run quarter-end reports.</p>
-        <p class="now-at" data-cms="tv2-now"><span class="now-dot" aria-hidden="true"></span>Currently working with <a href="https://digital.compunnel.com/" target="_blank" rel="noopener">Compunnel Digital<span class="sr-only"> (opens in a new tab)</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></p>
-        <p data-cms="tv2-brief2">From research and journey maps to prototypes and design systems, and even live events like Guru Samman Samaroh for 300+ guests.</p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="home.html#work">See selected work
+<p data-cms="tv2-brief1">I turn complex, high-stakes workflows into products people trust. Lately that has been fintech: a property tax loan platform at FinUnity and an advisor workspace that halved the steps to run quarter-end reports.</p>
+<p class="now-at" data-cms="tv2-now"><span class="now-dot" aria-hidden="true"></span>Currently working with <a href="https://digital.compunnel.com/" target="_blank" rel="noopener">Compunnel Digital<span class="sr-only"> (opens in a new tab)</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></p>
+<p data-cms="tv2-brief2">From research and journey maps to prototypes and design systems, and even live events like Guru Samman Samaroh for 300+ guests.</p>
+<div class="cta-row">
+<a class="btn btn-primary" href="home.html#work">See selected work
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
-          <a class="btn btn-ghost" href="contact.html" data-cms="tc49bb4c">Get in touch</a>
-        </div>
-      </div>
+<a class="btn btn-ghost" href="contact.html" data-cms="tc49bb4c">Get in touch</a>
+</div>
+</div>
       <ul class="stats badge-row anim-in" style="--d:270ms" aria-label="Credentials and experience">
-        <li class="bdg bdg-img" title="FinTech Professional"><img class="b-light" src="badge-fintech-light.webp" width="520" height="520" alt="FinTech Professional badge: I design financial products around trust, clarity and control, across banking, payments and insurance, including FinUnity’s property tax financing platform and a wealth advisor workspace."><img class="b-dark" src="badge-fintech-dark.webp" width="520" height="520" alt="" aria-hidden="true"></li>
-        <li class="bdg ink-green" title="AI-assisted design, since the AI era began"><span class="sr-only">Badge: <span data-cms="tai-badge">AI-assisted design</span>, a human-led design workflow using AI since the start of the AI era to speed up research, ideation and prototyping.</span><svg class="bdg-svg" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+<li class="bdg bdg-img" title="FinTech Professional"><img class="b-light" src="badge-fintech-light.webp" width="520" height="520" alt="FinTech Professional badge: I design financial products around trust, clarity and control, across banking, payments and insurance, including FinUnity’s property tax financing platform and a wealth advisor workspace."><img class="b-dark" src="badge-fintech-dark.webp" width="520" height="520" alt="" aria-hidden="true"></li>
+<li class="bdg ink-green" title="AI-assisted design, since the AI era began"><span class="sr-only">Badge: <span data-cms="tai-badge">AI-assisted design</span>, a human-led design workflow using AI since the start of the AI era to speed up research, ideation and prototyping.</span><svg class="bdg-svg" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
  <path class="pp" d="M8 3H112V82L60 117L8 82Z"/>
  <path d="M8 3H112V82L60 117L8 82Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
  <path d="M8 21H112" stroke="currentColor" stroke-width="1.1"/>
@@ -1307,8 +1307,8 @@ footer .foot-logo-wrap{padding-top:clamp(.5rem,1.5vw,1rem)}
  <rect x="34" y="82" width="52" height="11.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1"/>
  <text x="60" y="90.4" text-anchor="middle" font-size="6.6" fill="currentColor">SINCE AI ERA</text>
 </svg></li>
-        <li class="bdg bdg-img" title="HFI Certified Usability Analyst (CUA)"><img class="b-light" src="badge-cua-green.webp" width="520" height="520" alt="HFI Certified Usability Analyst (CUA) badge: certified by Human Factors International in usability analysis, the research and evaluation methods behind my case studies."><img class="b-dark" src="badge-cua-lime.webp" width="520" height="520" alt="" aria-hidden="true"></li>
-        <li class="bdg ink-green bdg-tall" title="22+ years in experience design"><span class="sr-only">Badge: <span data-cms="tf275a1a">22+</span> <span data-cms="t48b5f76">Years in experience design</span>, across research, interaction design, design systems and event design.</span><svg class="bdg-svg" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+<li class="bdg bdg-img" title="HFI Certified Usability Analyst (CUA)"><img class="b-light" src="badge-cua-green.webp" width="520" height="520" alt="HFI Certified Usability Analyst (CUA) badge: certified by Human Factors International in usability analysis, the research and evaluation methods behind my case studies."><img class="b-dark" src="badge-cua-lime.webp" width="520" height="520" alt="" aria-hidden="true"></li>
+<li class="bdg ink-green bdg-tall" title="22+ years in experience design"><span class="sr-only">Badge: <span data-cms="tf275a1a">22+</span> <span data-cms="t48b5f76">Years in experience design</span>, across research, interaction design, design systems and event design.</span><svg class="bdg-svg" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
  <path class="pp" d="M60 5 104 17v40c0 29-20 47-44 58C36 104 16 86 16 57V17z"/>
  <path d="M60 5 104 17v40c0 29-20 47-44 58C36 104 16 86 16 57V17z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
  <path d="M60 11.5 98 21.5v35.5c0 25-17 41-38 50.5C39 98 22 82 22 57V21.5z" fill="none" stroke="currentColor" stroke-width=".8" stroke-dasharray="2.4 2"/>
@@ -1319,7 +1319,7 @@ footer .foot-logo-wrap{padding-top:clamp(.5rem,1.5vw,1rem)}
  <text x="60" y="83" text-anchor="middle" font-size="8.6" fill="currentColor">UX DESIGN</text>
  <path d="M46 91.5h28" stroke="currentColor" stroke-width=".8"/>
 </svg></li>
-        <li class="bdg ink-brown" title="500+ websites and digital products"><span class="sr-only">Badge: <span data-cms="tdaf5121">500+</span> <span data-cms="t2665d5a">Websites &amp; digital products</span> designed, from marketing sites to enterprise platforms.</span><svg class="bdg-svg" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+<li class="bdg ink-brown" title="500+ websites and digital products"><span class="sr-only">Badge: <span data-cms="tdaf5121">500+</span> <span data-cms="t2665d5a">Websites &amp; digital products</span> designed, from marketing sites to enterprise platforms.</span><svg class="bdg-svg" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
  <defs><path id="bdgArcT" d="M22,60 a38,38 0 1,1 76,0"/><path id="bdgArcB" d="M17.5,60 a42.5,42.5 0 0,0 85,0"/></defs>
  <path d="M119.00,60.00 L112.71,65.54 L117.71,72.27 L110.41,76.38 L113.90,84.00 L105.90,86.50 L107.73,94.68 L99.39,95.46 L99.48,103.85 L91.15,102.88 L89.50,111.10 L81.56,108.42 L78.23,116.11 L71.02,111.84 L66.17,118.68 L60.00,113.00 L53.83,118.68 L48.98,111.84 L41.77,116.11 L38.44,108.42 L30.50,111.10 L28.85,102.88 L20.52,103.85 L20.61,95.46 L12.27,94.68 L14.10,86.50 L6.10,84.00 L9.59,76.38 L2.29,72.27 L7.29,65.54 L1.00,60.00 L7.29,54.46 L2.29,47.73 L9.59,43.62 L6.10,36.00 L14.10,33.50 L12.27,25.32 L20.61,24.54 L20.52,16.15 L28.85,17.12 L30.50,8.90 L38.44,11.58 L41.77,3.89 L48.98,8.16 L53.83,1.32 L60.00,7.00 L66.17,1.32 L71.02,8.16 L78.23,3.89 L81.56,11.58 L89.50,8.90 L91.15,17.12 L99.48,16.15 L99.39,24.54 L107.73,25.32 L105.90,33.50 L113.90,36.00 L110.41,43.62 L117.71,47.73 L112.71,54.46Z" class="pp" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/>
  <circle class="pp" cx="60" cy="60" r="49.5"/>
@@ -1332,7 +1332,7 @@ footer .foot-logo-wrap{padding-top:clamp(.5rem,1.5vw,1rem)}
  <text class="bdg-num" x="60" y="66.5" text-anchor="middle" font-size="16.5" fill="currentColor">500+</text>
  <path d="M51 73h18" stroke="currentColor" stroke-width="1"/>
 </svg></li>
-        <li class="bdg ink-green bdg-tall" title="50+ mobile apps designed"><span class="sr-only">Badge: <span data-cms="ta53653e">50+</span> <span data-cms="tf8c8204">Mobile applications</span> designed.</span><svg class="bdg-svg" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+<li class="bdg ink-green bdg-tall" title="50+ mobile apps designed"><span class="sr-only">Badge: <span data-cms="ta53653e">50+</span> <span data-cms="tf8c8204">Mobile applications</span> designed.</span><svg class="bdg-svg" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
  <path class="pp" d="M60 5C56 11.5 50 14.5 42 14.5H24Q17.5 14.5 17.5 21V62C17.5 86.5 37.5 102.5 60 114.5C82.5 102.5 102.5 86.5 102.5 62V21Q102.5 14.5 96 14.5H78C70 14.5 64 11.5 60 5Z"/>
  <path d="M60 5C56 11.5 50 14.5 42 14.5H24Q17.5 14.5 17.5 21V62C17.5 86.5 37.5 102.5 60 114.5C82.5 102.5 102.5 86.5 102.5 62V21Q102.5 14.5 96 14.5H78C70 14.5 64 11.5 60 5Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
  <path d="M60 11.5C56.5 16.5 50.5 19.5 42 19.5H26.5Q22.5 19.5 22.5 23.5V62C22.5 83 40 97.5 60 108.5C80 97.5 97.5 83 97.5 62V23.5Q97.5 19.5 93.5 19.5H78C69.5 19.5 63.5 16.5 60 11.5Z" fill="none" stroke="currentColor" stroke-width=".8" stroke-linejoin="round"/>
@@ -1344,7 +1344,7 @@ footer .foot-logo-wrap{padding-top:clamp(.5rem,1.5vw,1rem)}
  <text x="60" y="81" text-anchor="middle" font-size="8.4" fill="currentColor">USER</text>
  <text x="60" y="91" text-anchor="middle" font-size="8.4" fill="currentColor">CENTRED</text>
 </svg></li>
-      </ul>
+</ul>
     </div>
    </div>
    <figure class="hero-photo anim-in" style="--d:150ms">
@@ -1375,79 +1375,126 @@ footer .foot-logo-wrap{padding-top:clamp(.5rem,1.5vw,1rem)}
         <p class="sec-lede" data-cms="tfaa31c2">Selected case studies across enterprise, finance and health.</p>
       </div>
       <div class="bento">
-        <article class="case c1 has-link" style="--tint:#F5C84C">
+<article class="case c1 has-link" style="--tint:#F5C84C">
           <div class="art art-glyph" data-shape="house" data-color="#F5C84C"><canvas aria-hidden="true"></canvas></div>
           <div class="case-body">
-            <div class="tags"><span class="tag" data-cms="tfu-tag1">Financial services · Enterprise</span><span class="tag tag-live" data-cms="tfu-tag2">Case study</span></div>
+            <div class="tags">
+<span class="tag" data-cms="tfu-tag1">Financial services · Enterprise</span>
+<span class="tag tag-live" data-cms="tfu-tag2">Case study</span>
+</div>
             <h3><a class="case-link" href="case-finunity.html" data-cms="tfu-title2">One platform for property tax financing at FinUnity<svg class="lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-label="Password protected" role="img"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></a></h3>
             <p data-cms="tfu-desc2">Replaced a patchwork of tools with one platform for property tax loans and liens, from research to design system.</p>
-            <ul class="impact" aria-label="Impact"><li><b>1</b><span>platform for loans & liens</span></li><li><b>KPIs</b><span>met since launch</span></li><li><b>2+ yrs</b><span>partnership</span></li></ul>
+            <ul class="impact" aria-label="Impact">
+<li><b>1</b><span>platform for loans & liens</span></li>
+<li><b>KPIs</b><span>met since launch</span></li>
+<li><b>2+ yrs</b><span>partnership</span></li>
+</ul>
             <span class="read-more" aria-hidden="true">Read the case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
         </article>
-        <article class="case c2 has-link" style="--tint:#FF9A4D">
+<article class="case c2 has-link" style="--tint:#FF9A4D">
           <div class="art art-glyph" data-shape="growth" data-color="#FF9A4D"><canvas aria-hidden="true"></canvas></div>
           <div class="case-body">
-            <div class="tags"><span class="tag" data-cms="tad-tag1">Wealth management · SaaS</span><span class="tag tag-live" data-cms="tad-tag2">Case study</span></div>
+            <div class="tags">
+<span class="tag" data-cms="tad-tag1">Wealth management · SaaS</span>
+<span class="tag tag-live" data-cms="tad-tag2">Case study</span>
+</div>
             <h3><a class="case-link" href="case-advisor.html" data-cms="tad-title">From back-office grids to an advisor’s workspace<svg class="lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-label="Password protected" role="img"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></a></h3>
             <p data-cms="tad-desc">Reshaped a wealth platform around households and goals, with a design system, card-sorted menu and self-serve reports.</p>
-            <ul class="impact" aria-label="Impact"><li><b>14 → 7</b><span>steps to quarter-end reports</span></li><li><b>19 → 5</b><span>columns on client list</span></li><li><b>4</b><span>modules redesigned</span></li></ul>
+            <ul class="impact" aria-label="Impact">
+<li><b>14 → 7</b><span>steps to quarter-end reports</span></li>
+<li><b>19 → 5</b><span>columns on client list</span></li>
+<li><b>4</b><span>modules redesigned</span></li>
+</ul>
             <span class="read-more" aria-hidden="true">Read the case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
         </article>
-        <article class="case c3 has-link" style="--tint:#FF5E62">
+<article class="case c3 has-link" style="--tint:#FF5E62">
           <div class="art art-glyph" data-shape="shield" data-color="#FF5E62"><canvas aria-hidden="true"></canvas></div>
           <div class="case-body">
-            <div class="tags"><span class="tag" data-cms="tfg-tag1">Banking · Compliance</span><span class="tag tag-live" data-cms="tfg-tag2">Case study</span></div>
+            <div class="tags">
+<span class="tag" data-cms="tfg-tag1">Banking · Compliance</span>
+<span class="tag tag-live" data-cms="tfg-tag2">Case study</span>
+</div>
             <h3><a class="case-link" href="case-finguard.html" data-cms="tfg-title">FinGuard: risk you can explain<svg class="lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-label="Password protected" role="img"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></a></h3>
             <p data-cms="tfg-desc">Designed an explainable risk dashboard, search and customer profile for a bank’s financial crime team.</p>
-            <ul class="impact" aria-label="Impact"><li><b>5</b><span>risk dimensions, one score</span></li><li><b>3</b><span>record types, one search</span></li><li><b>1</b><span>page to decide</span></li></ul>
+            <ul class="impact" aria-label="Impact">
+<li><b>5</b><span>risk dimensions, one score</span></li>
+<li><b>3</b><span>record types, one search</span></li>
+<li><b>1</b><span>page to decide</span></li>
+</ul>
             <span class="read-more" aria-hidden="true">Read the case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
         </article>
-        <article class="case c6 has-link" style="--tint:#3EE6E6">
+<article class="case c6 has-link" style="--tint:#3EE6E6">
           <div class="art art-glyph" data-shape="wheat" data-color="#3EE6E6"><canvas aria-hidden="true"></canvas></div>
           <div class="case-body">
-            <div class="tags"><span class="tag" data-cms="taf-tag1">Agri lending · Enterprise</span><span class="tag tag-live" data-cms="taf-tag2">Case study</span></div>
+            <div class="tags">
+<span class="tag" data-cms="taf-tag1">Agri lending · Enterprise</span>
+<span class="tag tag-live" data-cms="taf-tag2">Case study</span>
+</div>
             <h3><a class="case-link" href="case-agrifunds.html" data-cms="taf-title">AgriFunds: one customer view for farm lenders<svg class="lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-label="Password protected" role="img"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></a></h3>
             <p data-cms="taf-desc">Brought loan, banking, CRM and statements tools into one customer view for farm lenders.</p>
-            <ul class="impact" aria-label="Impact"><li><b>4 → 1</b><span>systems in one portal</span></li><li><b>11 → 4</b><span>tabs per customer</span></li><li><b>5</b><span>modules designed</span></li></ul>
+            <ul class="impact" aria-label="Impact">
+<li><b>4 → 1</b><span>systems in one portal</span></li>
+<li><b>11 → 4</b><span>tabs per customer</span></li>
+<li><b>5</b><span>modules designed</span></li>
+</ul>
             <span class="read-more" aria-hidden="true">Read the case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
         </article>
-        <article class="case c7 has-link" style="--tint:#FF6FAE">
+<article class="case c7 has-link" style="--tint:#FF6FAE">
           <div class="art art-glyph" data-shape="learn" data-color="#FF6FAE"><canvas aria-hidden="true"></canvas></div>
           <div class="case-body">
-            <div class="tags"><span class="tag" data-cms="tas-tag1">Banking · eLearning</span><span class="tag tag-live" data-cms="tas-tag2">Case study</span></div>
+            <div class="tags">
+<span class="tag" data-cms="tas-tag1">Banking · eLearning</span>
+<span class="tag tag-live" data-cms="tas-tag2">Case study</span>
+</div>
             <h3><a class="case-link" href="case-aster.html" data-cms="tas-title">Aster Bank: a better working day, told as a story<svg class="lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-label="Password protected" role="img"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></a></h3>
             <p data-cms="tas-desc">Designed the UI of eLearning modules that follow a relationship manager through his day to explain a wealth management transformation.</p>
-            <ul class="impact" aria-label="Impact"><li><b>15</b><span>screens per module</span></li><li><b>1</b><span>persona-led story</span></li><li><b>3</b><span>help tools on every screen</span></li></ul>
+            <ul class="impact" aria-label="Impact">
+<li><b>15</b><span>screens per module</span></li>
+<li><b>1</b><span>persona-led story</span></li>
+<li><b>3</b><span>help tools on every screen</span></li>
+</ul>
             <span class="read-more" aria-hidden="true">Read the case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
         </article>
-
-        <article class="case c4 has-link" data-more style="--tint:#38B6FF">
+<article data-more class="case c4 has-link" style="--tint:#38B6FF">
           <div class="art art-glyph" data-shape="car" data-color="#38B6FF"><canvas aria-hidden="true"></canvas></div>
           <div class="case-body">
-            <div class="tags"><span class="tag" data-cms="tal-tag1">Public space · Kiosk</span><span class="tag tag-live" data-cms="tal-tag2">Case study</span></div>
+            <div class="tags">
+<span class="tag" data-cms="tal-tag1">Public space · Kiosk</span>
+<span class="tag tag-live" data-cms="tal-tag2">Case study</span>
+</div>
             <h3><a class="case-link" href="case-autolore.html" data-cms="tal-title">AutoLore: classic cars, told by touch<svg class="lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-label="Password protected" role="img"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></a></h3>
             <p data-cms="tal-desc">Designed a touch kiosk that turns a founder’s memories into stories for every car in a Florida museum.</p>
-            <ul class="impact" aria-label="Impact"><li><b>~50</b><span>cars with a story</span></li><li><b>3</b><span>ways into every car</span></li><li><b>2+ yrs</b><span>in daily use</span></li></ul>
+            <ul class="impact" aria-label="Impact">
+<li><b>~50</b><span>cars with a story</span></li>
+<li><b>3</b><span>ways into every car</span></li>
+<li><b>2+ yrs</b><span>in daily use</span></li>
+</ul>
             <span class="read-more" aria-hidden="true">Read the case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
         </article>
-
-        <article class="case c5 has-link" data-more style="--tint:#B98CFF">
+<article data-more class="case c5 has-link" style="--tint:#B98CFF">
           <div class="art art-glyph" data-shape="trophy" data-color="#B98CFF"><canvas aria-hidden="true"></canvas></div>
           <div class="case-body">
-            <div class="tags"><span class="tag" data-cms="tev-tag1">Event design</span><span class="tag" data-cms="tev-tag2">300+ guests</span></div>
+            <div class="tags">
+<span class="tag" data-cms="tev-tag1">Event design</span>
+<span class="tag" data-cms="tev-tag2">300+ guests</span>
+</div>
             <h3><a class="case-link" href="case-guru.html" data-cms="tev-title">Guru Samman Samaroh 2019<svg class="lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-label="Password protected" role="img"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></a></h3>
             <p data-cms="tev-desc">Visualised and designed an outdoor tribute to our teachers, from ground plan to printed backdrop.</p>
-            <ul class="impact" aria-label="Impact"><li><b>300+</b><span>guests</span></li><li><b>~90</b><span>days to deliver</span></li><li><b>1st</b><span>alumni-led tribute</span></li></ul>
+            <ul class="impact" aria-label="Impact">
+<li><b>300+</b><span>guests</span></li>
+<li><b>~90</b><span>days to deliver</span></li>
+<li><b>1st</b><span>alumni-led tribute</span></li>
+</ul>
             <span class="read-more" aria-hidden="true">Read the case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
         </article>
-      </div>
+</div>
       <div class="more-row" id="moreRow">
         <button class="more-work" id="loadMore" type="button" aria-expanded="false"><span data-cms="tv2-more">Load more work</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
@@ -1477,9 +1524,9 @@ footer .foot-logo-wrap{padding-top:clamp(.5rem,1.5vw,1rem)}
             <img src="sanjay-boardwalk-curve.webp" width="1800" height="497" loading="lazy" alt="Sanjay walking away along a weathered wooden boardwalk towards a misty beach, a pier in the distance.">
           </figure>
           <div class="about-cols">
-            <p data-cms="tv2-me-p1">I enjoy the problems many people find dull: dense data tables, multi-step approvals, compliance rules. Making those feel calm and obvious is the part of the job I like most.</p>
-            <p data-cms="tv2-me-p2">Outside work, music and visual storytelling keep me curious. They remind me that design is as much about how something feels as how it works.</p>
-          </div>
+<p data-cms="tv2-me-p1">I enjoy the problems many people find dull: dense data tables, multi-step approvals, compliance rules. Making those feel calm and obvious is the part of the job I like most.</p>
+<p data-cms="tv2-me-p2">Outside work, music and visual storytelling keep me curious. They remind me that design is as much about how something feels as how it works.</p>
+</div>
           <p class="visa-note" data-cms="tv2-visa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg><span><b>Valid US Visa</b> till Feb 2027</span></p>
         </div>
       </div>
@@ -1487,28 +1534,28 @@ footer .foot-logo-wrap{padding-top:clamp(.5rem,1.5vw,1rem)}
       <div role="tabpanel" id="panel-sum" aria-labelledby="tab-sum" tabindex="0" hidden>
         <h3 class="sec-lede panel-lede" data-cms="tv2-do-lede">The services I offer, and what your team gets from each project.</h3>
         <div class="summary summary-2">
-          <div>
+<div>
             <h3 data-cms="tv2-do-h1">Services</h3>
             <ul>
-              <li data-cms="tv2-do-s1">UX strategy</li>
-              <li data-cms="tv2-do-s2">User research and usability testing</li>
-              <li data-cms="tv2-do-s3">Product and interaction design</li>
-              <li data-cms="tv2-do-s4">Design systems</li>
-              <li data-cms="tv2-do-s5">Design leadership and mentoring</li>
-            </ul>
+<li data-cms="tv2-do-s1">UX strategy</li>
+<li data-cms="tv2-do-s2">User research and usability testing</li>
+<li data-cms="tv2-do-s3">Product and interaction design</li>
+<li data-cms="tv2-do-s4">Design systems</li>
+<li data-cms="tv2-do-s5">Design leadership and mentoring</li>
+</ul>
           </div>
-          <div>
+<div>
             <h3 data-cms="tv2-do-h2">Deliverables</h3>
             <ul>
-              <li data-cms="tv2-do-d1">Research insights, personas and journey maps</li>
-              <li data-cms="tv2-do-d2">Information architecture and user flows</li>
-              <li data-cms="tv2-do-d3">Wireframes and interactive prototypes</li>
-              <li data-cms="tv2-do-d4">Component libraries with usage guidelines</li>
-              <li data-cms="tv2-do-d5">Accessible, developer-ready UI specifications</li>
-              <li data-cms="tv2-do-d6">Visual storytelling for stakeholders</li>
-            </ul>
+<li data-cms="tv2-do-d1">Research insights, personas and journey maps</li>
+<li data-cms="tv2-do-d2">Information architecture and user flows</li>
+<li data-cms="tv2-do-d3">Wireframes and interactive prototypes</li>
+<li data-cms="tv2-do-d4">Component libraries with usage guidelines</li>
+<li data-cms="tv2-do-d5">Accessible, developer-ready UI specifications</li>
+<li data-cms="tv2-do-d6">Visual storytelling for stakeholders</li>
+</ul>
           </div>
-        </div>
+</div>
       </div>
 
       <div role="tabpanel" id="panel-how-wrap" aria-labelledby="tab-how" tabindex="0" hidden>
@@ -1545,10 +1592,10 @@ footer .foot-logo-wrap{padding-top:clamp(.5rem,1.5vw,1rem)}
 
       <h3 class="awards-h" data-cms="taw-h">Recognition</h3>
       <ul class="awards">
-        <li><span class="aw-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg></span><span><b data-cms="taw1">Customer Delight Award</b><span data-cms="taw1d">Certificate of appreciation for being a client champion · November 2022</span></span></li>
-        <li><span class="aw-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3a3 3 0 0 1-3 4M7 5H4a3 3 0 0 0 3 4"/></svg></span><span><b data-cms="taw2">Quarterly Team Award</b><span data-cms="taw2d">Material Design initiative team · April to June 2016</span></span></li>
-        <li><span class="aw-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H8l-4 4z"/><path d="M8 9h8M8 12h5"/></svg></span><span><b data-cms="taw3">Recognised by name by clients</b><span data-cms="taw3d">Featured on the company’s client appreciation wall · 2019</span></span></li>
-      </ul>
+<li><span class="aw-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg></span><span><b data-cms="taw1">Customer Delight Award</b><span data-cms="taw1d">Certificate of appreciation for being a client champion · November 2022</span></span></li>
+<li><span class="aw-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3a3 3 0 0 1-3 4M7 5H4a3 3 0 0 0 3 4"/></svg></span><span><b data-cms="taw2">Quarterly Team Award</b><span data-cms="taw2d">Material Design initiative team · April to June 2016</span></span></li>
+<li><span class="aw-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H8l-4 4z"/><path d="M8 9h8M8 12h5"/></svg></span><span><b data-cms="taw3">Recognised by name by clients</b><span data-cms="taw3d">Featured on the company’s client appreciation wall · 2019</span></span></li>
+</ul>
     </div>
   </section>
 
@@ -1563,8 +1610,8 @@ footer .foot-logo-wrap{padding-top:clamp(.5rem,1.5vw,1rem)}
       </div>
       <p class="copy-status" id="copyStatus" role="status" aria-live="polite"></p>
       <ul class="socials" aria-label="Social profiles">
-        <li><a class="li-btn" href="https://www.linkedin.com/in/sanjay-pal-hfi-cua%E2%84%A2-9959853/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>Connect on LinkedIn<span class="sr-only"> (opens in a new tab)</span></a></li>
-      </ul>
+<li><a class="li-btn" href="https://www.linkedin.com/in/sanjay-pal-hfi-cua%E2%84%A2-9959853/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>Connect on LinkedIn<span class="sr-only"> (opens in a new tab)</span></a></li>
+</ul>
     </div>
   </section>
 </main>
@@ -1629,68 +1676,7 @@ return H.map(function(x){return("00000000"+(x>>>0).toString(16)).slice(-8)}).joi
 })();
 </script>
 
-<!-- Light CMS: login, inline text editing, list editor -->
-<dialog class="cms-dialog" id="cmsLogin" aria-labelledby="cmsLoginTitle">
-  <form id="cmsLoginForm" novalidate>
-    <h2 id="cmsLoginTitle">Editor login</h2>
-    <p class="cms-hint">Sign in to edit the text on this site.</p>
-    <label for="cmsUser">Username</label>
-    <input id="cmsUser" name="username" autocomplete="username" required>
-    <label for="cmsPass">Password</label>
-    <input id="cmsPass" name="password" type="password" autocomplete="current-password" required>
-    <p class="cms-error" id="cmsLoginError" role="alert"></p>
-    <div class="cms-actions">
-      <button type="button" class="cms-btn ghost" id="cmsLoginCancel">Cancel</button>
-      <button type="submit" class="cms-btn">Log in</button>
-    </div>
-  </form>
-</dialog>
 
-<div class="cms-bar" id="cmsBar" role="region" aria-label="Site editor" hidden>
-  <span class="cms-status" id="cmsStatus" role="status" aria-live="polite">Editing. Click any text to change it.</span>
-  <div class="cms-bar-actions">
-    <button type="button" class="cms-btn ghost" id="cmsListsBtn">Edit lists</button>
-    <button type="button" class="cms-btn ghost" id="cmsDiscard">Discard</button>
-    <button type="button" class="cms-btn" id="cmsSave">Save changes</button>
-    <button type="button" class="cms-btn ghost" id="cmsLogout">Log out</button>
-  </div>
-</div>
-
-<dialog class="cms-dialog cms-wide" id="cmsLists" aria-labelledby="cmsListsTitle">
-  <form method="dialog" id="cmsListsForm">
-    <div class="cms-head">
-      <h2 id="cmsListsTitle">Edit lists</h2>
-      <button type="submit" class="cms-btn ghost" value="close">Done</button>
-    </div>
-    <p class="cms-hint">Changes here are saved with “Save changes”. One item per line where noted.</p>
-
-    <fieldset><legend>Testimonials</legend>
-      <div id="cmsQuotes"></div>
-      <button type="button" class="cms-btn ghost" id="cmsAddQuote">Add testimonial</button>
-    </fieldset>
-
-    <fieldset><legend>Process steps</legend><div id="cmsProcess"></div></fieldset>
-    <fieldset><legend>Principles</legend><div id="cmsPrinciples"></div></fieldset>
-
-    <fieldset><legend>Clients (Served tab)</legend>
-      <label for="cmsClients">Client names, one per line</label>
-      <textarea id="cmsClients" rows="6"></textarea>
-    </fieldset>
-
-    <fieldset><legend>Industries</legend>
-      <label for="cmsIndustries">One per line as <code>Name | icon</code></label>
-      <textarea id="cmsIndustries" rows="8"></textarea>
-      <p class="cms-hint" id="cmsIconHint"></p>
-    </fieldset>
-
-    <fieldset><legend>Countries map: clients per location</legend><div id="cmsPlaces"></div></fieldset>
-
-    <fieldset><legend>Social links</legend>
-      <label for="cmsSocial">One per line as <code>Label | https://link</code></label>
-      <textarea id="cmsSocial" rows="5"></textarea>
-    </fieldset>
-  </form>
-</dialog>
 
 <div class="sound-dock" id="sound" role="group" aria-label="Background music">
   <div class="vol-wrap">
@@ -1732,20 +1718,14 @@ return H.map(function(x){return("00000000"+(x>>>0).toString(16)).slice(-8)}).joi
 </div>
 
 <script>
-/* Content store: published content.json overrides the defaults written in this page */
+/* Content store: lists published from /admin (content.json) override the defaults written in this page */
 window.__esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 window.CMS=null;
 window.__cmsReady=Promise.race([
-  fetch("content.json",{cache:"no-store"}).then(r=>r.ok?r.json():null).catch(()=>null),
+  window.__cmsPreviewData?Promise.resolve({data:window.__cmsPreviewData}):fetch("content.json",{cache:"no-store"}).then(r=>r.ok?r.json():null).catch(()=>null),
   new Promise(r=>setTimeout(()=>r(null),2500))
 ]).then(d=>{
-  window.CMS=d&&typeof d==="object"?d:{};
-  const t=window.CMS.text||{};
-  document.querySelectorAll("[data-cms]").forEach(el=>{
-    const v=t[el.dataset.cms]; if(typeof v!=="string") return;
-    el.textContent=v;
-    if(el.matches("a.email")) el.setAttribute("href","mailto:"+v.trim());
-  });
+  window.CMS=d&&typeof d==="object"?(d.data||d):{};   // lists managed in /admin (text and images are baked into the page)
   return window.CMS;
 });
 </script>
@@ -1929,6 +1909,7 @@ window.__cmsReady=Promise.race([
   }
   const mergeList=(def,cms)=>Array.isArray(cms)&&cms.length?cms.map((it,i)=>({...def[i%def.length],t:it.t,d:it.d})):def;
   const how=mergeList(howDefault,CMS.process), prin=mergeList(prinDefault,CMS.principles);
+  window.__cmsDefaults=window.__cmsDefaults||{}; window.__cmsDefaults.process=howDefault.map(({t,d})=>({t,d})); window.__cmsDefaults.principles=prinDefault.map(({t,d})=>({t,d}));
   window.__cmsDefaults.process=howDefault.map(({t,d})=>({t,d})); window.__cmsDefaults.principles=prinDefault.map(({t,d})=>({t,d}));
   buildList(document.getElementById("panel-how"),how,"how","How I work");
   document.getElementById("panel-prin").innerHTML=prin.map(it=>`<li><h5>${esc(it.t)}</h5><p>${esc(it.d)}</p></li>`).join("");
@@ -1939,12 +1920,6 @@ window.__cmsReady=Promise.race([
     if(e.key==="ArrowRight"){e.preventDefault(); selectTab((i+1)%tabs.length,true)}
     if(e.key==="ArrowLeft"){e.preventDefault(); selectTab((i-1+tabs.length)%tabs.length,true)}
     if(e.key==="Home"){e.preventDefault(); selectTab(0,true)} if(e.key==="End"){e.preventDefault(); selectTab(tabs.length-1,true)}})});
-
-  /* ---------- Social links ---------- */
-  if(Array.isArray(CMS.social)&&CMS.social.length){
-    const ul=document.querySelector(".socials"), arrowSvg='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>';
-    ul.innerHTML=CMS.social.filter(x=>x&&/^https?:\/\//.test(x.url||"")).map(x=>`<li><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.label)}<span class="sr-only"> (opens in a new tab)</span>${arrowSvg}</a></li>`).join("");
-  }
 
   /* ---------- Copy email ---------- */
   const copyBtn=document.getElementById("copyBtn"), status=document.getElementById("copyStatus"), email=document.getElementById("email");
@@ -2009,6 +1984,7 @@ window.__cmsReady=Promise.race([
       {id:"sg",name:"Singapore",cc:"SG",lat:1.35,lon:103.8,side:"r",n:4}
     ];
     const full={USA:"United States",UK:"United Kingdom",IN:"India",SG:"Singapore"};
+    window.__cmsDefaults=window.__cmsDefaults||{}; window.__cmsDefaults.places=places.map(p=>({id:p.id,name:p.name,n:p.n}));
     const gx=lon=>((lon-M.lon0)/M.st+.5)/W, gy=lat=>((M.lat0-lat)/M.st+.5)/H;
     const panel=document.getElementById("panel-geo"), geo=document.getElementById("geo"), cv=document.getElementById("geoCanvas"), pinsEl=document.getElementById("geoPins"), pop=document.getElementById("geoPop"), legend=document.getElementById("geoLegend");
     let active=null, hideT=null;
@@ -2158,130 +2134,7 @@ window.__cmsReady=Promise.race([
   }
 })();
 </script>
-<script>
-/* ---------- Light CMS ---------- */
-(async function(){
-  await window.__cmsReady;
-  const root=document.documentElement, $=id=>document.getElementById(id);
-  const HASH="0b91ed8e4c5e1f774d48c50b8d0362305e8047843087e5470d9282f5a5431255";
-  const ss={get(k){try{return sessionStorage.getItem(k)}catch(e){return null}},set(k,v){try{sessionStorage.setItem(k,v)}catch(e){}},del(k){try{sessionStorage.removeItem(k)}catch(e){}}};
-  const login=$("cmsLogin"), bar=$("cmsBar"), status=$("cmsStatus"), lists=$("cmsLists");
-  const editables=()=>[...document.querySelectorAll("main [data-cms], footer [data-cms]")];
-  let snapshot=null, listsTouched=false, artifactNs=null;
 
-  async function sha(s){
-    try{const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(s)); return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("")}catch(e){return null}
-  }
-  function openLogin(){ $("cmsLoginError").textContent=""; try{login.showModal()}catch(e){login.setAttribute("open","")} $("cmsUser").focus() }
-  // Open the login only from the site link with #admin at the end
-  const wantsAdmin=()=>/^#admin$/i.test(location.hash);
-  if(wantsAdmin()) (window.__afterEnter||(f=>f()))(()=>setTimeout(openLogin,200));
-  addEventListener("hashchange",()=>{ if(wantsAdmin()) openLogin() });
-  $("cmsLoginCancel").addEventListener("click",()=>login.close());
-  $("cmsLoginForm").addEventListener("submit",async e=>{
-    e.preventDefault();
-    const u=$("cmsUser").value.trim(), p=$("cmsPass").value;
-    if(!u||!p){$("cmsLoginError").textContent="Enter your username and password."; return}
-    if(await sha(u+":"+p)!==HASH){$("cmsLoginError").textContent="That username or password is incorrect."; $("cmsPass").value=""; $("cmsPass").focus(); return}
-    $("cmsPass").value=""; login.close(); ss.set("sp-cms","1"); startEditing();
-  });
-
-  function setStatus(t){status.textContent=t}
-  function startEditing(){
-    root.classList.add("cms-on"); bar.hidden=false;
-    snapshot=new Map(editables().map(el=>[el,el.dataset.final||el.textContent]));
-    const pt=(()=>{const d=document.createElement("div"); d.contentEditable="plaintext-only"; return d.contentEditable==="plaintext-only"})();
-    editables().forEach(el=>{el.contentEditable=pt?"plaintext-only":"true"; el.spellcheck=true; if(!el.hasAttribute("tabindex")&&!el.matches("a")) el.tabIndex=0});
-    setStatus("Editing. Click any outlined text to change it.");
-    (window.claude||(()=>{try{return parent.claude}catch(e){}})())?.use?.("artifact").then(ns=>{artifactNs=ns; if(!ns){$("cmsSave").disabled=true; setStatus("Editing here, but saving isn't available in this view. Open the page in Claude as its owner to save.")}}).catch(()=>{});
-  }
-  function stopEditing(){
-    root.classList.remove("cms-on"); bar.hidden=true;
-    editables().forEach(el=>{el.removeAttribute("contenteditable"); el.classList.remove("cms-dirty"); if(el.tabIndex===0&&!el.matches("a,button")) el.removeAttribute("tabindex")});
-  }
-  document.addEventListener("input",e=>{const el=e.target.closest?.("[data-cms]"); if(el&&root.classList.contains("cms-on")){el.classList.add("cms-dirty"); delete el.dataset.final; setStatus("Unsaved changes.")}});
-  document.addEventListener("click",e=>{if(root.classList.contains("cms-on")&&e.target.closest("[data-cms]")&&e.target.closest("a")) e.preventDefault()},true);
-  document.addEventListener("keydown",e=>{const el=e.target.closest?.("[data-cms]"); if(el&&root.classList.contains("cms-on")&&e.key==="Enter"){e.preventDefault(); el.blur()}});
-
-  $("cmsDiscard").addEventListener("click",()=>{
-    snapshot?.forEach((t,el)=>{el.textContent=t; el.classList.remove("cms-dirty")}); listsTouched=false; fillLists(); setStatus("Changes discarded.");
-  });
-  $("cmsLogout").addEventListener("click",()=>{
-    const dirty=document.querySelector(".cms-dirty")||listsTouched;
-    if(dirty&&$("cmsLogout").dataset.confirm!=="1"){$("cmsLogout").dataset.confirm="1"; $("cmsLogout").textContent="Discard and log out"; setStatus("You have unsaved changes."); return}
-    $("cmsDiscard").click(); $("cmsLogout").dataset.confirm=""; $("cmsLogout").textContent="Log out"; ss.del("sp-cms"); stopEditing();
-  });
-
-  /* ----- List editor ----- */
-  const D=window.__cmsDefaults||{}, C=()=>window.CMS||{};
-  const cur=k=>Array.isArray(C()[k])&&C()[k].length?C()[k]:D[k]||[];
-  const PLACES=[["ca","California"],["dl","Dallas"],["fl","Florida"],["ny","New York"],["ph","Philadelphia"],["uk","United Kingdom"],["in","India"],["sg","Singapore"]];
-  const field=(id,label,val,area)=>`<label for="${id}">${label}</label>${area?`<textarea id="${id}" rows="3">${window.__esc(val)}</textarea>`:`<input id="${id}" value="${window.__esc(val)}">`}`;
-  function quoteItem(q,i){
-    const d=document.createElement("div"); d.className="cms-item"; d.dataset.quote="";
-    d.innerHTML=`<div class="cms-row"><span>Testimonial ${i+1}</span><button type="button" class="cms-btn ghost" data-remove>Remove</button></div>
-      ${field("q"+i+"q","Short quote",q.q,true)}${field("q"+i+"f","Full quote",q.full,true)}${field("q"+i+"n","Name",q.n)}${field("q"+i+"r","Role",q.r)}`;
-    d.querySelector("[data-remove]").addEventListener("click",()=>{d.remove(); listsTouched=true});
-    return d;
-  }
-  function fillLists(){
-    const qs=$("cmsQuotes"); qs.innerHTML=""; cur("testimonials").forEach((q,i)=>qs.appendChild(quoteItem(q,i)));
-    const pairs=(box,k,label)=>{box.innerHTML=cur(k).map((it,i)=>`<div class="cms-item" data-pair>${field(k+i+"t",label+" "+(i+1)+" title",it.t)}${field(k+i+"d","Description",it.d,true)}</div>`).join("")};
-    pairs($("cmsProcess"),"process","Step"); pairs($("cmsPrinciples"),"principles","Principle");
-    $("cmsClients").value=(Array.isArray(C().clients)&&C().clients.length?C().clients:Array.from({length:12},(_,i)=>"Client "+String(i+1).padStart(2,"0"))).join("\n");
-    $("cmsIndustries").value=cur("industries").map(([n,k])=>n+" | "+k).join("\n");
-    $("cmsIconHint").textContent="Icons: "+(window.__cmsIcons||[]).join(", ");
-    $("cmsPlaces").innerHTML=PLACES.map(([id,name])=>{const v=(C().places&&C().places[id])||[]; return `<label for="pl-${id}">${name}: client names, one per line (empty shows placeholders)</label><textarea id="pl-${id}" rows="3">${window.__esc(v.join("\n"))}</textarea>`}).join("");
-    const soc=Array.isArray(C().social)&&C().social.length?C().social:[...document.querySelectorAll(".socials a")].map(a=>({label:a.childNodes[0].textContent.trim(),url:a.href}));
-    $("cmsSocial").value=soc.map(x=>x.label+" | "+x.url).join("\n");
-  }
-  fillLists();
-  $("cmsListsBtn").addEventListener("click",()=>{try{lists.showModal()}catch(e){lists.setAttribute("open","")}});
-  lists.addEventListener("input",()=>{listsTouched=true; setStatus("Unsaved changes.")});
-  $("cmsAddQuote").addEventListener("click",()=>{const n=$("cmsQuotes").children.length; const it=quoteItem({q:"",full:"",n:"",r:""},n); $("cmsQuotes").appendChild(it); it.querySelector("textarea").focus(); listsTouched=true});
-
-  function readLists(){
-    const lines=id=>$(id).value.split("\n").map(x=>x.trim()).filter(Boolean);
-    const out={};
-    out.testimonials=[...$("cmsQuotes").children].map(d=>{const [q,f]=d.querySelectorAll("textarea"), [n,r]=d.querySelectorAll("input"); return {q:q.value.trim(),full:f.value.trim(),n:n.value.trim(),r:r.value.trim()}}).filter(x=>x.q);
-    const pairs=box=>[...box.querySelectorAll("[data-pair]")].map(d=>({t:d.querySelector("input").value.trim(),d:d.querySelector("textarea").value.trim()}));
-    out.process=pairs($("cmsProcess")); out.principles=pairs($("cmsPrinciples"));
-    out.clients=lines("cmsClients");
-    out.industries=lines("cmsIndustries").map(l=>{const [n,k]=l.split("|").map(x=>x.trim()); return [n,(window.__cmsIcons||[]).includes(k)?k:"gear"]});
-    out.places={}; PLACES.forEach(([id])=>{const v=lines("pl-"+id); if(v.length) out.places[id]=v});
-    out.social=lines("cmsSocial").map(l=>{const i=l.indexOf("|"); return {label:l.slice(0,i).trim(),url:l.slice(i+1).trim()}}).filter(x=>x.label&&/^https?:\/\//.test(x.url));
-    return out;
-  }
-
-  /* ----- Save ----- */
-  $("cmsSave").addEventListener("click",async()=>{
-    const text={}; editables().forEach(el=>{text[el.dataset.cms]=(el.dataset.final&&!el.classList.contains("cms-dirty"))?el.dataset.final:el.textContent.trim()});
-    const data={...C(), text, ...readLists(), updated:new Date().toISOString()};
-    const btn=$("cmsSave"); btn.disabled=true; setStatus("Saving…");
-    ss.set("sp-cms-draft",JSON.stringify(data));
-    try{
-      const ns=artifactNs||await (window.claude||(()=>{try{return parent.claude}catch(e){}})())?.use?.("artifact");
-      if(!ns) throw {code:"not_granted"};
-      await ns.publish({"content.json":{content:JSON.stringify(data,null,2),contentType:"application/json"}});
-      window.CMS=data; ss.del("sp-cms-draft");
-      editables().forEach(el=>el.classList.remove("cms-dirty")); snapshot=new Map(editables().map(el=>[el,el.textContent]));
-      setStatus("Saved. Visitors see the changes on their next visit.");
-      if(listsTouched){listsTouched=false; setStatus("Saved. Reloading to show your list changes…"); setTimeout(()=>location.reload(),900)}
-    }catch(err){
-      const c=err&&err.code;
-      const msg={conflict:"Someone else saved first. The page is reloading with their version; your draft is kept for this tab.",
-        not_writer:"This account can view the page but can't save it. Sign in to Claude as the page owner or an editor.",
-        not_granted:"Saving isn't available in this view. Open the page in Claude as its owner to save.",
-        capability_disabled:"Saving isn't available from this view (for example a public link). Open the page in Claude as its owner to save.",
-        too_large:"The content is too large to save. Shorten some text and try again.",
-        rate_limited:"Saving too often. Wait a moment, then save again."}[c]||"Saving failed. Try again in a moment.";
-      setStatus(msg);
-    }finally{btn.disabled=false}
-  });
-
-  if(ss.get("sp-cms")==="1") setTimeout(startEditing,1600);
-})();
-</script>
 <script>
 /* ---------- Background music: rotating start, plays all three on repeat ---------- */
 (function(){

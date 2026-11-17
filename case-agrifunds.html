@@ -7,7 +7,7 @@
 <script>
 /* Always show pages inside the site shell, so music keeps playing across pages */
 (function(){var inShell=false;try{inShell=window.parent!==window&&!!window.parent.__musicShell}catch(e){}
-if(inShell||location.protocol==="file:")return;
+if(inShell||location.protocol==="file:"||window.__cmsPreview)return;
 var name=location.pathname.split("/").pop()||"";
 location.replace("index.html"+(name&&name!=="home.html"?"#/"+name:location.hash));})();
 </script>
@@ -1596,15 +1596,15 @@ footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between
           <a href="home.html#work">Work</a>
           <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="workMenu" aria-label="Case studies"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           <ul class="submenu" id="workMenu" hidden>
-            <li><a href="case-finunity.html"><span class="sm-t">FinUnity</span><span class="sm-d">Property tax financing platform</span></a></li>
-            <li><a href="case-advisor.html"><span class="sm-t">Advisor platform</span><span class="sm-d">Wealth management workspace</span></a></li>
-            <li><a href="case-finguard.html"><span class="sm-t">FinGuard</span><span class="sm-d">Banking risk and investigations</span></a></li>
-            <li><a href="case-agrifunds.html" aria-current="page"><span class="sm-t">AgriFunds</span><span class="sm-d">Farm lending customer portal</span></a></li>
-            <li><a href="case-aster.html"><span class="sm-t">Aster Bank</span><span class="sm-d">Wealth management eLearning</span></a></li>
-            <li><a href="case-autolore.html"><span class="sm-t">AutoLore</span><span class="sm-d">Classic car museum kiosk</span></a></li>
-            <li><a href="case-guru.html"><span class="sm-t">Guru Samman Samaroh</span><span class="sm-d">Event visualisation and design</span></a></li>
-            <li class="sm-all"><a href="home.html#work">All work</a></li>
-          </ul>
+<li><a href="case-finunity.html"><span class="sm-t">FinUnity</span><span class="sm-d">Property tax financing platform</span></a></li>
+<li><a href="case-advisor.html"><span class="sm-t">Advisor platform</span><span class="sm-d">Wealth management workspace</span></a></li>
+<li><a href="case-finguard.html"><span class="sm-t">FinGuard</span><span class="sm-d">Banking risk and investigations</span></a></li>
+<li><a href="case-agrifunds.html" aria-current="page"><span class="sm-t">AgriFunds</span><span class="sm-d">Farm lending customer portal</span></a></li>
+<li><a href="case-aster.html"><span class="sm-t">Aster Bank</span><span class="sm-d">Wealth management eLearning</span></a></li>
+<li><a href="case-autolore.html"><span class="sm-t">AutoLore</span><span class="sm-d">Classic car museum kiosk</span></a></li>
+<li><a href="case-guru.html"><span class="sm-t">Guru Samman Samaroh</span><span class="sm-d">Event visualisation and design</span></a></li>
+<li class="sm-all"><a href="home.html#work">All work</a></li>
+</ul>
         </div>
         <a href="about.html">About</a>
         <a href="contact.html" class="nav-contact">Get in touch</a>
@@ -1626,12 +1626,12 @@ footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between
     <h1>AgriFunds: one customer view for farm lenders, in place of four systems</h1>
     <p class="cs-lede">Loan officers and service staff at a network of agricultural lending associations had to jump between a loan system, a core banking system, a CRM and a statements tool to help one farmer. I designed the portal that brings a customer, their loans and their borrowing entities into one place.</p>
     <dl class="cs-meta">
-      <div><dt>Product</dt><dd>AgriFunds (white-labelled)</dd></div>
-      <div><dt>Domain</dt><dd>Agricultural lending</dd></div>
-      <div><dt>Users</dt><dd>Loan officers and service staff</dd></div>
-      <div><dt>My role</dt><dd>Research, UX/UI, specs and design QA</dd></div>
-      <div><dt>Platform</dt><dd>Enterprise web app</dd></div>
-    </dl>
+<div><dt>Product</dt><dd>AgriFunds (white-labelled)</dd></div>
+<div><dt>Domain</dt><dd>Agricultural lending</dd></div>
+<div><dt>Users</dt><dd>Loan officers and service staff</dd></div>
+<div><dt>My role</dt><dd>Research, UX/UI, specs and design QA</dd></div>
+<div><dt>Platform</dt><dd>Enterprise web app</dd></div>
+</dl>
   </div>
   <div class="wrap cs-cover">
     <div class="cmp" id="cmp" style="--p:50%">
@@ -1662,145 +1662,172 @@ footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between
     </nav>
 
     <article class="cs-body">
-      <section class="cs-sec" id="impact" aria-labelledby="h-impact">
-        <p class="cs-kicker">Impact</p>
-        <h2 id="h-impact">From four systems to one customer view</h2>
-        <ul class="cs-stats cs-stats-4">
-          <li><b>4 → 1</b><span>loan, core banking, CRM and statements tools brought into one portal</span></li>
-          <li><b>5</b><span>modules designed end to end, from customer hub to creating a borrowing entity</span></li>
-          <li><b>11 → 4</b><span>tabs on a customer, down from eleven on the legacy loan screen</span></li>
-          <li><b>1</b><span>shared set of specs and components the developers built from</span></li>
-        </ul>
-        <p class="cs-tldr-label">In short</p>
-        <div class="cs-glance">
-          <div class="glance-card">
+<section class="cs-sec" id="impact" aria-labelledby="h-impact">
+<p class="cs-kicker">Impact</p>
+<h2 id="h-impact">From four systems to one customer view</h2>
+<ul class="cs-stats cs-stats-4">
+<li><b>4 → 1</b><span>loan, core banking, CRM and statements tools brought into one portal</span></li>
+<li><b>5</b><span>modules designed end to end, from customer hub to creating a borrowing entity</span></li>
+<li><b>11 → 4</b><span>tabs on a customer, down from eleven on the legacy loan screen</span></li>
+<li><b>1</b><span>shared set of specs and components the developers built from</span></li>
+</ul>
+<p class="cs-tldr-label">In short</p>
+<div class="cs-glance">
+<div class="glance-card">
             <span class="glance-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="7" height="7" rx="1"/><rect x="14" y="4" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span>
             <h3>Problem</h3>
             <p>Customer, loan and entity data lived in separate systems with different names for the same things, so simple requests took many screens.</p>
           </div>
-          <div class="glance-card">
+<div class="glance-card">
             <span class="glance-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="5.5"/><path d="M15 15l5 5"/></svg></span>
             <h3>Approach</h3>
             <p>Audit every legacy screen, agree one vocabulary with subject experts, then design module by module with specs and design QA.</p>
           </div>
-          <div class="glance-card">
+<div class="glance-card">
             <span class="glance-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
             <h3>Result</h3>
             <p>A single customer view with a pinned header, four tabs, and guided flows for editing details and creating borrowing entities.</p>
           </div>
-        </div>
-      </section>
-
-      <section class="cs-sec" id="context" aria-labelledby="h-context">
-        <p class="cs-kicker">Context</p>
-        <h2 id="h-context">Farm lending runs on relationships, and on many systems</h2>
-        <p>AgriFunds serves a network of local agricultural lending associations. A farmer may hold several loans through one or more <b>borrowing entities</b>, such as a family farm or a partnership, each with its own members, notes and equity.</p>
-        <p>To answer one call, staff looked up the customer in one system, the loans in another, statements in a third and notes in a CRM, each with its own layout and terms.</p>
-        <div class="cs-gallery g-2">
-          <figure class="cs-fig "><button class="zoom" type="button" data-cap="Legacy loan system. Eleven tabs and dense tables for one customer."><img src="cs6/img/legacy-customer.webp" width="952" height="1116" loading="lazy" alt="Legacy customer screen in grey with payments due and loan balances tables under a row of eleven tabs. Names and IDs are blurred."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-before">Before</span><b>Legacy loan system.</b> Eleven tabs and dense tables for one customer.</figcaption></figure>
-          <figure class="cs-fig "><button class="zoom" type="button" data-cap="Legacy statements tool. Statements lived in yet another tool."><img src="cs6/img/legacy-inquiry.webp" width="1288" height="832" loading="lazy" alt="Legacy statements inquiry screen in grey with annual statements and billing statements tables. Personal details are blurred."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-before">Before</span><b>Legacy statements tool.</b> Statements lived in yet another tool.</figcaption></figure>
-        </div>
-        <ul class="cs-pains" aria-label="Pain points">
-          <li>Four systems to answer one customer question</li>
-          <li>Different names for the same field in each system</li>
-          <li>No clear view of which entity a loan belongs to</li>
-          <li>Hard to tell which system a piece of data came from</li>
-          <li>Creating a borrowing entity relied on memory and manual checks</li>
-        </ul>
-        <div class="cs-goals">
-          <div><p class="g-k">Business goal</p><p>Retire screen-hopping and give every association one consistent way to serve members.</p></div>
-          <div><p class="g-k">User goal</p><p>See the customer, their loans and entities in one place, and act without switching systems.</p></div>
-          <div><p class="g-k">Data goal</p><p>Show where each value comes from, so fixes land in the right source system.</p></div>
-        </div>
-      </section>
-
-      <section class="cs-sec" id="users" aria-labelledby="h-users">
-        <p class="cs-kicker">Users</p>
-        <h2 id="h-users">Who uses it every day</h2>
-        <ul class="cs-personas">
-          <li><b>Loan officer</b><span>Manages a book of farm customers. Needs the whole relationship, loans, entities and equity, before a conversation.</span></li>
-          <li><b>Customer service representative</b><span>Answers calls about payments and statements. Needs quick answers and safe edits to contact details.</span></li>
-          <li><b>Operations staff</b><span>Set up and maintain borrowing entities and roles. Need guided steps and protection from duplicates.</span></li>
-        </ul>
-      </section>
-
-      <section class="cs-sec" id="research" aria-labelledby="h-research">
-        <p class="cs-kicker">Research</p>
-        <h2 id="h-research">Learning the business through its old screens</h2>
-        <ul class="cs-methods">
-          <li><b>Legacy screen audit</b><span>Mapped every field and tab across the loan system, core banking, CRM and statements tools, module by module.</span></li>
-          <li><b>Subject-expert sessions</b><span>Walkthroughs with lending and servicing experts to learn how each screen is really used and what can be retired.</span></li>
-          <li><b>Data dictionary</b><span>Built with the business: each system field, its plain-language label and its meaning, so the new screens speak one language.</span></li>
-          <li><b>Requirement reviews</b><span>Turned written requirements into wireframes for each module and agreed them with product owners before visual design.</span></li>
-          <li><b>Walkthrough testing</b><span>Reviewed prototypes with staff and product owners, then folded feedback into the next iteration.</span></li>
-        </ul>
-        <div class="cs-gallery g-2">
-          <figure class="cs-fig "><button class="zoom" type="button" data-cap="Data dictionary. System fields mapped to plain labels and meanings."><img src="cs6/img/data-dictionary.webp" width="1600" height="1489" loading="lazy" alt="Data dictionary table mapping system field names such as TotalPastDueAmount and PaymentFrequency to plain labels and definitions."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-research">Research</span><b>Data dictionary.</b> System fields mapped to plain labels and meanings.</figcaption></figure>
-          <figure class="cs-fig "><button class="zoom" type="button" data-cap="Field audit. Every legacy block reviewed: keep, merge or retire."><img src="cs6/img/legacy-credit.webp" width="888" height="636" loading="lazy" alt="Legacy credit detail screen in grey with risk rating, adverse and origination blocks. Names are blurred."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-research">Research</span><b>Field audit.</b> Every legacy block reviewed: keep, merge or retire.</figcaption></figure>
-        </div>
-      </section>
-
-      <section class="cs-sec" id="insights" aria-labelledby="h-insights">
-        <p class="cs-kicker">Insights</p>
-        <h2 id="h-insights">What we learned, and the principle each one became</h2>
-        <div class="cs-callout">
+</div>
+</section>
+<section class="cs-sec" id="context" aria-labelledby="h-context">
+<p class="cs-kicker">Context</p>
+<h2 id="h-context">Farm lending runs on relationships, and on many systems</h2>
+<p>AgriFunds serves a network of local agricultural lending associations. A farmer may hold several loans through one or more <b>borrowing entities</b>, such as a family farm or a partnership, each with its own members, notes and equity.</p>
+<p>To answer one call, staff looked up the customer in one system, the loans in another, statements in a third and notes in a CRM, each with its own layout and terms.</p>
+<div class="cs-gallery g-2">
+<figure class="cs-fig "><button class="zoom" type="button" data-cap="Legacy loan system. Eleven tabs and dense tables for one customer."><img src="cs6/img/legacy-customer.webp" width="952" height="1116" loading="lazy" alt="Legacy customer screen in grey with payments due and loan balances tables under a row of eleven tabs. Names and IDs are blurred."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-before">Before</span><b>Legacy loan system.</b> Eleven tabs and dense tables for one customer.</figcaption></figure>
+<figure class="cs-fig "><button class="zoom" type="button" data-cap="Legacy statements tool. Statements lived in yet another tool."><img src="cs6/img/legacy-inquiry.webp" width="1288" height="832" loading="lazy" alt="Legacy statements inquiry screen in grey with annual statements and billing statements tables. Personal details are blurred."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-before">Before</span><b>Legacy statements tool.</b> Statements lived in yet another tool.</figcaption></figure>
+</div>
+<ul class="cs-pains" aria-label="Pain points">
+<li>Four systems to answer one customer question</li>
+<li>Different names for the same field in each system</li>
+<li>No clear view of which entity a loan belongs to</li>
+<li>Hard to tell which system a piece of data came from</li>
+<li>Creating a borrowing entity relied on memory and manual checks</li>
+</ul>
+<div class="cs-goals">
+<div><p class="g-k">Business goal</p><p>Retire screen-hopping and give every association one consistent way to serve members.</p></div>
+<div><p class="g-k">User goal</p><p>See the customer, their loans and entities in one place, and act without switching systems.</p></div>
+<div><p class="g-k">Data goal</p><p>Show where each value comes from, so fixes land in the right source system.</p></div>
+</div>
+</section>
+<section class="cs-sec" id="users" aria-labelledby="h-users">
+<p class="cs-kicker">Users</p>
+<h2 id="h-users">Who uses it every day</h2>
+<ul class="cs-personas">
+<li><b>Loan officer</b><span>Manages a book of farm customers. Needs the whole relationship, loans, entities and equity, before a conversation.</span></li>
+<li><b>Customer service representative</b><span>Answers calls about payments and statements. Needs quick answers and safe edits to contact details.</span></li>
+<li><b>Operations staff</b><span>Set up and maintain borrowing entities and roles. Need guided steps and protection from duplicates.</span></li>
+</ul>
+</section>
+<section class="cs-sec" id="research" aria-labelledby="h-research">
+<p class="cs-kicker">Research</p>
+<h2 id="h-research">Learning the business through its old screens</h2>
+<ul class="cs-methods">
+<li><b>Legacy screen audit</b><span>Mapped every field and tab across the loan system, core banking, CRM and statements tools, module by module.</span></li>
+<li><b>Subject-expert sessions</b><span>Walkthroughs with lending and servicing experts to learn how each screen is really used and what can be retired.</span></li>
+<li><b>Data dictionary</b><span>Built with the business: each system field, its plain-language label and its meaning, so the new screens speak one language.</span></li>
+<li><b>Requirement reviews</b><span>Turned written requirements into wireframes for each module and agreed them with product owners before visual design.</span></li>
+<li><b>Walkthrough testing</b><span>Reviewed prototypes with staff and product owners, then folded feedback into the next iteration.</span></li>
+</ul>
+<div class="cs-gallery g-2">
+<figure class="cs-fig "><button class="zoom" type="button" data-cap="Data dictionary. System fields mapped to plain labels and meanings."><img src="cs6/img/data-dictionary.webp" width="1600" height="1489" loading="lazy" alt="Data dictionary table mapping system field names such as TotalPastDueAmount and PaymentFrequency to plain labels and definitions."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-research">Research</span><b>Data dictionary.</b> System fields mapped to plain labels and meanings.</figcaption></figure>
+<figure class="cs-fig "><button class="zoom" type="button" data-cap="Field audit. Every legacy block reviewed: keep, merge or retire."><img src="cs6/img/legacy-credit.webp" width="888" height="636" loading="lazy" alt="Legacy credit detail screen in grey with risk rating, adverse and origination blocks. Names are blurred."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-research">Research</span><b>Field audit.</b> Every legacy block reviewed: keep, merge or retire.</figcaption></figure>
+</div>
+</section>
+<section class="cs-sec" id="insights" aria-labelledby="h-insights">
+<p class="cs-kicker">Insights</p>
+<h2 id="h-insights">What we learned, and the principle each one became</h2>
+<div class="cs-callout">
           <p class="cs-callout-label">Key insight</p>
           <p>Staff think in <em>customers and relationships</em>, while the old systems were organised by <em>data tables</em>. The new portal had to start from the customer.</p>
         </div>
-        <ul class="cs-map">
-          <li><span class="from">Context is lost when switching screens</span><span class="to">A customer header pinned on every tab</span></li>
-          <li><span class="from">Same field, different names</span><span class="to">One vocabulary from the data dictionary</span></li>
-          <li><span class="from">Loans feel disconnected from entities</span><span class="to">Group loans under their borrowing entity</span></li>
-          <li><span class="from">Unsure where data came from</span><span class="to">Source tags on every row</span></li>
-          <li><span class="from">Accidental edits and duplicates</span><span class="to">Separate read and edit modes, and duplicate checks</span></li>
-        </ul>
-      </section>
-
-      <section class="cs-sec" id="solution" aria-labelledby="h-solution">
-        <p class="cs-kicker">Solution</p>
-        <h2 id="h-solution">Five modules around one customer</h2>
-        <p>Pick a module to see the screens and the decisions behind them.</p>
-        <div class="mod-tabs" role="tablist" aria-label="Product modules"><button class="mod-tab" role="tab" type="button" id="tab-actions" aria-controls="tp-actions" aria-selected="true" tabindex="0" data-hash="actions"><img src="cs6/img/actions.webp" alt="" width="1371" height="903" loading="lazy"><b>Customer hub</b><span>One place to start every task.</span></button><button class="mod-tab" role="tab" type="button" id="tab-details" aria-controls="tp-details" aria-selected="false" tabindex="-1" data-hash="details"><img src="cs6/img/details-view.webp" alt="" width="1370" height="1628" loading="lazy"><b>Customer details</b><span>Read first, edit when needed.</span></button><button class="mod-tab" role="tab" type="button" id="tab-loans" aria-controls="tp-loans" aria-selected="false" tabindex="-1" data-hash="loans"><img src="cs6/img/loan-summary.webp" alt="" width="1370" height="1350" loading="lazy"><b>Loans and billing</b><span>Every loan, grouped by entity.</span></button><button class="mod-tab" role="tab" type="button" id="tab-entities" aria-controls="tp-entities" aria-selected="false" tabindex="-1" data-hash="entities"><img src="cs6/img/be-details.webp" alt="" width="1370" height="2445" loading="lazy"><b>Borrowing entities</b><span>Roles, notes and equity in one view.</span></button><button class="mod-tab" role="tab" type="button" id="tab-create" aria-controls="tp-create" aria-selected="false" tabindex="-1" data-hash="create"><img src="cs6/img/be-create-2.webp" alt="" width="1372" height="1302" loading="lazy"><b>Create a BE</b><span>A guided flow with safe checks.</span></button></div>
-        <div class="mod-panels"><div class="tab-panel" role="tabpanel" id="tp-actions" aria-labelledby="tab-actions" tabindex="0"><h3 class="tp-title">Customer hub: what can I do for this customer?</h3><div class="cs-row"><div><figure class="cs-fig "><button class="zoom" type="button" data-cap="Customer hub. Every task for a customer, grouped by the team that owns it."><img src="cs6/img/actions.webp" width="1371" height="903" loading="lazy" alt="Customer hub with a persistent customer header, tabs for Actions, Customer Details, BEs and Loans, a filter box and grouped action cards for digital banking, cash services, teller, equity, pricing, credit and shared services."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Customer hub.</b> Every task for a customer, grouped by the team that owns it.</figcaption></figure></div><ol class="decisions"><li><b>Persistent customer header</b><span>Name, IDs, address, contact, loan count and lending association stay pinned on every tab, with source system links on the right.</span></li><li><b>Four tabs in the order of the work</b><span>Actions, Customer Details, BEs and Loans. The order came from design QA with the business.</span></li><li><b>Actions grouped by team</b><span>Cards for digital banking, cash services, teller, equity, pricing, credit and shared services replace menus spread across systems.</span></li><li><b>Filter instead of hunting</b><span>Type an action or task to narrow the cards.</span></li><li><b>Shortcuts on every tab</b><span>Favourite, customise, print and help, always in the same place.</span></li></ol></div></div><div class="tab-panel" role="tabpanel" id="tp-details" aria-labelledby="tab-details" tabindex="0" hidden><h3 class="tp-title">Customer details: one record, many sources</h3><div class="cs-row"><div><figure class="cs-fig "><button class="zoom" type="button" data-cap="Read-only view. Overview, contact and statements on one scroll."><img src="cs6/img/details-view.webp" width="1370" height="1628" loading="lazy" alt="Read-only customer details with sub-tabs All, Overview, Contact and Statements, an overview of identifiers and personal details, address, phone and email tables with source tags, and annual and billing statements."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Read-only view.</b> Overview, contact and statements on one scroll.</figcaption></figure><div class="cs-gallery g-2" style="margin-top:1rem"><figure class="cs-fig "><button class="zoom" type="button" data-cap="Edit an individual. Fields change with the customer type."><img src="cs6/img/details-edit-ind.webp" width="1371" height="1620" loading="lazy" alt="Editable customer details for an individual with salutation, names, SSN, birth and death dates, and editable address, phone and email tables."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Edit an individual.</b> Fields change with the customer type.</figcaption></figure><figure class="cs-fig "><button class="zoom" type="button" data-cap="Edit an organisation. Farming-specific fields such as year began farming."><img src="cs6/img/details-edit-org.webp" width="1371" height="1620" loading="lazy" alt="Editable customer details for an organisation with name, type, tax ID, dates and year began farming."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Edit an organisation.</b> Farming-specific fields such as year began farming.</figcaption></figure></div></div><ol class="decisions"><li><b>Read and edit are separate modes</b><span>Staff browse safely and switch to “Modify customer details” only when they mean to change something.</span></li><li><b>Individual or organisation</b><span>The form adapts: SSN and birth date for a person; tax ID, organisation type and year began farming for a business.</span></li><li><b>Source on every row</b><span>Tags show which system each address, phone or email came from, so staff know where a fix will land.</span></li><li><b>Sub-tabs for long records</b><span>All, Overview, Contact and Statements keep a long profile scannable.</span></li><li><b>Statements in context</b><span>Annual statements and billing notices sit with the customer, grouped by borrowing entity.</span></li></ol></div></div><div class="tab-panel" role="tabpanel" id="tp-loans" aria-labelledby="tab-loans" tabindex="0" hidden><h3 class="tp-title">Loans and billing: the whole relationship at a glance</h3><div class="cs-row"><div><figure class="cs-fig "><button class="zoom" type="button" data-cap="Loan and billing summary. Loans grouped by borrowing entity, with a filter and a closed-loan toggle."><img src="cs6/img/loan-summary.webp" width="1370" height="1350" loading="lazy" alt="Loans tab with a left rail of loans grouped by borrowing entity and a Loan and Billing Summary showing loan summary and billing summary tables grouped by entity."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Loan and billing summary.</b> Loans grouped by borrowing entity, with a filter and a closed-loan toggle.</figcaption></figure><div style="margin-top:1rem"><figure class="cs-fig "><button class="zoom" type="button" data-cap="Loan details. Overview, payment, obligors and statements for one loan."><img src="cs6/img/loan-details.webp" width="1370" height="1460" loading="lazy" alt="Loan details with sub-tabs All, Overview, Payment, Obligors and Statements, showing overview figures, next payment, past due, past due occurrences, obligors and billing statements."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Loan details.</b> Overview, payment, obligors and statements for one loan.</figcaption></figure></div></div><ol class="decisions"><li><b>Left rail grouped by entity</b><span>Loans sit under the borrowing entity they belong to, with purpose, status and source on each card.</span></li><li><b>Summary first</b><span>Loan and billing summary opens by default, so staff see the whole relationship before drilling in.</span></li><li><b>Closed loans on demand</b><span>A toggle hides closed loans until they are needed.</span></li><li><b>Plain-language labels</b><span>Field names were rewritten from system codes into lending terms using the data dictionary.</span></li><li><b>Past due made visible</b><span>Days and occurrences past due get their own block instead of hiding in a tab.</span></li></ol></div></div><div class="tab-panel" role="tabpanel" id="tp-entities" aria-labelledby="tab-entities" tabindex="0" hidden><h3 class="tp-title">Borrowing entities: who is on the loan, and how</h3><div class="cs-row"><div><figure class="cs-fig "><button class="zoom" type="button" data-cap="Borrowing entity details. Overview, roles, notes, equity and tax data for one entity."><img src="cs6/img/be-details.webp" width="1370" height="2445" loading="lazy" alt="Borrowing entity details with a list of entities on the left and, on the right, the entity overview, roles of customers, notes with loans, equity balance, equity codes and IRS reportable data."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Borrowing entity details.</b> Overview, roles, notes, equity and tax data for one entity.</figcaption></figure></div><ol class="decisions"><li><b>Entities listed beside details</b><span>Switch between a customer’s borrowing entities without leaving the page.</span></li><li><b>Roles as a table</b><span>Primary, member, voter and alternate stockowner, each linked to the customer record.</span></li><li><b>Notes with their loans</b><span>Expandable rows show which loans sit under each note.</span></li><li><b>Equity and tax together</b><span>Equity balance, equity codes and IRS reportable data in one scroll.</span></li></ol></div></div><div class="tab-panel" role="tabpanel" id="tp-create" aria-labelledby="tab-create" tabindex="0" hidden><h3 class="tp-title">Create a borrowing entity: guided, validated, recoverable</h3><div class="cs-gallery g-3"><figure class="cs-fig "><button class="zoom" type="button" data-cap="Step 1. Start with the overview."><img src="cs6/img/be-create-1.webp" width="1370" height="1364" loading="lazy" alt="Create New BE form with overview fields, empty roles and notes tables, and equity code toggles set to No."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Step 1.</b> Start with the overview.</figcaption></figure><figure class="cs-fig "><button class="zoom" type="button" data-cap="Step 2. Add roles, notes and equity codes."><img src="cs6/img/be-create-2.webp" width="1372" height="1302" loading="lazy" alt="Create New BE form with two roles added and Notice in Lieu of Check switched to Yes."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Step 2.</b> Add roles, notes and equity codes.</figcaption></figure><figure class="cs-fig "><button class="zoom" type="button" data-cap="Step 3. Confirmation with the next steps."><img src="cs6/img/be-create-3.webp" width="1370" height="1364" loading="lazy" alt="Confirmation with a green banner saying the BE has been created, links to modify it or move equity, and a Create Another BE button."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Step 3.</b> Confirmation with the next steps.</figcaption></figure></div><div class="cs-row" style="margin-top:1rem"><figure class="cs-fig "><button class="zoom" type="button" data-cap="Duplicate check. Stops a duplicate before it is created."><img src="cs6/img/be-exists.webp" width="646" height="354" loading="lazy" alt="Dialog titled BE exists in the selected Branch, warning that the branch already has a BE with the same primary and member roles, with a link to the existing BE."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Duplicate check.</b> Stops a duplicate before it is created.</figcaption></figure><ol class="decisions"><li><b>Opens as its own tab</b><span>“Create New BE” sits next to the customer’s tabs and closes when done.</span></li><li><b>Toggles for yes-or-no codes</b><span>Equity codes default to No and switch with one tap.</span></li><li><b>Duplicate prevention</b><span>If the branch already has an entity with the same roles, a dialog links straight to it.</span></li><li><b>Success with next steps</b><span>A banner confirms the new entity and offers to move equity or create another.</span></li></ol></div></div></div>
-      </section>
-
-      <section class="cs-sec" id="system" aria-labelledby="h-system">
-        <p class="cs-kicker">Design system</p>
-        <h2 id="h-system">Specs the developers could build from</h2>
-        <p>Every screen shipped with a visual spec: spacing, type sizes and the shared component class to use, such as <code>agf-table large</code>, <code>agf-table medium</code>, <code>agf-calendar</code> and <code>agf-button-primary-round-fill</code>.</p>
-        <div class="cs-gallery g-2">
-          <figure class="cs-fig "><button class="zoom" type="button" data-cap="Edit mode spec. Spacing of 8, 12, 16, 24 and 32, and the component for each table."><img src="cs6/img/spec-edit.webp" width="1600" height="1740" loading="lazy" alt="Visual spec of the editable customer details screen with pink spacing redlines and purple component class labels."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-spec">Spec</span><b>Edit mode spec.</b> Spacing of 8, 12, 16, 24 and 32, and the component for each table.</figcaption></figure>
-          <figure class="cs-fig "><button class="zoom" type="button" data-cap="Read mode spec. The same rhythm in read mode, so switching feels seamless."><img src="cs6/img/spec-view.webp" width="1600" height="1230" loading="lazy" alt="Visual spec of the read-only customer details screen with spacing redlines and table component labels."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-spec">Spec</span><b>Read mode spec.</b> The same rhythm in read mode, so switching feels seamless.</figcaption></figure>
-        </div>
-        <ul class="cs-methods">
-          <li><b>Spacing scale</b><span>8, 12, 16, 24 and 32 pixels, with 32 between sections and 32 after the longest label.</span></li>
-          <li><b>Table sizes</b><span>Large for addresses, medium for phone and email, with columns aligned to the labels above.</span></li>
-          <li><b>One button system</b><span>Filled for the main action, outlined for the secondary, always bottom right.</span></li>
-        </ul>
-      </section>
-
-      <section class="cs-sec" id="qa" aria-labelledby="h-qa">
-        <p class="cs-kicker">Design QA</p>
-        <h2 id="h-qa">Checking the build against the design</h2>
-        <p>I reviewed each build against the designs and logged numbered issues for the developers, from icon sizes and link colours to the order of tabs.</p>
-        <div class="cs-gallery g-2">
-          <figure class="cs-fig "><button class="zoom" type="button" data-cap="Header review. Icon size, link colour and spacing fixes."><img src="cs6/img/qa-1.webp" width="1512" height="782" loading="lazy" alt="Build review with red annotations: the source pill needs margins, the customer icon should match the design, and the link colour is mismatched."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-qa">QA</span><b>Header review.</b> Icon size, link colour and spacing fixes.</figcaption></figure>
-          <figure class="cs-fig "><button class="zoom" type="button" data-cap="Tab order. Tabs reordered to follow the work."><img src="cs6/img/qa-2.webp" width="1512" height="808" loading="lazy" alt="Build review annotated that the order of tabs should be Actions, Customer Details, BEs, Loans."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-qa">QA</span><b>Tab order.</b> Tabs reordered to follow the work.</figcaption></figure>
-        </div>
-      </section>
-
-      <section class="cs-sec" id="reflection" aria-labelledby="h-reflection">
-        <p class="cs-kicker">Reflection</p>
-        <h2 id="h-reflection">What I learned</h2>
-        <ul class="cs-learn">
-          <li><b>Vocabulary is design.</b> Agreeing one name for each field did more for clarity than any layout change.</li>
-          <li><b>Show the source.</b> In consolidated systems, people trust data more when they can see where it came from.</li>
-          <li><b>Specs and QA close the loop.</b> Redlines and numbered review notes kept the build true to the design.</li>
-          <li><b>Next, I’d measure it.</b> Time to answer a customer call and screens per task would show the gain in numbers.</li>
-        </ul>
-        <p class="cs-fine">The product and lenders have been white-labelled as AgriFunds. Customer names and identifiers are sample data or blurred.</p>
-      </section>
-    </article>
+<ul class="cs-map">
+<li><span class="from">Context is lost when switching screens</span><span class="to">A customer header pinned on every tab</span></li>
+<li><span class="from">Same field, different names</span><span class="to">One vocabulary from the data dictionary</span></li>
+<li><span class="from">Loans feel disconnected from entities</span><span class="to">Group loans under their borrowing entity</span></li>
+<li><span class="from">Unsure where data came from</span><span class="to">Source tags on every row</span></li>
+<li><span class="from">Accidental edits and duplicates</span><span class="to">Separate read and edit modes, and duplicate checks</span></li>
+</ul>
+</section>
+<section class="cs-sec" id="solution" aria-labelledby="h-solution">
+<p class="cs-kicker">Solution</p>
+<h2 id="h-solution">Five modules around one customer</h2>
+<p>Pick a module to see the screens and the decisions behind them.</p>
+<div class="mod-tabs" role="tablist" aria-label="Product modules"><button class="mod-tab" role="tab" type="button" id="tab-actions" aria-controls="tp-actions" aria-selected="true" tabindex="0" data-hash="actions"><img src="cs6/img/actions.webp" alt="" width="1371" height="903" loading="lazy"><b>Customer hub</b><span>One place to start every task.</span></button><button class="mod-tab" role="tab" type="button" id="tab-details" aria-controls="tp-details" aria-selected="false" tabindex="-1" data-hash="details"><img src="cs6/img/details-view.webp" alt="" width="1370" height="1628" loading="lazy"><b>Customer details</b><span>Read first, edit when needed.</span></button><button class="mod-tab" role="tab" type="button" id="tab-loans" aria-controls="tp-loans" aria-selected="false" tabindex="-1" data-hash="loans"><img src="cs6/img/loan-summary.webp" alt="" width="1370" height="1350" loading="lazy"><b>Loans and billing</b><span>Every loan, grouped by entity.</span></button><button class="mod-tab" role="tab" type="button" id="tab-entities" aria-controls="tp-entities" aria-selected="false" tabindex="-1" data-hash="entities"><img src="cs6/img/be-details.webp" alt="" width="1370" height="2445" loading="lazy"><b>Borrowing entities</b><span>Roles, notes and equity in one view.</span></button><button class="mod-tab" role="tab" type="button" id="tab-create" aria-controls="tp-create" aria-selected="false" tabindex="-1" data-hash="create"><img src="cs6/img/be-create-2.webp" alt="" width="1372" height="1302" loading="lazy"><b>Create a BE</b><span>A guided flow with safe checks.</span></button></div>
+<div class="mod-panels"><div class="tab-panel" role="tabpanel" id="tp-actions" aria-labelledby="tab-actions" tabindex="0"><h3 class="tp-title">Customer hub: what can I do for this customer?</h3><div class="cs-row"><div><figure class="cs-fig "><button class="zoom" type="button" data-cap="Customer hub. Every task for a customer, grouped by the team that owns it."><img src="cs6/img/actions.webp" width="1371" height="903" loading="lazy" alt="Customer hub with a persistent customer header, tabs for Actions, Customer Details, BEs and Loans, a filter box and grouped action cards for digital banking, cash services, teller, equity, pricing, credit and shared services."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Customer hub.</b> Every task for a customer, grouped by the team that owns it.</figcaption></figure></div><ol class="decisions">
+<li><b>Persistent customer header</b><span>Name, IDs, address, contact, loan count and lending association stay pinned on every tab, with source system links on the right.</span></li>
+<li><b>Four tabs in the order of the work</b><span>Actions, Customer Details, BEs and Loans. The order came from design QA with the business.</span></li>
+<li><b>Actions grouped by team</b><span>Cards for digital banking, cash services, teller, equity, pricing, credit and shared services replace menus spread across systems.</span></li>
+<li><b>Filter instead of hunting</b><span>Type an action or task to narrow the cards.</span></li>
+<li><b>Shortcuts on every tab</b><span>Favourite, customise, print and help, always in the same place.</span></li>
+</ol></div></div><div class="tab-panel" role="tabpanel" id="tp-details" aria-labelledby="tab-details" tabindex="0" hidden><h3 class="tp-title">Customer details: one record, many sources</h3><div class="cs-row"><div><figure class="cs-fig "><button class="zoom" type="button" data-cap="Read-only view. Overview, contact and statements on one scroll."><img src="cs6/img/details-view.webp" width="1370" height="1628" loading="lazy" alt="Read-only customer details with sub-tabs All, Overview, Contact and Statements, an overview of identifiers and personal details, address, phone and email tables with source tags, and annual and billing statements."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Read-only view.</b> Overview, contact and statements on one scroll.</figcaption></figure><div class="cs-gallery g-2" style="margin-top:1rem">
+<figure class="cs-fig "><button class="zoom" type="button" data-cap="Edit an individual. Fields change with the customer type."><img src="cs6/img/details-edit-ind.webp" width="1371" height="1620" loading="lazy" alt="Editable customer details for an individual with salutation, names, SSN, birth and death dates, and editable address, phone and email tables."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Edit an individual.</b> Fields change with the customer type.</figcaption></figure>
+<figure class="cs-fig "><button class="zoom" type="button" data-cap="Edit an organisation. Farming-specific fields such as year began farming."><img src="cs6/img/details-edit-org.webp" width="1371" height="1620" loading="lazy" alt="Editable customer details for an organisation with name, type, tax ID, dates and year began farming."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Edit an organisation.</b> Farming-specific fields such as year began farming.</figcaption></figure>
+</div></div><ol class="decisions">
+<li><b>Read and edit are separate modes</b><span>Staff browse safely and switch to “Modify customer details” only when they mean to change something.</span></li>
+<li><b>Individual or organisation</b><span>The form adapts: SSN and birth date for a person; tax ID, organisation type and year began farming for a business.</span></li>
+<li><b>Source on every row</b><span>Tags show which system each address, phone or email came from, so staff know where a fix will land.</span></li>
+<li><b>Sub-tabs for long records</b><span>All, Overview, Contact and Statements keep a long profile scannable.</span></li>
+<li><b>Statements in context</b><span>Annual statements and billing notices sit with the customer, grouped by borrowing entity.</span></li>
+</ol></div></div><div class="tab-panel" role="tabpanel" id="tp-loans" aria-labelledby="tab-loans" tabindex="0" hidden><h3 class="tp-title">Loans and billing: the whole relationship at a glance</h3><div class="cs-row"><div><figure class="cs-fig "><button class="zoom" type="button" data-cap="Loan and billing summary. Loans grouped by borrowing entity, with a filter and a closed-loan toggle."><img src="cs6/img/loan-summary.webp" width="1370" height="1350" loading="lazy" alt="Loans tab with a left rail of loans grouped by borrowing entity and a Loan and Billing Summary showing loan summary and billing summary tables grouped by entity."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Loan and billing summary.</b> Loans grouped by borrowing entity, with a filter and a closed-loan toggle.</figcaption></figure><div style="margin-top:1rem"><figure class="cs-fig "><button class="zoom" type="button" data-cap="Loan details. Overview, payment, obligors and statements for one loan."><img src="cs6/img/loan-details.webp" width="1370" height="1460" loading="lazy" alt="Loan details with sub-tabs All, Overview, Payment, Obligors and Statements, showing overview figures, next payment, past due, past due occurrences, obligors and billing statements."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Loan details.</b> Overview, payment, obligors and statements for one loan.</figcaption></figure></div></div><ol class="decisions">
+<li><b>Left rail grouped by entity</b><span>Loans sit under the borrowing entity they belong to, with purpose, status and source on each card.</span></li>
+<li><b>Summary first</b><span>Loan and billing summary opens by default, so staff see the whole relationship before drilling in.</span></li>
+<li><b>Closed loans on demand</b><span>A toggle hides closed loans until they are needed.</span></li>
+<li><b>Plain-language labels</b><span>Field names were rewritten from system codes into lending terms using the data dictionary.</span></li>
+<li><b>Past due made visible</b><span>Days and occurrences past due get their own block instead of hiding in a tab.</span></li>
+</ol></div></div><div class="tab-panel" role="tabpanel" id="tp-entities" aria-labelledby="tab-entities" tabindex="0" hidden><h3 class="tp-title">Borrowing entities: who is on the loan, and how</h3><div class="cs-row"><div><figure class="cs-fig "><button class="zoom" type="button" data-cap="Borrowing entity details. Overview, roles, notes, equity and tax data for one entity."><img src="cs6/img/be-details.webp" width="1370" height="2445" loading="lazy" alt="Borrowing entity details with a list of entities on the left and, on the right, the entity overview, roles of customers, notes with loans, equity balance, equity codes and IRS reportable data."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Borrowing entity details.</b> Overview, roles, notes, equity and tax data for one entity.</figcaption></figure></div><ol class="decisions">
+<li><b>Entities listed beside details</b><span>Switch between a customer’s borrowing entities without leaving the page.</span></li>
+<li><b>Roles as a table</b><span>Primary, member, voter and alternate stockowner, each linked to the customer record.</span></li>
+<li><b>Notes with their loans</b><span>Expandable rows show which loans sit under each note.</span></li>
+<li><b>Equity and tax together</b><span>Equity balance, equity codes and IRS reportable data in one scroll.</span></li>
+</ol></div></div><div class="tab-panel" role="tabpanel" id="tp-create" aria-labelledby="tab-create" tabindex="0" hidden><h3 class="tp-title">Create a borrowing entity: guided, validated, recoverable</h3><div class="cs-gallery g-3">
+<figure class="cs-fig "><button class="zoom" type="button" data-cap="Step 1. Start with the overview."><img src="cs6/img/be-create-1.webp" width="1370" height="1364" loading="lazy" alt="Create New BE form with overview fields, empty roles and notes tables, and equity code toggles set to No."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Step 1.</b> Start with the overview.</figcaption></figure>
+<figure class="cs-fig "><button class="zoom" type="button" data-cap="Step 2. Add roles, notes and equity codes."><img src="cs6/img/be-create-2.webp" width="1372" height="1302" loading="lazy" alt="Create New BE form with two roles added and Notice in Lieu of Check switched to Yes."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Step 2.</b> Add roles, notes and equity codes.</figcaption></figure>
+<figure class="cs-fig "><button class="zoom" type="button" data-cap="Step 3. Confirmation with the next steps."><img src="cs6/img/be-create-3.webp" width="1370" height="1364" loading="lazy" alt="Confirmation with a green banner saying the BE has been created, links to modify it or move equity, and a Create Another BE button."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Step 3.</b> Confirmation with the next steps.</figcaption></figure>
+</div><div class="cs-row" style="margin-top:1rem"><figure class="cs-fig "><button class="zoom" type="button" data-cap="Duplicate check. Stops a duplicate before it is created."><img src="cs6/img/be-exists.webp" width="646" height="354" loading="lazy" alt="Dialog titled BE exists in the selected Branch, warning that the branch already has a BE with the same primary and member roles, with a link to the existing BE."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Duplicate check.</b> Stops a duplicate before it is created.</figcaption></figure><ol class="decisions">
+<li><b>Opens as its own tab</b><span>“Create New BE” sits next to the customer’s tabs and closes when done.</span></li>
+<li><b>Toggles for yes-or-no codes</b><span>Equity codes default to No and switch with one tap.</span></li>
+<li><b>Duplicate prevention</b><span>If the branch already has an entity with the same roles, a dialog links straight to it.</span></li>
+<li><b>Success with next steps</b><span>A banner confirms the new entity and offers to move equity or create another.</span></li>
+</ol></div></div></div>
+</section>
+<section class="cs-sec" id="system" aria-labelledby="h-system">
+<p class="cs-kicker">Design system</p>
+<h2 id="h-system">Specs the developers could build from</h2>
+<p>Every screen shipped with a visual spec: spacing, type sizes and the shared component class to use, such as <code>agf-table large</code>, <code>agf-table medium</code>, <code>agf-calendar</code> and <code>agf-button-primary-round-fill</code>.</p>
+<div class="cs-gallery g-2">
+<figure class="cs-fig "><button class="zoom" type="button" data-cap="Edit mode spec. Spacing of 8, 12, 16, 24 and 32, and the component for each table."><img src="cs6/img/spec-edit.webp" width="1600" height="1740" loading="lazy" alt="Visual spec of the editable customer details screen with pink spacing redlines and purple component class labels."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-spec">Spec</span><b>Edit mode spec.</b> Spacing of 8, 12, 16, 24 and 32, and the component for each table.</figcaption></figure>
+<figure class="cs-fig "><button class="zoom" type="button" data-cap="Read mode spec. The same rhythm in read mode, so switching feels seamless."><img src="cs6/img/spec-view.webp" width="1600" height="1230" loading="lazy" alt="Visual spec of the read-only customer details screen with spacing redlines and table component labels."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-spec">Spec</span><b>Read mode spec.</b> The same rhythm in read mode, so switching feels seamless.</figcaption></figure>
+</div>
+<ul class="cs-methods">
+<li><b>Spacing scale</b><span>8, 12, 16, 24 and 32 pixels, with 32 between sections and 32 after the longest label.</span></li>
+<li><b>Table sizes</b><span>Large for addresses, medium for phone and email, with columns aligned to the labels above.</span></li>
+<li><b>One button system</b><span>Filled for the main action, outlined for the secondary, always bottom right.</span></li>
+</ul>
+</section>
+<section class="cs-sec" id="qa" aria-labelledby="h-qa">
+<p class="cs-kicker">Design QA</p>
+<h2 id="h-qa">Checking the build against the design</h2>
+<p>I reviewed each build against the designs and logged numbered issues for the developers, from icon sizes and link colours to the order of tabs.</p>
+<div class="cs-gallery g-2">
+<figure class="cs-fig "><button class="zoom" type="button" data-cap="Header review. Icon size, link colour and spacing fixes."><img src="cs6/img/qa-1.webp" width="1512" height="782" loading="lazy" alt="Build review with red annotations: the source pill needs margins, the customer icon should match the design, and the link colour is mismatched."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-qa">QA</span><b>Header review.</b> Icon size, link colour and spacing fixes.</figcaption></figure>
+<figure class="cs-fig "><button class="zoom" type="button" data-cap="Tab order. Tabs reordered to follow the work."><img src="cs6/img/qa-2.webp" width="1512" height="808" loading="lazy" alt="Build review annotated that the order of tabs should be Actions, Customer Details, BEs, Loans."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-qa">QA</span><b>Tab order.</b> Tabs reordered to follow the work.</figcaption></figure>
+</div>
+</section>
+<section class="cs-sec" id="reflection" aria-labelledby="h-reflection">
+<p class="cs-kicker">Reflection</p>
+<h2 id="h-reflection">What I learned</h2>
+<ul class="cs-learn">
+<li><b>Vocabulary is design.</b> Agreeing one name for each field did more for clarity than any layout change.</li>
+<li><b>Show the source.</b> In consolidated systems, people trust data more when they can see where it came from.</li>
+<li><b>Specs and QA close the loop.</b> Redlines and numbered review notes kept the build true to the design.</li>
+<li><b>Next, I’d measure it.</b> Time to answer a customer call and screens per task would show the gain in numbers.</li>
+</ul>
+<p class="cs-fine">The product and lenders have been white-labelled as AgriFunds. Customer names and identifiers are sample data or blurred.</p>
+</section>
+</article>
   </div>
 
   <section class="band cs-next" aria-labelledby="h-next">
@@ -1808,9 +1835,9 @@ footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between
       <p class="cs-kicker">Next</p>
       <h2 id="h-next">See how FinUnity got one platform for loans and liens</h2>
       <div class="cta-row">
-        <a class="btn btn-primary" href="case-finunity.html">Read the FinUnity case study</a>
-        <a class="btn" href="home.html#work">Back to all work</a>
-      </div>
+<a class="btn btn-primary" href="case-finunity.html">Read the FinUnity case study</a>
+<a class="btn" href="home.html#work">Back to all work</a>
+</div>
     </div>
   </section>
 </main>
@@ -1890,6 +1917,21 @@ footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between
     const h=document.documentElement.scrollHeight-innerHeight; prog.style.width=(h>0?Math.min(100,scrollY/h*100):0)+"%";
   }
   addEventListener("scroll",onScroll,{passive:true}); onScroll();
+
+  /* "On this page" follows the sections actually on the page (sections can be added, hidden or reordered in /admin) */
+  (function(){
+    const toc=document.getElementById("csToc"); if(!toc) return;
+    const secs=[...document.querySelectorAll(".cs-body > section.cs-sec")], seen=new Set(), old=new Map();
+    toc.querySelectorAll("li").forEach(li=>{const a=li.querySelector("a"); if(a) old.set(a.getAttribute("href"),li)});
+    const frag=document.createDocumentFragment();
+    secs.forEach(sec=>{
+      let id=sec.id||"section"; while(seen.has(id)) id+="-2"; seen.add(id); if(sec.id!==id) sec.id=id;
+      let li=old.get("#"+id);
+      if(li){ old.delete("#"+id) } else { const k=sec.querySelector(".cs-kicker, h2"); li=document.createElement("li"); const a=document.createElement("a"); a.href="#"+id; a.textContent=k?k.textContent.trim():id; li.appendChild(a) }
+      frag.appendChild(li);
+    });
+    toc.replaceChildren(frag);
+  })();
 
   /* "On this page" highlights the section being read */
   const links=[...document.querySelectorAll("#csToc a")];

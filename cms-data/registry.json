@@ -1,0 +1,107 @@
+{
+ "pages": [
+  {
+   "file": "index.html",
+   "kind": "shell",
+   "label": "Sanjay Pal UX"
+  },
+  {
+   "file": "home.html",
+   "kind": "page",
+   "label": "Sanjay Pal UX"
+  },
+  {
+   "file": "about.html",
+   "kind": "page",
+   "label": "About Sanjay Pal, UX Designer"
+  },
+  {
+   "file": "contact.html",
+   "kind": "page",
+   "label": "Contact Sanjay Pal, UX Designer"
+  },
+  {
+   "file": "case-advisor.html",
+   "kind": "case",
+   "label": "Advisor Platform Case Study"
+  },
+  {
+   "file": "case-agrifunds.html",
+   "kind": "case",
+   "label": "AgriFunds Farm Lending Case Study"
+  },
+  {
+   "file": "case-aster.html",
+   "kind": "case",
+   "label": "Aster Bank eLearning Case Study"
+  },
+  {
+   "file": "case-autolore.html",
+   "kind": "case",
+   "label": "AutoLore Museum Kiosk Case Study"
+  },
+  {
+   "file": "case-finguard.html",
+   "kind": "case",
+   "label": "FinGuard Banking Case Study"
+  },
+  {
+   "file": "case-finunity.html",
+   "kind": "case",
+   "label": "FinUnity Case Study"
+  },
+  {
+   "file": "case-guru.html",
+   "kind": "case",
+   "label": "Guru Samman Samaroh Case Study"
+  }
+ ],
+ "cases": {
+  "finunity": {
+   "file": "case-finunity.html",
+   "card": "home.Lfd254#1",
+   "nav": "g.L38833#1"
+  },
+  "advisor": {
+   "file": "case-advisor.html",
+   "card": "home.Lfd254#2",
+   "nav": "g.L38833#2"
+  },
+  "finguard": {
+   "file": "case-finguard.html",
+   "card": "home.Lfd254#3",
+   "nav": "g.L38833#3"
+  },
+  "agrifunds": {
+   "file": "case-agrifunds.html",
+   "card": "home.Lfd254#4",
+   "nav": "g.L38833#4"
+  },
+  "aster": {
+   "file": "case-aster.html",
+   "card": "home.Lfd254#5",
+   "nav": "g.L38833#5"
+  },
+  "autolore": {
+   "file": "case-autolore.html",
+   "card": "home.Lfd254#6",
+   "nav": "g.L38833#6"
+  },
+  "guru": {
+   "file": "case-guru.html",
+   "card": "home.Lfd254#7",
+   "nav": "g.L38833#7"
+  }
+ },
+ "workList": "home.Lfd254",
+ "navList": "g.L38833",
+ "order": [
+  "finunity",
+  "advisor",
+  "finguard",
+  "agrifunds",
+  "aster",
+  "autolore",
+  "guru"
+ ]
+}
