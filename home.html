@@ -768,7 +768,7 @@ svg .l1,svg .l2,svg .l3,#themeBtn .rays,#themeBtn .core,#themeBtn .moon,#themeBt
 #themeBtn:hover .core{transform:scale(.88)}
 #themeBtn:hover .moon{transform:rotate(-20deg)}
 #themeBtn .star{opacity:0; transform-origin:center; transform:scale(.4); transition:opacity .3s, transform .4s cubic-bezier(.2,.7,.2,1)}
-#themeBtn .s1{transform-origin:12.5px 4px} #themeBtn .s2{transform-origin:16.5px 7.5px; transition-delay:.08s}
+#themeBtn .s1{transform-origin:17px 4.1px} #themeBtn .s2{transform-origin:20.6px 8.2px; transition-delay:.08s}
 #themeBtn:hover .star{opacity:1; transform:scale(1)}
 /* Sound: waves ripple outward; when muted the X gives a little shake */
 .sound-btn .wave{transform-origin:11px 12px; transition:transform .35s cubic-bezier(.2,.7,.2,1)}
@@ -820,7 +820,7 @@ a.btn:hover svg,.more-btn[aria-expanded="false"]:hover svg{animation:nudgeDown 1
 /* Hero badge: plain outline, not a button */
 .hero .eyebrow{background:transparent; border:1px solid var(--line-strong); box-shadow:none; -webkit-backdrop-filter:none; backdrop-filter:none}
 
-/* "FinTech Professional" ring over the portrait, in the style of a profile-frame banner */
+/* "FinTech Experience" ring over the portrait, in the style of a profile-frame banner */
 .otw-ring{position:absolute; z-index:2; left:0; top:0; width:100%; height:auto; aspect-ratio:869/900; pointer-events:none; animation:float 7s ease-in-out infinite;
   --otw-fade:conic-gradient(from 0deg at 49.94% 50.22%, transparent 0deg 106deg, #000 170deg 280deg, transparent 332deg 360deg);
   -webkit-mask-image:var(--otw-fade); mask-image:var(--otw-fade)}
@@ -1044,6 +1044,10 @@ a.btn:hover svg,.more-btn[aria-expanded="false"]:hover svg{animation:nudgeDown 1
   background:linear-gradient(180deg,#6E36AB 0%,#55238B 100%) !important; color:#fff !important; box-shadow:inset 0 1px 0 rgba(255,255,255,.22), 0 10px 26px rgba(74,29,122,.45) !important}
 .btn.btn-primary:focus-visible,.bar .hdr-cta:focus-visible{outline:3px solid #B98CFF !important; outline-offset:3px}
 :root[data-theme="dark"]{--pp-glow:rgba(150,100,230,.35)}
+/* Dark theme: primary buttons rest with the deeper shadow and take the soft glow on hover */
+:root[data-theme="dark"] .btn.btn-primary,:root[data-theme="dark"] .hero .btn-primary,:root[data-theme="dark"] .bar .hdr-cta,:root[data-theme="dark"] .cs-pass .btn-primary,:root[data-theme="dark"] .loader-enter .btn.btn-primary,:root[data-theme="dark"] .cs-next .btn-primary{box-shadow:inset 0 1px 0 rgba(255,255,255,.22), 0 10px 26px rgba(74,29,122,.45) !important}
+:root[data-theme="dark"] .btn.btn-primary:hover,:root[data-theme="dark"] .btn.btn-primary:active,:root[data-theme="dark"] .hero .btn-primary:hover,:root[data-theme="dark"] .hero .btn-primary:active,:root[data-theme="dark"] .bar .hdr-cta:hover,:root[data-theme="dark"] .bar .hdr-cta:active,:root[data-theme="dark"] .cs-pass .btn-primary:hover,:root[data-theme="dark"] .cs-next .btn-primary:hover,:root[data-theme="dark"] .loader-enter .btn.btn-primary:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.18), 0 6px 18px rgba(30,215,96,.42) !important}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn.btn-primary,:root:not([data-theme="light"]) .hero .btn-primary,:root:not([data-theme="light"]) .bar .hdr-cta,:root:not([data-theme="light"]) .cs-pass .btn-primary,:root:not([data-theme="light"]) .loader-enter .btn.btn-primary,:root:not([data-theme="light"]) .cs-next .btn-primary{box-shadow:inset 0 1px 0 rgba(255,255,255,.22), 0 10px 26px rgba(74,29,122,.45) !important} :root:not([data-theme="light"]) .btn.btn-primary:hover,:root:not([data-theme="light"]) .btn.btn-primary:active,:root:not([data-theme="light"]) .hero .btn-primary:hover,:root:not([data-theme="light"]) .hero .btn-primary:active,:root:not([data-theme="light"]) .bar .hdr-cta:hover,:root:not([data-theme="light"]) .bar .hdr-cta:active,:root:not([data-theme="light"]) .cs-pass .btn-primary:hover,:root:not([data-theme="light"]) .cs-next .btn-primary:hover,:root:not([data-theme="light"]) .loader-enter .btn.btn-primary:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.18), 0 6px 18px rgba(30,215,96,.42) !important}}
 #work .bento .case{transition:background-color .35s ease, border-color .35s ease, box-shadow .35s ease}
 #work .bento .case.has-link:hover,#work .bento .case.has-link:focus-within{background:#050505 !important; border-color:color-mix(in srgb, var(--tint) 55%, transparent) !important; box-shadow:0 18px 40px rgba(0,0,0,.45)}
 
@@ -1173,7 +1177,7 @@ section.block.sig-quote{padding-block:clamp(3.5rem,9vw,7rem); text-align:center;
 .sig-quote .sq-kicker{margin:0; font-family:var(--body); font-size:.78rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
 .sig-quote blockquote{margin:0; width:100%}
 .sig-quote blockquote p{margin:0}
-.sig-quote .sq-svg{display:block; width:min(100%,1100px); height:auto; margin-inline:auto; color:var(--sig-ink); overflow:visible}
+.sig-quote .sq-svg{opacity:.8; display:block; width:min(100%,1100px); height:auto; margin-inline:auto; color:var(--sig-ink); overflow:visible}
 .sig-quote .sq-note{margin:calc(-1 * clamp(.35rem,2.6vw,2.2rem)) 0 0; font-family:var(--body); font-size:clamp(1.05rem,1.6vw,1.2rem); color:var(--muted)}
 .sig-quote .sq-line{width:min(220px,40%); height:1px; background:var(--line-strong); margin-top:.4rem}
 .sig-quote .sq-face{display:inline-block; width:1.9em; height:1.9em; border-radius:50%; object-fit:cover; vertical-align:-.62em; margin:0 .2em; background:#F3EBD9; box-shadow:0 0 0 2px var(--surface), 0 2px 8px rgba(6,34,22,.18)}
@@ -1182,6 +1186,124 @@ section.block.sig-quote{padding-block:clamp(3.5rem,9vw,7rem); text-align:center;
 .sig-quote .nl-dot.pop{animation:nlPop .7s cubic-bezier(.3,.7,.3,1)}
 .sig-quote .nl-dot.gone{opacity:0}
 @keyframes nlPop{0%{transform:scale(0)} 55%{transform:scale(1.7)} 100%{transform:scale(1)}}
+.foot-logo{overflow:visible}
+.foot-logo .tittle-hit{cursor:pointer; pointer-events:all}
+.foot-logo .tittle-fx{pointer-events:none}
+.foot-logo .tittle-fx circle{fill-opacity:1}
+/* small photo in the quote line: a balloon on a thread; on hover it flies up and pops at the top bar */
+.sig-quote .sq-balloon{position:relative; z-index:1; display:inline-block; width:1.75em; height:2.05em; margin:0 .3em; vertical-align:-.5em; cursor:pointer; transform-origin:50% 140%; animation:balloonIdle 3.6s ease-in-out infinite}
+.sig-quote .sq-balloon .sq-face{display:block; width:100%; height:100%; margin:0; border-radius:50% 50% 47% 47% / 56% 56% 44% 44%; object-fit:cover; box-shadow:0 0 0 2px var(--surface), 0 3px 8px rgba(6,34,22,.18); position:relative; z-index:2}
+.sq-balloon::before{content:""; position:absolute; left:50%; top:calc(100% - .06em); width:.34em; height:.22em; transform:translateX(-50%); background:var(--muted); clip-path:polygon(50% 0,100% 100%,0 100%); z-index:1}
+.sq-balloon::after{content:""; position:absolute; left:50%; top:calc(100% + .14em); width:.5em; height:1.1em; transform:translateX(-50%); background:var(--muted); -webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2010%2040%27%3E%3Cpath%20d%3D%27M5%200C1.5%207%208.5%2013%205%2021S1.5%2033%205%2040%27%20fill%3D%27none%27%20stroke%3D%27black%27%20stroke-width%3D%271.5%27%20stroke-linecap%3D%27round%27/%3E%3C/svg%3E") center/100% 100% no-repeat; mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2010%2040%27%3E%3Cpath%20d%3D%27M5%200C1.5%207%208.5%2013%205%2021S1.5%2033%205%2040%27%20fill%3D%27none%27%20stroke%3D%27black%27%20stroke-width%3D%271.5%27%20stroke-linecap%3D%27round%27/%3E%3C/svg%3E") center/100% 100% no-repeat; z-index:1}
+@keyframes balloonIdle{0%,100%{transform:rotate(-3deg)} 50%{transform:rotate(3deg) translateY(-.08em)}}
+.sq-balloon.flying{animation:none; color:var(--muted)}
+.sq-balloon.flying .sq-face{border-radius:50% 50% 47% 47% / 56% 56% 44% 44%; object-fit:cover; width:100%; height:100%; display:block; box-shadow:0 0 0 2px var(--surface), 0 10px 22px rgba(6,34,22,.25)}
+.sq-shard{position:fixed; z-index:2001; pointer-events:none; border-radius:3px; background-repeat:no-repeat}
+.sq-popring{position:fixed; z-index:2001; pointer-events:none; border-radius:50%; border:3px solid #E0322B}
+@media (prefers-reduced-motion: reduce){.sig-quote .sq-balloon{animation:none}}
+:root.a11y-motion .sig-quote .sq-balloon{animation:none}
+/* Hero ring on photo hover: stars spin, "FINTECH EXPERIENCE" stretches its spacing like rubber */
+.otw-ring .otw-star-fx{transform-box:fill-box; transform-origin:50% 50%}
+.otw-ring .otw-star-fx .sb{fill:#fff; transition:fill .35s ease}
+.otw-ring .otw-star-fx .sf{opacity:0; transition:opacity .35s ease}
+.otw-ring .otw-star-fx .sf polygon{fill:var(--g); stroke:var(--g); stroke-width:.3; stroke-linejoin:round}
+.otw-ring .otw-star-fx .sb,.otw-ring .otw-star-fx .sf{transform-box:view-box; transform-origin:0 0; transition:transform .45s cubic-bezier(.3,1.6,.5,1), fill .35s ease, opacity .35s ease}
+.hero-photo:hover .otw-ring .otw-star-fx .sb,.hero-photo:hover .otw-ring .otw-star-fx .sf{transform:scale(1.25)}
+.otw-ring.js-stars .otw-text .otw-star{fill:transparent}
+.hero-photo:hover .otw-star-fx{animation:otwSpin 1.4s linear infinite}
+.hero-photo:hover .otw-star-fx.s2{animation-direction:reverse}
+@keyframes otwSpin{to{transform:rotate(360deg)}}
+.hero-photo.ring-in .otw-text{animation:otwRubber .9s cubic-bezier(.3,.7,.3,1) both}
+.hero-photo.ring-in .otw-text .otw-thin{animation:otwRubberThin .9s cubic-bezier(.3,.7,.3,1) both}
+.hero-photo.ring-out .otw-text{animation:otwRubberOut .9s cubic-bezier(.3,.7,.3,1) both}
+.hero-photo.ring-out .otw-text .otw-thin{animation:otwRubberOutThin .9s cubic-bezier(.3,.7,.3,1) both}
+@keyframes otwRubberOut{0%{letter-spacing:.18em} 38%{letter-spacing:.05em} 58%{letter-spacing:.13em} 76%{letter-spacing:.08em} 90%{letter-spacing:.105em} 100%{letter-spacing:.1em}}
+@keyframes otwRubberOutThin{0%{letter-spacing:.2em} 38%{letter-spacing:.07em} 58%{letter-spacing:.15em} 76%{letter-spacing:.1em} 90%{letter-spacing:.125em} 100%{letter-spacing:.12em}}
+@keyframes otwRubber{0%{letter-spacing:.1em} 38%{letter-spacing:.24em} 58%{letter-spacing:.15em} 76%{letter-spacing:.2em} 90%{letter-spacing:.17em} 100%{letter-spacing:.18em}}
+@keyframes otwRubberThin{0%{letter-spacing:.12em} 38%{letter-spacing:.26em} 58%{letter-spacing:.17em} 76%{letter-spacing:.22em} 90%{letter-spacing:.19em} 100%{letter-spacing:.2em}}
+@media (prefers-reduced-motion: reduce){.hero-photo:hover .otw-star-fx,.hero-photo .otw-text,.hero-photo .otw-text .otw-thin{animation:none !important}}
+:root.a11y-motion .hero-photo:hover .otw-star-fx,:root.a11y-motion .hero-photo .otw-text,:root.a11y-motion .hero-photo .otw-text .otw-thin{animation:none !important}
+/* About me photo: small location watermark, bottom right */
+.about-photo .photo-loc{position:absolute; z-index:2; right:5.5%; bottom:11%; display:flex; align-items:center; gap:.3em; margin:0; font-family:var(--body); font-size:.68rem; font-weight:500; letter-spacing:.04em; line-height:1; color:rgba(255,255,255,.66); text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.about-photo .photo-loc a{display:inline-flex; align-items:center; gap:.3em; color:inherit; text-decoration:none; padding:.35em .2em; transition:color .2s}
+.about-photo .photo-loc a:hover,.about-photo .photo-loc a:focus-visible{color:#fff; text-decoration:underline; text-underline-offset:2px}
+.about-photo .photo-loc svg{width:1.05em; height:1.05em; flex:none; filter:drop-shadow(0 1px 2px rgba(0,0,0,.5))}
+@media (max-width:600px){.about-photo .photo-loc{font-size:.58rem; right:6%; bottom:13%}}
+/* Dark theme: every other button gets the same green neon glow on hover as the primary buttons */
+:root[data-theme="dark"] .btn:not(.btn-primary):hover,:root[data-theme="dark"] .btn:not(.btn-primary):active,:root[data-theme="dark"] .icon-btn:hover,:root[data-theme="dark"] .icon-btn:active,:root[data-theme="dark"] .more-btn:hover,:root[data-theme="dark"] .more-btn:active,:root[data-theme="dark"] .socials a:hover,:root[data-theme="dark"] .socials a.li-btn:hover,:root[data-theme="dark"] .a11y-fab:hover,:root[data-theme="dark"] .sound-btn:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.18), 0 6px 18px rgba(30,215,96,.42) !important}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn:not(.btn-primary):hover,:root:not([data-theme="light"]) .btn:not(.btn-primary):active,:root:not([data-theme="light"]) .icon-btn:hover,:root:not([data-theme="light"]) .icon-btn:active,:root:not([data-theme="light"]) .more-btn:hover,:root:not([data-theme="light"]) .more-btn:active,:root:not([data-theme="light"]) .socials a:hover,:root:not([data-theme="light"]) .socials a.li-btn:hover,:root:not([data-theme="light"]) .a11y-fab:hover,:root:not([data-theme="light"]) .sound-btn:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.18), 0 6px 18px rgba(30,215,96,.42) !important}}
+/* ========== Micro-animations for small icons that are not buttons, each tied to what the icon means ========== */
+/* Lock (work cards, password popup): the shackle lifts and swings open, as if unlocking */
+.lock path,.g-ico svg path{transform-box:view-box; transform-origin:16px 11px; transition:transform .4s cubic-bezier(.3,1.6,.5,1)}
+.lock{transition:opacity .25s}
+#work .case.has-link:hover .lock{opacity:1}
+#work .case.has-link:hover .lock path,.g-ico:hover svg path{transform:translateY(-1.8px) rotate(-16deg)}
+/* "Read the case study" arrow keeps nudging forward while the card is hovered */
+#work .case.has-link:hover .read-more svg{animation:nudgeRight 1s ease-in-out infinite}
+@keyframes nudgeRight{0%,100%{transform:translateX(4px)} 50%{transform:translateX(9px)}}
+/* Recognition: the medal swings on its ribbon, the trophy cheers, the speech bubble's lines type in */
+.awards .aw-ico{transition:transform .3s cubic-bezier(.3,1.6,.5,1)}
+.awards li:hover .aw-ico{transform:scale(1.08)}
+.awards li:nth-child(1):hover .aw-ico svg{transform-origin:50% 5%; animation:medalSwing .9s ease-in-out}
+@keyframes medalSwing{20%{transform:rotate(16deg)} 45%{transform:rotate(-11deg)} 65%{transform:rotate(6deg)} 82%{transform:rotate(-3deg)} 100%{transform:none}}
+.awards li:nth-child(2):hover .aw-ico svg{transform-origin:50% 100%; animation:trophyCheer .75s cubic-bezier(.3,.7,.3,1)}
+@keyframes trophyCheer{30%{transform:translateY(-3px) rotate(-9deg)} 55%{transform:translateY(0) rotate(7deg)} 78%{transform:rotate(-3deg)} 100%{transform:none}}
+.awards li:nth-child(3) .aw-ico svg path:nth-child(2){stroke-dasharray:9; stroke-dashoffset:0}
+.awards li:nth-child(3):hover .aw-ico svg path:nth-child(2){animation:typeLines .9s steps(9) both}
+@keyframes typeLines{from{stroke-dashoffset:9}}
+/* Sparkle in the hero pill: spins and flares */
+.eyebrow:hover .dot svg{animation:sparkSpin .9s cubic-bezier(.3,.7,.3,1)}
+@keyframes sparkSpin{50%{transform:rotate(180deg) scale(1.4)} 100%{transform:rotate(360deg) scale(1)}}
+/* "Currently working with" outside-link arrow flies out and back, like the social links */
+.now-at a svg{overflow:visible}
+.now-at a:hover svg{animation:flyOut .55s cubic-bezier(.4,0,.2,1)}
+/* Visa note: the tick redraws itself and the circle pulses */
+.visa-note svg path{stroke-dasharray:12; stroke-dashoffset:0}
+.visa-note svg circle{transform-box:fill-box; transform-origin:center}
+.visa-note:hover svg path{animation:checkDraw .55s ease-out}
+.visa-note:hover svg circle{animation:ringPulse .55s ease-out}
+@keyframes checkDraw{from{stroke-dashoffset:12}}
+@keyframes ringPulse{40%{transform:scale(1.18)} 100%{transform:none}}
+/* Photo location pin: drops and bounces onto the spot */
+.photo-loc a svg{transform-origin:50% 100%}
+.photo-loc a:hover svg{animation:pinDrop .7s cubic-bezier(.3,.7,.3,1)}
+@keyframes pinDrop{25%{transform:translateY(-4px)} 50%{transform:translateY(0) scale(1.1,.85)} 72%{transform:translateY(-1.5px)} 100%{transform:none}}
+/* Hero badges: a small stamp-like wobble as they grow */
+.bdg:hover > img,.bdg:hover .bdg-svg{animation:badgeWobble .7s cubic-bezier(.3,.7,.3,1)}
+@keyframes badgeWobble{30%{transform:rotate(-8deg)} 60%{transform:rotate(5deg)} 82%{transform:rotate(-2deg)} 100%{transform:none}}
+@media (prefers-reduced-motion: reduce){#work .case.has-link:hover .read-more svg,.awards li:hover .aw-ico svg,.awards li:hover .aw-ico svg path,.eyebrow:hover .dot svg,.now-at a:hover svg,.visa-note:hover svg path,.visa-note:hover svg circle,.photo-loc a:hover svg,.bdg:hover > img,.bdg:hover .bdg-svg{animation:none}}
+:root.a11y-motion #work .case.has-link:hover .read-more svg,:root.a11y-motion .awards li:hover .aw-ico svg,:root.a11y-motion .awards li:hover .aw-ico svg path,:root.a11y-motion .eyebrow:hover .dot svg,:root.a11y-motion .now-at a:hover svg,:root.a11y-motion .visa-note:hover svg path,:root.a11y-motion .visa-note:hover svg circle,:root.a11y-motion .photo-loc a:hover svg,:root.a11y-motion .bdg:hover > img,:root.a11y-motion .bdg:hover .bdg-svg{animation:none}
+#work .sec-lede{max-width:48ch}
+/* outside links keep their hover look while the top-page click target sits over them */
+.about-photo .photo-loc a.hl{color:#fff; text-decoration:underline; text-underline-offset:2px}
+.photo-loc a.hl svg{animation:pinDrop .7s cubic-bezier(.3,.7,.3,1)}
+.socials a.li-btn.hl{background:#004182 !important; border-color:#004182 !important; transform:translateY(-1px)}
+.socials a.hl svg{animation:flyOut .55s cubic-bezier(.4,0,.2,1)}
+.now-at a.hl svg{animation:flyOut .55s cubic-bezier(.4,0,.2,1)}
+:root[data-theme="dark"] .socials a.li-btn.hl{box-shadow:inset 0 1px 0 rgba(255,255,255,.18), 0 6px 18px rgba(30,215,96,.42) !important}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .socials a.li-btn.hl{box-shadow:inset 0 1px 0 rgba(255,255,255,.18), 0 6px 18px rgba(30,215,96,.42) !important}}
+/* ========== Type scale: one set of sizes for every page ========== */
+:root{
+  --fs-h1:clamp(2.375rem, 1.5rem + 3.4vw, 4.5rem);   /* 38px phone → 72px desktop */
+  --fs-h2:clamp(2rem, 1.35rem + 2.2vw, 3.25rem);     /* 32px → 52px */
+  --fs-h3:clamp(1.25rem, 1.1rem + .5vw, 1.5rem);     /* 20px → 24px */
+  --fs-body:1.0625rem;                               /* 17px */
+}
+body{font-size:var(--fs-body); line-height:1.6}
+/* H1: page titles (home hero, case-study titles) */
+main h1{font-size:var(--fs-h1) !important; line-height:1.05}
+/* H2: section titles on the home page and in case studies (not dialog or panel titles) */
+main .sec-num,main #contact h2,main section h2:not(dialog h2){font-size:var(--fs-h2) !important; line-height:1.1}
+/* H3: card and sub-section titles */
+main #work .case h3,main #about h3:not(.sec-lede),main .awards-h,main .glance-card h3,main .cs-sub,main .cs-sec h3:not(.sec-lede),main .pdetail h3{font-size:var(--fs-h3) !important; line-height:1.2}
+/* Body: running text */
+main p:not([class]),main .about-cols p,main li:not([class]){font-size:var(--fs-body) !important; line-height:1.6}
+main .about-lead{font-family:var(--body) !important; font-size:var(--fs-body) !important; font-weight:400 !important; line-height:1.6 !important; letter-spacing:0 !important}
+/* About me: the green shape behind the photo, shown at 5% strength */
+.about-photo .about-photo-shape{opacity:.05}
+/* Dark theme: the maroon About panel is 30% transparent */
+:root[data-theme="dark"] #about>.wrap{background:rgba(43,21,25,.7)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) #about>.wrap{background:rgba(43,21,25,.7)}}
 </style>
 </head>
 <body>
@@ -1277,11 +1399,11 @@ section.block.sig-quote{padding-block:clamp(3.5rem,9vw,7rem); text-align:center;
             <li class="sm-all"><a href="#work">All work</a></li>
           </ul>
         </div>
-        <a href="about.html">About</a>
-        <a href="contact.html" class="nav-contact">Get in touch</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="nav-contact">Get in touch</a>
       </div>
     </nav>
-    <a class="btn btn-primary hdr-cta" href="contact.html">Get in touch</a>
+    <a class="btn btn-primary hdr-cta" href="#contact">Get in touch</a>
     <div class="hdr-tools">
       <button class="icon-btn" id="themeBtn" type="button" aria-label="Switch to dark theme">
         <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"></svg>
@@ -1297,7 +1419,7 @@ section.block.sig-quote{padding-block:clamp(3.5rem,9vw,7rem); text-align:center;
    <div class="hero-layout">
    <div class="hero-main">
     <p class="eyebrow anim-in" style="--d:0ms"><span class="dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/></svg></span><span data-cms="tbcdd03b">Accelerated solutions with AI, UX laws, principles and ethics</span></p>
-    <h1 class="anim-in" style="--d:90ms"><span data-cms="tde48104">I’m Sanjay Pal,</span> <span class="role" data-cms="tb050e76">a Human+Agent Experience Designer.</span></h1>
+    <h1 class="anim-in" style="--d:90ms"><span data-cms="tde48104">Hello! I’m Sanjay&nbsp;Pal,</span> <span class="role" data-cms="tb050e76">a Human+Agent Experience Designer.</span></h1>
     <div class="hero-grid">
       <div class="hero-copy anim-in" style="--d:180ms">
         <p data-cms="tv2-brief1">I turn complex, high-stakes workflows into products people trust. Lately that has been fintech: a property tax loan platform at FinUnity and an advisor workspace that halved the steps to run quarter-end reports.</p>
@@ -1306,11 +1428,11 @@ section.block.sig-quote{padding-block:clamp(3.5rem,9vw,7rem); text-align:center;
         <div class="cta-row">
           <a class="btn btn-primary" href="#work">See selected work
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
-          <a class="btn btn-ghost" href="contact.html" data-cms="tc49bb4c">Get in touch</a>
+          <a class="btn btn-ghost" href="#contact" data-cms="tc49bb4c">Get in touch</a>
         </div>
       </div>
       <ul class="stats badge-row anim-in" style="--d:270ms" aria-label="Credentials and experience">
-        <li class="bdg bdg-img" title="FinTech Professional"><img class="b-light" src="badge-fintech-light.webp" width="520" height="520" alt="FinTech Professional badge: I design financial products around trust, clarity and control, across banking, payments and insurance, including FinUnity’s property tax financing platform and a wealth advisor workspace."><img class="b-dark" src="badge-fintech-dark.webp" width="520" height="520" alt="" aria-hidden="true"></li>
+        <li class="bdg bdg-img" title="FinTech Experience"><img class="b-light" src="badge-fintech-light.webp" width="520" height="520" alt="FinTech Experience badge: I design financial products around trust, clarity and control, across banking, payments and insurance, including FinUnity’s property tax financing platform and a wealth advisor workspace."><img class="b-dark" src="badge-fintech-dark.webp" width="520" height="520" alt="" aria-hidden="true"></li>
         <li class="bdg ink-green" title="AI-assisted design, since the AI era began"><span class="sr-only">Badge: <span data-cms="tai-badge">AI-assisted design</span>, a human-led design workflow using AI since the start of the AI era to speed up research, ideation and prototyping.</span><svg class="bdg-svg" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
  <path class="pp" d="M8 3H112V82L60 117L8 82Z"/>
  <path d="M8 3H112V82L60 117L8 82Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
@@ -1378,9 +1500,9 @@ section.block.sig-quote{padding-block:clamp(3.5rem,9vw,7rem); text-align:center;
          <mask id="otwMaskB" maskUnits="userSpaceOnUse" x="0" y="0" width="869" height="900"><rect width="869" height="900" fill="url(#otwFadeB)"/></mask>
        </defs>
        <g mask="url(#otwShape)"><path class="otw-band" d="M836.5 487.2A404 404 0 1 1 329.4 61.8" fill="none" stroke="#4A1D7A" stroke-width="104"/></g>
-       <text class="otw-text"><textPath href="#otwPath" startOffset="50%" text-anchor="middle"><tspan class="otw-star">★</tspan>&#160;&#160;FINTECH&#160;&#160;<tspan class="otw-thin">PROFESSIONAL</tspan>&#160;&#160;<tspan class="otw-star">★</tspan></textPath></text>
+       <text class="otw-text"><textPath href="#otwPath" startOffset="50%" text-anchor="middle"><tspan class="otw-star">★</tspan>&#160;&#160;FINTECH&#160;&#160;<tspan class="otw-thin">EXPERIENCE</tspan>&#160;&#160;<tspan class="otw-star">★</tspan></textPath></text>
      </svg>
-     <figcaption class="sr-only">FinTech Professional</figcaption>
+     <figcaption class="sr-only">FinTech Experience</figcaption>
    </figure>
    </div>
   </div>
@@ -1390,7 +1512,7 @@ section.block.sig-quote{padding-block:clamp(3.5rem,9vw,7rem); text-align:center;
     <div class="wrap">
       <div class="sec-head">
         <h2 class="sec-num" id="work-h" data-cms="t00040ba">Work</h2>
-        <p class="sec-lede" data-cms="tfaa31c2">Selected case studies across enterprise, finance and health.</p>
+        <p class="sec-lede" data-cms="tfaa31c2">Case studies in financial services, wealth management, banking and agri lending, plus a public-space kiosk and a live event.</p>
       </div>
       <div class="bento">
         <article class="case c1 has-link" style="--tint:#F5C84C">
@@ -1493,6 +1615,7 @@ section.block.sig-quote{padding-block:clamp(3.5rem,9vw,7rem); text-align:center;
           <figure class="about-photo">
             <img class="about-photo-shape" src="boardwalk-shape.webp" width="1200" height="331" alt="" aria-hidden="true">
             <img src="sanjay-boardwalk-curve.webp" width="1800" height="497" loading="lazy" alt="Sanjay walking away along a weathered wooden boardwalk towards a misty beach, a pier in the distance.">
+            <figcaption class="photo-loc"><a href="https://www.google.com/maps/search/?api=1&amp;query=Jacksonville%2C+Florida%2C+USA" target="_blank" rel="noopener" title="Open Jacksonville, Florida in Google Maps" data-cms="tv3-photoloc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>Jacksonville, Florida, USA</a></figcaption>
           </figure>
           <div class="about-cols">
             <p data-cms="tv2-me-p1">I enjoy the problems many people find dull: dense data tables, multi-step approvals, compliance rules. Making those feel calm and obvious is the part of the job I like most.</p>
@@ -1576,7 +1699,7 @@ section.block.sig-quote{padding-block:clamp(3.5rem,9vw,7rem); text-align:center;
       <figure>
         <p class="sq-kicker" data-cms="tv3-qk">What I believe</p>
         <blockquote><p><span class="sr-only">Human-made ART is the New Luxury</span><svg class="sq-svg" viewBox="0 0 2129 327" aria-hidden="true" focusable="false"><defs><mask id="nlMask" maskUnits="userSpaceOnUse" x="0" y="0" width="2129" height="327"><rect class="nl-base" width="2129" height="327" fill="#fff"/><g class="nl-dots" fill="#fff"></g><circle class="nl-dot-hole" cx="1188.5" cy="106" r="9.5" fill="#000" style="opacity:0"/></mask><mask id="nlFresh" maskUnits="userSpaceOnUse" x="0" y="0" width="2129" height="327"><g class="nl-fresh" fill="#fff"></g></mask></defs><g fill="currentColor" mask="url(#nlMask)"><path id="nlInk" fill-rule="evenodd" clip-rule="evenodd" d="M 512 140 510 138 507 138 506 137 489 137 488 138 483 138 481 137 472 146 463 153 457 156 451 156 448 153 447 150 446 132 445 131 440 131 430 139 422 147 420 146 430 129 430 125 429 124 426 124 422 128 416 138 402 152 394 157 391 157 388 153 388 146 392 134 394 131 394 126 393 125 385 125 384 126 381 126 373 131 367 137 366 137 366 138 353 151 346 155 341 155 337 151 336 140 334 137 330 137 315 152 314 151 314 148 319 136 319 131 318 130 314 130 312 132 309 133 300 140 291 149 290 147 295 137 300 130 300 126 295 126 292 129 283 143 266 158 261 159 260 158 260 152 263 146 263 144 271 129 269 126 265 126 262 129 261 132 255 140 239 156 235 157 234 156 238 144 246 130 246 127 245 126 241 126 238 129 234 138 230 144 228 150 228 153 227 154 227 159 229 162 231 163 235 163 244 158 252 151 253 152 253 160 256 163 258 164 265 163 269 161 275 156 276 159 274 162 274 165 275 166 279 166 302 145 308 141 309 142 306 149 306 158 309 160 314 159 328 147 330 149 330 152 333 157 339 160 345 160 348 159 355 154 357 159 359 160 364 160 367 158 369 158 380 149 383 158 386 161 389 162 396 161 405 155 406 156 406 159 404 162 404 165 407 167 437 140 439 141 438 142 439 143 439 147 443 157 450 161 455 161 461 159 469 154 481 143 510 142 Z M 419 147 420 146 421 147 420 148 Z M 384 132 385 135 382 139 372 149 367 153 364 154 363 153 366 148 380 134 Z M 1223 123 1221 121 1216 122 1212 126 1210 130 1193 147 1181 156 1174 159 1171 159 1169 157 1169 153 1177 136 1181 130 1181 127 1179 125 1176 125 1157 143 1157 145 1161 145 1163 143 1164 144 1162 150 1162 158 1163 160 1168 164 1175 164 1178 163 1193 153 1201 145 1202 145 1209 137 1210 138 1210 144 1211 145 1211 156 1208 163 1204 167 1197 169 1194 165 1196 160 1193 161 1189 166 1189 169 1192 173 1195 173 1196 174 1197 173 1204 173 1208 171 1214 166 1218 158 1219 148 1218 147 1217 134 1223 126 Z M 1693 119 1691 117 1687 119 1687 130 1682 142 1680 144 1676 152 1670 158 1666 160 1662 157 1662 154 1661 153 1662 137 1660 136 1658 136 1635 159 1633 160 1632 159 1634 151 1645 132 1644 129 1641 128 1636 132 1633 138 1615 154 1596 164 1586 166 1582 161 1587 149 1601 143 1605 140 1611 133 1612 130 1611 126 1608 124 1604 124 1597 127 1593 130 1581 144 1577 152 1577 155 1576 156 1576 164 1579 169 1583 171 1590 171 1599 168 1609 163 1625 151 1626 153 1624 157 1624 163 1626 166 1630 167 1638 163 1653 149 1654 150 1655 158 1659 164 1662 165 1669 164 1682 152 1686 146 1689 137 1691 134 1691 131 1693 126 Z M 1604 130 1605 131 1604 134 1598 140 1594 142 1593 140 1595 137 Z M 2128 160 2126 158 2123 158 2122 157 2106 157 2105 158 2097 158 2096 159 2086 160 2085 161 2082 161 2078 163 2075 163 2074 164 2071 164 2062 167 2061 165 2066 157 2072 144 2074 142 2074 140 2078 133 2079 125 2077 124 2071 126 2057 141 2046 150 2040 153 2039 152 2040 146 2044 138 2046 136 2050 127 2048 125 2044 125 2040 129 2035 140 2018 155 2010 159 2008 157 2008 155 2015 138 2013 135 2000 135 1999 134 2003 125 2003 122 2001 120 1997 121 1993 125 1991 129 1991 135 1971 155 1964 159 1962 159 1960 157 1960 154 1961 153 1962 146 1967 136 1969 134 1970 126 1965 126 1962 129 1957 138 1940 155 1936 157 1935 156 1935 153 1937 147 1947 129 1946 126 1942 126 1940 127 1934 138 1920 151 1913 156 1907 159 1899 159 1897 158 1892 152 1891 147 1908 124 1916 116 1916 115 1928 104 1927 101 1925 101 1912 112 1904 123 1895 132 1889 140 1887 139 1886 130 1885 129 1885 125 1883 122 1879 122 1876 126 1876 132 1872 137 1857 152 1849 158 1845 159 1843 157 1843 153 1845 147 1854 129 1853 126 1848 126 1844 131 1841 137 1831 147 1831 148 1824 155 1819 157 1818 156 1818 153 1821 147 1821 145 1830 130 1830 127 1829 126 1825 126 1823 127 1813 145 1812 152 1811 153 1811 160 1814 163 1819 163 1827 158 1835 150 1837 151 1836 152 1836 158 1837 161 1841 164 1847 164 1856 159 1871 144 1876 137 1878 136 1883 150 1874 163 1867 176 1863 181 1862 186 1864 187 1867 185 1873 173 1885 156 1886 156 1887 158 1893 163 1896 164 1905 164 1919 157 1927 150 1928 151 1927 154 1928 160 1931 163 1935 163 1938 162 1945 157 1952 150 1953 151 1953 158 1955 162 1959 164 1963 164 1973 159 1995 138 1997 140 2005 140 2006 141 2002 150 2001 159 2004 163 2006 164 2011 164 2020 159 2027 152 2028 152 2029 150 2031 151 2031 156 2033 159 2036 160 2041 159 2053 151 2063 141 2064 142 2053 163 2047 172 2040 174 2027 180 2025 180 2003 191 2001 191 1999 193 1984 200 1982 202 1970 208 1940 229 1935 234 1929 238 1910 256 1893 278 1892 282 1887 290 1885 296 1885 299 1884 300 1884 313 1886 318 1891 323 1899 326 1909 326 1910 325 1914 325 1923 322 1938 314 1950 306 1967 292 1997 260 2012 240 2016 236 2043 197 2045 192 2057 173 2069 169 2072 169 2076 167 2079 167 2084 165 2088 165 2089 164 2093 164 2094 163 2106 162 2107 161 2122 161 2123 162 2127 162 Z M 2043 179 2039 187 2022 212 2019 218 1995 250 1973 274 1973 275 1950 297 1931 311 1915 319 1912 319 1907 321 1898 321 1895 320 1889 314 1888 311 1888 302 1893 287 1906 267 1930 243 1958 221 1983 205 2006 194 2012 190 2014 190 2017 188 2019 188 2024 185 2039 180 2042 178 Z M 1191 99 1186 101 1183 107 1183 111 1185 113 1187 113 1192 108 1194 104 1194 102 Z M 1392 29 1387 28 1381 30 1374 35 1360 49 1350 61 1342 74 1339 77 1323 103 1305 102 1304 101 1304 99 1311 89 1312 86 1323 71 1324 67 1321 64 1318 65 1315 68 1292 102 1268 103 1267 104 1259 105 1256 107 1257 110 1271 109 1272 108 1283 108 1284 107 1288 107 1289 108 1276 133 1276 135 1274 138 1274 140 1270 149 1268 160 1269 161 1269 165 1273 169 1280 169 1284 167 1298 154 1299 155 1298 161 1297 162 1298 165 1300 166 1304 165 1327 141 1328 142 1328 150 1329 151 1329 154 1334 160 1342 160 1348 157 1349 158 1349 162 1353 166 1357 166 1358 167 1366 166 1376 162 1391 152 1401 143 1405 138 1404 136 1399 139 1393 145 1377 156 1365 161 1358 162 1355 159 1355 155 1358 148 1360 146 1362 146 1376 138 1379 135 1382 129 1381 124 1378 122 1375 122 1368 125 1359 133 1352 143 1349 149 1349 151 1344 155 1340 156 1338 155 1336 152 1336 137 1337 135 1334 131 1332 131 1326 135 1310 151 1309 150 1311 144 1314 139 1314 137 1316 135 1318 129 1320 127 1320 125 1324 118 1348 95 1348 94 1371 70 1379 59 1384 54 1391 43 1393 38 1394 33 Z M 1308 151 1309 150 1310 152 1309 153 Z M 1375 128 1376 129 1374 133 1369 138 1364 141 1363 138 1373 128 Z M 1319 107 1320 109 1317 113 1315 119 1313 121 1313 123 1305 140 1290 156 1281 163 1277 164 1275 162 1275 158 1276 157 1276 154 1279 145 1297 110 1300 107 Z M 1387 33 1389 35 1387 41 1376 57 1358 77 1358 78 1334 103 1333 100 1335 96 1339 91 1346 78 1352 71 1361 57 1380 37 Z M 937 64 926 80 919 95 918 101 917 102 917 105 919 109 920 109 922 106 922 100 927 87 940 68 957 52 967 45 975 41 977 41 985 37 988 37 997 34 1003 34 1004 33 1020 34 1031 39 1037 45 1040 51 1040 64 1039 67 1032 75 1033 80 1015 99 1001 109 994 112 989 116 983 119 981 119 976 122 974 122 965 126 958 127 954 129 946 130 945 129 948 125 950 120 954 115 958 107 981 75 986 70 987 66 985 64 982 64 977 69 975 73 969 79 967 83 956 97 949 109 946 112 938 128 936 130 932 131 932 135 933 137 928 145 928 147 921 161 919 169 915 178 914 186 913 187 913 191 914 193 917 193 918 192 918 188 922 176 926 168 926 166 937 144 939 143 968 172 983 184 998 194 1003 196 1008 200 1032 211 1041 214 1048 215 1049 216 1060 217 1061 218 1081 218 1082 217 1091 216 1106 210 1118 200 1124 191 1123 190 1120 190 1116 196 1108 203 1098 209 1089 212 1085 212 1084 213 1060 213 1059 212 1050 211 1040 207 1037 207 1031 205 1017 198 993 183 973 167 960 154 960 153 955 149 951 143 945 137 947 135 958 134 959 133 962 133 966 131 969 131 978 128 1004 116 1024 102 1038 88 1043 81 1047 73 1048 68 1051 65 1057 61 1083 49 1091 47 1094 45 1097 45 1101 43 1104 43 1113 40 1114 42 1105 54 1104 57 1089 80 1085 89 1083 91 1066 125 1062 137 1058 144 1056 150 1056 153 1052 162 1052 165 1051 166 1051 169 1048 178 1048 183 1047 184 1047 198 1049 201 1051 201 1052 200 1051 197 1052 195 1052 188 1053 187 1053 183 1055 178 1055 174 1059 165 1059 162 1061 159 1062 154 1069 140 1073 128 1089 96 1091 94 1094 87 1100 78 1103 71 1108 65 1109 62 1115 54 1120 45 1123 42 1124 39 1128 37 1135 37 1136 36 1165 36 1166 37 1173 38 1179 40 1187 46 1189 50 1189 56 1190 57 1193 56 1193 48 1191 44 1185 38 1178 34 1172 32 1169 32 1168 31 1163 31 1162 30 1139 30 1138 31 1130 31 1129 32 1123 32 1122 33 1113 34 1101 38 1098 38 1094 40 1091 40 1086 43 1081 44 1069 50 1067 50 1050 59 1049 58 1048 49 1046 45 1037 35 1027 30 1016 29 1015 28 1004 28 1003 29 997 29 996 30 988 31 979 35 977 35 967 40 952 50 Z M 764 25 761 23 758 23 751 26 744 31 733 42 718 61 716 65 711 71 710 74 703 83 700 90 698 92 690 108 688 110 683 120 683 122 681 124 678 122 675 122 666 126 658 134 652 143 643 152 637 156 633 157 631 156 629 153 630 142 635 131 635 126 632 124 630 125 625 125 617 129 598 147 587 155 584 156 581 155 578 152 576 140 574 138 570 138 556 151 555 151 554 148 560 135 559 130 556 129 544 136 540 140 535 143 529 150 528 148 530 146 532 141 534 139 540 128 538 125 535 125 531 129 523 144 521 146 515 158 514 166 516 167 519 166 531 154 536 151 548 140 549 143 547 146 546 152 545 153 545 157 548 160 551 160 555 158 569 146 572 155 575 158 580 160 588 159 595 154 597 155 597 158 600 160 605 160 611 157 621 148 622 149 622 153 624 158 630 162 638 161 640 159 643 158 646 154 647 155 647 158 649 161 655 161 661 157 671 147 671 146 673 145 674 146 671 153 671 158 670 159 670 169 672 174 675 176 681 176 685 174 697 162 702 166 709 167 710 166 717 165 729 159 744 148 751 141 753 137 752 136 750 137 744 143 727 155 717 160 711 162 707 162 704 159 704 153 706 149 709 146 713 145 722 140 729 133 730 130 730 124 727 122 724 122 717 125 708 133 702 141 698 149 698 153 694 159 682 171 679 172 677 170 677 160 678 159 679 152 682 143 685 138 685 136 689 129 689 127 730 83 732 79 739 72 748 59 752 55 760 43 764 35 764 32 765 31 765 27 Z M 553 151 554 150 555 151 554 152 Z M 625 131 626 133 621 141 608 153 605 154 604 153 606 149 617 137 Z M 676 128 678 130 677 133 657 154 656 151 660 143 666 135 672 129 Z M 724 127 725 130 719 137 714 139 713 138 715 135 Z M 759 28 760 29 760 32 748 53 722 85 699 110 698 108 702 102 705 95 726 62 730 58 737 47 753 31 Z M 946 19 945 18 940 18 936 20 919 32 907 43 900 48 885 63 884 63 860 88 860 89 852 96 847 103 821 131 817 131 812 133 808 133 807 134 803 134 795 137 792 137 782 141 779 141 770 144 762 149 761 151 764 153 772 149 793 142 796 142 797 141 800 141 801 140 804 140 813 137 815 138 776 185 753 209 753 210 729 234 711 246 706 248 699 249 696 248 692 244 691 237 694 229 692 227 689 229 687 233 687 245 688 247 693 252 696 253 706 253 715 250 727 243 740 232 770 201 774 195 794 173 798 167 811 153 823 138 828 134 832 134 837 132 853 130 854 129 860 129 861 128 871 127 872 126 880 126 881 125 886 125 887 126 884 133 884 136 879 151 879 155 878 156 877 165 876 166 876 172 875 173 875 181 874 182 874 188 875 189 876 199 879 204 883 204 883 202 880 196 880 182 881 181 881 175 882 174 885 155 887 151 887 148 893 133 894 127 897 123 906 123 907 122 915 122 916 120 913 118 900 118 899 116 906 101 906 99 920 71 922 69 928 56 930 54 932 49 937 42 942 31 945 27 Z M 936 29 930 37 918 60 916 62 901 93 899 95 895 107 889 119 879 120 878 121 872 121 871 122 865 122 864 123 859 123 858 124 852 124 851 125 840 126 835 128 833 127 843 116 847 110 859 98 859 97 895 60 927 33 934 28 Z M 1628 16 1623 14 1615 14 1614 15 1608 16 1595 22 1576 34 1543 62 1538 68 1525 80 1525 81 1504 104 1503 102 1506 98 1520 68 1524 56 1525 48 1526 47 1526 39 1524 33 1519 28 1513 26 1507 26 1506 27 1502 27 1498 29 1495 29 1483 35 1462 50 1442 69 1431 82 1420 98 1413 112 1412 118 1411 119 1412 121 1415 121 1416 120 1417 114 1421 106 1431 90 1438 82 1441 77 1460 58 1477 44 1486 38 1503 31 1513 31 1515 32 1519 37 1519 46 1518 47 1517 54 1513 63 1513 65 1509 72 1509 74 1484 121 1478 129 1474 138 1472 140 1465 153 1459 161 1456 168 1454 170 1448 182 1442 191 1431 213 1429 219 1429 222 1428 223 1428 225 1430 227 1433 226 1448 196 1479 146 1488 135 1492 128 1499 120 1505 111 1515 101 1530 83 1565 49 1594 28 1608 21 1614 20 1615 19 1620 19 1623 21 1623 27 1618 41 1596 75 1591 81 1587 89 1577 103 1576 106 1570 114 1568 119 1562 127 1549 151 1549 153 1541 169 1541 171 1539 174 1536 183 1536 186 1533 195 1533 201 1532 202 1532 211 1533 212 1533 217 1535 223 1539 229 1544 233 1549 235 1556 235 1556 232 1549 230 1543 224 1540 219 1539 205 1540 204 1541 193 1547 175 1560 147 1569 133 1573 124 1577 119 1578 116 1595 90 1600 84 1601 81 1616 59 1625 42 1627 40 1627 38 1629 35 1630 28 1631 27 1631 22 Z M 1502 104 1503 103 1504 104 1503 105 Z M 1883 6 1877 3 1870 3 1869 4 1863 5 1848 14 1831 30 1823 41 1818 46 1804 66 1803 69 1795 80 1790 90 1786 95 1773 119 1767 127 1763 136 1758 142 1754 150 1749 156 1738 173 1734 177 1730 184 1728 186 1721 186 1720 187 1715 187 1714 188 1709 188 1708 189 1700 190 1691 193 1679 199 1667 209 1662 219 1662 226 1666 231 1672 233 1677 233 1678 232 1682 232 1688 229 1693 228 1710 216 1729 197 1733 191 1751 191 1752 192 1761 192 1762 193 1774 194 1779 196 1788 197 1789 198 1804 201 1808 203 1815 204 1857 218 1860 218 1865 220 1869 220 1870 221 1882 222 1883 223 1897 223 1898 222 1901 222 1911 218 1916 213 1918 209 1918 200 1915 194 1912 195 1912 200 1914 203 1913 208 1908 214 1905 216 1899 217 1898 218 1883 218 1882 217 1877 217 1876 216 1872 216 1871 215 1867 215 1863 213 1860 213 1847 208 1840 207 1828 203 1825 201 1819 200 1795 192 1791 192 1785 190 1780 190 1779 189 1774 189 1773 188 1766 188 1765 187 1759 187 1758 186 1747 186 1746 185 1740 185 1739 184 1742 181 1745 175 1758 158 1759 155 1781 121 1786 111 1791 106 1796 106 1800 104 1823 87 1843 70 1866 47 1877 33 1885 17 1885 10 Z M 1722 194 1710 207 1709 207 1700 216 1688 224 1677 228 1671 228 1666 224 1666 220 1670 213 1677 206 1683 202 1704 194 1715 193 1716 192 1721 192 Z M 1877 8 1880 11 1879 20 1873 31 1860 47 1848 59 1847 59 1843 64 1842 64 1826 79 1792 105 1791 103 1803 82 1810 73 1811 70 1814 67 1818 60 1824 53 1828 46 1839 33 1853 19 1863 12 1872 8 Z M 307 2 305 0 300 1 284 17 269 35 265 42 248 64 247 67 238 79 233 89 222 106 217 117 214 120 205 120 200 122 194 122 193 123 189 123 183 125 178 125 177 126 168 127 159 130 150 131 146 133 145 132 153 119 159 112 165 102 168 99 169 96 181 81 206 44 210 35 210 28 207 24 205 23 189 23 188 24 183 24 179 26 176 26 172 28 169 28 160 31 153 35 144 38 136 43 123 49 103 62 82 79 67 95 57 111 56 114 56 120 58 122 61 122 62 121 61 116 64 110 64 108 74 94 96 73 112 61 127 53 134 48 162 35 168 34 171 32 180 29 191 28 192 27 202 27 205 30 200 41 197 44 194 50 172 79 167 88 158 99 155 105 149 112 143 122 132 137 129 137 115 142 112 142 103 145 100 147 92 149 89 151 84 152 72 158 67 159 38 174 27 181 10 195 2 205 0 209 0 215 2 217 5 216 5 210 7 206 22 191 48 174 66 165 68 165 80 159 87 157 92 154 113 147 116 147 120 145 124 145 126 144 127 145 103 181 102 184 88 206 80 222 78 224 71 242 72 246 74 247 76 246 77 244 77 241 79 238 79 236 86 222 103 195 105 190 125 161 130 152 135 146 136 143 139 140 148 137 151 137 152 136 156 136 157 135 160 135 165 133 169 133 170 132 174 132 175 131 179 131 180 130 185 130 186 129 194 128 195 127 211 126 212 127 204 142 204 144 197 158 194 169 190 177 190 180 189 181 189 184 186 193 186 197 185 198 184 211 183 212 184 226 187 234 191 237 193 234 190 230 189 217 190 216 190 209 191 208 192 198 193 197 195 186 199 174 201 171 206 156 210 149 210 147 222 124 225 123 233 123 234 122 241 122 242 121 240 118 227 118 226 117 236 97 269 48 298 12 306 5 Z"/></g><use href="#nlInk" fill="#E53935" mask="url(#nlFresh)"/><path class="nl-dot" fill="#E53935" fill-rule="evenodd" d="M 1191 99 1186 101 1183 107 1183 111 1185 113 1187 113 1192 108 1194 104 1194 102 Z"/><circle class="nl-tip" r="9" cx="0" cy="0" fill="#E53935" style="opacity:0"/></svg></p></blockquote>
-        <p class="sq-note" data-cms="tv3-qnote">and <img class="sq-face" src="sanjay-avatar.webp" width="128" height="128" alt="Sanjay Pal" decoding="async"> I know how to do it!</p>
+        <p class="sq-note" data-cms="tv3-qnote">and <span class="sq-balloon"><img class="sq-face" src="sanjay-avatar.webp" width="320" height="320" alt="Sanjay Pal" decoding="async"></span> I know how to do it!</p>
         <span class="sq-line" aria-hidden="true"></span>
       </figure>
     </div>
@@ -1617,7 +1740,7 @@ section.block.sig-quote{padding-block:clamp(3.5rem,9vw,7rem); text-align:center;
     <span class="pw-wrap"><input id="csPassIn" type="password" autocomplete="current-password" required aria-describedby="csPassD csPassE"><button class="pw-eye" type="button" id="csPassEye" aria-controls="csPassIn" aria-pressed="false" aria-label="Show password"><svg class="i-show" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><svg class="i-hide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3l18 18M10.6 5.1A10.4 10.4 0 0 1 12 5c6.4 0 10 7 10 7a17.6 17.6 0 0 1-3.2 4.1M6.6 6.6C3.9 8.3 2 12 2 12s3.6 7 10 7a9.7 9.7 0 0 0 5.4-1.6M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg></button></span>
     <p class="g-err" id="csPassE" role="alert" aria-live="assertive"></p>
     <div class="g-row"><button class="btn btn-primary" type="submit">View case study</button><button class="btn" type="button" id="csPassCancel">Cancel</button></div>
-    <a class="g-req" href="contact.html" id="csPassReq">Don’t have the password? Request access</a>
+    <a class="g-req" href="#contact" id="csPassReq">Don’t have the password? Request access</a>
   </form>
 </dialog>
 <script>
@@ -1664,7 +1787,7 @@ return H.map(function(x){return("00000000"+(x>>>0).toString(16)).slice(-8)}).joi
 <div class="sound-dock" id="sound" role="group" aria-label="Background music">
   <div class="vol-wrap">
     <label class="sr-only" for="volRange">Music volume</label>
-    <input class="vol" type="range" id="volRange" min="0" max="100" step="1" value="4" aria-valuetext="4%" aria-orientation="vertical">
+    <input class="vol" type="range" id="volRange" min="0" max="100" step="1" value="1" aria-valuetext="1%" aria-orientation="vertical">
   </div>
   <button class="sound-btn" id="soundBtn" type="button" aria-label="Mute music">
     <svg id="soundIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"></svg>
@@ -1721,7 +1844,7 @@ window.__cmsReady=Promise.race([
 
   /* ---------- Theme: auto by local time of day ---------- */
   const sun='<circle class="core" cx="12" cy="12" r="4.5"/><path class="rays" d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>';
-  const moon='<g transform="translate(-.3 -2.7) rotate(-70 12 12)"><path class="moon" d="M14.5 4A8 8 0 1 0 14.5 20A11 11 0 0 1 14.5 4z"/></g><path class="star s1" d="M12.5 2.5v3M11 4h3"/><path class="star s2" d="M16.5 6.5v2M15.5 7.5h2"/>';
+  const moon='<path class="moon" d="M20.5 13.2A8.6 8.6 0 1 1 10.8 3.5A6.7 6.7 0 0 0 20.5 13.2z"/><path class="star s1" d="M17 2.6v3M15.5 4.1h3"/><path class="star s2" d="M20.6 7.2v2M19.6 8.2h2"/>';
   function isDay(){const h=new Date().getHours(); return h>=6 && h<18}
   function applyTheme(){
     const pref=store.get("sp-theme")||"auto";
@@ -1904,6 +2027,45 @@ window.__cmsReady=Promise.race([
     if(e.key==="ArrowLeft"){e.preventDefault(); selectTab((i-1+tabs.length)%tabs.length,true)}
     if(e.key==="Home"){e.preventDefault(); selectTab(0,true)} if(e.key==="End"){e.preventDefault(); selectTab(tabs.length-1,true)}})});
 
+  /* ---------- Outside links (Google Maps, LinkedIn, Compunnel...) always open in a new tab ----------
+     Pages run inside the site frame; a new-tab link clicked inside a frame can be blocked in some viewers,
+     so the click is handed to the top-level page, which opens the new tab itself. */
+  document.addEventListener("click",e=>{
+    const a=e.target.closest&&e.target.closest("a[href]"); if(!a||e.defaultPrevented||e.button>0||e.metaKey||e.ctrlKey||e.shiftKey) return;
+    let u; try{u=new URL(a.href,location.href)}catch(err){return}
+    if(!/^https?:$/.test(u.protocol)||u.origin===location.origin) return;
+    let topWin=null; try{ if(window.top!==window && window.top.location.origin===location.origin) topWin=window.top }catch(err){}
+    if(!topWin) { a.target="_blank"; a.rel="noopener"; return }
+    e.preventDefault();
+    const t=topWin.document.createElement("a"); t.href=u.href; t.target="_blank"; t.rel="noopener"; t.style.display="none";
+    topWin.document.body.appendChild(t); t.click(); t.remove();
+  });
+  /* ---------- Outside links, part 2: a real link on the top-level page under the pointer ----------
+     Some viewers (such as Claude's preview) only open new tabs from a genuine click on a top-level link.
+     While the pointer is over an outside link, the top page places an invisible copy of that link exactly over it,
+     so the visitor's own click lands on a top-level link and the new tab opens. */
+  (function(){
+    let topWin=null; try{ if(window.top!==window && window.top.location.origin===location.origin) topWin=window.top }catch(err){}
+    if(!topWin || !window.frameElement) return;
+    const td=topWin.document; let hit=null, cur=null;
+    const isExt=a=>{try{const u=new URL(a.href,location.href); return /^https?:$/.test(u.protocol)&&u.origin!==location.origin}catch(e){return false}};
+    function clear(){ if(cur) cur.classList.remove("hl"); cur=null; if(hit) hit.style.display="none" }
+    function place(a){
+      if(!hit){
+        hit=td.createElement("a"); hit.id="extHit"; hit.target="_blank"; hit.rel="noopener"; hit.tabIndex=-1; hit.setAttribute("aria-hidden","true");
+        Object.assign(hit.style,{position:"fixed",zIndex:"2147483000",background:"transparent",cursor:"pointer",display:"none"});
+        hit.addEventListener("mouseleave",clear);
+        hit.addEventListener("click",()=>setTimeout(clear,60));
+        td.body.appendChild(hit);
+      }
+      const r=a.getBoundingClientRect(), f=window.frameElement.getBoundingClientRect();
+      hit.href=a.href; hit.title=a.title||a.textContent.trim();
+      Object.assign(hit.style,{left:(f.left+r.left)+"px",top:(f.top+r.top)+"px",width:r.width+"px",height:r.height+"px",borderRadius:getComputedStyle(a).borderRadius,display:"block"});
+      if(cur&&cur!==a) cur.classList.remove("hl"); cur=a; a.classList.add("hl");
+    }
+    document.addEventListener("pointerover",e=>{ if(e.pointerType&&e.pointerType!=="mouse") return; const a=e.target.closest&&e.target.closest("a[href]"); if(a&&isExt(a)) place(a) });
+    addEventListener("scroll",clear,{passive:true}); addEventListener("resize",clear);
+  })();
   /* ---------- Copy email ---------- */
   const copyBtn=document.getElementById("copyBtn"), status=document.getElementById("copyStatus"), email=document.getElementById("email");
   // the address shown is always the one the email goes to, even after an admin-panel edit
@@ -2088,6 +2250,137 @@ window.__cmsReady=Promise.race([
     const fo=new IntersectionObserver(es=>{if(es[0].isIntersecting){writeSig(footSig,3600); fo.disconnect()}},{threshold:.4});
     fo.observe(document.querySelector(".foot-logo"));
   }
+
+  // Hero ring: draw the two stars as their own shapes so they can spin, and keep them on their spots on the curve
+  (function(){
+    const svg=document.querySelector(".otw-ring"); if(!svg) return;
+    const txt=svg.querySelector(".otw-text"), fig=svg.closest(".hero-photo"), NS="http://www.w3.org/2000/svg";
+    let fx=[];
+    const STAR='<polygon class="sb" points="0.00,-17.00 4.23,-5.82 16.17,-5.25 6.85,2.22 9.99,13.75 0.00,7.20 -9.99,13.75 -6.85,2.22 -16.17,-5.25 -4.23,-5.82"/><g class="sf"><polygon points="0,0 0.00,-17.00 4.23,-5.82" style="--g:#EDD998"/><polygon points="0,0 4.23,-5.82 16.17,-5.25" style="--g:#C9A658"/><polygon points="0,0 16.17,-5.25 6.85,2.22" style="--g:#BB9240"/><polygon points="0,0 6.85,2.22 9.99,13.75" style="--g:#AB7A22"/><polygon points="0,0 9.99,13.75 0.00,7.20" style="--g:#AD7E27"/><polygon points="0,0 0.00,7.20 -9.99,13.75" style="--g:#C7A354"/><polygon points="0,0 -9.99,13.75 -6.85,2.22" style="--g:#D6B86F"/><polygon points="0,0 -6.85,2.22 -16.17,-5.25" style="--g:#F6E7A9"/><polygon points="0,0 -16.17,-5.25 -4.23,-5.82" style="--g:#FDF1B5"/><polygon points="0,0 -4.23,-5.82 0.00,-17.00" style="--g:#F8E8AB"/></g>';
+    function place(){
+      try{
+        const n=txt.getNumberOfChars(); if(!n) return;
+        [0,n-1].forEach((ci,k)=>{
+          const e=txt.getExtentOfChar(ci), a=txt.getRotationOfChar(ci);
+          fx[k].g.setAttribute("transform",`translate(${(e.x+e.width/2).toFixed(1)} ${(e.y+e.height/2).toFixed(1)}) rotate(${a.toFixed(1)})`);
+        });
+      }catch(err){}
+    }
+    function init(){
+      if(fx.length) return;
+      for(let k=0;k<2;k++){
+        // a faceted star: white normally, shaded metal gold on hover (ten facets lit from the top left)
+        const g=document.createElementNS(NS,"g"), t=document.createElementNS(NS,"g");
+        t.setAttribute("class","otw-star-fx s"+(k+1)); t.innerHTML=STAR;
+        g.appendChild(t); svg.appendChild(g); fx.push({g,t});
+      }
+      place(); svg.classList.add("js-stars");
+    }
+    // follow the letters while the spacing stretches and springs back
+    let until=0, raf=0;
+    function follow(ms){ until=performance.now()+ms; if(!raf) (function loop(){ place(); raf=performance.now()<until?requestAnimationFrame(loop):0 })() }
+    (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(()=>{init(); follow(300)});
+    // rubber stretch on the way in, rubber spring-back on the way out
+    fig.addEventListener("mouseenter",()=>{fig.classList.remove("ring-out"); fig.classList.add("ring-in"); follow(1100)});
+    fig.addEventListener("mouseleave",()=>{if(fig.classList.contains("ring-in")){fig.classList.remove("ring-in"); fig.classList.add("ring-out")} follow(1100)});
+    addEventListener("resize",()=>follow(200));
+  })();
+
+  // Quote line photo balloon: on hover it inflates, flies up the screen and pops when it touches the top bar
+  (function(){
+    const b=document.querySelector(".sig-quote .sq-balloon"); if(!b) return;
+    const hdr=document.querySelector("header.bar"); let busy=false;
+    function burst(c,img){
+      const r=c.getBoundingClientRect(), cx=r.left+r.width/2, cy=r.top+r.height*0.45, w=r.width, h=r.height*0.86;
+      c.remove();
+      const ring=document.createElement("div"); ring.className="sq-popring";
+      Object.assign(ring.style,{left:(cx-w/2)+"px",top:(cy-w/2)+"px",width:w+"px",height:w+"px"}); document.body.appendChild(ring);
+      ring.animate([{transform:"scale(.4)",opacity:1},{transform:"scale(2.3)",opacity:0}],{duration:420,easing:"cubic-bezier(.2,.7,.3,1)"}).onfinish=()=>ring.remove();
+      const n=4, pw=w/n, ph=h/n;
+      for(let i=0;i<n;i++) for(let j=0;j<n;j++){
+        if((i===0||i===n-1)&&(j===0||j===n-1)) continue;
+        const d=document.createElement("div"); d.className="sq-shard";
+        const x=cx-w/2+i*pw, y=cy-h/2+j*ph;
+        Object.assign(d.style,{left:x+"px",top:y+"px",width:pw+"px",height:ph+"px",backgroundImage:"url("+img+")",backgroundSize:w+"px "+h+"px",backgroundPosition:(-i*pw)+"px "+(-j*ph)+"px"});
+        document.body.appendChild(d);
+        const ang=Math.atan2(y+ph/2-cy,x+pw/2-cx)+(Math.random()-.5)*.6, sp=60+Math.random()*70, rot=(Math.random()-.5)*540;
+        const dx=Math.cos(ang)*sp, dy=Math.sin(ang)*sp;
+        d.animate([{transform:"translate(0,0) rotate(0)",opacity:1},{transform:`translate(${dx}px,${dy}px) rotate(${rot/2}deg)`,opacity:1,offset:.35},{transform:`translate(${dx*1.3}px,${dy+140}px) rotate(${rot}deg) scale(.6)`,opacity:0}],{duration:1000+Math.random()*300,easing:"cubic-bezier(.25,.6,.4,1)"}).onfinish=()=>d.remove();
+      }
+      setTimeout(()=>{ b.style.visibility=""; b.animate([{transform:"scale(0)"},{transform:"scale(1.15)",offset:.6},{transform:"scale(1)"}],{duration:650,easing:"cubic-bezier(.3,.7,.3,1)"}).onfinish=()=>{busy=false} },1500);
+    }
+    function go(){
+      if(busy) return;
+      if(calm()){ b.animate([{transform:"scale(1)"},{transform:"scale(1.2)"},{transform:"scale(1)"}],{duration:500}); return }
+      busy=true;
+      const r=b.getBoundingClientRect(), fs=getComputedStyle(b).fontSize, im=b.querySelector("img"), img=im.currentSrc||im.src;
+      const c=b.cloneNode(true); c.classList.add("flying");
+      Object.assign(c.style,{position:"fixed",left:r.left+"px",top:r.top+"px",width:r.width+"px",height:r.height+"px",margin:0,fontSize:fs,zIndex:2000,pointerEvents:"none",transformOrigin:"50% 50%"});
+      document.body.appendChild(c); b.style.visibility="hidden";
+      const t0=performance.now(), POP=380;
+      (function frame(now){
+        const t=now-t0, stop=hdr?Math.max(0,hdr.getBoundingClientRect().bottom):0;
+        let sc, y, x, rot;
+        if(t<POP){ const k=t/POP; sc=1+Math.sin(k*Math.PI)*.5+k*.35; y=-k*10; x=0; rot=Math.sin(k*Math.PI*2)*4; }
+        else { const k=(t-POP)/1000; sc=1.35; y=-10-(260*k*k+120*k); x=Math.sin((t-POP)/240)*14*Math.min(1,k*2); rot=Math.sin((t-POP)/300)*9; }
+        c.style.transform=`translate(${x}px,${y}px) scale(${sc}) rotate(${rot}deg)`;
+        const top=r.top+y-(sc-1)*r.height/2;
+        if((t>POP && top<=stop+2) || t>6000){ burst(c,img); return }
+        requestAnimationFrame(frame);
+      })(t0);
+    }
+    b.addEventListener("pointerenter",go);
+    b.addEventListener("click",go);
+  })();
+  // Footer signature: the red tittle bursts into firework sparks when the pointer touches it
+  (function(S){
+    const svg=document.querySelector(".foot-logo"), reds=[...svg.querySelectorAll("circle.red")]; if(!reds.length) return;
+    const NS="http://www.w3.org/2000/svg";
+    let cx=0, cy=0; reds.forEach(c=>{cx+=+c.getAttribute("cx"); cy+=+c.getAttribute("cy")}); cx/=reds.length; cy/=reds.length;
+    let ext=0; reds.forEach(c=>{ext=Math.max(ext,Math.hypot(c.getAttribute("cx")-cx,c.getAttribute("cy")-cy))});
+    const hit=document.createElementNS(NS,"circle"); hit.setAttribute("cx",cx); hit.setAttribute("cy",cy); hit.setAttribute("r",ext+26);
+    hit.setAttribute("class","tittle-hit"); hit.setAttribute("fill","transparent"); svg.appendChild(hit);
+    const fx=document.createElementNS(NS,"g"); fx.setAttribute("class","tittle-fx"); svg.appendChild(fx);
+    const RED="#E0322B";
+    let busy=false;
+    function burst(){
+      if(busy) return; busy=true;
+      const g=svg.querySelector("g"); 
+      if(calm()){ reds.forEach(c=>c.style.opacity=.3); setTimeout(()=>{reds.forEach(c=>c.style.opacity=""); busy=false},400); return }
+      reds.forEach(c=>{c.style.transition="opacity .12s"; c.style.opacity=0});
+      const parts=[], N=72;
+      for(let i=0;i<N;i++){
+        const a=(i/N)*Math.PI*2+Math.random()*.25, sp=(i%2?300:190)+Math.random()*170;
+        // tapered spark: round head, thinning to a fine point at its tail
+        const ln=document.createElementNS(NS,"path"); ln.setAttribute("fill",RED);
+        fx.appendChild(ln); parts.push({el:ln,w:(i%3?1.6:2.4),vx:Math.cos(a)*sp,vy:Math.sin(a)*sp,x:cx,y:cy,px:cx,py:cy});
+      }
+      // a few twinkling stars that linger
+      for(let i=0;i<20;i++){
+        const a=Math.random()*Math.PI*2, d=90+Math.random()*200, st=document.createElementNS(NS,"circle");
+        st.setAttribute("cx",cx+Math.cos(a)*d); st.setAttribute("cy",cy+Math.sin(a)*d); st.setAttribute("r",0); st.setAttribute("fill",RED);
+        fx.appendChild(st); parts.push({star:st,delay:250+Math.random()*450});
+      }
+      const t0=performance.now(), DUR=1300, G=260;
+      (function frame(now){
+        const t=(now-t0)/1000, p=(now-t0)/DUR;
+        parts.forEach(q=>{
+          if(q.star){ const k=Math.max(0,Math.min(1,((now-t0)-q.delay)/500)); const r=k<=0?0:Math.sin(k*Math.PI)*3.6; q.star.setAttribute("r",r.toFixed(2)); return }
+          const drag=Math.exp(-1.6*t);
+          q.px=q.x; q.py=q.y;
+          q.x=cx+q.vx*(1-drag)/1.6; q.y=cy+q.vy*(1-drag)/1.6+.5*G*t*t;
+          const tail=.16; const tx=cx+q.vx*(1-Math.exp(-1.6*Math.max(0,t-tail)))/1.6, ty=cy+q.vy*(1-Math.exp(-1.6*Math.max(0,t-tail)))/1.6+.5*G*Math.max(0,t-tail)**2;
+          { const dx=q.x-tx, dy=q.y-ty, L=Math.hypot(dx,dy)||1, nx=-dy/L*q.w, ny=dx/L*q.w;
+            q.el.setAttribute("d",`M${tx.toFixed(1)} ${ty.toFixed(1)}L${(q.x+nx).toFixed(1)} ${(q.y+ny).toFixed(1)}A${q.w} ${q.w} 0 0 0 ${(q.x-nx).toFixed(1)} ${(q.y-ny).toFixed(1)}Z`); }
+          q.el.setAttribute("opacity",Math.max(0,1-p*1.05).toFixed(2));
+        });
+        if(p<1) requestAnimationFrame(frame);
+        else { fx.innerHTML=""; reds.forEach((c,i)=>{c.style.transition="r .45s cubic-bezier(.3,1.8,.5,1), opacity .2s"; c.style.opacity=""; c.setAttribute("r",0); setTimeout(()=>c.setAttribute("r",S.r),20+i*4)}); setTimeout(()=>{reds.forEach(c=>c.style.transition=""); busy=false},700) }
+      })(t0);
+    }
+    hit.addEventListener("pointerenter",burst);
+    hit.addEventListener("click",burst);
+  })(footSig);
   // Re-write the footer signature whenever the pointer enters the footer
   let footLast=0;
   document.querySelector("footer").addEventListener("mouseenter",()=>{if(!calm() && performance.now()-footLast>3800){footLast=performance.now(); writeSig(footSig,3200)}});
@@ -2184,7 +2477,7 @@ window.__cmsReady=Promise.race([
   let resumeAt=0; try{const r=JSON.parse(ss.get("sp-music-pos")||"null"); if(r&&r.i>=0&&r.i<TRACKS.length){idx=r.i; resumeAt=r.t||0}}catch(e){}
   ls.set("sp-music-last",String(idx));
 
-  let vol=parseInt(ls.get("sp-music-v4"),10); if(!(vol>=0&&vol<=100)) vol=4;
+  let vol=parseInt(ls.get("sp-music-v1d"),10); if(!(vol>=0&&vol<=100)) vol=1;
   let muted=ls.get("sp-music-muted")==="1";
   let started=false, wasPlaying=false, fadeRaf=0;
 
@@ -2237,11 +2530,11 @@ window.__cmsReady=Promise.race([
   btn.addEventListener("click",()=>{
     if(!started&&!muted){play(true); return}
     muted=!muted; ls.set("sp-music-muted",muted?"1":"0");
-    if(muted){audio.pause()} else {if(vol===0){vol=4; ls.set("sp-music-v4","4")} removeStarters(); play(!started)}
+    if(muted){audio.pause()} else {if(vol===0){vol=1; ls.set("sp-music-v1d","1")} removeStarters(); play(!started)}
     render();
   });
   sliders.forEach(r=>r&&r.addEventListener("input",()=>{
-    vol=parseInt(r.value,10)||0; ls.set("sp-music-v4",String(vol)); setVolume(vol/100,false);
+    vol=parseInt(r.value,10)||0; ls.set("sp-music-v1d",String(vol)); setVolume(vol/100,false);
     if(vol>0&&!started&&!muted) play(false);
     render();
   }));
@@ -2253,7 +2546,7 @@ window.__cmsReady=Promise.race([
     audio,
     isPlaying:()=>started&&!audio.paused,
     isMuted:()=>muted,
-    start(){ if(muted){muted=false; ls.set("sp-music-muted","0")} if(vol===0){vol=4} const r=play(true); render(); return r },
+    start(){ if(muted){muted=false; ls.set("sp-music-muted","0")} if(vol===0){vol=1} const r=play(true); render(); return r },
     mute(){ muted=true; ls.set("sp-music-muted","1"); audio.pause(); removeStarters(); render() }
   };
   document.dispatchEvent(new Event("sp:music-ready"));
