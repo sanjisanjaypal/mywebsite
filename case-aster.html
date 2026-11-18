@@ -1196,7 +1196,7 @@ section#about{padding-left:max(16px, env(safe-area-inset-left,0px)); padding-rig
 #main:focus{outline:none}
 
 /* v2: standalone Contact page, generated from this same contact section */
-.page-contact #top,.page-contact #work,.page-contact #about,.page-contact #testimonials{display:none !important}
+.page-contact #top,.page-contact #work,.page-contact #about,.page-contact #testimonials,.page-contact #quote{display:none !important}
 .page-contact #contact{padding-block:clamp(4rem,10vw,7rem)}
 .contact h1{font-size:clamp(2.4rem,6vw,4.5rem); font-weight:500; margin:0}
 
@@ -1228,6 +1228,24 @@ footer .foot-logo-wrap{padding-top:clamp(.5rem,1.5vw,1rem)}
   #work .bento.js-span > .case:last-child:nth-child(odd):not(.span-row) .case-body{justify-content:flex-start; padding:1.25rem 1.4rem 1.4rem}
 }
 
+/* v3: signature quote band */
+:root{--sig-ink:#062216; --sig-art:#4A1D7A}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--sig-ink:#EEF1E6; --sig-art:#CDB0F2}}
+:root[data-theme="dark"]{--sig-ink:#EEF1E6; --sig-art:#CDB0F2}
+section.block.sig-quote{padding-block:clamp(3.5rem,9vw,7rem); text-align:center; overflow:hidden}
+.sig-quote figure{margin:0; display:flex; flex-direction:column; align-items:center; gap:clamp(.6rem,2vw,1.2rem)}
+.sig-quote .sq-kicker{margin:0; font-family:var(--body); font-size:.78rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
+.sig-quote blockquote{margin:0; width:100%}
+.sig-quote blockquote p{margin:0}
+.sig-quote .sq-svg{display:block; width:min(100%,1100px); height:auto; margin-inline:auto; color:var(--sig-ink); overflow:visible}
+.sig-quote .sq-note{margin:calc(-1 * clamp(.35rem,2.6vw,2.2rem)) 0 0; font-family:var(--body); font-size:clamp(1.05rem,1.6vw,1.2rem); color:var(--muted)}
+.sig-quote .sq-line{width:min(220px,40%); height:1px; background:var(--line-strong); margin-top:.4rem}
+.sig-quote .sq-face{display:inline-block; width:1.9em; height:1.9em; border-radius:50%; object-fit:cover; vertical-align:-.62em; margin:0 .2em; background:#F3EBD9; box-shadow:0 0 0 2px var(--surface), 0 2px 8px rgba(6,34,22,.18)}
+.sig-quote .nl-tip{transition:fill .25s ease}
+.sig-quote .nl-dot{transform-box:fill-box; transform-origin:50% 50%}
+.sig-quote .nl-dot.pop{animation:nlPop .7s cubic-bezier(.3,.7,.3,1)}
+.sig-quote .nl-dot.gone{opacity:0}
+@keyframes nlPop{0%{transform:scale(0)} 55%{transform:scale(1.7)} 100%{transform:scale(1)}}
 </style>
 <style>
 /* ================= Case study page ================= */
@@ -1616,15 +1634,15 @@ footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between
           <a href="home.html#work">Work</a>
           <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="workMenu" aria-label="Case studies"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           <ul class="submenu" id="workMenu" hidden>
-<li><a href="case-finunity.html"><span class="sm-t">FinUnity</span><span class="sm-d">Property tax financing platform</span></a></li>
-<li><a href="case-advisor.html"><span class="sm-t">Advisor platform</span><span class="sm-d">Wealth management workspace</span></a></li>
-<li><a href="case-finguard.html"><span class="sm-t">FinGuard</span><span class="sm-d">Banking risk and investigations</span></a></li>
-<li><a href="case-agrifunds.html"><span class="sm-t">AgriFunds</span><span class="sm-d">Farm lending customer portal</span></a></li>
-<li><a href="case-aster.html" aria-current="page"><span class="sm-t">Aster Bank</span><span class="sm-d">Wealth management eLearning</span></a></li>
-<li><a href="case-autolore.html"><span class="sm-t">AutoLore</span><span class="sm-d">Classic car museum kiosk</span></a></li>
-<li><a href="case-guru.html"><span class="sm-t">Guru Samman Samaroh</span><span class="sm-d">Event visualisation and design</span></a></li>
-<li class="sm-all"><a href="home.html#work">All work</a></li>
-</ul>
+            <li><a href="case-finunity.html"><span class="sm-t">FinUnity</span><span class="sm-d">Property tax financing platform</span></a></li>
+            <li><a href="case-advisor.html"><span class="sm-t">Advisor platform</span><span class="sm-d">Wealth management workspace</span></a></li>
+            <li><a href="case-finguard.html"><span class="sm-t">FinGuard</span><span class="sm-d">Banking risk and investigations</span></a></li>
+            <li><a href="case-agrifunds.html"><span class="sm-t">AgriFunds</span><span class="sm-d">Farm lending customer portal</span></a></li>
+            <li><a href="case-aster.html" aria-current="page"><span class="sm-t">Aster Bank</span><span class="sm-d">Wealth management eLearning</span></a></li>
+            <li><a href="case-autolore.html"><span class="sm-t">AutoLore</span><span class="sm-d">Classic car museum kiosk</span></a></li>
+            <li><a href="case-guru.html"><span class="sm-t">Guru Samman Samaroh</span><span class="sm-d">Event visualisation and design</span></a></li>
+            <li class="sm-all"><a href="home.html#work">All work</a></li>
+          </ul>
         </div>
         <a href="about.html">About</a>
         <a href="contact.html" class="nav-contact">Get in touch</a>
@@ -1647,12 +1665,12 @@ footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between
     <h1>Aster Bank: eLearning that shows wealth teams a better working day</h1>
     <p class="cs-lede">An international bank in Singapore was rolling out a new way of working for its wealth management teams. I designed the UI of the eLearning modules that introduced it: a course player and a set of illustrated screens that follow one relationship manager through his day, before and after the change.</p>
     <dl class="cs-meta">
-<div><dt>Client</dt><dd>Aster Bank (white-labelled)</dd></div>
-<div><dt>Industry</dt><dd>Banking · Wealth management</dd></div>
-<div><dt>My role</dt><dd>UI and visual design</dd></div>
-<div><dt>Platform</dt><dd>eLearning modules, desktop and touch</dd></div>
-<div><dt>Year</dt><dd>2017</dd></div>
-</dl>
+      <div><dt>Client</dt><dd>Aster Bank (white-labelled)</dd></div>
+      <div><dt>Industry</dt><dd>Banking · Wealth management</dd></div>
+      <div><dt>My role</dt><dd>UI and visual design</dd></div>
+      <div><dt>Platform</dt><dd>eLearning modules, desktop and touch</dd></div>
+      <div><dt>Year</dt><dd>2017</dd></div>
+    </dl>
   </div>
   <figure class="wrap cs-cover cs-cover-art">
     <img src="cs7/cover.webp" width="1672" height="941" alt="Two eLearning screens on a berry and teal background: a monitor showing the Workbench 1.1 checklist next to today’s tasks, and a top-down view of a relationship manager’s desk.">
@@ -1676,151 +1694,157 @@ footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between
     </nav>
 
     <article class="cs-body">
-<section class="cs-sec" id="impact" aria-labelledby="h-impact">
-<p class="cs-kicker">Impact</p>
-<h2 id="h-impact">A change programme explained as one person’s working day</h2>
-<ul class="cs-stats">
-<li><b>15</b><span>short screens per module, each carrying a single idea</span></li>
-<li><b>1</b><span>relationship manager, Kevin, whose day carries the whole story</span></li>
-<li><b>3</b><span>help tools on every screen: Resource, Glossary and Help</span></li>
-</ul>
-<p class="cs-tldr-label">In short</p>
-<div class="cs-glance">
-<div class="glance-card">
+      <section class="cs-sec" id="impact" aria-labelledby="h-impact">
+        <p class="cs-kicker">Impact</p>
+        <h2 id="h-impact">A change programme explained as one person’s working day</h2>
+        <ul class="cs-stats">
+          <li><b>15</b><span>short screens per module, each carrying a single idea</span></li>
+          <li><b>1</b><span>relationship manager, Kevin, whose day carries the whole story</span></li>
+          <li><b>3</b><span>help tools on every screen: Resource, Glossary and Help</span></li>
+        </ul>
+        <p class="cs-tldr-label">In short</p>
+        <div class="cs-glance">
+          <div class="glance-card">
             <span class="glance-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h10M4 18h7"/></svg></span>
             <h3>Problem</h3>
             <p>A new way of working for wealth teams is hard to explain in slides and policy documents. People needed to see why it mattered to their own day.</p>
           </div>
-<div class="glance-card">
+          <div class="glance-card">
             <span class="glance-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></span>
             <h3>Approach</h3>
             <p>Tell it as a story. Follow one relationship manager through a familiar day, show the friction, then show the same day with the new workbench.</p>
           </div>
-<div class="glance-card">
+          <div class="glance-card">
             <span class="glance-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
             <h3>Result</h3>
             <p>A consistent course player and a flat, illustrated screen system the learning team could reuse across modules.</p>
           </div>
-</div>
-</section>
-<section class="cs-sec" id="context" aria-labelledby="h-context">
-<p class="cs-kicker">Context</p>
-<h2 id="h-context">A transformation that people had to understand, not just attend</h2>
-<p>The bank’s wealth management business was moving its relationship managers onto a new workbench: one place for portfolio performance, reports, appointments, calls and events, with research and portfolio reporting built in.</p>
-<p>Training had to reach busy front-line staff, so it needed to be short, self-paced and clear about the benefit before it asked anyone to learn a new tool.</p>
-<ul class="cs-pains" aria-label="Challenges">
-<li>An abstract change programme with many moving parts</li>
-<li>Busy staff with little time for training</li>
-<li>Banking terms that newer staff might not know</li>
-<li>Several modules that had to look and work alike</li>
-<li>Desktop and touch screens</li>
-</ul>
-<div class="cs-goals">
-<div><p class="g-k">Business goal</p><p>Help wealth teams understand and adopt the new way of working.</p></div>
-<div><p class="g-k">Learner goal</p><p>Quickly see what changes in my day and why it is better.</p></div>
-<div><p class="g-k">Design goal</p><p>One player and one visual language that every module can reuse.</p></div>
-</div>
-</section>
-<section class="cs-sec" id="audience" aria-labelledby="h-audience">
-<p class="cs-kicker">Audience</p>
-<h2 id="h-audience">Relationship managers and the teams around them</h2>
-<p>The learners were the people who would use the workbench every day, so the story had to look and sound like their own desk, their own clients and their own to-do list.</p>
-<ul class="cs-pains cs-collab" aria-label="Learner groups">
-<li>Relationship managers</li>
-<li>Wealth team leads</li>
-<li>Support and service staff</li>
-<li>New joiners</li>
-</ul>
-</section>
-<section class="cs-sec" id="approach" aria-labelledby="h-approach">
-<p class="cs-kicker">Learning approach</p>
-<h2 id="h-approach">Show the day, then show the difference</h2>
-<ul class="cs-methods">
-<li><b>A persona to follow</b><span>Kevin, a relationship manager, gives learners someone to recognise. Every screen is a moment in his day.</span></li>
-<li><b>Familiar moments</b><span>Market research, today’s tasks, a client who wants to invest in real estate, a pile of client files: the everyday work the change affects.</span></li>
-<li><b>Before and after</b><span>The same desk shown twice. Before: manual effort, collating reports, coordinating over calls and emails. After: information anytime and anywhere, automated tasks, more time for clients.</span></li>
-<li><b>The tool, in context</b><span>The workbench appears as Kevin’s own checklist, ticking off portfolio performance and appointments against today’s tasks.</span></li>
-<li><b>Short screens</b><span>One idea per screen and a visible page count, so learners always know how far they have to go.</span></li>
-</ul>
-</section>
-<section class="cs-sec" id="storyboard" aria-labelledby="h-storyboard">
-<p class="cs-kicker">Storyboard</p>
-<h2 id="h-storyboard">Eight beats, sketched before any screen was drawn</h2>
-<p>I storyboarded the module as a sequence of beats, so the learning team could agree on the story and the order before visual design began.</p>
-<figure class="cs-fig sk-fig"><button class="zoom" type="button" data-cap="Storyboard of the module in eight beats."><svg class="sk" viewBox="0 0 640 330" role="img" aria-label="Storyboard sketch of the module in eight frames: why change, Kevin’s desk, market research, today and tomorrow’s tasks, a client calls about real estate, the before state, the new workbench, and the after state."><rect class="sk-paper" width="640" height="330" rx="6"/><g class="sk-lines"><path d="M14 30H626"/><path d="M14 52H626"/><path d="M14 74H626"/><path d="M14 96H626"/><path d="M14 118H626"/><path d="M14 140H626"/><path d="M14 162H626"/><path d="M14 184H626"/><path d="M14 206H626"/><path d="M14 228H626"/><path d="M14 250H626"/><path d="M14 272H626"/><path d="M14 294H626"/><path d="M14 316H626"/></g><g class="sk-ink" filter="url(#skRough)"><text x="20" y="26" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="17" font-weight="700">Storyboard: one module, one working day</text><rect x="20" y="40" width="140" height="94" rx="4"/><text x="28" y="56" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="14" font-weight="700">1</text><rect x="60" y="64" width="60" height="36" rx="3"/><path d="M90 100v8M76 110h28"/><text x="90" y="88" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="14" font-weight="700">WM</text><text x="90" y="154" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Why change?</text><path d="M162 87h10m-5-4 5 4-5 4" stroke-width="1.6"/><rect x="174" y="40" width="140" height="94" rx="4"/><text x="182" y="56" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="14" font-weight="700">2</text><rect x="204" y="62" width="80" height="50" rx="3"/><rect x="226" y="70" width="36" height="10" rx="2"/><rect x="228" y="90" width="32" height="9" rx="2"/><circle cx="270" cy="96" r="4"/><text x="244" y="154" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Kevin’s desk</text><path d="M316 87h10m-5-4 5 4-5 4" stroke-width="1.6"/><rect x="328" y="40" width="140" height="94" rx="4"/><text x="336" y="56" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="14" font-weight="700">3</text><rect x="366" y="62" width="64" height="46" rx="3"/><path d="M376 98l12-12 10 7 18-20"/><path d="M374 74h20M374 82h14"/><text x="398" y="154" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Market research</text><path d="M470 87h10m-5-4 5 4-5 4" stroke-width="1.6"/><rect x="482" y="40" width="140" height="94" rx="4"/><text x="490" y="56" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="14" font-weight="700">4</text><rect x="518" y="62" width="30" height="46" rx="3"/><path d="M522 74h22"/><rect x="554" y="62" width="32" height="46" rx="3" class="sk-red-f" style="fill-opacity:.22"/><path d="M559 74h20M559 84h16M559 96h18"/><text x="552" y="154" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Today, tomorrow</text><rect x="20" y="172" width="140" height="94" rx="4"/><text x="28" y="188" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="14" font-weight="700">5</text><rect x="78" y="192" width="24" height="46" rx="5"/><circle cx="86" cy="226" r="3"/><circle cx="95" cy="226" r="3"/><text x="128" y="214" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="13">“real</text><text x="128" y="228" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="13">estate?”</text><text x="90" y="286" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">A client calls</text><path d="M162 219h10m-5-4 5 4-5 4" stroke-width="1.6"/><rect x="174" y="172" width="140" height="94" rx="4"/><text x="182" y="188" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="14" font-weight="700">6</text><text x="214" y="208" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="15" font-weight="700">BEFORE</text><circle cx="218" cy="220" r="2.5"/><path d="M226 220h44"/><circle cx="218" cy="232" r="2.5"/><path d="M226 232h38"/><circle cx="218" cy="244" r="2.5"/><path d="M226 244h32"/><text x="244" y="286" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Before</text><path d="M316 219h10m-5-4 5 4-5 4" stroke-width="1.6"/><rect x="328" y="172" width="140" height="94" rx="4"/><text x="336" y="188" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="14" font-weight="700">7</text><rect x="364" y="194" width="32" height="9" rx="2"/><rect x="364" y="206" width="32" height="9" rx="2"/><rect x="364" y="218" width="32" height="9" rx="2"/><rect x="364" y="230" width="32" height="9" rx="2"/><rect x="402" y="194" width="30" height="10" rx="2"/><rect x="402" y="208" width="30" height="10" rx="2"/><rect x="402" y="222" width="30" height="10" rx="2"/><path class="sk-red" d="M386 198l3 3 6-6"/><text x="398" y="286" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Workbench 1.1</text><path d="M470 219h10m-5-4 5 4-5 4" stroke-width="1.6"/><rect x="482" y="172" width="140" height="94" rx="4"/><text x="490" y="188" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="14" font-weight="700">8</text><text x="522" y="208" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="15" font-weight="700">AFTER</text><path class="sk-red" d="M522 219l3 3 5-6"/><path d="M534 220h46"/><path class="sk-red" d="M522 231l3 3 5-6"/><path d="M534 232h42"/><path class="sk-red" d="M522 243l3 3 5-6"/><path d="M534 244h38"/><path class="sk-red" d="M522 255l3 3 5-6"/><path d="M534 256h34"/><text x="552" y="286" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">After</text><text x="20" y="318" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="15" class="sk-red">story first: the tool only appears once the pain is felt</text></g></svg><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="context" aria-labelledby="h-context">
+        <p class="cs-kicker">Context</p>
+        <h2 id="h-context">A transformation that people had to understand, not just attend</h2>
+        <p>The bank’s wealth management business was moving its relationship managers onto a new workbench: one place for portfolio performance, reports, appointments, calls and events, with research and portfolio reporting built in.</p>
+        <p>Training had to reach busy front-line staff, so it needed to be short, self-paced and clear about the benefit before it asked anyone to learn a new tool.</p>
+        <ul class="cs-pains" aria-label="Challenges">
+          <li>An abstract change programme with many moving parts</li>
+          <li>Busy staff with little time for training</li>
+          <li>Banking terms that newer staff might not know</li>
+          <li>Several modules that had to look and work alike</li>
+          <li>Desktop and touch screens</li>
+        </ul>
+        <div class="cs-goals">
+          <div><p class="g-k">Business goal</p><p>Help wealth teams understand and adopt the new way of working.</p></div>
+          <div><p class="g-k">Learner goal</p><p>Quickly see what changes in my day and why it is better.</p></div>
+          <div><p class="g-k">Design goal</p><p>One player and one visual language that every module can reuse.</p></div>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="audience" aria-labelledby="h-audience">
+        <p class="cs-kicker">Audience</p>
+        <h2 id="h-audience">Relationship managers and the teams around them</h2>
+        <p>The learners were the people who would use the workbench every day, so the story had to look and sound like their own desk, their own clients and their own to-do list.</p>
+        <ul class="cs-pains cs-collab" aria-label="Learner groups">
+          <li>Relationship managers</li><li>Wealth team leads</li><li>Support and service staff</li><li>New joiners</li>
+        </ul>
+      </section>
+
+      <section class="cs-sec" id="approach" aria-labelledby="h-approach">
+        <p class="cs-kicker">Learning approach</p>
+        <h2 id="h-approach">Show the day, then show the difference</h2>
+        <ul class="cs-methods">
+          <li><b>A persona to follow</b><span>Kevin, a relationship manager, gives learners someone to recognise. Every screen is a moment in his day.</span></li>
+          <li><b>Familiar moments</b><span>Market research, today’s tasks, a client who wants to invest in real estate, a pile of client files: the everyday work the change affects.</span></li>
+          <li><b>Before and after</b><span>The same desk shown twice. Before: manual effort, collating reports, coordinating over calls and emails. After: information anytime and anywhere, automated tasks, more time for clients.</span></li>
+          <li><b>The tool, in context</b><span>The workbench appears as Kevin’s own checklist, ticking off portfolio performance and appointments against today’s tasks.</span></li>
+          <li><b>Short screens</b><span>One idea per screen and a visible page count, so learners always know how far they have to go.</span></li>
+        </ul>
+      </section>
+
+      <section class="cs-sec" id="storyboard" aria-labelledby="h-storyboard">
+        <p class="cs-kicker">Storyboard</p>
+        <h2 id="h-storyboard">Eight beats, sketched before any screen was drawn</h2>
+        <p>I storyboarded the module as a sequence of beats, so the learning team could agree on the story and the order before visual design began.</p>
+        <figure class="cs-fig sk-fig"><button class="zoom" type="button" data-cap="Storyboard of the module in eight beats."><svg class="sk" viewBox="0 0 640 330" role="img" aria-label="Storyboard sketch of the module in eight frames: why change, Kevin’s desk, market research, today and tomorrow’s tasks, a client calls about real estate, the before state, the new workbench, and the after state."><rect class="sk-paper" width="640" height="330" rx="6"/><g class="sk-lines"><path d="M14 30H626"/><path d="M14 52H626"/><path d="M14 74H626"/><path d="M14 96H626"/><path d="M14 118H626"/><path d="M14 140H626"/><path d="M14 162H626"/><path d="M14 184H626"/><path d="M14 206H626"/><path d="M14 228H626"/><path d="M14 250H626"/><path d="M14 272H626"/><path d="M14 294H626"/><path d="M14 316H626"/></g><g class="sk-ink" filter="url(#skRough)"><text x="20" y="26" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="17" font-weight="700">Storyboard: one module, one working day</text><rect x="20" y="40" width="140" height="94" rx="4"/><text x="28" y="56" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="14" font-weight="700">1</text><rect x="60" y="64" width="60" height="36" rx="3"/><path d="M90 100v8M76 110h28"/><text x="90" y="88" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="14" font-weight="700">WM</text><text x="90" y="154" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Why change?</text><path d="M162 87h10m-5-4 5 4-5 4" stroke-width="1.6"/><rect x="174" y="40" width="140" height="94" rx="4"/><text x="182" y="56" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="14" font-weight="700">2</text><rect x="204" y="62" width="80" height="50" rx="3"/><rect x="226" y="70" width="36" height="10" rx="2"/><rect x="228" y="90" width="32" height="9" rx="2"/><circle cx="270" cy="96" r="4"/><text x="244" y="154" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Kevin’s desk</text><path d="M316 87h10m-5-4 5 4-5 4" stroke-width="1.6"/><rect x="328" y="40" width="140" height="94" rx="4"/><text x="336" y="56" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="14" font-weight="700">3</text><rect x="366" y="62" width="64" height="46" rx="3"/><path d="M376 98l12-12 10 7 18-20"/><path d="M374 74h20M374 82h14"/><text x="398" y="154" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Market research</text><path d="M470 87h10m-5-4 5 4-5 4" stroke-width="1.6"/><rect x="482" y="40" width="140" height="94" rx="4"/><text x="490" y="56" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="14" font-weight="700">4</text><rect x="518" y="62" width="30" height="46" rx="3"/><path d="M522 74h22"/><rect x="554" y="62" width="32" height="46" rx="3" class="sk-red-f" style="fill-opacity:.22"/><path d="M559 74h20M559 84h16M559 96h18"/><text x="552" y="154" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Today, tomorrow</text><rect x="20" y="172" width="140" height="94" rx="4"/><text x="28" y="188" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="14" font-weight="700">5</text><rect x="78" y="192" width="24" height="46" rx="5"/><circle cx="86" cy="226" r="3"/><circle cx="95" cy="226" r="3"/><text x="128" y="214" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="13">“real</text><text x="128" y="228" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="13">estate?”</text><text x="90" y="286" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">A client calls</text><path d="M162 219h10m-5-4 5 4-5 4" stroke-width="1.6"/><rect x="174" y="172" width="140" height="94" rx="4"/><text x="182" y="188" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="14" font-weight="700">6</text><text x="214" y="208" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="15" font-weight="700">BEFORE</text><circle cx="218" cy="220" r="2.5"/><path d="M226 220h44"/><circle cx="218" cy="232" r="2.5"/><path d="M226 232h38"/><circle cx="218" cy="244" r="2.5"/><path d="M226 244h32"/><text x="244" y="286" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Before</text><path d="M316 219h10m-5-4 5 4-5 4" stroke-width="1.6"/><rect x="328" y="172" width="140" height="94" rx="4"/><text x="336" y="188" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="14" font-weight="700">7</text><rect x="364" y="194" width="32" height="9" rx="2"/><rect x="364" y="206" width="32" height="9" rx="2"/><rect x="364" y="218" width="32" height="9" rx="2"/><rect x="364" y="230" width="32" height="9" rx="2"/><rect x="402" y="194" width="30" height="10" rx="2"/><rect x="402" y="208" width="30" height="10" rx="2"/><rect x="402" y="222" width="30" height="10" rx="2"/><path class="sk-red" d="M386 198l3 3 6-6"/><text x="398" y="286" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">Workbench 1.1</text><path d="M470 219h10m-5-4 5 4-5 4" stroke-width="1.6"/><rect x="482" y="172" width="140" height="94" rx="4"/><text x="490" y="188" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="14" font-weight="700">8</text><text x="522" y="208" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="15" font-weight="700">AFTER</text><path class="sk-red" d="M522 219l3 3 5-6"/><path d="M534 220h46"/><path class="sk-red" d="M522 231l3 3 5-6"/><path d="M534 232h42"/><path class="sk-red" d="M522 243l3 3 5-6"/><path d="M534 244h38"/><path class="sk-red" d="M522 255l3 3 5-6"/><path d="M534 256h34"/><text x="552" y="286" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">After</text><text x="20" y="318" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="15" class="sk-red">story first: the tool only appears once the pain is felt</text></g></svg><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button>
           <figcaption><span class="lbl lbl-storyboard">Storyboard</span><b>One module, one working day.</b> The new tool only appears once the pain has been felt.</figcaption></figure>
-</section>
-<section class="cs-sec" id="player" aria-labelledby="h-player">
-<p class="cs-kicker">Course player</p>
-<h2 id="h-player">A frame that stays still so the story can move</h2>
-<p>Every module runs inside the same player. Controls never move, so learners spend their attention on the scene, not on finding the next button.</p>
-<figure class="cs-fig sk-fig"><button class="zoom" type="button" data-cap="Anatomy of the course player."><svg class="sk" viewBox="0 0 640 262" role="img" aria-label="Annotated sketch of the course player: a header with menu and course title, Resource, Glossary and Help links, a large scene area, a notes button, a swipe hint, a page counter and a progress bar."><rect class="sk-paper" width="640" height="262" rx="6"/><g class="sk-lines"><path d="M14 30H626"/><path d="M14 52H626"/><path d="M14 74H626"/><path d="M14 96H626"/><path d="M14 118H626"/><path d="M14 140H626"/><path d="M14 162H626"/><path d="M14 184H626"/><path d="M14 206H626"/><path d="M14 228H626"/><path d="M14 250H626"/></g><g class="sk-ink" filter="url(#skRough)"><text x="20" y="24" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="17" font-weight="700">Course player: same frame on every screen</text><rect x="20" y="36" width="420" height="214" rx="5"/><rect x="30" y="44" width="400" height="26" rx="3" class="sk-red-f" style="fill-opacity:.22"/><circle cx="44" cy="57" r="8" class="sk-card"/><path d="M40 54h8M40 57h8M40 60h8" /><text x="60" y="62" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="14" font-weight="700">Course title</text><text x="372" y="62" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="13">Bank</text><text x="300" y="84" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="13">Resource  Glossary  Help</text><rect x="30" y="92" width="400" height="118" rx="3" class="sk-faint"/><text x="230" y="150" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">scene: illustration + one idea</text><rect x="34" y="220" width="10" height="9" rx="2"/><text x="230" y="230" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="13">↔ swipe</text><text x="400" y="230" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="13">02/15</text><path d="M30 242H120" stroke-width="5" class="sk-link"/><path d="M120 242H430" stroke-width="5" class="sk-faint"/><text x="452" y="60" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="15">① title + menu, always visible</text><text x="452" y="86" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="15">② help never more than a tap</text><text x="452" y="150" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="15">③ one scene, one message</text><text x="452" y="214" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="15">④ notes  ⑤ swipe hint</text><text x="452" y="234" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="15">⑥ page count + progress bar</text></g></svg><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button>
+      </section>
+
+      <section class="cs-sec" id="player" aria-labelledby="h-player">
+        <p class="cs-kicker">Course player</p>
+        <h2 id="h-player">A frame that stays still so the story can move</h2>
+        <p>Every module runs inside the same player. Controls never move, so learners spend their attention on the scene, not on finding the next button.</p>
+        <figure class="cs-fig sk-fig"><button class="zoom" type="button" data-cap="Anatomy of the course player."><svg class="sk" viewBox="0 0 640 262" role="img" aria-label="Annotated sketch of the course player: a header with menu and course title, Resource, Glossary and Help links, a large scene area, a notes button, a swipe hint, a page counter and a progress bar."><rect class="sk-paper" width="640" height="262" rx="6"/><g class="sk-lines"><path d="M14 30H626"/><path d="M14 52H626"/><path d="M14 74H626"/><path d="M14 96H626"/><path d="M14 118H626"/><path d="M14 140H626"/><path d="M14 162H626"/><path d="M14 184H626"/><path d="M14 206H626"/><path d="M14 228H626"/><path d="M14 250H626"/></g><g class="sk-ink" filter="url(#skRough)"><text x="20" y="24" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="17" font-weight="700">Course player: same frame on every screen</text><rect x="20" y="36" width="420" height="214" rx="5"/><rect x="30" y="44" width="400" height="26" rx="3" class="sk-red-f" style="fill-opacity:.22"/><circle cx="44" cy="57" r="8" class="sk-card"/><path d="M40 54h8M40 57h8M40 60h8" /><text x="60" y="62" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="14" font-weight="700">Course title</text><text x="372" y="62" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="13">Bank</text><text x="300" y="84" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="13">Resource  Glossary  Help</text><rect x="30" y="92" width="400" height="118" rx="3" class="sk-faint"/><text x="230" y="150" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="15">scene: illustration + one idea</text><rect x="34" y="220" width="10" height="9" rx="2"/><text x="230" y="230" text-anchor="middle" font-family="Caveat, 'Segoe Print', cursive" font-size="13">↔ swipe</text><text x="400" y="230" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="13">02/15</text><path d="M30 242H120" stroke-width="5" class="sk-link"/><path d="M120 242H430" stroke-width="5" class="sk-faint"/><text x="452" y="60" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="15">① title + menu, always visible</text><text x="452" y="86" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="15">② help never more than a tap</text><text x="452" y="150" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="15">③ one scene, one message</text><text x="452" y="214" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="15">④ notes  ⑤ swipe hint</text><text x="452" y="234" text-anchor="start" font-family="Caveat, 'Segoe Print', cursive" font-size="15">⑥ page count + progress bar</text></g></svg><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button>
           <figcaption><span class="lbl lbl-storyboard">Wireframe</span><b>Player anatomy.</b> Title and menu on top, help one tap away, progress at the bottom.</figcaption></figure>
-<ul class="cs-map">
-<li><span class="from">Learners lose their place</span><span class="to">Page count and a segmented progress bar on every screen</span></li>
-<li><span class="from">Banking terms slow new staff down</span><span class="to">Glossary always in the top bar</span></li>
-<li><span class="from">Some learners use touch screens</span><span class="to">A swipe hint and large, simple targets</span></li>
-<li><span class="from">Learners want to keep notes</span><span class="to">A notes button in the same corner on every screen</span></li>
-</ul>
-</section>
-<section class="cs-sec" id="visual" aria-labelledby="h-visual">
-<p class="cs-kicker">Visual language</p>
-<h2 id="h-visual">Flat illustration, one desk, a few strong colours</h2>
-<p>A top-down view of Kevin’s desk is the recurring stage: the same monitor, keyboard, notebook and plant, so learners always know where they are. Vignette cards titled “Today at Kevin’s desk” zoom into single moments, each in one dominant colour.</p>
-<div class="cs-gallery g-2">
-<figure class="cs-fig "><button class="zoom" type="button" data-cap="The stage. Kevin’s desk, seen from above."><img src="cs7/img/desk-start.webp" width="1025" height="768" loading="lazy" alt="Top-down illustration of a relationship manager’s desk with a monitor, keyboard, calculator, sticky notes, a tablet and hands at work."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>The stage.</b> Kevin’s desk, seen from above.</figcaption></figure>
-<figure class="cs-fig "><button class="zoom" type="button" data-cap="A vignette. One moment, one colour, one caption."><img src="cs7/img/research.webp" width="1025" height="768" loading="lazy" alt="Vignette card titled Today at Kevin’s desk showing a monitor with market research charts on an orange background, captioned He starts going through websites for market research and investment ideas."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>A vignette.</b> One moment, one colour, one caption.</figcaption></figure>
-</div>
-</section>
-<section class="cs-sec" id="design" aria-labelledby="h-design">
-<p class="cs-kicker">Final UI</p>
-<h2 id="h-design">The module, screen by screen</h2>
-<h3 class="cs-sub">Opening</h3>
-<div class="cs-gallery g-2">
-<figure class="cs-fig "><button class="zoom" type="button" data-cap="Enable the transformation. The opening sets the theme."><img src="cs7/img/intro-world.webp" width="1025" height="768" loading="lazy" alt="Opening screen: a monitor in an office showing a grid of round service icons, above a banner reading Enable WM transformation world."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Enable the transformation.</b> The opening sets the theme.</figcaption></figure>
-<figure class="cs-fig "><button class="zoom" type="button" data-cap="Introduction video. A short video sets up the story."><img src="cs7/img/intro-video.webp" width="1025" height="768" loading="lazy" alt="Opening screen with a monitor playing the introduction video, titled Enable WM transformation."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Introduction video.</b> A short video sets up the story.</figcaption></figure>
-</div>
-<h3 class="cs-sub">A day at the desk</h3>
-<div class="cs-gallery g-2">
-<figure class="cs-fig "><button class="zoom" type="button" data-cap="Today and tomorrow. Kevin’s to-do list, in his words."><img src="cs7/img/tasks.webp" width="1025" height="768" loading="lazy" alt="Vignette card with a calendar on a yellow panel and a list: today, call clients to report account status and a lunch meeting to discuss portfolio balancing options; tomorrow, report on account performance."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Today and tomorrow.</b> Kevin’s to-do list, in his words.</figcaption></figure>
-<figure class="cs-fig "><button class="zoom" type="button" data-cap="A client calls. A real request that needs data fast."><img src="cs7/img/client-call.webp" width="1025" height="768" loading="lazy" alt="Vignette card in teal showing a hand holding a ringing phone in an office, captioned He gets a call from one of his clients who wants to invest in real estate in California."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>A client calls.</b> A real request that needs data fast.</figcaption></figure>
-<figure class="cs-fig "><button class="zoom" type="button" data-cap="The paperwork. Where the old way slows him down."><img src="cs7/img/client-files.webp" width="1025" height="768" loading="lazy" alt="Vignette card in berry showing a hand pointing at a report among client files, captioned He needs to go through client files, reports and data to complete his other tasks for the day."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>The paperwork.</b> Where the old way slows him down.</figcaption></figure>
-<figure class="cs-fig "><button class="zoom" type="button" data-cap="Back at the desk. The stage returns between moments."><img src="cs7/img/desk-work.webp" width="1025" height="768" loading="lazy" alt="Top-down desk scene with a hand pointing at the monitor while the other types on the keyboard."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Back at the desk.</b> The stage returns between moments.</figcaption></figure>
-</div>
-<h3 class="cs-sub">Before and after</h3>
-<div class="cs-gallery g-2">
-<figure class="cs-fig "><button class="zoom" type="button" data-cap="Before. Manual effort, collating reports, chasing calls and emails."><img src="cs7/img/before.webp" width="1025" height="768" loading="lazy" alt="Desk scene with a dark panel titled Before listing manual effort, collation of reports, and coordinating on calls and emails."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-before">Before</span><b>Before.</b> Manual effort, collating reports, chasing calls and emails.</figcaption></figure>
-<figure class="cs-fig "><button class="zoom" type="button" data-cap="After. The same desk, with the work automated."><img src="cs7/img/after.webp" width="1025" height="768" loading="lazy" alt="Desk scene with a berry panel titled After listing access information anytime anywhere, manual tasks are automated, increased efficiency and improved client experience."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-after">After</span><b>After.</b> The same desk, with the work automated.</figcaption></figure>
-</div>
-<h3 class="cs-sub">The new way of working</h3>
-<div class="cs-gallery g-2">
-<figure class="cs-fig "><button class="zoom" type="button" data-cap="The tools. Each capability introduced as a card."><img src="cs7/img/tools.webp" width="1025" height="768" loading="lazy" alt="Three tool cards above a monitor: Analysis and profiling in grey, Online market research and commentary in teal, and Automated portfolio performance in berry."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>The tools.</b> Each capability introduced as a card.</figcaption></figure>
-<figure class="cs-fig "><button class="zoom" type="button" data-cap="Workbench 1.1. Today’s tasks, ticked off in the new tool."><img src="cs7/img/workbench.webp" width="1025" height="768" loading="lazy" alt="Monitor showing Do in Workbench 1.1 with portfolio performance and appointment ticked, next to a To be done today list of three tasks."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Workbench 1.1.</b> Today’s tasks, ticked off in the new tool.</figcaption></figure>
-</div>
-</section>
-<section class="cs-sec" id="principles" aria-labelledby="h-principles">
-<p class="cs-kicker">Design principles</p>
-<h2 id="h-principles">What guided every screen</h2>
-<ul class="cs-learn">
-<li><b>Story before software.</b> Learners meet the problem in Kevin’s day before they meet the tool.</li>
-<li><b>One idea per screen.</b> A headline, one illustration and a one-line caption.</li>
-<li><b>Familiar over flashy.</b> Real tasks and real requests from a relationship manager’s week.</li>
-<li><b>Colour with a job.</b> Dark for the old way, bright for the new; each vignette owns one colour.</li>
-<li><b>A frame that never moves.</b> The same player and controls in every module.</li>
-</ul>
-</section>
-<section class="cs-sec" id="reflection" aria-labelledby="h-reflection">
-<p class="cs-kicker">Reflection</p>
-<h2 id="h-reflection">What I learned, and what I’d add next</h2>
-<ul class="cs-learn">
-<li><b>Training is a product too.</b> The same UX basics apply: know the learner, cut the noise, show progress.</li>
-<li><b>Stories travel.</b> A single persona made an abstract programme easy to explain across teams.</li>
-<li><b>Next, I’d add practice.</b> A short scenario where learners complete Kevin’s tasks in the workbench themselves.</li>
-<li><b>And measure it.</b> Completion rates and a quick confidence check before and after each module.</li>
-</ul>
-<p class="cs-fine">The bank has been white-labelled as Aster Bank, and its colours and logo have been replaced. Screens are shown for portfolio purposes.</p>
-</section>
-</article>
+        <ul class="cs-map">
+          <li><span class="from">Learners lose their place</span><span class="to">Page count and a segmented progress bar on every screen</span></li>
+          <li><span class="from">Banking terms slow new staff down</span><span class="to">Glossary always in the top bar</span></li>
+          <li><span class="from">Some learners use touch screens</span><span class="to">A swipe hint and large, simple targets</span></li>
+          <li><span class="from">Learners want to keep notes</span><span class="to">A notes button in the same corner on every screen</span></li>
+        </ul>
+      </section>
+
+      <section class="cs-sec" id="visual" aria-labelledby="h-visual">
+        <p class="cs-kicker">Visual language</p>
+        <h2 id="h-visual">Flat illustration, one desk, a few strong colours</h2>
+        <p>A top-down view of Kevin’s desk is the recurring stage: the same monitor, keyboard, notebook and plant, so learners always know where they are. Vignette cards titled “Today at Kevin’s desk” zoom into single moments, each in one dominant colour.</p>
+        <div class="cs-gallery g-2">
+          <figure class="cs-fig "><button class="zoom" type="button" data-cap="The stage. Kevin’s desk, seen from above."><img src="cs7/img/desk-start.webp" width="1025" height="768" loading="lazy" alt="Top-down illustration of a relationship manager’s desk with a monitor, keyboard, calculator, sticky notes, a tablet and hands at work."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>The stage.</b> Kevin’s desk, seen from above.</figcaption></figure>
+          <figure class="cs-fig "><button class="zoom" type="button" data-cap="A vignette. One moment, one colour, one caption."><img src="cs7/img/research.webp" width="1025" height="768" loading="lazy" alt="Vignette card titled Today at Kevin’s desk showing a monitor with market research charts on an orange background, captioned He starts going through websites for market research and investment ideas."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>A vignette.</b> One moment, one colour, one caption.</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="design" aria-labelledby="h-design">
+        <p class="cs-kicker">Final UI</p>
+        <h2 id="h-design">The module, screen by screen</h2>
+        <h3 class="cs-sub">Opening</h3>
+        <div class="cs-gallery g-2">
+          <figure class="cs-fig "><button class="zoom" type="button" data-cap="Enable the transformation. The opening sets the theme."><img src="cs7/img/intro-world.webp" width="1025" height="768" loading="lazy" alt="Opening screen: a monitor in an office showing a grid of round service icons, above a banner reading Enable WM transformation world."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Enable the transformation.</b> The opening sets the theme.</figcaption></figure>
+          <figure class="cs-fig "><button class="zoom" type="button" data-cap="Introduction video. A short video sets up the story."><img src="cs7/img/intro-video.webp" width="1025" height="768" loading="lazy" alt="Opening screen with a monitor playing the introduction video, titled Enable WM transformation."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Introduction video.</b> A short video sets up the story.</figcaption></figure>
+        </div>
+        <h3 class="cs-sub">A day at the desk</h3>
+        <div class="cs-gallery g-2">
+          <figure class="cs-fig "><button class="zoom" type="button" data-cap="Today and tomorrow. Kevin’s to-do list, in his words."><img src="cs7/img/tasks.webp" width="1025" height="768" loading="lazy" alt="Vignette card with a calendar on a yellow panel and a list: today, call clients to report account status and a lunch meeting to discuss portfolio balancing options; tomorrow, report on account performance."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Today and tomorrow.</b> Kevin’s to-do list, in his words.</figcaption></figure>
+          <figure class="cs-fig "><button class="zoom" type="button" data-cap="A client calls. A real request that needs data fast."><img src="cs7/img/client-call.webp" width="1025" height="768" loading="lazy" alt="Vignette card in teal showing a hand holding a ringing phone in an office, captioned He gets a call from one of his clients who wants to invest in real estate in California."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>A client calls.</b> A real request that needs data fast.</figcaption></figure>
+          <figure class="cs-fig "><button class="zoom" type="button" data-cap="The paperwork. Where the old way slows him down."><img src="cs7/img/client-files.webp" width="1025" height="768" loading="lazy" alt="Vignette card in berry showing a hand pointing at a report among client files, captioned He needs to go through client files, reports and data to complete his other tasks for the day."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>The paperwork.</b> Where the old way slows him down.</figcaption></figure>
+          <figure class="cs-fig "><button class="zoom" type="button" data-cap="Back at the desk. The stage returns between moments."><img src="cs7/img/desk-work.webp" width="1025" height="768" loading="lazy" alt="Top-down desk scene with a hand pointing at the monitor while the other types on the keyboard."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Back at the desk.</b> The stage returns between moments.</figcaption></figure>
+        </div>
+        <h3 class="cs-sub">Before and after</h3>
+        <div class="cs-gallery g-2">
+          <figure class="cs-fig "><button class="zoom" type="button" data-cap="Before. Manual effort, collating reports, chasing calls and emails."><img src="cs7/img/before.webp" width="1025" height="768" loading="lazy" alt="Desk scene with a dark panel titled Before listing manual effort, collation of reports, and coordinating on calls and emails."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-before">Before</span><b>Before.</b> Manual effort, collating reports, chasing calls and emails.</figcaption></figure>
+          <figure class="cs-fig "><button class="zoom" type="button" data-cap="After. The same desk, with the work automated."><img src="cs7/img/after.webp" width="1025" height="768" loading="lazy" alt="Desk scene with a berry panel titled After listing access information anytime anywhere, manual tasks are automated, increased efficiency and improved client experience."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-after">After</span><b>After.</b> The same desk, with the work automated.</figcaption></figure>
+        </div>
+        <h3 class="cs-sub">The new way of working</h3>
+        <div class="cs-gallery g-2">
+          <figure class="cs-fig "><button class="zoom" type="button" data-cap="The tools. Each capability introduced as a card."><img src="cs7/img/tools.webp" width="1025" height="768" loading="lazy" alt="Three tool cards above a monitor: Analysis and profiling in grey, Online market research and commentary in teal, and Automated portfolio performance in berry."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>The tools.</b> Each capability introduced as a card.</figcaption></figure>
+          <figure class="cs-fig "><button class="zoom" type="button" data-cap="Workbench 1.1. Today’s tasks, ticked off in the new tool."><img src="cs7/img/workbench.webp" width="1025" height="768" loading="lazy" alt="Monitor showing Do in Workbench 1.1 with portfolio performance and appointment ticked, next to a To be done today list of three tasks."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Workbench 1.1.</b> Today’s tasks, ticked off in the new tool.</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="principles" aria-labelledby="h-principles">
+        <p class="cs-kicker">Design principles</p>
+        <h2 id="h-principles">What guided every screen</h2>
+        <ul class="cs-learn">
+          <li><b>Story before software.</b> Learners meet the problem in Kevin’s day before they meet the tool.</li>
+          <li><b>One idea per screen.</b> A headline, one illustration and a one-line caption.</li>
+          <li><b>Familiar over flashy.</b> Real tasks and real requests from a relationship manager’s week.</li>
+          <li><b>Colour with a job.</b> Dark for the old way, bright for the new; each vignette owns one colour.</li>
+          <li><b>A frame that never moves.</b> The same player and controls in every module.</li>
+        </ul>
+      </section>
+
+      <section class="cs-sec" id="reflection" aria-labelledby="h-reflection">
+        <p class="cs-kicker">Reflection</p>
+        <h2 id="h-reflection">What I learned, and what I’d add next</h2>
+        <ul class="cs-learn">
+          <li><b>Training is a product too.</b> The same UX basics apply: know the learner, cut the noise, show progress.</li>
+          <li><b>Stories travel.</b> A single persona made an abstract programme easy to explain across teams.</li>
+          <li><b>Next, I’d add practice.</b> A short scenario where learners complete Kevin’s tasks in the workbench themselves.</li>
+          <li><b>And measure it.</b> Completion rates and a quick confidence check before and after each module.</li>
+        </ul>
+        <p class="cs-fine">The bank has been white-labelled as Aster Bank, and its colours and logo have been replaced. Screens are shown for portfolio purposes.</p>
+      </section>
+    </article>
   </div>
 
   <section class="band cs-next" aria-labelledby="h-next">
@@ -1828,9 +1852,9 @@ footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between
       <p class="cs-kicker">Next</p>
       <h2 id="h-next">See how FinUnity got one platform for loans and liens</h2>
       <div class="cta-row">
-<a class="btn btn-primary" href="case-finunity.html">Read the FinUnity case study</a>
-<a class="btn" href="home.html#work">Back to all work</a>
-</div>
+        <a class="btn btn-primary" href="case-finunity.html">Read the FinUnity case study</a>
+        <a class="btn" href="home.html#work">Back to all work</a>
+      </div>
     </div>
   </section>
 </main>

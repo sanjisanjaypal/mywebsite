@@ -12,7 +12,7 @@ location.replace("index.html"+(name&&name!=="home.html"?"#/"+name:location.hash)
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Contact Sanjay Pal, UX Designer</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Sanjay Pal, UX Designer. 22+ years designing human-centred digital products.">
+<meta name="description" content="Sanjay Pal, Human+Agent Experience Designer. 22+ years designing human-centred digital products.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Instrument+Sans:wght@400;500;600;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
@@ -1132,7 +1132,7 @@ section#about{padding-left:max(16px, env(safe-area-inset-left,0px)); padding-rig
 #main:focus{outline:none}
 
 /* v2: standalone Contact page, generated from this same contact section */
-.page-contact #top,.page-contact #work,.page-contact #about,.page-contact #testimonials{display:none !important}
+.page-contact #top,.page-contact #work,.page-contact #about,.page-contact #testimonials,.page-contact #quote{display:none !important}
 .page-contact #contact{padding-block:clamp(4rem,10vw,7rem)}
 .contact h1{font-size:clamp(2.4rem,6vw,4.5rem); font-weight:500; margin:0}
 
@@ -1164,6 +1164,24 @@ footer .foot-logo-wrap{padding-top:clamp(.5rem,1.5vw,1rem)}
   #work .bento.js-span > .case:last-child:nth-child(odd):not(.span-row) .case-body{justify-content:flex-start; padding:1.25rem 1.4rem 1.4rem}
 }
 
+/* v3: signature quote band */
+:root{--sig-ink:#062216; --sig-art:#4A1D7A}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--sig-ink:#EEF1E6; --sig-art:#CDB0F2}}
+:root[data-theme="dark"]{--sig-ink:#EEF1E6; --sig-art:#CDB0F2}
+section.block.sig-quote{padding-block:clamp(3.5rem,9vw,7rem); text-align:center; overflow:hidden}
+.sig-quote figure{margin:0; display:flex; flex-direction:column; align-items:center; gap:clamp(.6rem,2vw,1.2rem)}
+.sig-quote .sq-kicker{margin:0; font-family:var(--body); font-size:.78rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
+.sig-quote blockquote{margin:0; width:100%}
+.sig-quote blockquote p{margin:0}
+.sig-quote .sq-svg{display:block; width:min(100%,1100px); height:auto; margin-inline:auto; color:var(--sig-ink); overflow:visible}
+.sig-quote .sq-note{margin:calc(-1 * clamp(.35rem,2.6vw,2.2rem)) 0 0; font-family:var(--body); font-size:clamp(1.05rem,1.6vw,1.2rem); color:var(--muted)}
+.sig-quote .sq-line{width:min(220px,40%); height:1px; background:var(--line-strong); margin-top:.4rem}
+.sig-quote .sq-face{display:inline-block; width:1.9em; height:1.9em; border-radius:50%; object-fit:cover; vertical-align:-.62em; margin:0 .2em; background:#F3EBD9; box-shadow:0 0 0 2px var(--surface), 0 2px 8px rgba(6,34,22,.18)}
+.sig-quote .nl-tip{transition:fill .25s ease}
+.sig-quote .nl-dot{transform-box:fill-box; transform-origin:50% 50%}
+.sig-quote .nl-dot.pop{animation:nlPop .7s cubic-bezier(.3,.7,.3,1)}
+.sig-quote .nl-dot.gone{opacity:0}
+@keyframes nlPop{0%{transform:scale(0)} 55%{transform:scale(1.7)} 100%{transform:scale(1)}}
 </style>
 </head>
 <body>
@@ -1171,7 +1189,7 @@ footer .foot-logo-wrap{padding-top:clamp(.5rem,1.5vw,1rem)}
 <div class="loader" id="loader" role="dialog" aria-modal="true" aria-labelledby="loaderTitle">
   <div class="loader-inner">
     <svg class="loader-sig" aria-hidden="true" focusable="false"><use href="#sp-logo"/></svg>
-    <p class="loader-title" id="loaderTitle">UX Designer</p>
+    <p class="loader-title" id="loaderTitle">Human+Agent Experience Designer</p>
     <div class="loader-bar" role="progressbar" aria-label="Loading the site" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
     <p class="loader-pct" aria-hidden="true">0%</p>
   </div>
@@ -1249,15 +1267,15 @@ footer .foot-logo-wrap{padding-top:clamp(.5rem,1.5vw,1rem)}
           <a href="home.html#work">Work</a>
           <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="workMenu" aria-label="Case studies"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           <ul class="submenu" id="workMenu" hidden>
-<li><a href="case-finunity.html"><span class="sm-t">FinUnity</span><span class="sm-d">Property tax financing platform</span></a></li>
-<li><a href="case-advisor.html"><span class="sm-t">Advisor platform</span><span class="sm-d">Wealth management workspace</span></a></li>
-<li><a href="case-finguard.html"><span class="sm-t">FinGuard</span><span class="sm-d">Banking risk and investigations</span></a></li>
-<li><a href="case-agrifunds.html"><span class="sm-t">AgriFunds</span><span class="sm-d">Farm lending customer portal</span></a></li>
-<li><a href="case-aster.html"><span class="sm-t">Aster Bank</span><span class="sm-d">Wealth management eLearning</span></a></li>
-<li><a href="case-autolore.html"><span class="sm-t">AutoLore</span><span class="sm-d">Classic car museum kiosk</span></a></li>
-<li><a href="case-guru.html"><span class="sm-t">Guru Samman Samaroh</span><span class="sm-d">Event visualisation and design</span></a></li>
-<li class="sm-all"><a href="home.html#work">All work</a></li>
-</ul>
+            <li><a href="case-finunity.html"><span class="sm-t">FinUnity</span><span class="sm-d">Property tax financing platform</span></a></li>
+            <li><a href="case-advisor.html"><span class="sm-t">Advisor platform</span><span class="sm-d">Wealth management workspace</span></a></li>
+            <li><a href="case-finguard.html"><span class="sm-t">FinGuard</span><span class="sm-d">Banking risk and investigations</span></a></li>
+            <li><a href="case-agrifunds.html"><span class="sm-t">AgriFunds</span><span class="sm-d">Farm lending customer portal</span></a></li>
+            <li><a href="case-aster.html"><span class="sm-t">Aster Bank</span><span class="sm-d">Wealth management eLearning</span></a></li>
+            <li><a href="case-autolore.html"><span class="sm-t">AutoLore</span><span class="sm-d">Classic car museum kiosk</span></a></li>
+            <li><a href="case-guru.html"><span class="sm-t">Guru Samman Samaroh</span><span class="sm-d">Event visualisation and design</span></a></li>
+            <li class="sm-all"><a href="home.html#work">All work</a></li>
+          </ul>
         </div>
         <a href="about.html">About</a>
         <a href="contact.html" class="nav-contact" aria-current="page">Get in touch</a>
@@ -1279,21 +1297,21 @@ footer .foot-logo-wrap{padding-top:clamp(.5rem,1.5vw,1rem)}
    <div class="hero-layout">
    <div class="hero-main">
     <p class="eyebrow anim-in" style="--d:0ms"><span class="dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/></svg></span><span data-cms="tbcdd03b">Accelerated solutions with AI, UX laws, principles and ethics</span></p>
-    <h1 class="anim-in" style="--d:90ms"><span data-cms="tde48104">I’m Sanjay Pal,</span> <span class="role" data-cms="tb050e76">a UX Designer.</span></h1>
+    <h1 class="anim-in" style="--d:90ms"><span data-cms="tde48104">I’m Sanjay Pal,</span> <span class="role" data-cms="tb050e76">a Human+Agent Experience Designer.</span></h1>
     <div class="hero-grid">
       <div class="hero-copy anim-in" style="--d:180ms">
-<p data-cms="tv2-brief1">I turn complex, high-stakes workflows into products people trust. Lately that has been fintech: a property tax loan platform at FinUnity and an advisor workspace that halved the steps to run quarter-end reports.</p>
-<p class="now-at" data-cms="tv2-now"><span class="now-dot" aria-hidden="true"></span>Currently working with <a href="https://digital.compunnel.com/" target="_blank" rel="noopener">Compunnel Digital<span class="sr-only"> (opens in a new tab)</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></p>
-<p data-cms="tv2-brief2">From research and journey maps to prototypes and design systems, and even live events like Guru Samman Samaroh for 300+ guests.</p>
-<div class="cta-row">
-<a class="btn btn-primary" href="home.html#work">See selected work
+        <p data-cms="tv2-brief1">I turn complex, high-stakes workflows into products people trust. Lately that has been fintech: a property tax loan platform at FinUnity and an advisor workspace that halved the steps to run quarter-end reports.</p>
+        <p class="now-at" data-cms="tv2-now"><span class="now-dot" aria-hidden="true"></span>Currently working with <a href="https://digital.compunnel.com/" target="_blank" rel="noopener">Compunnel Digital<span class="sr-only"> (opens in a new tab)</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></p>
+        <p data-cms="tv2-brief2">From research and journey maps to prototypes and design systems, and even live events like Guru Samman Samaroh for 300+ guests.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="home.html#work">See selected work
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
-<a class="btn btn-ghost" href="contact.html" data-cms="tc49bb4c">Get in touch</a>
-</div>
-</div>
+          <a class="btn btn-ghost" href="contact.html" data-cms="tc49bb4c">Get in touch</a>
+        </div>
+      </div>
       <ul class="stats badge-row anim-in" style="--d:270ms" aria-label="Credentials and experience">
-<li class="bdg bdg-img" title="FinTech Professional"><img class="b-light" src="badge-fintech-light.webp" width="520" height="520" alt="FinTech Professional badge: I design financial products around trust, clarity and control, across banking, payments and insurance, including FinUnity’s property tax financing platform and a wealth advisor workspace."><img class="b-dark" src="badge-fintech-dark.webp" width="520" height="520" alt="" aria-hidden="true"></li>
-<li class="bdg ink-green" title="AI-assisted design, since the AI era began"><span class="sr-only">Badge: <span data-cms="tai-badge">AI-assisted design</span>, a human-led design workflow using AI since the start of the AI era to speed up research, ideation and prototyping.</span><svg class="bdg-svg" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+        <li class="bdg bdg-img" title="FinTech Professional"><img class="b-light" src="badge-fintech-light.webp" width="520" height="520" alt="FinTech Professional badge: I design financial products around trust, clarity and control, across banking, payments and insurance, including FinUnity’s property tax financing platform and a wealth advisor workspace."><img class="b-dark" src="badge-fintech-dark.webp" width="520" height="520" alt="" aria-hidden="true"></li>
+        <li class="bdg ink-green" title="AI-assisted design, since the AI era began"><span class="sr-only">Badge: <span data-cms="tai-badge">AI-assisted design</span>, a human-led design workflow using AI since the start of the AI era to speed up research, ideation and prototyping.</span><svg class="bdg-svg" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
  <path class="pp" d="M8 3H112V82L60 117L8 82Z"/>
  <path d="M8 3H112V82L60 117L8 82Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
  <path d="M8 21H112" stroke="currentColor" stroke-width="1.1"/>
@@ -1307,8 +1325,8 @@ footer .foot-logo-wrap{padding-top:clamp(.5rem,1.5vw,1rem)}
  <rect x="34" y="82" width="52" height="11.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1"/>
  <text x="60" y="90.4" text-anchor="middle" font-size="6.6" fill="currentColor">SINCE AI ERA</text>
 </svg></li>
-<li class="bdg bdg-img" title="HFI Certified Usability Analyst (CUA)"><img class="b-light" src="badge-cua-green.webp" width="520" height="520" alt="HFI Certified Usability Analyst (CUA) badge: certified by Human Factors International in usability analysis, the research and evaluation methods behind my case studies."><img class="b-dark" src="badge-cua-lime.webp" width="520" height="520" alt="" aria-hidden="true"></li>
-<li class="bdg ink-green bdg-tall" title="22+ years in experience design"><span class="sr-only">Badge: <span data-cms="tf275a1a">22+</span> <span data-cms="t48b5f76">Years in experience design</span>, across research, interaction design, design systems and event design.</span><svg class="bdg-svg" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+        <li class="bdg bdg-img" title="HFI Certified Usability Analyst (CUA)"><img class="b-light" src="badge-cua-green.webp" width="520" height="520" alt="HFI Certified Usability Analyst (CUA) badge: certified by Human Factors International in usability analysis, the research and evaluation methods behind my case studies."><img class="b-dark" src="badge-cua-lime.webp" width="520" height="520" alt="" aria-hidden="true"></li>
+        <li class="bdg ink-green bdg-tall" title="22+ years in experience design"><span class="sr-only">Badge: <span data-cms="tf275a1a">22+</span> <span data-cms="t48b5f76">Years in experience design</span>, across research, interaction design, design systems and event design.</span><svg class="bdg-svg" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
  <path class="pp" d="M60 5 104 17v40c0 29-20 47-44 58C36 104 16 86 16 57V17z"/>
  <path d="M60 5 104 17v40c0 29-20 47-44 58C36 104 16 86 16 57V17z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
  <path d="M60 11.5 98 21.5v35.5c0 25-17 41-38 50.5C39 98 22 82 22 57V21.5z" fill="none" stroke="currentColor" stroke-width=".8" stroke-dasharray="2.4 2"/>
@@ -1319,7 +1337,7 @@ footer .foot-logo-wrap{padding-top:clamp(.5rem,1.5vw,1rem)}
  <text x="60" y="83" text-anchor="middle" font-size="8.6" fill="currentColor">UX DESIGN</text>
  <path d="M46 91.5h28" stroke="currentColor" stroke-width=".8"/>
 </svg></li>
-<li class="bdg ink-brown" title="500+ websites and digital products"><span class="sr-only">Badge: <span data-cms="tdaf5121">500+</span> <span data-cms="t2665d5a">Websites &amp; digital products</span> designed, from marketing sites to enterprise platforms.</span><svg class="bdg-svg" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+        <li class="bdg ink-brown" title="500+ websites and digital products"><span class="sr-only">Badge: <span data-cms="tdaf5121">500+</span> <span data-cms="t2665d5a">Websites &amp; digital products</span> designed, from marketing sites to enterprise platforms.</span><svg class="bdg-svg" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
  <defs><path id="bdgArcT" d="M22,60 a38,38 0 1,1 76,0"/><path id="bdgArcB" d="M17.5,60 a42.5,42.5 0 0,0 85,0"/></defs>
  <path d="M119.00,60.00 L112.71,65.54 L117.71,72.27 L110.41,76.38 L113.90,84.00 L105.90,86.50 L107.73,94.68 L99.39,95.46 L99.48,103.85 L91.15,102.88 L89.50,111.10 L81.56,108.42 L78.23,116.11 L71.02,111.84 L66.17,118.68 L60.00,113.00 L53.83,118.68 L48.98,111.84 L41.77,116.11 L38.44,108.42 L30.50,111.10 L28.85,102.88 L20.52,103.85 L20.61,95.46 L12.27,94.68 L14.10,86.50 L6.10,84.00 L9.59,76.38 L2.29,72.27 L7.29,65.54 L1.00,60.00 L7.29,54.46 L2.29,47.73 L9.59,43.62 L6.10,36.00 L14.10,33.50 L12.27,25.32 L20.61,24.54 L20.52,16.15 L28.85,17.12 L30.50,8.90 L38.44,11.58 L41.77,3.89 L48.98,8.16 L53.83,1.32 L60.00,7.00 L66.17,1.32 L71.02,8.16 L78.23,3.89 L81.56,11.58 L89.50,8.90 L91.15,17.12 L99.48,16.15 L99.39,24.54 L107.73,25.32 L105.90,33.50 L113.90,36.00 L110.41,43.62 L117.71,47.73 L112.71,54.46Z" class="pp" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/>
  <circle class="pp" cx="60" cy="60" r="49.5"/>
@@ -1332,7 +1350,7 @@ footer .foot-logo-wrap{padding-top:clamp(.5rem,1.5vw,1rem)}
  <text class="bdg-num" x="60" y="66.5" text-anchor="middle" font-size="16.5" fill="currentColor">500+</text>
  <path d="M51 73h18" stroke="currentColor" stroke-width="1"/>
 </svg></li>
-<li class="bdg ink-green bdg-tall" title="50+ mobile apps designed"><span class="sr-only">Badge: <span data-cms="ta53653e">50+</span> <span data-cms="tf8c8204">Mobile applications</span> designed.</span><svg class="bdg-svg" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+        <li class="bdg ink-green bdg-tall" title="50+ mobile apps designed"><span class="sr-only">Badge: <span data-cms="ta53653e">50+</span> <span data-cms="tf8c8204">Mobile applications</span> designed.</span><svg class="bdg-svg" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
  <path class="pp" d="M60 5C56 11.5 50 14.5 42 14.5H24Q17.5 14.5 17.5 21V62C17.5 86.5 37.5 102.5 60 114.5C82.5 102.5 102.5 86.5 102.5 62V21Q102.5 14.5 96 14.5H78C70 14.5 64 11.5 60 5Z"/>
  <path d="M60 5C56 11.5 50 14.5 42 14.5H24Q17.5 14.5 17.5 21V62C17.5 86.5 37.5 102.5 60 114.5C82.5 102.5 102.5 86.5 102.5 62V21Q102.5 14.5 96 14.5H78C70 14.5 64 11.5 60 5Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
  <path d="M60 11.5C56.5 16.5 50.5 19.5 42 19.5H26.5Q22.5 19.5 22.5 23.5V62C22.5 83 40 97.5 60 108.5C80 97.5 97.5 83 97.5 62V23.5Q97.5 19.5 93.5 19.5H78C69.5 19.5 63.5 16.5 60 11.5Z" fill="none" stroke="currentColor" stroke-width=".8" stroke-linejoin="round"/>
@@ -1344,7 +1362,7 @@ footer .foot-logo-wrap{padding-top:clamp(.5rem,1.5vw,1rem)}
  <text x="60" y="81" text-anchor="middle" font-size="8.4" fill="currentColor">USER</text>
  <text x="60" y="91" text-anchor="middle" font-size="8.4" fill="currentColor">CENTRED</text>
 </svg></li>
-</ul>
+      </ul>
     </div>
    </div>
    <figure class="hero-photo anim-in" style="--d:150ms">
@@ -1375,126 +1393,79 @@ footer .foot-logo-wrap{padding-top:clamp(.5rem,1.5vw,1rem)}
         <p class="sec-lede" data-cms="tfaa31c2">Selected case studies across enterprise, finance and health.</p>
       </div>
       <div class="bento">
-<article class="case c1 has-link" style="--tint:#F5C84C">
+        <article class="case c1 has-link" style="--tint:#F5C84C">
           <div class="art art-glyph" data-shape="house" data-color="#F5C84C"><canvas aria-hidden="true"></canvas></div>
           <div class="case-body">
-            <div class="tags">
-<span class="tag" data-cms="tfu-tag1">Financial services · Enterprise</span>
-<span class="tag tag-live" data-cms="tfu-tag2">Case study</span>
-</div>
+            <div class="tags"><span class="tag" data-cms="tfu-tag1">Financial services · Enterprise</span><span class="tag tag-live" data-cms="tfu-tag2">Case study</span></div>
             <h3><a class="case-link" href="case-finunity.html" data-cms="tfu-title2">One platform for property tax financing at FinUnity<svg class="lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-label="Password protected" role="img"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></a></h3>
             <p data-cms="tfu-desc2">Replaced a patchwork of tools with one platform for property tax loans and liens, from research to design system.</p>
-            <ul class="impact" aria-label="Impact">
-<li><b>1</b><span>platform for loans & liens</span></li>
-<li><b>KPIs</b><span>met since launch</span></li>
-<li><b>2+ yrs</b><span>partnership</span></li>
-</ul>
+            <ul class="impact" aria-label="Impact"><li><b>1</b><span>platform for loans & liens</span></li><li><b>KPIs</b><span>met since launch</span></li><li><b>2+ yrs</b><span>partnership</span></li></ul>
             <span class="read-more" aria-hidden="true">Read the case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
         </article>
-<article class="case c2 has-link" style="--tint:#FF9A4D">
+        <article class="case c2 has-link" style="--tint:#FF9A4D">
           <div class="art art-glyph" data-shape="growth" data-color="#FF9A4D"><canvas aria-hidden="true"></canvas></div>
           <div class="case-body">
-            <div class="tags">
-<span class="tag" data-cms="tad-tag1">Wealth management · SaaS</span>
-<span class="tag tag-live" data-cms="tad-tag2">Case study</span>
-</div>
+            <div class="tags"><span class="tag" data-cms="tad-tag1">Wealth management · SaaS</span><span class="tag tag-live" data-cms="tad-tag2">Case study</span></div>
             <h3><a class="case-link" href="case-advisor.html" data-cms="tad-title">From back-office grids to an advisor’s workspace<svg class="lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-label="Password protected" role="img"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></a></h3>
             <p data-cms="tad-desc">Reshaped a wealth platform around households and goals, with a design system, card-sorted menu and self-serve reports.</p>
-            <ul class="impact" aria-label="Impact">
-<li><b>14 → 7</b><span>steps to quarter-end reports</span></li>
-<li><b>19 → 5</b><span>columns on client list</span></li>
-<li><b>4</b><span>modules redesigned</span></li>
-</ul>
+            <ul class="impact" aria-label="Impact"><li><b>14 → 7</b><span>steps to quarter-end reports</span></li><li><b>19 → 5</b><span>columns on client list</span></li><li><b>4</b><span>modules redesigned</span></li></ul>
             <span class="read-more" aria-hidden="true">Read the case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
         </article>
-<article class="case c3 has-link" style="--tint:#FF5E62">
+        <article class="case c3 has-link" style="--tint:#FF5E62">
           <div class="art art-glyph" data-shape="shield" data-color="#FF5E62"><canvas aria-hidden="true"></canvas></div>
           <div class="case-body">
-            <div class="tags">
-<span class="tag" data-cms="tfg-tag1">Banking · Compliance</span>
-<span class="tag tag-live" data-cms="tfg-tag2">Case study</span>
-</div>
+            <div class="tags"><span class="tag" data-cms="tfg-tag1">Banking · Compliance</span><span class="tag tag-live" data-cms="tfg-tag2">Case study</span></div>
             <h3><a class="case-link" href="case-finguard.html" data-cms="tfg-title">FinGuard: risk you can explain<svg class="lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-label="Password protected" role="img"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></a></h3>
             <p data-cms="tfg-desc">Designed an explainable risk dashboard, search and customer profile for a bank’s financial crime team.</p>
-            <ul class="impact" aria-label="Impact">
-<li><b>5</b><span>risk dimensions, one score</span></li>
-<li><b>3</b><span>record types, one search</span></li>
-<li><b>1</b><span>page to decide</span></li>
-</ul>
+            <ul class="impact" aria-label="Impact"><li><b>5</b><span>risk dimensions, one score</span></li><li><b>3</b><span>record types, one search</span></li><li><b>1</b><span>page to decide</span></li></ul>
             <span class="read-more" aria-hidden="true">Read the case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
         </article>
-<article class="case c6 has-link" style="--tint:#3EE6E6">
+        <article class="case c6 has-link" style="--tint:#3EE6E6">
           <div class="art art-glyph" data-shape="wheat" data-color="#3EE6E6"><canvas aria-hidden="true"></canvas></div>
           <div class="case-body">
-            <div class="tags">
-<span class="tag" data-cms="taf-tag1">Agri lending · Enterprise</span>
-<span class="tag tag-live" data-cms="taf-tag2">Case study</span>
-</div>
+            <div class="tags"><span class="tag" data-cms="taf-tag1">Agri lending · Enterprise</span><span class="tag tag-live" data-cms="taf-tag2">Case study</span></div>
             <h3><a class="case-link" href="case-agrifunds.html" data-cms="taf-title">AgriFunds: one customer view for farm lenders<svg class="lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-label="Password protected" role="img"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></a></h3>
             <p data-cms="taf-desc">Brought loan, banking, CRM and statements tools into one customer view for farm lenders.</p>
-            <ul class="impact" aria-label="Impact">
-<li><b>4 → 1</b><span>systems in one portal</span></li>
-<li><b>11 → 4</b><span>tabs per customer</span></li>
-<li><b>5</b><span>modules designed</span></li>
-</ul>
+            <ul class="impact" aria-label="Impact"><li><b>4 → 1</b><span>systems in one portal</span></li><li><b>11 → 4</b><span>tabs per customer</span></li><li><b>5</b><span>modules designed</span></li></ul>
             <span class="read-more" aria-hidden="true">Read the case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
         </article>
-<article class="case c7 has-link" style="--tint:#FF6FAE">
+        <article class="case c7 has-link" style="--tint:#FF6FAE">
           <div class="art art-glyph" data-shape="learn" data-color="#FF6FAE"><canvas aria-hidden="true"></canvas></div>
           <div class="case-body">
-            <div class="tags">
-<span class="tag" data-cms="tas-tag1">Banking · eLearning</span>
-<span class="tag tag-live" data-cms="tas-tag2">Case study</span>
-</div>
+            <div class="tags"><span class="tag" data-cms="tas-tag1">Banking · eLearning</span><span class="tag tag-live" data-cms="tas-tag2">Case study</span></div>
             <h3><a class="case-link" href="case-aster.html" data-cms="tas-title">Aster Bank: a better working day, told as a story<svg class="lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-label="Password protected" role="img"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></a></h3>
             <p data-cms="tas-desc">Designed the UI of eLearning modules that follow a relationship manager through his day to explain a wealth management transformation.</p>
-            <ul class="impact" aria-label="Impact">
-<li><b>15</b><span>screens per module</span></li>
-<li><b>1</b><span>persona-led story</span></li>
-<li><b>3</b><span>help tools on every screen</span></li>
-</ul>
+            <ul class="impact" aria-label="Impact"><li><b>15</b><span>screens per module</span></li><li><b>1</b><span>persona-led story</span></li><li><b>3</b><span>help tools on every screen</span></li></ul>
             <span class="read-more" aria-hidden="true">Read the case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
         </article>
-<article data-more class="case c4 has-link" style="--tint:#38B6FF">
+
+        <article class="case c4 has-link" data-more style="--tint:#38B6FF">
           <div class="art art-glyph" data-shape="car" data-color="#38B6FF"><canvas aria-hidden="true"></canvas></div>
           <div class="case-body">
-            <div class="tags">
-<span class="tag" data-cms="tal-tag1">Public space · Kiosk</span>
-<span class="tag tag-live" data-cms="tal-tag2">Case study</span>
-</div>
+            <div class="tags"><span class="tag" data-cms="tal-tag1">Public space · Kiosk</span><span class="tag tag-live" data-cms="tal-tag2">Case study</span></div>
             <h3><a class="case-link" href="case-autolore.html" data-cms="tal-title">AutoLore: classic cars, told by touch<svg class="lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-label="Password protected" role="img"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></a></h3>
             <p data-cms="tal-desc">Designed a touch kiosk that turns a founder’s memories into stories for every car in a Florida museum.</p>
-            <ul class="impact" aria-label="Impact">
-<li><b>~50</b><span>cars with a story</span></li>
-<li><b>3</b><span>ways into every car</span></li>
-<li><b>2+ yrs</b><span>in daily use</span></li>
-</ul>
+            <ul class="impact" aria-label="Impact"><li><b>~50</b><span>cars with a story</span></li><li><b>3</b><span>ways into every car</span></li><li><b>2+ yrs</b><span>in daily use</span></li></ul>
             <span class="read-more" aria-hidden="true">Read the case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
         </article>
-<article data-more class="case c5 has-link" style="--tint:#B98CFF">
+
+        <article class="case c5 has-link" data-more style="--tint:#B98CFF">
           <div class="art art-glyph" data-shape="trophy" data-color="#B98CFF"><canvas aria-hidden="true"></canvas></div>
           <div class="case-body">
-            <div class="tags">
-<span class="tag" data-cms="tev-tag1">Event design</span>
-<span class="tag" data-cms="tev-tag2">300+ guests</span>
-</div>
+            <div class="tags"><span class="tag" data-cms="tev-tag1">Event design</span><span class="tag" data-cms="tev-tag2">300+ guests</span></div>
             <h3><a class="case-link" href="case-guru.html" data-cms="tev-title">Guru Samman Samaroh 2019<svg class="lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-label="Password protected" role="img"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></a></h3>
             <p data-cms="tev-desc">Visualised and designed an outdoor tribute to our teachers, from ground plan to printed backdrop.</p>
-            <ul class="impact" aria-label="Impact">
-<li><b>300+</b><span>guests</span></li>
-<li><b>~90</b><span>days to deliver</span></li>
-<li><b>1st</b><span>alumni-led tribute</span></li>
-</ul>
+            <ul class="impact" aria-label="Impact"><li><b>300+</b><span>guests</span></li><li><b>~90</b><span>days to deliver</span></li><li><b>1st</b><span>alumni-led tribute</span></li></ul>
             <span class="read-more" aria-hidden="true">Read the case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
         </article>
-</div>
+      </div>
       <div class="more-row" id="moreRow">
         <button class="more-work" id="loadMore" type="button" aria-expanded="false"><span data-cms="tv2-more">Load more work</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
@@ -1524,9 +1495,9 @@ footer .foot-logo-wrap{padding-top:clamp(.5rem,1.5vw,1rem)}
             <img src="sanjay-boardwalk-curve.webp" width="1800" height="497" loading="lazy" alt="Sanjay walking away along a weathered wooden boardwalk towards a misty beach, a pier in the distance.">
           </figure>
           <div class="about-cols">
-<p data-cms="tv2-me-p1">I enjoy the problems many people find dull: dense data tables, multi-step approvals, compliance rules. Making those feel calm and obvious is the part of the job I like most.</p>
-<p data-cms="tv2-me-p2">Outside work, music and visual storytelling keep me curious. They remind me that design is as much about how something feels as how it works.</p>
-</div>
+            <p data-cms="tv2-me-p1">I enjoy the problems many people find dull: dense data tables, multi-step approvals, compliance rules. Making those feel calm and obvious is the part of the job I like most.</p>
+            <p data-cms="tv2-me-p2">Outside work, music and visual storytelling keep me curious. They remind me that design is as much about how something feels as how it works.</p>
+          </div>
           <p class="visa-note" data-cms="tv2-visa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg><span><b>Valid US Visa</b> till Feb 2027</span></p>
         </div>
       </div>
@@ -1534,28 +1505,28 @@ footer .foot-logo-wrap{padding-top:clamp(.5rem,1.5vw,1rem)}
       <div role="tabpanel" id="panel-sum" aria-labelledby="tab-sum" tabindex="0" hidden>
         <h3 class="sec-lede panel-lede" data-cms="tv2-do-lede">The services I offer, and what your team gets from each project.</h3>
         <div class="summary summary-2">
-<div>
+          <div>
             <h3 data-cms="tv2-do-h1">Services</h3>
             <ul>
-<li data-cms="tv2-do-s1">UX strategy</li>
-<li data-cms="tv2-do-s2">User research and usability testing</li>
-<li data-cms="tv2-do-s3">Product and interaction design</li>
-<li data-cms="tv2-do-s4">Design systems</li>
-<li data-cms="tv2-do-s5">Design leadership and mentoring</li>
-</ul>
+              <li data-cms="tv2-do-s1">UX strategy</li>
+              <li data-cms="tv2-do-s2">User research and usability testing</li>
+              <li data-cms="tv2-do-s3">Product and interaction design</li>
+              <li data-cms="tv2-do-s4">Design systems</li>
+              <li data-cms="tv2-do-s5">Design leadership and mentoring</li>
+            </ul>
           </div>
-<div>
+          <div>
             <h3 data-cms="tv2-do-h2">Deliverables</h3>
             <ul>
-<li data-cms="tv2-do-d1">Research insights, personas and journey maps</li>
-<li data-cms="tv2-do-d2">Information architecture and user flows</li>
-<li data-cms="tv2-do-d3">Wireframes and interactive prototypes</li>
-<li data-cms="tv2-do-d4">Component libraries with usage guidelines</li>
-<li data-cms="tv2-do-d5">Accessible, developer-ready UI specifications</li>
-<li data-cms="tv2-do-d6">Visual storytelling for stakeholders</li>
-</ul>
+              <li data-cms="tv2-do-d1">Research insights, personas and journey maps</li>
+              <li data-cms="tv2-do-d2">Information architecture and user flows</li>
+              <li data-cms="tv2-do-d3">Wireframes and interactive prototypes</li>
+              <li data-cms="tv2-do-d4">Component libraries with usage guidelines</li>
+              <li data-cms="tv2-do-d5">Accessible, developer-ready UI specifications</li>
+              <li data-cms="tv2-do-d6">Visual storytelling for stakeholders</li>
+            </ul>
           </div>
-</div>
+        </div>
       </div>
 
       <div role="tabpanel" id="panel-how-wrap" aria-labelledby="tab-how" tabindex="0" hidden>
@@ -1592,10 +1563,22 @@ footer .foot-logo-wrap{padding-top:clamp(.5rem,1.5vw,1rem)}
 
       <h3 class="awards-h" data-cms="taw-h">Recognition</h3>
       <ul class="awards">
-<li><span class="aw-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg></span><span><b data-cms="taw1">Customer Delight Award</b><span data-cms="taw1d">Certificate of appreciation for being a client champion · November 2022</span></span></li>
-<li><span class="aw-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3a3 3 0 0 1-3 4M7 5H4a3 3 0 0 0 3 4"/></svg></span><span><b data-cms="taw2">Quarterly Team Award</b><span data-cms="taw2d">Material Design initiative team · April to June 2016</span></span></li>
-<li><span class="aw-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H8l-4 4z"/><path d="M8 9h8M8 12h5"/></svg></span><span><b data-cms="taw3">Recognised by name by clients</b><span data-cms="taw3d">Featured on the company’s client appreciation wall · 2019</span></span></li>
-</ul>
+        <li><span class="aw-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg></span><span><b data-cms="taw1">Customer Delight Award</b><span data-cms="taw1d">Certificate of appreciation for being a client champion · November 2022</span></span></li>
+        <li><span class="aw-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3a3 3 0 0 1-3 4M7 5H4a3 3 0 0 0 3 4"/></svg></span><span><b data-cms="taw2">Quarterly Team Award</b><span data-cms="taw2d">Material Design initiative team · April to June 2016</span></span></li>
+        <li><span class="aw-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H8l-4 4z"/><path d="M8 9h8M8 12h5"/></svg></span><span><b data-cms="taw3">Recognised by name by clients</b><span data-cms="taw3d">Featured on the company’s client appreciation wall · 2019</span></span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="block sig-quote" id="quote" aria-label="Quote">
+    <div class="wrap">
+      <figure>
+        <p class="sq-kicker" data-cms="tv3-qk">What I believe</p>
+        <blockquote><p><span class="sr-only">Human-made ART is the New Luxury</span><svg class="sq-svg" viewBox="0 0 2129 327" aria-hidden="true" focusable="false"><defs><mask id="nlMask" maskUnits="userSpaceOnUse" x="0" y="0" width="2129" height="327"><rect class="nl-base" width="2129" height="327" fill="#fff"/><g class="nl-dots" fill="#fff"></g><circle class="nl-dot-hole" cx="1188.5" cy="106" r="9.5" fill="#000" style="opacity:0"/></mask><mask id="nlFresh" maskUnits="userSpaceOnUse" x="0" y="0" width="2129" height="327"><g class="nl-fresh" fill="#fff"></g></mask></defs><g fill="currentColor" mask="url(#nlMask)"><path id="nlInk" fill-rule="evenodd" clip-rule="evenodd" d="M 512 140 510 138 507 138 506 137 489 137 488 138 483 138 481 137 472 146 463 153 457 156 451 156 448 153 447 150 446 132 445 131 440 131 430 139 422 147 420 146 430 129 430 125 429 124 426 124 422 128 416 138 402 152 394 157 391 157 388 153 388 146 392 134 394 131 394 126 393 125 385 125 384 126 381 126 373 131 367 137 366 137 366 138 353 151 346 155 341 155 337 151 336 140 334 137 330 137 315 152 314 151 314 148 319 136 319 131 318 130 314 130 312 132 309 133 300 140 291 149 290 147 295 137 300 130 300 126 295 126 292 129 283 143 266 158 261 159 260 158 260 152 263 146 263 144 271 129 269 126 265 126 262 129 261 132 255 140 239 156 235 157 234 156 238 144 246 130 246 127 245 126 241 126 238 129 234 138 230 144 228 150 228 153 227 154 227 159 229 162 231 163 235 163 244 158 252 151 253 152 253 160 256 163 258 164 265 163 269 161 275 156 276 159 274 162 274 165 275 166 279 166 302 145 308 141 309 142 306 149 306 158 309 160 314 159 328 147 330 149 330 152 333 157 339 160 345 160 348 159 355 154 357 159 359 160 364 160 367 158 369 158 380 149 383 158 386 161 389 162 396 161 405 155 406 156 406 159 404 162 404 165 407 167 437 140 439 141 438 142 439 143 439 147 443 157 450 161 455 161 461 159 469 154 481 143 510 142 Z M 419 147 420 146 421 147 420 148 Z M 384 132 385 135 382 139 372 149 367 153 364 154 363 153 366 148 380 134 Z M 1223 123 1221 121 1216 122 1212 126 1210 130 1193 147 1181 156 1174 159 1171 159 1169 157 1169 153 1177 136 1181 130 1181 127 1179 125 1176 125 1157 143 1157 145 1161 145 1163 143 1164 144 1162 150 1162 158 1163 160 1168 164 1175 164 1178 163 1193 153 1201 145 1202 145 1209 137 1210 138 1210 144 1211 145 1211 156 1208 163 1204 167 1197 169 1194 165 1196 160 1193 161 1189 166 1189 169 1192 173 1195 173 1196 174 1197 173 1204 173 1208 171 1214 166 1218 158 1219 148 1218 147 1217 134 1223 126 Z M 1693 119 1691 117 1687 119 1687 130 1682 142 1680 144 1676 152 1670 158 1666 160 1662 157 1662 154 1661 153 1662 137 1660 136 1658 136 1635 159 1633 160 1632 159 1634 151 1645 132 1644 129 1641 128 1636 132 1633 138 1615 154 1596 164 1586 166 1582 161 1587 149 1601 143 1605 140 1611 133 1612 130 1611 126 1608 124 1604 124 1597 127 1593 130 1581 144 1577 152 1577 155 1576 156 1576 164 1579 169 1583 171 1590 171 1599 168 1609 163 1625 151 1626 153 1624 157 1624 163 1626 166 1630 167 1638 163 1653 149 1654 150 1655 158 1659 164 1662 165 1669 164 1682 152 1686 146 1689 137 1691 134 1691 131 1693 126 Z M 1604 130 1605 131 1604 134 1598 140 1594 142 1593 140 1595 137 Z M 2128 160 2126 158 2123 158 2122 157 2106 157 2105 158 2097 158 2096 159 2086 160 2085 161 2082 161 2078 163 2075 163 2074 164 2071 164 2062 167 2061 165 2066 157 2072 144 2074 142 2074 140 2078 133 2079 125 2077 124 2071 126 2057 141 2046 150 2040 153 2039 152 2040 146 2044 138 2046 136 2050 127 2048 125 2044 125 2040 129 2035 140 2018 155 2010 159 2008 157 2008 155 2015 138 2013 135 2000 135 1999 134 2003 125 2003 122 2001 120 1997 121 1993 125 1991 129 1991 135 1971 155 1964 159 1962 159 1960 157 1960 154 1961 153 1962 146 1967 136 1969 134 1970 126 1965 126 1962 129 1957 138 1940 155 1936 157 1935 156 1935 153 1937 147 1947 129 1946 126 1942 126 1940 127 1934 138 1920 151 1913 156 1907 159 1899 159 1897 158 1892 152 1891 147 1908 124 1916 116 1916 115 1928 104 1927 101 1925 101 1912 112 1904 123 1895 132 1889 140 1887 139 1886 130 1885 129 1885 125 1883 122 1879 122 1876 126 1876 132 1872 137 1857 152 1849 158 1845 159 1843 157 1843 153 1845 147 1854 129 1853 126 1848 126 1844 131 1841 137 1831 147 1831 148 1824 155 1819 157 1818 156 1818 153 1821 147 1821 145 1830 130 1830 127 1829 126 1825 126 1823 127 1813 145 1812 152 1811 153 1811 160 1814 163 1819 163 1827 158 1835 150 1837 151 1836 152 1836 158 1837 161 1841 164 1847 164 1856 159 1871 144 1876 137 1878 136 1883 150 1874 163 1867 176 1863 181 1862 186 1864 187 1867 185 1873 173 1885 156 1886 156 1887 158 1893 163 1896 164 1905 164 1919 157 1927 150 1928 151 1927 154 1928 160 1931 163 1935 163 1938 162 1945 157 1952 150 1953 151 1953 158 1955 162 1959 164 1963 164 1973 159 1995 138 1997 140 2005 140 2006 141 2002 150 2001 159 2004 163 2006 164 2011 164 2020 159 2027 152 2028 152 2029 150 2031 151 2031 156 2033 159 2036 160 2041 159 2053 151 2063 141 2064 142 2053 163 2047 172 2040 174 2027 180 2025 180 2003 191 2001 191 1999 193 1984 200 1982 202 1970 208 1940 229 1935 234 1929 238 1910 256 1893 278 1892 282 1887 290 1885 296 1885 299 1884 300 1884 313 1886 318 1891 323 1899 326 1909 326 1910 325 1914 325 1923 322 1938 314 1950 306 1967 292 1997 260 2012 240 2016 236 2043 197 2045 192 2057 173 2069 169 2072 169 2076 167 2079 167 2084 165 2088 165 2089 164 2093 164 2094 163 2106 162 2107 161 2122 161 2123 162 2127 162 Z M 2043 179 2039 187 2022 212 2019 218 1995 250 1973 274 1973 275 1950 297 1931 311 1915 319 1912 319 1907 321 1898 321 1895 320 1889 314 1888 311 1888 302 1893 287 1906 267 1930 243 1958 221 1983 205 2006 194 2012 190 2014 190 2017 188 2019 188 2024 185 2039 180 2042 178 Z M 1191 99 1186 101 1183 107 1183 111 1185 113 1187 113 1192 108 1194 104 1194 102 Z M 1392 29 1387 28 1381 30 1374 35 1360 49 1350 61 1342 74 1339 77 1323 103 1305 102 1304 101 1304 99 1311 89 1312 86 1323 71 1324 67 1321 64 1318 65 1315 68 1292 102 1268 103 1267 104 1259 105 1256 107 1257 110 1271 109 1272 108 1283 108 1284 107 1288 107 1289 108 1276 133 1276 135 1274 138 1274 140 1270 149 1268 160 1269 161 1269 165 1273 169 1280 169 1284 167 1298 154 1299 155 1298 161 1297 162 1298 165 1300 166 1304 165 1327 141 1328 142 1328 150 1329 151 1329 154 1334 160 1342 160 1348 157 1349 158 1349 162 1353 166 1357 166 1358 167 1366 166 1376 162 1391 152 1401 143 1405 138 1404 136 1399 139 1393 145 1377 156 1365 161 1358 162 1355 159 1355 155 1358 148 1360 146 1362 146 1376 138 1379 135 1382 129 1381 124 1378 122 1375 122 1368 125 1359 133 1352 143 1349 149 1349 151 1344 155 1340 156 1338 155 1336 152 1336 137 1337 135 1334 131 1332 131 1326 135 1310 151 1309 150 1311 144 1314 139 1314 137 1316 135 1318 129 1320 127 1320 125 1324 118 1348 95 1348 94 1371 70 1379 59 1384 54 1391 43 1393 38 1394 33 Z M 1308 151 1309 150 1310 152 1309 153 Z M 1375 128 1376 129 1374 133 1369 138 1364 141 1363 138 1373 128 Z M 1319 107 1320 109 1317 113 1315 119 1313 121 1313 123 1305 140 1290 156 1281 163 1277 164 1275 162 1275 158 1276 157 1276 154 1279 145 1297 110 1300 107 Z M 1387 33 1389 35 1387 41 1376 57 1358 77 1358 78 1334 103 1333 100 1335 96 1339 91 1346 78 1352 71 1361 57 1380 37 Z M 937 64 926 80 919 95 918 101 917 102 917 105 919 109 920 109 922 106 922 100 927 87 940 68 957 52 967 45 975 41 977 41 985 37 988 37 997 34 1003 34 1004 33 1020 34 1031 39 1037 45 1040 51 1040 64 1039 67 1032 75 1033 80 1015 99 1001 109 994 112 989 116 983 119 981 119 976 122 974 122 965 126 958 127 954 129 946 130 945 129 948 125 950 120 954 115 958 107 981 75 986 70 987 66 985 64 982 64 977 69 975 73 969 79 967 83 956 97 949 109 946 112 938 128 936 130 932 131 932 135 933 137 928 145 928 147 921 161 919 169 915 178 914 186 913 187 913 191 914 193 917 193 918 192 918 188 922 176 926 168 926 166 937 144 939 143 968 172 983 184 998 194 1003 196 1008 200 1032 211 1041 214 1048 215 1049 216 1060 217 1061 218 1081 218 1082 217 1091 216 1106 210 1118 200 1124 191 1123 190 1120 190 1116 196 1108 203 1098 209 1089 212 1085 212 1084 213 1060 213 1059 212 1050 211 1040 207 1037 207 1031 205 1017 198 993 183 973 167 960 154 960 153 955 149 951 143 945 137 947 135 958 134 959 133 962 133 966 131 969 131 978 128 1004 116 1024 102 1038 88 1043 81 1047 73 1048 68 1051 65 1057 61 1083 49 1091 47 1094 45 1097 45 1101 43 1104 43 1113 40 1114 42 1105 54 1104 57 1089 80 1085 89 1083 91 1066 125 1062 137 1058 144 1056 150 1056 153 1052 162 1052 165 1051 166 1051 169 1048 178 1048 183 1047 184 1047 198 1049 201 1051 201 1052 200 1051 197 1052 195 1052 188 1053 187 1053 183 1055 178 1055 174 1059 165 1059 162 1061 159 1062 154 1069 140 1073 128 1089 96 1091 94 1094 87 1100 78 1103 71 1108 65 1109 62 1115 54 1120 45 1123 42 1124 39 1128 37 1135 37 1136 36 1165 36 1166 37 1173 38 1179 40 1187 46 1189 50 1189 56 1190 57 1193 56 1193 48 1191 44 1185 38 1178 34 1172 32 1169 32 1168 31 1163 31 1162 30 1139 30 1138 31 1130 31 1129 32 1123 32 1122 33 1113 34 1101 38 1098 38 1094 40 1091 40 1086 43 1081 44 1069 50 1067 50 1050 59 1049 58 1048 49 1046 45 1037 35 1027 30 1016 29 1015 28 1004 28 1003 29 997 29 996 30 988 31 979 35 977 35 967 40 952 50 Z M 764 25 761 23 758 23 751 26 744 31 733 42 718 61 716 65 711 71 710 74 703 83 700 90 698 92 690 108 688 110 683 120 683 122 681 124 678 122 675 122 666 126 658 134 652 143 643 152 637 156 633 157 631 156 629 153 630 142 635 131 635 126 632 124 630 125 625 125 617 129 598 147 587 155 584 156 581 155 578 152 576 140 574 138 570 138 556 151 555 151 554 148 560 135 559 130 556 129 544 136 540 140 535 143 529 150 528 148 530 146 532 141 534 139 540 128 538 125 535 125 531 129 523 144 521 146 515 158 514 166 516 167 519 166 531 154 536 151 548 140 549 143 547 146 546 152 545 153 545 157 548 160 551 160 555 158 569 146 572 155 575 158 580 160 588 159 595 154 597 155 597 158 600 160 605 160 611 157 621 148 622 149 622 153 624 158 630 162 638 161 640 159 643 158 646 154 647 155 647 158 649 161 655 161 661 157 671 147 671 146 673 145 674 146 671 153 671 158 670 159 670 169 672 174 675 176 681 176 685 174 697 162 702 166 709 167 710 166 717 165 729 159 744 148 751 141 753 137 752 136 750 137 744 143 727 155 717 160 711 162 707 162 704 159 704 153 706 149 709 146 713 145 722 140 729 133 730 130 730 124 727 122 724 122 717 125 708 133 702 141 698 149 698 153 694 159 682 171 679 172 677 170 677 160 678 159 679 152 682 143 685 138 685 136 689 129 689 127 730 83 732 79 739 72 748 59 752 55 760 43 764 35 764 32 765 31 765 27 Z M 553 151 554 150 555 151 554 152 Z M 625 131 626 133 621 141 608 153 605 154 604 153 606 149 617 137 Z M 676 128 678 130 677 133 657 154 656 151 660 143 666 135 672 129 Z M 724 127 725 130 719 137 714 139 713 138 715 135 Z M 759 28 760 29 760 32 748 53 722 85 699 110 698 108 702 102 705 95 726 62 730 58 737 47 753 31 Z M 946 19 945 18 940 18 936 20 919 32 907 43 900 48 885 63 884 63 860 88 860 89 852 96 847 103 821 131 817 131 812 133 808 133 807 134 803 134 795 137 792 137 782 141 779 141 770 144 762 149 761 151 764 153 772 149 793 142 796 142 797 141 800 141 801 140 804 140 813 137 815 138 776 185 753 209 753 210 729 234 711 246 706 248 699 249 696 248 692 244 691 237 694 229 692 227 689 229 687 233 687 245 688 247 693 252 696 253 706 253 715 250 727 243 740 232 770 201 774 195 794 173 798 167 811 153 823 138 828 134 832 134 837 132 853 130 854 129 860 129 861 128 871 127 872 126 880 126 881 125 886 125 887 126 884 133 884 136 879 151 879 155 878 156 877 165 876 166 876 172 875 173 875 181 874 182 874 188 875 189 876 199 879 204 883 204 883 202 880 196 880 182 881 181 881 175 882 174 885 155 887 151 887 148 893 133 894 127 897 123 906 123 907 122 915 122 916 120 913 118 900 118 899 116 906 101 906 99 920 71 922 69 928 56 930 54 932 49 937 42 942 31 945 27 Z M 936 29 930 37 918 60 916 62 901 93 899 95 895 107 889 119 879 120 878 121 872 121 871 122 865 122 864 123 859 123 858 124 852 124 851 125 840 126 835 128 833 127 843 116 847 110 859 98 859 97 895 60 927 33 934 28 Z M 1628 16 1623 14 1615 14 1614 15 1608 16 1595 22 1576 34 1543 62 1538 68 1525 80 1525 81 1504 104 1503 102 1506 98 1520 68 1524 56 1525 48 1526 47 1526 39 1524 33 1519 28 1513 26 1507 26 1506 27 1502 27 1498 29 1495 29 1483 35 1462 50 1442 69 1431 82 1420 98 1413 112 1412 118 1411 119 1412 121 1415 121 1416 120 1417 114 1421 106 1431 90 1438 82 1441 77 1460 58 1477 44 1486 38 1503 31 1513 31 1515 32 1519 37 1519 46 1518 47 1517 54 1513 63 1513 65 1509 72 1509 74 1484 121 1478 129 1474 138 1472 140 1465 153 1459 161 1456 168 1454 170 1448 182 1442 191 1431 213 1429 219 1429 222 1428 223 1428 225 1430 227 1433 226 1448 196 1479 146 1488 135 1492 128 1499 120 1505 111 1515 101 1530 83 1565 49 1594 28 1608 21 1614 20 1615 19 1620 19 1623 21 1623 27 1618 41 1596 75 1591 81 1587 89 1577 103 1576 106 1570 114 1568 119 1562 127 1549 151 1549 153 1541 169 1541 171 1539 174 1536 183 1536 186 1533 195 1533 201 1532 202 1532 211 1533 212 1533 217 1535 223 1539 229 1544 233 1549 235 1556 235 1556 232 1549 230 1543 224 1540 219 1539 205 1540 204 1541 193 1547 175 1560 147 1569 133 1573 124 1577 119 1578 116 1595 90 1600 84 1601 81 1616 59 1625 42 1627 40 1627 38 1629 35 1630 28 1631 27 1631 22 Z M 1502 104 1503 103 1504 104 1503 105 Z M 1883 6 1877 3 1870 3 1869 4 1863 5 1848 14 1831 30 1823 41 1818 46 1804 66 1803 69 1795 80 1790 90 1786 95 1773 119 1767 127 1763 136 1758 142 1754 150 1749 156 1738 173 1734 177 1730 184 1728 186 1721 186 1720 187 1715 187 1714 188 1709 188 1708 189 1700 190 1691 193 1679 199 1667 209 1662 219 1662 226 1666 231 1672 233 1677 233 1678 232 1682 232 1688 229 1693 228 1710 216 1729 197 1733 191 1751 191 1752 192 1761 192 1762 193 1774 194 1779 196 1788 197 1789 198 1804 201 1808 203 1815 204 1857 218 1860 218 1865 220 1869 220 1870 221 1882 222 1883 223 1897 223 1898 222 1901 222 1911 218 1916 213 1918 209 1918 200 1915 194 1912 195 1912 200 1914 203 1913 208 1908 214 1905 216 1899 217 1898 218 1883 218 1882 217 1877 217 1876 216 1872 216 1871 215 1867 215 1863 213 1860 213 1847 208 1840 207 1828 203 1825 201 1819 200 1795 192 1791 192 1785 190 1780 190 1779 189 1774 189 1773 188 1766 188 1765 187 1759 187 1758 186 1747 186 1746 185 1740 185 1739 184 1742 181 1745 175 1758 158 1759 155 1781 121 1786 111 1791 106 1796 106 1800 104 1823 87 1843 70 1866 47 1877 33 1885 17 1885 10 Z M 1722 194 1710 207 1709 207 1700 216 1688 224 1677 228 1671 228 1666 224 1666 220 1670 213 1677 206 1683 202 1704 194 1715 193 1716 192 1721 192 Z M 1877 8 1880 11 1879 20 1873 31 1860 47 1848 59 1847 59 1843 64 1842 64 1826 79 1792 105 1791 103 1803 82 1810 73 1811 70 1814 67 1818 60 1824 53 1828 46 1839 33 1853 19 1863 12 1872 8 Z M 307 2 305 0 300 1 284 17 269 35 265 42 248 64 247 67 238 79 233 89 222 106 217 117 214 120 205 120 200 122 194 122 193 123 189 123 183 125 178 125 177 126 168 127 159 130 150 131 146 133 145 132 153 119 159 112 165 102 168 99 169 96 181 81 206 44 210 35 210 28 207 24 205 23 189 23 188 24 183 24 179 26 176 26 172 28 169 28 160 31 153 35 144 38 136 43 123 49 103 62 82 79 67 95 57 111 56 114 56 120 58 122 61 122 62 121 61 116 64 110 64 108 74 94 96 73 112 61 127 53 134 48 162 35 168 34 171 32 180 29 191 28 192 27 202 27 205 30 200 41 197 44 194 50 172 79 167 88 158 99 155 105 149 112 143 122 132 137 129 137 115 142 112 142 103 145 100 147 92 149 89 151 84 152 72 158 67 159 38 174 27 181 10 195 2 205 0 209 0 215 2 217 5 216 5 210 7 206 22 191 48 174 66 165 68 165 80 159 87 157 92 154 113 147 116 147 120 145 124 145 126 144 127 145 103 181 102 184 88 206 80 222 78 224 71 242 72 246 74 247 76 246 77 244 77 241 79 238 79 236 86 222 103 195 105 190 125 161 130 152 135 146 136 143 139 140 148 137 151 137 152 136 156 136 157 135 160 135 165 133 169 133 170 132 174 132 175 131 179 131 180 130 185 130 186 129 194 128 195 127 211 126 212 127 204 142 204 144 197 158 194 169 190 177 190 180 189 181 189 184 186 193 186 197 185 198 184 211 183 212 184 226 187 234 191 237 193 234 190 230 189 217 190 216 190 209 191 208 192 198 193 197 195 186 199 174 201 171 206 156 210 149 210 147 222 124 225 123 233 123 234 122 241 122 242 121 240 118 227 118 226 117 236 97 269 48 298 12 306 5 Z"/></g><use href="#nlInk" fill="#E53935" mask="url(#nlFresh)"/><path class="nl-dot" fill="#E53935" fill-rule="evenodd" d="M 1191 99 1186 101 1183 107 1183 111 1185 113 1187 113 1192 108 1194 104 1194 102 Z"/><circle class="nl-tip" r="9" cx="0" cy="0" fill="#E53935" style="opacity:0"/></svg></p></blockquote>
+        <p class="sq-note" data-cms="tv3-qnote">and <img class="sq-face" src="sanjay-avatar.webp" width="128" height="128" alt="Sanjay Pal" decoding="async"> I know how to do it!</p>
+        <span class="sq-line" aria-hidden="true"></span>
+      </figure>
     </div>
   </section>
 
@@ -1610,8 +1593,8 @@ footer .foot-logo-wrap{padding-top:clamp(.5rem,1.5vw,1rem)}
       </div>
       <p class="copy-status" id="copyStatus" role="status" aria-live="polite"></p>
       <ul class="socials" aria-label="Social profiles">
-<li><a class="li-btn" href="https://www.linkedin.com/in/sanjay-pal-hfi-cua%E2%84%A2-9959853/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>Connect on LinkedIn<span class="sr-only"> (opens in a new tab)</span></a></li>
-</ul>
+        <li><a class="li-btn" href="https://www.linkedin.com/in/sanjay-pal-hfi-cua%E2%84%A2-9959853/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>Connect on LinkedIn<span class="sr-only"> (opens in a new tab)</span></a></li>
+      </ul>
     </div>
   </section>
 </main>
@@ -2108,6 +2091,49 @@ window.__cmsReady=Promise.race([
   // Re-write the footer signature whenever the pointer enters the footer
   let footLast=0;
   document.querySelector("footer").addEventListener("mouseenter",()=>{if(!calm() && performance.now()-footLast>3800){footLast=performance.now(); writeSig(footSig,3200)}});
+
+  // "New Luxury" in the quote writes itself like the logo: pen-ordered dots reveal the ink
+  (function(){
+    const svg=document.querySelector(".sig-quote .sq-svg"); if(!svg) return;
+    const D=[-1,1414,119,5,1414,116,6,1414,114,6,1416,112,6,1416,110,6,1418,108,6,1418,106,6,1420,104,6,1420,102,6,1422,100,6,1423,98,6,1424,96,6,1426,94,6,1427,92,6,1428,90,6,1430,88,6,1431,86,6,1432,84,6,1434,82,6,1436,80,6,1437,78,6,1438,76,6,1440,75,6,1441,74,6,1442,72,6,1444,70,6,1446,68,6,1447,67,6,1448,66,6,1450,64,6,1452,62,6,1453,61,6,1455,60,6,1456,58,6,1458,56,6,1460,55,6,1461,54,6,1462,52,6,1464,50,6,1466,49,6,1468,48,6,1470,46,6,1472,44,6,1474,43,6,1476,42,6,1478,40,5,1480,39,6,1482,38,6,1484,36,6,1486,35,6,1489,34,6,1491,33,6,1493,32,6,1496,31,6,1498,30,5,1500,30,5,1502,29,5,1505,28,5,1508,28,6,1510,28,6,1513,28,6,1516,29,6,1517,30,6,1518,32,6,1520,34,7,1521,36,6,1522,38,6,1522,40,7,1522,44,7,1522,46,6,1521,49,7,1520,52,7,1520,54,7,1520,56,7,1518,58,7,1518,61,7,1517,63,7,1516,66,7,1516,68,7,1514,70,7,1513,72,7,1512,74,7,1512,76,7,1510,78,7,1510,80,7,1508,82,7,1508,84,7,1506,86,7,1506,88,8,1504,90,8,1504,92,8,1502,94,8,1502,96,8,1500,98,7,1500,100,7,1498,102,7,1502,102,5,-1,1430,224,6,1431,222,6,1432,220,7,1433,218,7,1434,215,7,1435,213,7,1436,211,7,1437,209,7,1438,207,7,1439,205,7,1440,203,7,1441,201,7,1442,199,7,1443,197,7,1444,195,7,1445,193,7,1446,191,7,1448,189,7,1448,187,7,1450,185,7,1451,183,7,1452,181,7,1454,179,7,1454,177,7,1456,175,7,1456,173,7,1458,172,8,1459,170,7,1460,168,7,1462,166,8,1462,164,8,1464,162,8,1465,160,8,1466,158,8,1468,156,7,1468,154,7,1470,152,8,1471,150,8,1472,148,8,1474,146,8,1474,144,8,1476,142,8,1477,140,8,1478,138,8,1480,137,8,1480,135,9,1482,133,9,1483,132,9,1484,130,9,1486,128,9,1487,126,9,1488,124,9,1490,122,9,1491,120,9,1492,118,9,1494,116,10,1494,114,10,1496,112,10,1497,110,10,1498,108,9,1498,105,8,-1,1498,109,10,1500,108,7,1503,108,6,1505,106,7,1506,105,7,1508,104,7,1510,102,7,1511,100,7,1512,98,7,1514,97,7,1516,96,6,1517,94,7,1518,92,6,1520,90,6,1522,88,6,1523,86,6,1524,85,6,1526,83,6,1528,82,6,1529,80,6,1530,78,6,1532,77,6,1534,76,6,1535,74,6,1536,72,6,1538,71,6,1540,70,6,1541,68,6,1542,66,6,1544,65,6,1546,64,6,1547,62,7,1548,60,6,1550,59,6,1552,58,6,1554,56,6,1555,54,6,1556,53,6,1558,52,6,1560,50,6,1562,48,6,1564,47,6,1566,46,6,1567,44,6,1569,42,6,1571,41,6,1573,40,6,1575,38,6,1577,36,6,1579,35,6,1581,34,6,1583,32,6,1585,31,6,1587,30,6,1589,28,6,1591,27,6,1593,26,6,1595,24,6,1597,24,6,1599,22,6,1601,22,6,1603,20,6,1605,20,6,1608,18,6,1610,18,6,1612,17,6,1615,16,6,1618,16,6,1620,16,6,1622,17,7,1624,18,7,1626,20,7,1626,22,7,1626,26,7,1626,28,7,1626,31,7,1624,33,7,1624,35,7,1623,38,7,1622,40,7,1621,42,7,1620,44,7,1619,46,7,1618,48,7,1616,50,7,1616,52,7,1614,54,7,1613,56,7,1612,58,7,1610,60,7,1609,62,7,1608,64,7,1606,66,7,1605,68,7,1604,70,7,1602,72,7,1601,74,7,1600,76,7,1598,78,7,1597,80,8,1596,82,8,1594,83,8,1593,85,7,1592,87,7,1590,89,7,1590,91,7,1588,93,7,1587,95,7,1586,97,7,1584,99,7,1582,101,7,1582,103,7,1580,105,7,1579,107,7,1578,109,7,1576,111,7,1575,113,7,1574,115,7,1572,117,7,1572,119,7,1570,121,7,1569,123,7,1568,125,7,1567,127,7,1566,129,8,1564,131,8,1563,133,8,1562,135,8,1561,137,8,1560,139,7,1558,140,7,1558,142,7,1556,144,7,1556,146,7,1554,148,7,1554,150,8,1552,152,7,1552,154,7,1551,157,7,1550,159,7,1549,161,7,1548,163,7,1547,165,7,1546,167,7,1545,169,7,1544,171,7,1544,174,7,1542,176,7,1542,178,7,1541,180,7,1540,182,7,1540,184,7,1538,186,6,1538,190,7,1538,192,7,1537,194,7,1536,197,7,1536,200,7,1536,202,7,1535,205,7,1536,208,7,1536,211,7,1536,214,7,1536,216,7,1537,219,6,1538,222,7,1539,224,7,1540,226,6,1542,227,7,1543,228,6,1545,230,6,1546,232,6,1549,232,6,1552,233,5,-1,1498,103,7,-1,1502,102,4,-1,1554,233,5,-1,1578,161,6,1579,158,7,1580,156,7,1580,154,7,1582,151,7,1582,149,7,1584,147,7,1585,145,8,1587,144,8,1589,143,8,1590,140,7,1590,138,7,1592,136,7,1593,134,7,1595,132,7,1596,131,7,1598,130,7,1600,128,7,1602,128,6,1606,127,7,1608,128,7,1607,132,6,1606,134,6,1605,136,6,1604,138,6,1602,139,6,1600,140,6,1598,142,6,1596,142,6,1594,144,5,1591,144,7,-1,1579,162,6,1580,164,7,1582,166,7,1583,168,7,1586,168,6,1588,168,6,1591,168,6,1594,166,6,1596,166,6,1598,165,6,1600,164,6,1602,163,6,1604,162,6,1606,161,6,1608,160,6,1610,158,6,1612,157,6,1614,156,6,1616,154,5,1618,153,6,1620,152,6,1622,150,6,1624,149,5,1627,148,7,1630,148,9,1631,146,8,1632,144,8,1634,142,7,1635,140,7,1636,138,7,1638,136,7,1638,134,7,1640,133,7,-1,1590,143,8,-1,1630,148,8,1629,151,7,1629,154,7,1628,156,7,1628,159,7,1628,162,8,1630,162,7,1633,162,6,1636,161,6,1638,160,6,1639,158,6,1640,156,6,1642,155,6,1644,154,6,1646,152,6,1647,150,6,1648,149,6,1650,148,6,1652,146,6,1654,146,7,1657,144,8,1658,142,7,1658,140,7,-1,1642,131,6,-1,1657,145,8,1657,148,7,1658,150,7,1658,154,7,1658,156,7,1659,158,7,1660,160,7,1662,162,7,1664,162,6,1667,162,6,1669,160,6,1671,159,5,1672,158,5,1674,156,6,1676,154,6,1678,152,6,1679,150,6,1680,148,6,1682,146,6,1683,144,7,1684,142,6,1685,140,6,1686,138,6,1687,136,6,1688,134,6,1688,131,6,1689,128,6,1690,125,6,1690,122,6,-1,1659,139,6,-1,1664,224,5,1664,221,5,1664,218,6,1665,216,6,1666,214,6,1668,212,6,1668,210,6,1670,209,6,1672,208,6,1674,206,6,1676,204,6,1677,203,6,1679,202,6,1681,200,6,1683,199,6,1686,198,6,1688,197,6,1690,196,6,1692,195,6,1694,194,6,1696,194,6,1699,192,6,1702,192,5,1704,192,6,1707,191,6,1710,190,6,1712,190,6,1715,190,6,1718,189,6,1720,189,6,1724,189,7,1726,190,8,1728,189,7,1730,188,7,1733,187,7,1735,186,8,1736,184,7,1736,181,8,1738,179,8,1739,178,7,1740,176,7,1742,174,7,1743,172,7,1744,170,7,1746,168,7,1747,166,7,1748,164,7,1750,162,7,1751,160,8,1752,158,8,1754,156,8,1756,154,7,1756,152,7,1758,150,7,1759,148,7,1760,146,7,1762,144,7,1763,142,7,1764,140,7,1766,138,7,1766,136,7,1768,134,7,1769,131,7,1770,129,8,1772,127,7,1773,125,7,1774,123,7,1776,121,7,1777,119,7,1778,117,7,1779,115,7,1780,113,7,1782,111,7,1782,109,7,1784,107,8,1785,105,8,1786,103,8,1788,101,7,1788,98,7,1790,97,7,1790,95,7,1792,93,7,1793,91,7,1794,89,7,1796,87,7,1796,85,7,1798,83,7,1798,81,7,1800,79,7,1802,77,7,1803,75,7,1804,73,7,1806,71,7,1807,69,7,1808,67,8,1810,65,8,1811,63,8,1812,61,7,1814,59,8,1814,57,7,1816,56,8,1818,54,8,1819,52,8,1820,50,8,1822,48,7,1823,46,7,1824,44,7,1826,42,7,1828,40,7,1829,38,7,1830,36,7,1832,34,7,1834,33,7,1835,31,7,1836,30,7,1838,28,7,1840,26,7,1841,25,7,1843,24,7,1844,22,7,1846,20,7,1848,19,7,1849,18,7,1850,16,7,1852,15,7,1854,14,7,1856,12,7,1858,11,7,1860,10,6,1862,8,7,1864,8,6,1866,6,6,1869,6,6,1872,6,6,1874,5,6,1876,6,6,1878,6,6,1880,8,6,1882,10,6,1882,12,6,1882,16,6,1881,18,5,1880,20,5,1880,22,5,1878,24,6,1878,26,6,1876,28,6,1876,30,6,1874,32,6,1872,34,6,1871,36,6,1870,38,6,1868,40,6,1866,42,6,1865,44,6,1864,46,6,1862,48,6,1860,49,6,1859,50,6,1858,52,6,1856,54,6,1854,55,6,1853,56,6,1852,58,6,1850,60,6,1848,61,6,1846,62,6,1845,64,6,1843,66,6,1842,68,6,1840,69,6,1838,70,6,1836,72,6,1834,74,6,1833,75,6,1832,76,6,1830,78,6,1828,80,6,1826,81,6,1824,82,6,1822,84,6,1820,86,6,1818,87,6,1816,88,6,1815,90,6,1813,92,6,1811,93,6,1809,94,6,1807,96,6,1805,98,6,1803,99,6,1801,100,6,1799,102,6,1797,103,5,1795,104,5,1792,105,4,1790,104,6,1788,104,7,-1,1664,224,6,1666,226,6,1667,228,6,1668,230,6,1672,230,6,1674,230,6,1677,230,5,1680,230,6,1682,228,6,1684,228,6,1686,226,6,1689,226,6,1691,225,6,1693,224,7,1695,222,7,1697,221,6,1699,220,6,1701,218,6,1702,217,7,1704,216,7,1706,214,7,1708,212,7,1710,211,7,1711,210,7,1713,208,7,1714,206,7,1716,205,7,1718,204,7,1719,202,7,1720,200,7,1722,199,7,1724,198,7,1724,196,7,1725,193,7,-1,1690,121,6,-1,1726,190,8,-1,1735,186,8,1737,188,7,1740,188,6,1743,188,6,1746,188,6,1748,188,6,1752,188,6,1754,188,6,1756,189,6,1760,189,6,1762,189,6,1764,190,6,1768,190,6,1770,190,6,1773,191,6,1776,191,6,1778,192,7,1780,192,6,1783,193,7,1786,194,6,1788,194,6,1790,194,6,1793,195,7,1796,196,7,1798,196,7,1800,197,7,1803,198,6,1806,198,6,1808,199,6,1810,200,7,1812,200,6,1815,202,6,1818,202,6,1820,202,6,1822,203,6,1824,204,6,1826,205,6,1829,206,6,1831,206,6,1834,207,6,1836,208,6,1838,208,6,1840,210,6,1843,210,6,1846,210,6,1848,212,7,1850,212,6,1852,213,7,1854,214,6,1856,214,6,1859,215,6,1862,216,6,1864,216,6,1866,217,6,1869,218,6,1872,218,6,1874,218,6,1876,219,6,1880,219,6,1882,220,6,1884,220,6,1888,220,6,1890,220,6,1894,220,6,1896,220,5,1899,220,6,1901,218,6,1904,218,6,1906,218,6,1908,216,6,1910,215,6,1912,214,6,1913,212,6,1914,210,6,1915,208,6,1916,205,6,1916,202,6,1914,200,6,1914,198,5,-1,1787,103,7,-1,1827,128,6,1826,130,7,1824,132,7,1823,134,7,1822,136,7,1821,138,7,1820,140,7,1818,142,7,1818,144,7,1816,146,7,1816,148,7,1815,150,6,1814,154,7,1814,156,7,1815,158,7,1817,160,7,1820,159,6,1822,158,6,1824,157,6,1826,156,6,1828,154,6,1829,153,6,1830,152,6,1832,150,6,1833,148,6,1835,147,6,1838,146,8,1840,146,9,1841,144,8,1842,142,8,1844,140,7,1845,137,7,1846,135,7,1847,133,7,1848,131,7,1850,129,7,-1,1840,146,8,1840,149,7,1840,152,7,1840,155,7,1840,158,7,1842,160,7,1844,161,6,1846,160,6,1849,160,6,1851,159,6,1853,158,6,1855,156,6,1857,154,6,1858,153,6,1860,152,6,1862,150,6,1863,148,6,1864,147,6,1866,146,6,1868,144,6,1869,142,6,1870,141,6,1872,139,5,1874,137,5,1875,136,5,1877,134,5,1878,133,7,1880,132,8,1880,129,8,1880,126,7,-1,1850,128,6,-1,1863,185,5,1864,184,6,1866,182,6,1866,180,6,1868,178,6,1869,176,6,1870,174,5,1871,172,5,1872,170,5,1874,168,6,1874,166,6,1876,164,6,1877,162,6,1878,160,6,1880,158,6,1882,156,6,1883,154,6,1885,153,6,1886,152,8,1886,148,8,1886,146,8,1886,144,8,1884,142,7,1883,140,7,1882,137,7,1882,134,8,1881,132,8,-1,1880,132,8,-1,1881,126,7,-1,1886,144,8,1888,142,6,1891,142,7,1892,140,6,1894,138,6,1896,136,6,1897,134,6,1898,132,6,1900,130,6,1902,128,6,1903,127,6,1904,125,6,1906,123,6,1908,122,6,1909,120,6,1910,118,6,1912,116,6,1914,114,6,1914,112,6,1916,111,6,1918,110,6,1920,108,6,1922,106,6,1923,105,6,1925,104,6,-1,1887,152,8,1888,154,7,1890,156,7,1892,157,7,1893,158,7,1894,160,7,1896,161,6,1900,161,6,1902,161,6,1905,160,5,1908,160,5,1910,159,5,1912,158,5,1914,157,5,1916,156,6,1918,154,6,1920,153,6,1922,152,6,1924,150,6,1925,148,6,1928,148,6,1930,147,7,1932,146,8,1933,144,8,1934,142,8,1936,140,7,1937,138,7,1938,136,7,1940,134,7,1940,132,7,1942,130,7,1943,129,7,-1,1886,311,5,1886,308,5,1886,305,5,1886,302,5,1886,300,6,1887,297,6,1888,294,6,1888,292,6,1890,290,6,1890,288,5,1892,286,5,1892,284,5,1894,282,5,1894,280,6,1896,278,6,1897,276,6,1898,274,6,1900,272,6,1901,270,6,1902,268,5,1904,266,5,1905,265,6,1906,264,6,1908,262,6,1910,260,6,1911,258,6,1912,256,6,1914,255,6,1916,254,6,1917,252,6,1918,250,6,1920,249,6,1922,248,6,1924,246,6,1925,244,6,1926,243,6,1928,242,6,1930,240,6,1932,238,6,1934,237,6,1936,236,6,1938,234,6,1940,232,6,1941,231,6,1942,230,6,1944,228,6,1946,226,6,1948,226,6,1950,224,6,1952,222,6,1954,221,6,1956,220,5,1958,218,5,1960,217,5,1962,216,6,1964,214,6,1966,214,6,1968,212,6,1970,210,6,1972,209,6,1974,208,6,1976,207,6,1978,206,5,1980,204,5,1982,204,5,1984,202,5,1986,201,6,1988,200,5,1990,199,6,1992,198,6,1994,197,6,1996,196,5,1998,195,5,2000,194,6,2002,192,5,2005,192,6,2007,190,5,2009,190,5,2011,188,5,2014,188,6,2016,186,5,2018,186,6,2020,184,6,2022,184,6,2024,182,6,2026,182,5,2028,181,6,2031,180,6,2034,179,6,2036,178,6,2038,177,6,2040,176,6,2044,176,6,2046,176,7,2049,176,8,2050,174,8,2052,172,8,2053,170,8,2055,168,8,2056,167,8,2057,164,7,2058,162,7,2058,160,7,2060,158,8,2061,156,8,2062,154,8,2063,152,8,2064,150,8,2065,148,7,2066,146,7,2067,144,7,2068,142,7,2068,139,9,2066,138,8,2064,138,6,2062,140,5,2060,141,6,2058,142,6,2056,144,6,2054,146,6,2053,147,6,2052,148,6,2050,150,6,2048,152,6,2046,152,6,2044,154,6,2042,154,6,2039,156,6,2036,156,7,2035,154,8,2034,152,7,2034,148,8,2033,147,8,2030,148,6,2028,148,5,2026,150,6,2024,152,6,2023,153,6,2022,154,6,2020,156,6,2018,157,6,2016,158,6,2014,159,6,2012,160,6,2010,161,6,2007,161,6,2006,160,7,2004,157,7,2004,154,7,2005,152,7,2006,150,7,2007,148,7,2008,145,7,2008,142,7,2009,140,7,2008,138,6,2006,137,6,2003,137,6,2000,137,6,1998,136,7,1996,135,7,1995,133,7,1996,130,8,1996,128,8,1998,126,8,1999,124,7,-1,1886,312,5,1886,314,6,1888,316,6,1889,318,6,1890,319,6,1892,320,6,1894,322,6,1896,322,6,1899,323,6,1902,323,6,1905,323,6,1908,322,6,1911,322,6,1913,322,6,1916,321,6,1918,320,6,1920,320,7,1922,318,7,1924,318,7,1926,316,7,1928,316,7,1930,314,7,1932,314,7,1934,312,7,1936,311,7,1938,310,7,1940,308,7,1942,307,7,1944,306,7,1946,304,7,1948,302,7,1950,301,7,1952,300,7,1954,298,7,1956,296,7,1957,295,7,1958,294,7,1960,292,7,1962,290,8,1964,289,7,1965,288,7,1966,286,7,1968,284,7,1970,283,7,1971,282,7,1972,280,7,1974,278,7,1976,277,7,1977,275,8,1978,274,7,1980,272,7,1982,270,7,1983,268,8,1984,267,8,1986,266,7,1988,264,8,1989,262,8,1990,260,8,1992,259,8,1994,258,7,1995,256,7,1996,254,7,1998,252,7,2000,250,7,2001,248,7,2002,246,7,2004,244,7,2006,242,7,2007,240,7,2008,238,7,2010,236,7,2012,234,8,2013,232,8,2014,230,8,2016,228,7,2017,227,7,2018,225,7,2020,223,7,2021,221,7,2022,219,7,2024,217,7,2025,215,8,2026,213,8,2028,211,8,2029,209,8,2030,207,8,2032,205,8,2033,203,8,2034,201,8,2036,199,8,2037,197,8,2038,195,8,2040,193,7,2041,190,7,2042,188,7,2043,186,7,2044,184,7,2046,182,8,2046,180,7,-1,1914,195,5,-1,1926,102,4,-1,1932,148,8,1931,150,7,1931,153,7,1931,156,7,1932,158,7,1934,160,7,1936,159,6,1938,158,6,1940,157,6,1942,156,6,1944,154,6,1946,152,6,1947,151,6,1948,150,6,1950,148,6,1952,148,6,1954,146,8,1957,146,8,1958,144,8,1959,142,8,1960,140,7,1962,138,7,1962,136,7,1964,134,7,1965,132,7,1966,130,7,1968,128,5,-1,1944,128,5,-1,1956,147,9,1956,150,8,1956,152,7,1956,155,7,1957,158,7,1958,160,7,1960,161,6,1962,160,5,1965,160,5,1968,159,6,1970,158,6,1972,157,6,1973,156,6,1974,154,6,1976,152,6,1978,151,6,1979,150,6,1980,148,6,1982,146,6,1984,145,6,1985,144,6,1986,142,6,1988,140,6,1990,139,6,1991,138,6,1992,136,6,1994,134,7,-1,1969,126,4,-1,1994,134,7,-1,2000,123,6,-1,2034,147,8,2036,145,7,2037,143,7,2038,141,7,2039,139,7,2040,137,7,2041,135,7,2042,133,8,2044,131,7,2045,129,7,-1,2046,128,6,-1,2047,178,8,-1,2056,168,9,2058,168,7,2062,168,6,2064,168,5,2066,168,6,2069,167,5,2071,166,6,2074,166,5,2076,165,5,2078,164,6,2080,164,6,2083,163,6,2086,162,6,2088,162,5,2090,162,6,2093,161,5,2096,160,5,2098,160,6,2101,160,5,2104,160,5,2106,159,6,2109,158,5,2112,158,5,2115,158,5,2118,158,5,2120,159,5,2124,160,5,-1,2068,138,9,2070,136,9,2071,134,9,2072,132,9,2074,130,8,2074,128,7,2076,127,6,-1,2076,126,5,-1,2126,160,5];
+    const NS="http://www.w3.org/2000/svg", g=svg.querySelector(".nl-dots"), fg=svg.querySelector(".nl-fresh"), fresh=[], base=svg.querySelector(".nl-base"), tip=svg.querySelector(".nl-tip");
+    const dots=[], times=[], rad=[]; let t=0, px=null, py=null;
+    for(let i=0;i<D.length;){
+      if(D[i]===-1){t+=10; px=null; i++; continue}
+      const x=D[i], y=D[i+1], r=D[i+2]; i+=3;
+      if(px!==null) t+=Math.hypot(x-px,y-py); px=x; py=y;
+      const c=document.createElementNS(NS,"circle"); c.setAttribute("cx",x); c.setAttribute("cy",y); c.setAttribute("r",r);
+      g.appendChild(c); dots.push(c); rad.push(r); times.push(t);
+      const f=c.cloneNode(); f.setAttribute("fill-opacity","0"); fg.appendChild(f); fresh.push(f);
+    }
+    base.setAttribute("width","1408");
+    const FADE=1600; // red ink fades to the normal ink colour over this many ms
+    const dot=svg.querySelector(".nl-dot"), hole=svg.querySelector(".nl-dot-hole");
+    let raf=0, last=0;
+    function write(dur){
+      if(calm()) return;
+      cancelAnimationFrame(raf); dots.forEach(c=>c.setAttribute("r",0)); fresh.forEach(f=>f.setAttribute("fill-opacity","0"));
+      hole.style.opacity=1; dot.classList.remove("pop"); dot.classList.add("gone"); // dot on the "i" leaves while writing
+      const t0=performance.now(), at=new Array(dots.length); let k=0, j=0, popped=false;
+      const ease=p=>p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;
+      (function frame(now){
+        const p=Math.min(1,(now-t0)/dur), lim=ease(p)*t;
+        while(k<dots.length && times[k]<=lim){dots[k].setAttribute("r",rad[k]); fresh[k].setAttribute("fill-opacity","1"); at[k]=now; k++}
+        // fresh red ink dries: each written dot fades from red to the normal ink
+        for(let i=j;i<k;i++){const o=Math.max(0,1-(now-at[i])/FADE); fresh[i].setAttribute("fill-opacity",o.toFixed(3)); if(o===0&&i===j) j++}
+        const cur=dots[Math.max(0,k-1)]; tip.setAttribute("cx",cur.getAttribute("cx")); tip.setAttribute("cy",cur.getAttribute("cy"));
+        tip.style.opacity=p<1?1:0;
+        if(p>=1&&!popped){popped=true; dots.forEach((c,i)=>c.setAttribute("r",rad[i])); hole.style.opacity=0; dot.classList.remove("gone","pop"); void dot.getBoundingClientRect(); dot.classList.add("pop")}
+        if(p<1||j<k) raf=requestAnimationFrame(frame); else fresh.forEach(f=>f.setAttribute("fill-opacity","0"));
+      })(t0);
+    }
+    const go=()=>{if(performance.now()-last>3200){last=performance.now(); write(2600)}};
+    svg.closest("figure").addEventListener("mouseenter",go);
+    if("IntersectionObserver" in window && !calm()){
+      const io=new IntersectionObserver(es=>{if(es[0].isIntersecting){go(); io.disconnect()}},{threshold:.6});
+      io.observe(svg);
+    }
+  })();
   const tb=document.getElementById("themeBtn");
   tb.addEventListener("click",()=>tb.classList.toggle("spin"));
 

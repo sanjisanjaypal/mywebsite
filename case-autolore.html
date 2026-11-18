@@ -1196,7 +1196,7 @@ section#about{padding-left:max(16px, env(safe-area-inset-left,0px)); padding-rig
 #main:focus{outline:none}
 
 /* v2: standalone Contact page, generated from this same contact section */
-.page-contact #top,.page-contact #work,.page-contact #about,.page-contact #testimonials{display:none !important}
+.page-contact #top,.page-contact #work,.page-contact #about,.page-contact #testimonials,.page-contact #quote{display:none !important}
 .page-contact #contact{padding-block:clamp(4rem,10vw,7rem)}
 .contact h1{font-size:clamp(2.4rem,6vw,4.5rem); font-weight:500; margin:0}
 
@@ -1228,6 +1228,24 @@ footer .foot-logo-wrap{padding-top:clamp(.5rem,1.5vw,1rem)}
   #work .bento.js-span > .case:last-child:nth-child(odd):not(.span-row) .case-body{justify-content:flex-start; padding:1.25rem 1.4rem 1.4rem}
 }
 
+/* v3: signature quote band */
+:root{--sig-ink:#062216; --sig-art:#4A1D7A}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--sig-ink:#EEF1E6; --sig-art:#CDB0F2}}
+:root[data-theme="dark"]{--sig-ink:#EEF1E6; --sig-art:#CDB0F2}
+section.block.sig-quote{padding-block:clamp(3.5rem,9vw,7rem); text-align:center; overflow:hidden}
+.sig-quote figure{margin:0; display:flex; flex-direction:column; align-items:center; gap:clamp(.6rem,2vw,1.2rem)}
+.sig-quote .sq-kicker{margin:0; font-family:var(--body); font-size:.78rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
+.sig-quote blockquote{margin:0; width:100%}
+.sig-quote blockquote p{margin:0}
+.sig-quote .sq-svg{display:block; width:min(100%,1100px); height:auto; margin-inline:auto; color:var(--sig-ink); overflow:visible}
+.sig-quote .sq-note{margin:calc(-1 * clamp(.35rem,2.6vw,2.2rem)) 0 0; font-family:var(--body); font-size:clamp(1.05rem,1.6vw,1.2rem); color:var(--muted)}
+.sig-quote .sq-line{width:min(220px,40%); height:1px; background:var(--line-strong); margin-top:.4rem}
+.sig-quote .sq-face{display:inline-block; width:1.9em; height:1.9em; border-radius:50%; object-fit:cover; vertical-align:-.62em; margin:0 .2em; background:#F3EBD9; box-shadow:0 0 0 2px var(--surface), 0 2px 8px rgba(6,34,22,.18)}
+.sig-quote .nl-tip{transition:fill .25s ease}
+.sig-quote .nl-dot{transform-box:fill-box; transform-origin:50% 50%}
+.sig-quote .nl-dot.pop{animation:nlPop .7s cubic-bezier(.3,.7,.3,1)}
+.sig-quote .nl-dot.gone{opacity:0}
+@keyframes nlPop{0%{transform:scale(0)} 55%{transform:scale(1.7)} 100%{transform:scale(1)}}
 </style>
 <style>
 /* ================= Case study page ================= */
@@ -1620,15 +1638,15 @@ footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between
           <a href="home.html#work">Work</a>
           <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="workMenu" aria-label="Case studies"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           <ul class="submenu" id="workMenu" hidden>
-<li><a href="case-finunity.html"><span class="sm-t">FinUnity</span><span class="sm-d">Property tax financing platform</span></a></li>
-<li><a href="case-advisor.html"><span class="sm-t">Advisor platform</span><span class="sm-d">Wealth management workspace</span></a></li>
-<li><a href="case-finguard.html"><span class="sm-t">FinGuard</span><span class="sm-d">Banking risk and investigations</span></a></li>
-<li><a href="case-agrifunds.html"><span class="sm-t">AgriFunds</span><span class="sm-d">Farm lending customer portal</span></a></li>
-<li><a href="case-aster.html"><span class="sm-t">Aster Bank</span><span class="sm-d">Wealth management eLearning</span></a></li>
-<li><a href="case-autolore.html" aria-current="page"><span class="sm-t">AutoLore</span><span class="sm-d">Classic car museum kiosk</span></a></li>
-<li><a href="case-guru.html"><span class="sm-t">Guru Samman Samaroh</span><span class="sm-d">Event visualisation and design</span></a></li>
-<li class="sm-all"><a href="home.html#work">All work</a></li>
-</ul>
+            <li><a href="case-finunity.html"><span class="sm-t">FinUnity</span><span class="sm-d">Property tax financing platform</span></a></li>
+            <li><a href="case-advisor.html"><span class="sm-t">Advisor platform</span><span class="sm-d">Wealth management workspace</span></a></li>
+            <li><a href="case-finguard.html"><span class="sm-t">FinGuard</span><span class="sm-d">Banking risk and investigations</span></a></li>
+            <li><a href="case-agrifunds.html"><span class="sm-t">AgriFunds</span><span class="sm-d">Farm lending customer portal</span></a></li>
+            <li><a href="case-aster.html"><span class="sm-t">Aster Bank</span><span class="sm-d">Wealth management eLearning</span></a></li>
+            <li><a href="case-autolore.html" aria-current="page"><span class="sm-t">AutoLore</span><span class="sm-d">Classic car museum kiosk</span></a></li>
+            <li><a href="case-guru.html"><span class="sm-t">Guru Samman Samaroh</span><span class="sm-d">Event visualisation and design</span></a></li>
+            <li class="sm-all"><a href="home.html#work">All work</a></li>
+          </ul>
         </div>
         <a href="about.html">About</a>
         <a href="contact.html" class="nav-contact">Get in touch</a>
@@ -1650,12 +1668,12 @@ footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between
     <h1>AutoLore: a touch kiosk that lets classic cars tell their own stories</h1>
     <p class="cs-lede">A private collection of around 50 classic cars became a public museum in Florida. I designed the kiosk that stands in front of each car, turning a founder’s memories and hundreds of scattered artefacts into stories any visitor can explore.</p>
     <dl class="cs-meta">
-<div><dt>Client</dt><dd>AutoLore (white-labelled)</dd></div>
-<div><dt>Industry</dt><dd>Automotive heritage</dd></div>
-<div><dt>My role</dt><dd>UX/UI design, sole designer</dd></div>
-<div><dt>Platform</dt><dd>Touch-screen kiosk</dd></div>
-<div><dt>Timeline</dt><dd>Ongoing, 2+ years</dd></div>
-</dl>
+      <div><dt>Client</dt><dd>AutoLore (white-labelled)</dd></div>
+      <div><dt>Industry</dt><dd>Automotive heritage</dd></div>
+      <div><dt>My role</dt><dd>UX/UI design, sole designer</dd></div>
+      <div><dt>Platform</dt><dd>Touch-screen kiosk</dd></div>
+      <div><dt>Timeline</dt><dd>Ongoing, 2+ years</dd></div>
+    </dl>
   </div>
   <figure class="wrap cs-cover cs-cover-art">
     <img src="cs5/thumb-autolore-illus.webp" width="1672" height="941" style="object-position:50% 58%" alt="Illustration of a black vintage roadster on display in a brick museum hall with tall windows, a touch-screen kiosk beside it showing the car and three story icons, an archive portrait of an engineer on the wall and an antique engine on a plinth.">
@@ -1680,98 +1698,89 @@ footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between
     </nav>
 
     <article class="cs-body">
-<section class="cs-sec" id="impact" aria-labelledby="h-impact">
-<p class="cs-kicker">Impact</p>
-<h2 id="h-impact">Every car on the floor now has a story to tell</h2>
-<ul class="cs-stats">
-<li><b>~50</b><span>classic cars, each with its own kiosk story</span></li>
-<li><b>3</b><span>ways into every car: its stories, a gallery and its specifications</span></li>
-<li><b>2+</b><span>years in use and still growing, as new stories are added</span></li>
-</ul>
-<p class="cs-tldr-label">In short</p>
-<div class="cs-glance">
-<div class="glance-card">
+      <section class="cs-sec" id="impact" aria-labelledby="h-impact">
+        <p class="cs-kicker">Impact</p>
+        <h2 id="h-impact">Every car on the floor now has a story to tell</h2>
+        <ul class="cs-stats">
+          <li><b>~50</b><span>classic cars, each with its own kiosk story</span></li>
+          <li><b>3</b><span>ways into every car: its stories, a gallery and its specifications</span></li>
+          <li><b>2+</b><span>years in use and still growing, as new stories are added</span></li>
+        </ul>
+        <p class="cs-tldr-label">In short</p>
+        <div class="cs-glance">
+          <div class="glance-card">
             <span class="glance-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h10M4 18h7"/></svg></span>
             <h3>Problem</h3>
             <p>The cars’ histories lived in the founder’s memory and in hundreds of uncatalogued artefacts. None of it was ready for the public.</p>
           </div>
-<div class="glance-card">
+          <div class="glance-card">
             <span class="glance-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></span>
             <h3>Approach</h3>
             <p>Study the museum and its visitors, map the walk through the halls, then design a kiosk simple enough for anyone to use standing in front of a car.</p>
           </div>
-<div class="glance-card">
+          <div class="glance-card">
             <span class="glance-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
             <h3>Result</h3>
             <p>A dark, story-first kiosk with one clear path per car, backed by a content system so the team can keep adding stories.</p>
           </div>
-</div>
-<blockquote class="cs-quote" style="margin-top:2rem"><p>“You have done an excellent job on this project! I feel, as does the client, that the designs are excellent and will bring to life the content we wish to present on such historical cars.”</p></blockquote>
-<p class="cs-quote-src">Client partner, AutoLore</p>
-</section>
-<section class="cs-sec" id="context" aria-labelledby="h-context">
-<p class="cs-kicker">Context</p>
-<h2 id="h-context">From a private passion to a public museum</h2>
-<p>The founder had collected around 50 cars over a lifetime and decided to open a museum in Jacksonville, Florida, to share them with the public. Every car came with its own history, memories and people.</p>
-<p>Hundreds of artefacts about the cars sat in different places and had never been catalogued. Much of the story existed only in the founder’s mind and the minds of a few others.</p>
-<ul class="cs-pains" aria-label="Challenges">
-<li>No catalogue of the artefacts, photos and documents</li>
-<li>Stories held in people’s memories, not in writing</li>
-<li>Each story could be about a person, a car or a technical breakthrough</li>
-<li>Content had to live online and appear on a screen beside each car</li>
-<li>Visitors of every age and ability, with no instructions</li>
-</ul>
-<div class="cs-goals">
-<div><p class="g-k">Business goal</p><p>Bring the collection to life and give every car a voice on the museum floor.</p></div>
-<div><p class="g-k">Visitor goal</p><p>Walk up to any car and quickly discover why it matters.</p></div>
-<div><p class="g-k">Content goal</p><p>Collect, organise and publish stories in a system the team can keep updating.</p></div>
-</div>
-</section>
-<section class="cs-sec" id="audience" aria-labelledby="h-audience">
-<p class="cs-kicker">Audience</p>
-<h2 id="h-audience">Designing for everyone who walks in</h2>
-<p>A museum is a public place, so anyone could be the user: there is no login, no training and no second chance at a first impression.</p>
-<ul class="cs-pains cs-collab" aria-label="Visitor groups">
-<li>Children and teenagers</li>
-<li>Adults and seniors</li>
-<li>Florida tourists</li>
-<li>Car enthusiasts</li>
-<li>First-time museum visitors</li>
-<li>People with disabilities</li>
-</ul>
-</section>
-<section class="cs-sec" id="research" aria-labelledby="h-research">
-<p class="cs-kicker">Research</p>
-<h2 id="h-research">Understanding the space before designing the screen</h2>
-<p>In public places, the environment shapes the experience as much as the interface does.</p>
-<ul class="cs-methods">
-<li><b>Stakeholder interviews</b><span>Conversations with the founder and his team to capture the stories, priorities and the people behind each car.</span></li>
-<li><b>Environment study</b><span>Light, mood, location and temperature on the museum floor, which set screen brightness, contrast and theme.</span></li>
-<li><b>Comparative review</b><span>Case studies of kiosks and apps in other public places, to learn what helps people succeed without help.</span></li>
-<li><b>Journey mapping</b><span>The visitor’s walk through the halls, step by step, to place the kiosk where curiosity peaks.</span></li>
-<li><b>Content audit</b><span>Working with a business analyst to sort the artefacts into stories, captions and specifications.</span></li>
-</ul>
-</section>
-<section class="cs-sec" id="journey" aria-labelledby="h-journey">
-<p class="cs-kicker">Visitor journey</p>
-<h2 id="h-journey">Curiosity peaks in front of a car</h2>
-<p>The journey map showed the moment that matters: a visitor stops at a car and wants to know more. That is where the kiosk stands, in both the Forerunners and the Frontrunners halls.</p>
-<ol class="jmap" aria-label="Visitor journey, in order">
-<li class="j-up"><span class="j-dot" aria-hidden="true"></span><b>Arrive at the museum</b><span>Curious, getting oriented</span></li>
-<li class="j-up"><span class="j-dot" aria-hidden="true"></span><b>Enter the Forerunners hall</b><span>Wonder at the earliest cars</span></li>
-<li class="j-mid"><span class="j-dot" aria-hidden="true"></span><b>Look at the cars</b><span>Wants the story behind one</span></li>
-<li class="j-top"><span class="j-dot" aria-hidden="true"></span><b>Use the kiosk by a car</b><span>Story, gallery and specs</span></li>
-<li class="j-up"><span class="j-dot" aria-hidden="true"></span><b>Enter the Frontrunners hall</b><span>Racing-era cars</span></li>
-<li class="j-mid"><span class="j-dot" aria-hidden="true"></span><b>Look at the cars</b><span>Compares eras</span></li>
-<li class="j-top"><span class="j-dot" aria-hidden="true"></span><b>Use the kiosk again</b><span>Already knows how it works</span></li>
-<li class="j-up"><span class="j-dot" aria-hidden="true"></span><b>Leave</b><span>Remembers a story, not a label</span></li>
-</ol>
-</section>
-<section class="cs-sec" id="structure" aria-labelledby="h-structure">
-<p class="cs-kicker">Kiosk structure</p>
-<h2 id="h-structure">Three ways into every car</h2>
-<p>Each kiosk opens on its car. From there, a visitor can read its stories, browse its gallery or check its specifications, and always find their way back.</p>
-<div class="ia" role="img" aria-label="Kiosk structure: the home screen lists the cars; each car has an introduction leading to its stories, a gallery of images and videos, and technical specifications.">
+        </div>
+        <blockquote class="cs-quote" style="margin-top:2rem"><p>“You have done an excellent job on this project! I feel, as does the client, that the designs are excellent and will bring to life the content we wish to present on such historical cars.”</p></blockquote>
+        <p class="cs-quote-src">Client partner, AutoLore</p>
+      </section>
+
+      <section class="cs-sec" id="context" aria-labelledby="h-context">
+        <p class="cs-kicker">Context</p>
+        <h2 id="h-context">From a private passion to a public museum</h2>
+        <p>The founder had collected around 50 cars over a lifetime and decided to open a museum in Jacksonville, Florida, to share them with the public. Every car came with its own history, memories and people.</p>
+        <p>Hundreds of artefacts about the cars sat in different places and had never been catalogued. Much of the story existed only in the founder’s mind and the minds of a few others.</p>
+        <ul class="cs-pains" aria-label="Challenges">
+          <li>No catalogue of the artefacts, photos and documents</li>
+          <li>Stories held in people’s memories, not in writing</li>
+          <li>Each story could be about a person, a car or a technical breakthrough</li>
+          <li>Content had to live online and appear on a screen beside each car</li>
+          <li>Visitors of every age and ability, with no instructions</li>
+        </ul>
+        <div class="cs-goals">
+          <div><p class="g-k">Business goal</p><p>Bring the collection to life and give every car a voice on the museum floor.</p></div>
+          <div><p class="g-k">Visitor goal</p><p>Walk up to any car and quickly discover why it matters.</p></div>
+          <div><p class="g-k">Content goal</p><p>Collect, organise and publish stories in a system the team can keep updating.</p></div>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="audience" aria-labelledby="h-audience">
+        <p class="cs-kicker">Audience</p>
+        <h2 id="h-audience">Designing for everyone who walks in</h2>
+        <p>A museum is a public place, so anyone could be the user: there is no login, no training and no second chance at a first impression.</p>
+        <ul class="cs-pains cs-collab" aria-label="Visitor groups">
+          <li>Children and teenagers</li><li>Adults and seniors</li><li>Florida tourists</li><li>Car enthusiasts</li><li>First-time museum visitors</li><li>People with disabilities</li>
+        </ul>
+      </section>
+
+      <section class="cs-sec" id="research" aria-labelledby="h-research">
+        <p class="cs-kicker">Research</p>
+        <h2 id="h-research">Understanding the space before designing the screen</h2>
+        <p>In public places, the environment shapes the experience as much as the interface does.</p>
+        <ul class="cs-methods">
+          <li><b>Stakeholder interviews</b><span>Conversations with the founder and his team to capture the stories, priorities and the people behind each car.</span></li>
+          <li><b>Environment study</b><span>Light, mood, location and temperature on the museum floor, which set screen brightness, contrast and theme.</span></li>
+          <li><b>Comparative review</b><span>Case studies of kiosks and apps in other public places, to learn what helps people succeed without help.</span></li>
+          <li><b>Journey mapping</b><span>The visitor’s walk through the halls, step by step, to place the kiosk where curiosity peaks.</span></li>
+          <li><b>Content audit</b><span>Working with a business analyst to sort the artefacts into stories, captions and specifications.</span></li>
+        </ul>
+      </section>
+
+      <section class="cs-sec" id="journey" aria-labelledby="h-journey">
+        <p class="cs-kicker">Visitor journey</p>
+        <h2 id="h-journey">Curiosity peaks in front of a car</h2>
+        <p>The journey map showed the moment that matters: a visitor stops at a car and wants to know more. That is where the kiosk stands, in both the Forerunners and the Frontrunners halls.</p>
+        <ol class="jmap" aria-label="Visitor journey, in order"><li class="j-up"><span class="j-dot" aria-hidden="true"></span><b>Arrive at the museum</b><span>Curious, getting oriented</span></li><li class="j-up"><span class="j-dot" aria-hidden="true"></span><b>Enter the Forerunners hall</b><span>Wonder at the earliest cars</span></li><li class="j-mid"><span class="j-dot" aria-hidden="true"></span><b>Look at the cars</b><span>Wants the story behind one</span></li><li class="j-top"><span class="j-dot" aria-hidden="true"></span><b>Use the kiosk by a car</b><span>Story, gallery and specs</span></li><li class="j-up"><span class="j-dot" aria-hidden="true"></span><b>Enter the Frontrunners hall</b><span>Racing-era cars</span></li><li class="j-mid"><span class="j-dot" aria-hidden="true"></span><b>Look at the cars</b><span>Compares eras</span></li><li class="j-top"><span class="j-dot" aria-hidden="true"></span><b>Use the kiosk again</b><span>Already knows how it works</span></li><li class="j-up"><span class="j-dot" aria-hidden="true"></span><b>Leave</b><span>Remembers a story, not a label</span></li></ol>
+      </section>
+
+      <section class="cs-sec" id="structure" aria-labelledby="h-structure">
+        <p class="cs-kicker">Kiosk structure</p>
+        <h2 id="h-structure">Three ways into every car</h2>
+        <p>Each kiosk opens on its car. From there, a visitor can read its stories, browse its gallery or check its specifications, and always find their way back.</p>
+        <div class="ia" role="img" aria-label="Kiosk structure: the home screen lists the cars; each car has an introduction leading to its stories, a gallery of images and videos, and technical specifications.">
   <div class="ia-root">Home: choose a car</div>
   <div class="ia-branches">
     <div class="ia-row"><span class="ia-node">Introduction</span><span class="ia-node ia-leaf">Car stories</span></div>
@@ -1779,66 +1788,71 @@ footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between
     <div class="ia-row"><span class="ia-node">Tech specification</span><span class="ia-node ia-leaf">Design specifications</span></div>
   </div>
 </div>
-</section>
-<section class="cs-sec" id="principles" aria-labelledby="h-principles">
-<p class="cs-kicker">Design principles</p>
-<h2 id="h-principles">What the research told us to do</h2>
-<ul class="cs-map">
-<li><span class="from">Visitors stand, glance and move on</span><span class="to">One car per kiosk, with the story told in short screens</span></li>
-<li><span class="from">Museum halls are dim and dramatic</span><span class="to">A dark theme that cuts glare and lets the photos glow</span></li>
-<li><span class="from">Nobody reads instructions</span><span class="to">A single “Next” and three large icons, the same on every screen</span></li>
-<li><span class="from">People like to know how much is left</span><span class="to">A vertical progress rail showing where they are in the story</span></li>
-<li><span class="from">Stories are about people, not just machines</span><span class="to">Archive photos and captions alongside the specifications</span></li>
-</ul>
-</section>
-<section class="cs-sec" id="prototypes" aria-labelledby="h-prototypes">
-<p class="cs-kicker">Prototypes</p>
-<h2 id="h-prototypes">Shaping the story flow in mid-fidelity</h2>
-<p>Working with the business analyst, I sketched wireframes and carved the content into a journey: an introduction, the machine’s unique features, and the facts behind its acquisition.</p>
-<div class="cs-gallery g-3">
-<figure class="cs-fig "><button class="zoom" type="button" data-cap="Introduction. Title, a short intro and a sound to play."><img src="cs5/mf1.webp" width="282" height="176" loading="lazy" alt="Mid-fidelity screen for a sports car with a title, a short introduction, an engine sound button, three icons and a progress rail."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-wireframe">Wireframe</span><b>Introduction.</b> Title, a short intro and a sound to play.</figcaption></figure>
-<figure class="cs-fig "><button class="zoom" type="button" data-cap="Uniqueness of the machine. Key facts as short bullets."><img src="cs5/mf2.webp" width="282" height="176" loading="lazy" alt="Mid-fidelity screen with a car sketch and a list of what made the machine unique, with a progress rail and a Next button."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-wireframe">Wireframe</span><b>Uniqueness of the machine.</b> Key facts as short bullets.</figcaption></figure>
-<figure class="cs-fig "><button class="zoom" type="button" data-cap="Facts behind the acquisition. The rail shows the story is nearly done."><img src="cs5/mf3.webp" width="284" height="176" loading="lazy" alt="Mid-fidelity screen titled Facts behind the acquisition, with a car sketch and a progress rail near the end."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-wireframe">Wireframe</span><b>Facts behind the acquisition.</b> The rail shows the story is nearly done.</figcaption></figure>
-</div>
-</section>
-<section class="cs-sec" id="design" aria-labelledby="h-design">
-<p class="cs-kicker">Final design</p>
-<h2 id="h-design">A dark, cinematic kiosk that puts the car first</h2>
-<div class="cs-gallery g-2">
-<figure class="cs-fig "><button class="zoom" type="button" data-cap="Introduction. A bold title and one line on why the car matters."><img src="cs5/d1.webp" width="314" height="180" loading="lazy" alt="Kiosk introduction screen for a 1914 Grand Prix racecar, with large white title text over a dark archive photo and three round icons on the right."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Introduction.</b> A bold title and one line on why the car matters.</figcaption></figure>
-<figure class="cs-fig "><button class="zoom" type="button" data-cap="The story. Short paragraphs with an archive photo."><img src="cs5/d2.webp" width="315" height="180" loading="lazy" alt="Kiosk story screen about how the engineers reimagined the engine, with paragraphs of text and an archive photo."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>The story.</b> Short paragraphs with an archive photo.</figcaption></figure>
-<figure class="cs-fig "><button class="zoom" type="button" data-cap="Design specifications. Gold labels make the facts easy to scan."><img src="cs5/d3.webp" width="315" height="180" loading="lazy" alt="Kiosk specifications screen listing maker, engine, valvetrain, top speed, transmission, brakes and weight in two columns with gold labels."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Design specifications.</b> Gold labels make the facts easy to scan.</figcaption></figure>
-<figure class="cs-fig "><button class="zoom" type="button" data-cap="Gallery. Swipe through photos and videos."><img src="cs5/d4.webp" width="314" height="180" loading="lazy" alt="Kiosk gallery screen with a large engine photo and a strip of thumbnails below."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Gallery.</b> Swipe through photos and videos.</figcaption></figure>
-</div>
-<h3 class="cs-sub">On the museum floor</h3>
-<div class="cs-gallery g-2-70">
-<figure class="cs-fig "><button class="zoom" type="button" data-cap="Beside the car. Each kiosk stands next to the car it describes."><img src="cs5/kiosk.webp" width="306" height="180" loading="lazy" alt="A kiosk stand beside a green vintage racecar on the museum floor, with more classic cars behind."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-in-use">In use</span><b>Beside the car.</b> Each kiosk stands next to the car it describes.</figcaption></figure>
-<figure class="cs-fig "><button class="zoom" type="button" data-cap="The kiosk. At standing height, angled for easy reach."><img src="cs5/kiosk2.webp" width="142" height="180" loading="lazy" alt="Close-up of a kiosk on its stand showing the introduction screen."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-in-use">In use</span><b>The kiosk.</b> At standing height, angled for easy reach.</figcaption></figure>
-</div>
-</section>
-<section class="cs-sec" id="inclusion" aria-labelledby="h-inclusion">
-<p class="cs-kicker">Inclusive by design</p>
-<h2 id="h-inclusion">Easy for a child, a grandparent or a wheelchair user</h2>
-<ul class="cs-methods">
-<li><b>Large touch targets</b><span>Round icons and a wide Next button that are easy to hit, standing or seated.</span></li>
-<li><b>High contrast</b><span>White and gold text on a dark background, readable under museum lighting.</span></li>
-<li><b>Short, plain language</b><span>Stories broken into brief screens that work for younger readers and tourists.</span></li>
-<li><b>Predictable layout</b><span>The same controls in the same places on every car, so learning one kiosk means knowing them all.</span></li>
-<li><b>More than text</b><span>Photos, video and engine sounds for visitors who prefer to look and listen.</span></li>
-</ul>
-</section>
-<section class="cs-sec" id="reflection" aria-labelledby="h-reflection">
-<p class="cs-kicker">Reflection</p>
-<h2 id="h-reflection">What I learned, and what I’d add next</h2>
-<ul class="cs-learn">
-<li><b>Context is the brief.</b> Light, mood and how people move through a hall decided more of the design than any style guide.</li>
-<li><b>Content design is UX.</b> Turning memories and artefacts into short stories was as important as the screens themselves.</li>
-<li><b>Next, I’d measure it.</b> Dwell time and the most-read stories would show which cars spark the most curiosity.</li>
-<li><b>And widen the audience.</b> Audio narration, captions on video and other languages would welcome even more visitors.</li>
-</ul>
-<p class="cs-fine">The client and museum have been white-labelled as AutoLore. Screens are shown for portfolio purposes.</p>
-</section>
-</article>
+      </section>
+
+      <section class="cs-sec" id="principles" aria-labelledby="h-principles">
+        <p class="cs-kicker">Design principles</p>
+        <h2 id="h-principles">What the research told us to do</h2>
+        <ul class="cs-map">
+          <li><span class="from">Visitors stand, glance and move on</span><span class="to">One car per kiosk, with the story told in short screens</span></li>
+          <li><span class="from">Museum halls are dim and dramatic</span><span class="to">A dark theme that cuts glare and lets the photos glow</span></li>
+          <li><span class="from">Nobody reads instructions</span><span class="to">A single “Next” and three large icons, the same on every screen</span></li>
+          <li><span class="from">People like to know how much is left</span><span class="to">A vertical progress rail showing where they are in the story</span></li>
+          <li><span class="from">Stories are about people, not just machines</span><span class="to">Archive photos and captions alongside the specifications</span></li>
+        </ul>
+      </section>
+
+      <section class="cs-sec" id="prototypes" aria-labelledby="h-prototypes">
+        <p class="cs-kicker">Prototypes</p>
+        <h2 id="h-prototypes">Shaping the story flow in mid-fidelity</h2>
+        <p>Working with the business analyst, I sketched wireframes and carved the content into a journey: an introduction, the machine’s unique features, and the facts behind its acquisition.</p>
+        <div class="cs-gallery g-3">
+          <figure class="cs-fig "><button class="zoom" type="button" data-cap="Introduction. Title, a short intro and a sound to play."><img src="cs5/mf1.webp" width="282" height="176" loading="lazy" alt="Mid-fidelity screen for a sports car with a title, a short introduction, an engine sound button, three icons and a progress rail."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-wireframe">Wireframe</span><b>Introduction.</b> Title, a short intro and a sound to play.</figcaption></figure>
+          <figure class="cs-fig "><button class="zoom" type="button" data-cap="Uniqueness of the machine. Key facts as short bullets."><img src="cs5/mf2.webp" width="282" height="176" loading="lazy" alt="Mid-fidelity screen with a car sketch and a list of what made the machine unique, with a progress rail and a Next button."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-wireframe">Wireframe</span><b>Uniqueness of the machine.</b> Key facts as short bullets.</figcaption></figure>
+          <figure class="cs-fig "><button class="zoom" type="button" data-cap="Facts behind the acquisition. The rail shows the story is nearly done."><img src="cs5/mf3.webp" width="284" height="176" loading="lazy" alt="Mid-fidelity screen titled Facts behind the acquisition, with a car sketch and a progress rail near the end."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-wireframe">Wireframe</span><b>Facts behind the acquisition.</b> The rail shows the story is nearly done.</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="design" aria-labelledby="h-design">
+        <p class="cs-kicker">Final design</p>
+        <h2 id="h-design">A dark, cinematic kiosk that puts the car first</h2>
+        <div class="cs-gallery g-2">
+          <figure class="cs-fig "><button class="zoom" type="button" data-cap="Introduction. A bold title and one line on why the car matters."><img src="cs5/d1.webp" width="314" height="180" loading="lazy" alt="Kiosk introduction screen for a 1914 Grand Prix racecar, with large white title text over a dark archive photo and three round icons on the right."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Introduction.</b> A bold title and one line on why the car matters.</figcaption></figure>
+          <figure class="cs-fig "><button class="zoom" type="button" data-cap="The story. Short paragraphs with an archive photo."><img src="cs5/d2.webp" width="315" height="180" loading="lazy" alt="Kiosk story screen about how the engineers reimagined the engine, with paragraphs of text and an archive photo."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>The story.</b> Short paragraphs with an archive photo.</figcaption></figure>
+          <figure class="cs-fig "><button class="zoom" type="button" data-cap="Design specifications. Gold labels make the facts easy to scan."><img src="cs5/d3.webp" width="315" height="180" loading="lazy" alt="Kiosk specifications screen listing maker, engine, valvetrain, top speed, transmission, brakes and weight in two columns with gold labels."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Design specifications.</b> Gold labels make the facts easy to scan.</figcaption></figure>
+          <figure class="cs-fig "><button class="zoom" type="button" data-cap="Gallery. Swipe through photos and videos."><img src="cs5/d4.webp" width="314" height="180" loading="lazy" alt="Kiosk gallery screen with a large engine photo and a strip of thumbnails below."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-final">Final</span><b>Gallery.</b> Swipe through photos and videos.</figcaption></figure>
+        </div>
+        <h3 class="cs-sub">On the museum floor</h3>
+        <div class="cs-gallery g-2-70">
+          <figure class="cs-fig "><button class="zoom" type="button" data-cap="Beside the car. Each kiosk stands next to the car it describes."><img src="cs5/kiosk.webp" width="306" height="180" loading="lazy" alt="A kiosk stand beside a green vintage racecar on the museum floor, with more classic cars behind."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-in-use">In use</span><b>Beside the car.</b> Each kiosk stands next to the car it describes.</figcaption></figure>
+          <figure class="cs-fig "><button class="zoom" type="button" data-cap="The kiosk. At standing height, angled for easy reach."><img src="cs5/kiosk2.webp" width="142" height="180" loading="lazy" alt="Close-up of a kiosk on its stand showing the introduction screen."><span class="zoom-hint" aria-hidden="true">Enlarge</span><span class="sr-only">Enlarge image</span></button><figcaption><span class="lbl lbl-in-use">In use</span><b>The kiosk.</b> At standing height, angled for easy reach.</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="inclusion" aria-labelledby="h-inclusion">
+        <p class="cs-kicker">Inclusive by design</p>
+        <h2 id="h-inclusion">Easy for a child, a grandparent or a wheelchair user</h2>
+        <ul class="cs-methods">
+          <li><b>Large touch targets</b><span>Round icons and a wide Next button that are easy to hit, standing or seated.</span></li>
+          <li><b>High contrast</b><span>White and gold text on a dark background, readable under museum lighting.</span></li>
+          <li><b>Short, plain language</b><span>Stories broken into brief screens that work for younger readers and tourists.</span></li>
+          <li><b>Predictable layout</b><span>The same controls in the same places on every car, so learning one kiosk means knowing them all.</span></li>
+          <li><b>More than text</b><span>Photos, video and engine sounds for visitors who prefer to look and listen.</span></li>
+        </ul>
+      </section>
+
+      <section class="cs-sec" id="reflection" aria-labelledby="h-reflection">
+        <p class="cs-kicker">Reflection</p>
+        <h2 id="h-reflection">What I learned, and what I’d add next</h2>
+        <ul class="cs-learn">
+          <li><b>Context is the brief.</b> Light, mood and how people move through a hall decided more of the design than any style guide.</li>
+          <li><b>Content design is UX.</b> Turning memories and artefacts into short stories was as important as the screens themselves.</li>
+          <li><b>Next, I’d measure it.</b> Dwell time and the most-read stories would show which cars spark the most curiosity.</li>
+          <li><b>And widen the audience.</b> Audio narration, captions on video and other languages would welcome even more visitors.</li>
+        </ul>
+        <p class="cs-fine">The client and museum have been white-labelled as AutoLore. Screens are shown for portfolio purposes.</p>
+      </section>
+    </article>
   </div>
 
   <section class="band cs-next" aria-labelledby="h-next">
@@ -1846,9 +1860,9 @@ footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between
       <p class="cs-kicker">Next</p>
       <h2 id="h-next">See how FinUnity got one platform for loans and liens</h2>
       <div class="cta-row">
-<a class="btn btn-primary" href="case-finunity.html">Read the FinUnity case study</a>
-<a class="btn" href="home.html#work">Back to all work</a>
-</div>
+        <a class="btn btn-primary" href="case-finunity.html">Read the FinUnity case study</a>
+        <a class="btn" href="home.html#work">Back to all work</a>
+      </div>
     </div>
   </section>
 </main>
