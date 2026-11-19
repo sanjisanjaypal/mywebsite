@@ -3,6 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#4A1D7A">
 <title>Guru Samman Samaroh Case Study</title>
 <script>
 /* Always show pages inside the site shell, so music keeps playing across pages */
@@ -50,9 +54,19 @@ return H.map(function(x){return("00000000"+(x>>>0).toString(16)).slice(-8)}).joi
       '<h1 id="gateT">This case study is protected</h1><p>It includes client work shared in confidence. Enter the password to continue, or get in touch to request it.</p>'+
       '<label for="gateP">Password</label><span class="pw-wrap"><input id="gateP" type="password" autocomplete="current-password" required><button class="pw-eye" type="button" id="gateEye" aria-controls="gateP" aria-pressed="false" aria-label="Show password"><svg class="i-show" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><svg class="i-hide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3l18 18M10.6 5.1A10.4 10.4 0 0 1 12 5c6.4 0 10 7 10 7a17.6 17.6 0 0 1-3.2 4.1M6.6 6.6C3.9 8.3 2 12 2 12s3.6 7 10 7a9.7 9.7 0 0 0 5.4-1.6M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg></button></span>'+
       '<p class="g-err" id="gateE" role="alert" aria-live="assertive"></p>'+
-      '<div class="g-row"><button type="submit">View case study</button><a class="g-back" href="home.html#contact">Request access</a></div></form>';
+      '<div class="g-row"><button type="submit">View case study</button><a class="g-back" id="gateReq" href="mailto:sanji.sanjaypal@gmail.com?subject=Password%20request%3A%20case%20study">Request access</a></div></form>';
     document.body.appendChild(g);
-    var f=g.querySelector("form"), i=g.querySelector("input"), e=g.querySelector("#gateE"); function pwToggle(b,i){b.addEventListener("click",function(){var s=i.type==="password";i.type=s?"text":"password";b.setAttribute("aria-pressed",String(s));b.setAttribute("aria-label",s?"Hide password":"Show password");i.focus()})} pwToggle(g.querySelector("#gateEye"),i); i.focus();
+    var f=g.querySelector("form"), i=g.querySelector("input"), e=g.querySelector("#gateE");
+    /* Request access opens the visitor's email app with a draft to Sanjay; handed to the top window because browsers block mailto: inside the site frame */
+    g.querySelector("#gateReq").addEventListener("click",function(ev){
+      ev.preventDefault();
+      var name=document.title.replace(/\s*case study.*$/i,"").trim()||"this";
+      var url="mailto:sanji.sanjaypal@gmail.com?subject="+encodeURIComponent("Password request: "+name)+
+        "&body="+encodeURIComponent("Hi Sanjay,\n\nI came across your portfolio and would like to view the \""+name+"\" case study. Could you please share the password?\n\nA little about me:\nName: \nCompany / role: \nReason for viewing: \n\nThank you,\n");
+      this.href=url;
+      var topWin=null; try{ if(window.top.location.origin===location.origin) topWin=window.top }catch(x){}
+      if(topWin) topWin.location.href=url; else { try{ window.open(url,"_blank") }catch(x){ location.href=url } }
+    }); function pwToggle(b,i){b.addEventListener("click",function(){var s=i.type==="password";i.type=s?"text":"password";b.setAttribute("aria-pressed",String(s));b.setAttribute("aria-label",s?"Hide password":"Show password");i.focus()})} pwToggle(g.querySelector("#gateEye"),i); i.focus();
     function hex(b){return Array.prototype.map.call(new Uint8Array(b),function(x){return("0"+x.toString(16)).slice(-2)}).join("")}
     f.addEventListener("submit",function(ev){ev.preventDefault();
       var v=i.value; if(!v){e.textContent="Please enter the password."; i.focus(); return}
@@ -1433,6 +1447,28 @@ footer .foot-resume:focus-visible{outline:3px solid #B98CFF; outline-offset:3px;
 .hero-copy .co-link:hover,.hero-copy .co-link.hl{text-decoration-thickness:2.5px}
 .hero-copy .co-link:hover svg,.hero-copy .co-link.hl svg{animation:flyOut .55s cubic-bezier(.4,0,.2,1)}
 @media (prefers-reduced-motion: reduce){.hero-copy .co-link:hover svg,.hero-copy .co-link.hl svg{animation:none}}
+/* Visa note in the hero-pill style: rounded pill, solid round icon badge, bold text; its own maroon colours kept */
+.visa-note{--vn:#8B1E2D; border-radius:999px !important; padding:.4rem 1.05rem .4rem .4rem !important; gap:.6rem !important; font-weight:600; font-size:1rem; line-height:1.3}
+.visa-note svg{width:28px !important; height:28px !important}
+.visa-note svg circle{fill:var(--vn); stroke:var(--vn); r:11}
+.visa-note svg path{stroke:#fff; stroke-width:2.4}
+:root[data-theme="dark"] .visa-note{--vn:#E0697A}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .visa-note{--vn:#E0697A}}
+:root[data-theme="dark"] .visa-note svg path{stroke:#3A1219}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .visa-note svg path{stroke:#3A1219}}
+/* Visa pill: lighter border (light: soft rose; dark: muted rose) */
+.visa-note{border-color:rgba(139,30,45,.28) !important}
+:root[data-theme="dark"] .visa-note{border-color:rgba(224,105,122,.35) !important}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .visa-note{border-color:rgba(224,105,122,.35) !important}}
+/* Connect on LinkedIn: same size and shape as the header "Get in touch" button, in LinkedIn blue */
+.socials a.li-btn{min-height:40px; padding:.45rem 1.2rem; font-size:.92rem; line-height:1.6; gap:.5rem;
+  background:#0A66C2 !important; border-color:#0A66C2 !important; color:#fff !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.18), 0 6px 18px rgba(10,102,194,.35) !important}
+.socials a.li-btn svg{width:16px; height:16px}
+.socials a.li-btn:hover,.socials a.li-btn:active,.socials a.li-btn.hl{background:#004182 !important; border-color:#004182 !important; color:#fff !important; box-shadow:inset 0 1px 0 rgba(255,255,255,.22), 0 10px 26px rgba(0,65,130,.45) !important}
+.socials a.li-btn:focus-visible{outline:3px solid #fff !important; outline-offset:3px}
+:root[data-theme="dark"] .socials a.li-btn:hover,:root[data-theme="dark"] .socials a.li-btn:active,:root[data-theme="dark"] .socials a.li-btn.hl{box-shadow:inset 0 1px 0 rgba(255,255,255,.18), 0 6px 18px rgba(30,215,96,.42) !important}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .socials a.li-btn:hover,:root:not([data-theme="light"]) .socials a.li-btn:active,:root:not([data-theme="light"]) .socials a.li-btn.hl{box-shadow:inset 0 1px 0 rgba(255,255,255,.18), 0 6px 18px rgba(30,215,96,.42) !important}}
 </style>
 <style>
 /* ================= Case study page ================= */
@@ -1824,7 +1860,7 @@ footer.cs-foot .wrap{display:flex; flex-wrap:wrap; justify-content:space-between
           </ul>
         </div>
         <a href="home.html#about">About</a>
-        <a class="nav-resume-top" href="Sanjay-Pal-Resume-2026.pdf" download="Sanjay-Pal-Resume-2026.pdf" title="Download resume (PDF, 70 KB)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="M7 10.5l5 5 5-5"/><path d="M5 20h14"/></svg><span>Download Resume</span></a>
+        <a class="nav-resume-top" href="Sanjay-Pal-Resume-2026.pdf" download="Sanjay-Pal-Resume-2026.pdf" title="Download resume (PDF, 71 KB)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="M7 10.5l5 5 5-5"/><path d="M5 20h14"/></svg><span>Download Resume</span></a>
         <a href="home.html#contact" class="nav-contact">Get in touch</a>
       </div>
     </nav>
