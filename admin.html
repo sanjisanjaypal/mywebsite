@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Site editor · Sanjay Pal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{--bg:#F4F6EE; --panel:#FFFFFF; --ink:#13241A; --muted:#5C6B60; --line:#D9DFD0; --accent:#4A1D7A; --accent-2:#5E2A96; --accent-soft:#EFE7F8;
+  --ok:#0E7A3E; --ok-soft:#E3F4E9; --warn:#9A5B00; --warn-soft:#FFF2DC; --err:#A3202F; --err-soft:#FBE6E8; --field:#FFFFFF; color-scheme:light}
+@media (prefers-color-scheme: dark){:root{--bg:#0F1A13; --panel:#16241B; --ink:#EEF1E6; --muted:#A8B4A9; --line:#2C3D31; --accent:#B98CFF; --accent-2:#C9A6FF; --accent-soft:#2A2140;
+  --ok:#6FD49A; --ok-soft:#173523; --warn:#F2B661; --warn-soft:#3A2A12; --err:#FF8E9A; --err-soft:#3D1A1F; --field:#0F1A13; color-scheme:dark}}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0; background:var(--bg); color:var(--ink); font:15px/1.5 "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif}
+button,input,select,textarea{font:inherit; color:inherit}
+h1,h2,h3{line-height:1.2; margin:0; text-wrap:balance}
+a{color:var(--accent)}
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:.4rem; min-height:38px; padding:.4rem 1rem; border-radius:999px; border:1px solid var(--line); background:var(--panel); font-weight:600; cursor:pointer; white-space:nowrap}
+.btn:hover{border-color:var(--accent)}
+.btn:disabled{opacity:.45; cursor:not-allowed}
+.btn.primary{background:linear-gradient(180deg,#5E2A96,#4A1D7A); border-color:#4A1D7A; color:#fff}
+.btn.primary:hover:not(:disabled){background:linear-gradient(180deg,#6E36AB,#55238B)}
+.btn.small{min-height:30px; padding:.2rem .7rem; font-size:.85rem}
+.btn.danger{color:var(--err)}
+.btn:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+label{display:block; font-weight:600; font-size:.88rem; margin:.9rem 0 .3rem}
+input[type=text],input[type=password],input[type=url],select,textarea{width:100%; padding:.55rem .7rem; border:1px solid var(--line); border-radius:10px; background:var(--field)}
+textarea{min-height:84px; resize:vertical}
+.hint{color:var(--muted); font-size:.85rem; margin:.3rem 0 0}
+.msg{border-radius:10px; padding:.6rem .8rem; margin:.8rem 0 0; font-size:.9rem}
+.msg.err{background:var(--err-soft); color:var(--err)} .msg.ok{background:var(--ok-soft); color:var(--ok)} .msg.warn{background:var(--warn-soft); color:var(--warn)}
+[hidden]{display:none !important}
+
+/* Connect screen */
+#connect{min-height:100%; display:grid; place-items:center; padding:2rem max(16px, env(safe-area-inset-left,0px))}
+.card{width:min(520px,100%); background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:1.6rem}
+.card h1{font-size:1.5rem}
+.card .sub{color:var(--muted); margin:.4rem 0 0}
+.check{display:flex; gap:.5rem; align-items:center; font-weight:500; margin-top:.9rem}
+.check input{width:18px; height:18px}
+details.help{margin-top:1.2rem; border-top:1px solid var(--line); padding-top:.9rem}
+details.help summary{cursor:pointer; font-weight:600; color:var(--accent)}
+details.help ol{padding-left:1.2rem; margin:.6rem 0 0} details.help li{margin:.35rem 0}
+
+/* Editor */
+#app{height:100%; display:flex; flex-direction:column}
+.top{display:flex; flex-wrap:wrap; align-items:center; gap:.6rem 1rem; padding:.6rem max(16px, env(safe-area-inset-left,0px)); background:var(--panel); border-bottom:1px solid var(--line)}
+.brand{font-weight:700; font-size:1.05rem; margin-right:.4rem}
+.brand small{display:block; font-weight:500; color:var(--muted); font-size:.75rem}
+.top select{width:auto; min-width:200px; padding:.4rem .6rem}
+.seg{display:inline-flex; border:1px solid var(--line); border-radius:999px; overflow:hidden}
+.seg button{border:0; background:transparent; padding:.4rem .9rem; font-weight:600; cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent); color:#fff}
+@media (prefers-color-scheme: dark){.seg button[aria-pressed="true"]{color:#1B1030}}
+.top .grow{flex:1}
+.status{font-size:.88rem; color:var(--muted)}
+.status b{color:var(--warn)}
+.main{flex:1; display:flex; min-height:0}
+.stage{flex:1; min-width:0; position:relative; background:#888}
+.stage iframe{width:100%; height:100%; border:0; background:#fff; display:block}
+.stage .loading{position:absolute; inset:0; display:grid; place-items:center; background:var(--bg); color:var(--muted); font-weight:600}
+.side{width:340px; flex:none; overflow:auto; background:var(--panel); border-left:1px solid var(--line); padding:1rem 1.1rem 2rem}
+.side h2{font-size:1.05rem}
+.side .kind{display:inline-block; font-size:.75rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); background:var(--accent-soft); border-radius:999px; padding:.15rem .6rem; margin-bottom:.5rem}
+.thumb{display:block; max-width:100%; max-height:180px; border-radius:10px; border:1px solid var(--line); background:repeating-conic-gradient(#0001 0 25%, transparent 0 50%) 0 0/16px 16px; margin-top:.6rem}
+.tips{padding-left:1.1rem; margin:.6rem 0 0; color:var(--muted)} .tips li{margin:.4rem 0}
+.lists{flex:1; overflow:auto; padding:1.2rem max(16px, env(safe-area-inset-left,0px)) 3rem}
+.lists .inner{max-width:860px; margin:0 auto}
+.lists > .inner > p{color:var(--muted); margin:.3rem 0 1rem}
+.lists details{background:var(--panel); border:1px solid var(--line); border-radius:14px; margin:0 0 .8rem}
+.lists summary{cursor:pointer; padding:.9rem 1.1rem; font-weight:700; font-size:1.05rem}
+.lists summary span{font-weight:500; color:var(--muted); font-size:.88rem; margin-left:.4rem}
+.lists .body{padding:0 1.1rem 1.1rem}
+.item{border:1px solid var(--line); border-radius:12px; padding:.2rem .9rem .9rem; margin:.7rem 0; background:var(--bg)}
+.item .row{display:flex; gap:.4rem; justify-content:flex-end; margin-top:.7rem; flex-wrap:wrap}
+.item .num{font-weight:700; color:var(--muted); font-size:.8rem; margin-top:.7rem}
+.ind{display:grid; grid-template-columns:1fr 160px auto; gap:.5rem; align-items:center; margin:.45rem 0}
+.ind input,.ind select{margin:0}
+@media (max-width:860px){
+  .main{flex-direction:column}
+  .side{width:auto; border-left:0; border-top:1px solid var(--line); max-height:42%}
+  .top select{min-width:0; flex:1}
+  .ind{grid-template-columns:1fr 120px}
+  .ind .btn{grid-column:1/-1; justify-self:end}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ Connect ============ -->
+<section id="connect">
+  <form class="card" id="connectForm" autocomplete="off">
+    <h1>Site editor</h1>
+    <p class="sub">Edit text and images on sanjaypal.online. Changes are saved to your GitHub repository, and the live site updates about a minute later.</p>
+
+    <label for="repo">GitHub repository</label>
+    <input type="text" id="repo" placeholder="your-username/sanjaypal-site" required spellcheck="false">
+    <p class="hint">Your GitHub username, a slash, then the repository name.</p>
+
+    <label for="branch">Branch</label>
+    <input type="text" id="branch" value="main" required spellcheck="false">
+
+    <label for="token">GitHub key (access token)</label>
+    <input type="password" id="token" placeholder="github_pat_…" required spellcheck="false">
+    <p class="hint">Only sent to GitHub. Never put this key in a page or share it.</p>
+
+    <div class="check"><input type="checkbox" id="remember"><label for="remember" style="margin:0;font-weight:500">Remember me on this computer</label></div>
+
+    <div id="connectMsg" class="msg err" hidden></div>
+    <p style="margin:1.2rem 0 0"><button class="btn primary" type="submit" id="connectBtn">Open editor</button></p>
+
+    <details class="help">
+      <summary>How do I get a GitHub key?</summary>
+      <ol>
+        <li>On github.com, click your photo (top right), then <b>Settings</b>.</li>
+        <li>At the bottom of the left menu, click <b>Developer settings</b>, then <b>Personal access tokens</b>, then <b>Fine-grained tokens</b>.</li>
+        <li>Click <b>Generate new token</b>. Name it "Site editor" and pick an expiry (for example 1 year).</li>
+        <li>Under <b>Repository access</b>, choose <b>Only select repositories</b> and pick your site's repository.</li>
+        <li>Under <b>Permissions</b>, open <b>Repository permissions</b> and set <b>Contents</b> to <b>Read and write</b>.</li>
+        <li>Click <b>Generate token</b> and copy it (it starts with <code>github_pat_</code>). Paste it above.</li>
+      </ol>
+    </details>
+  </form>
+</section>
+
+<!-- ============ Editor ============ -->
+<section id="app" hidden>
+  <div class="top">
+    <div class="brand">Site editor<small id="repoLabel"></small></div>
+    <select id="pageSel" aria-label="Page to edit"></select>
+    <div class="seg" role="group" aria-label="What to edit">
+      <button type="button" id="modePage" aria-pressed="true">Page</button>
+      <button type="button" id="modeLists" aria-pressed="false">Lists</button>
+    </div>
+    <label class="check" style="margin:0"><input type="checkbox" id="showHidden"> <span style="font-weight:500">Show hidden parts</span></label>
+    <span class="grow"></span>
+    <span class="status" id="status" aria-live="polite">No changes</span>
+    <button class="btn" type="button" id="discardBtn" disabled>Discard</button>
+    <button class="btn primary" type="button" id="publishBtn" disabled>Publish</button>
+    <button class="btn small" type="button" id="signOut" title="Forget the key on this computer">Sign out</button>
+  </div>
+
+  <div class="main" id="pageView">
+    <div class="stage"><iframe id="frame" title="Page being edited"></iframe><div class="loading" id="loading">Loading…</div></div>
+    <aside class="side" id="side" aria-live="polite"></aside>
+  </div>
+
+  <div class="lists" id="listsView" hidden>
+    <div class="inner">
+      <h2 style="font-size:1.4rem">Lists on the home page</h2>
+      <p>These parts of the home page are built from lists. Edit, add, remove or reorder items here, then press Publish.</p>
+      <div id="listsMsg"></div>
+      <div id="listsBody"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+"use strict";
+const $=s=>document.querySelector(s);
+const store={
+  get(k){try{return localStorage.getItem(k)??sessionStorage.getItem(k)}catch(e){return null}},
+  set(k,v,keep){try{(keep?localStorage:sessionStorage).setItem(k,v); (keep?sessionStorage:localStorage).removeItem(k)}catch(e){}},
+  del(k){try{localStorage.removeItem(k); sessionStorage.removeItem(k)}catch(e){}}
+};
+const PAGE_NAMES={"home.html":"Home page","case-finunity.html":"Case study: FinUnity","case-advisor.html":"Case study: Advisor platform","case-finguard.html":"Case study: FinGuard",
+  "case-agrifunds.html":"Case study: AgriFunds","case-aster.html":"Case study: Aster Bank","case-autolore.html":"Case study: AutoLore","case-guru.html":"Case study: Guru Samman Samaroh"};
+let cfg={repo:"",branch:"main",token:""};
+let state={path:"",sha:null,source:"",scripts:[],prefix:"",dirty:new Set(),uploads:new Map(),sel:null,hov:null,
+  lists:null,listsSha:null,listsDirty:false,defaults:null,icons:[],mode:"page"};
+
+/* ---------- GitHub API ---------- */
+async function gh(path,opts={}){
+  const headers={Authorization:"Bearer "+cfg.token,"X-GitHub-Api-Version":"2022-11-28",Accept:opts.accept||"application/vnd.github+json"};
+  if(opts.body) headers["Content-Type"]="application/json";
+  const r=await fetch("https://api.github.com"+path,{method:opts.method||"GET",headers,body:opts.body?JSON.stringify(opts.body):undefined,cache:"no-store"});
+  if(opts.allow404 && r.status===404) return null;
+  if(!r.ok){
+    let m=""; try{m=(await r.json()).message||""}catch(e){}
+    const err=new Error(m||("GitHub error "+r.status)); err.status=r.status; throw err;
+  }
+  return opts.accept&&opts.accept.includes("raw")?r.text():r.json();
+}
+const enc=p=>p.split("/").map(encodeURIComponent).join("/");
+function b64FromBytes(bytes){let s=""; for(let i=0;i<bytes.length;i+=0x8000) s+=String.fromCharCode.apply(null,bytes.subarray(i,i+0x8000)); return btoa(s)}
+function utf8FromB64(b){const bin=atob(b.replace(/\s/g,"")); const u=new Uint8Array(bin.length); for(let i=0;i<bin.length;i++)u[i]=bin.charCodeAt(i); return new TextDecoder().decode(u)}
+async function getFile(path,allow404){
+  const meta=await gh(`/repos/${cfg.repo}/contents/${enc(path)}?ref=${encodeURIComponent(cfg.branch)}`,{allow404});
+  if(!meta) return null;
+  let text;
+  if(meta.content && meta.encoding==="base64") text=utf8FromB64(meta.content);
+  else text=await gh(`/repos/${cfg.repo}/contents/${enc(path)}?ref=${encodeURIComponent(cfg.branch)}`,{accept:"application/vnd.github.raw+json"});
+  return {sha:meta.sha,text};
+}
+async function putFile(path,b64,sha,message){
+  const body={message,content:b64,branch:cfg.branch}; if(sha) body.sha=sha;
+  const r=await gh(`/repos/${cfg.repo}/contents/${enc(path)}`,{method:"PUT",body});
+  return r.content.sha;
+}
+
+/* ---------- Connect ---------- */
+$("#repo").value=store.get("se-repo")||guessRepo();
+$("#branch").value=store.get("se-branch")||"main";
+$("#remember").checked=!!(function(){try{return localStorage.getItem("se-token")}catch(e){return null}})();
+function guessRepo(){const h=location.hostname; if(h.endsWith(".github.io")){const u=h.split(".")[0], p=location.pathname.split("/")[1]; return u+"/"+(p&&!p.includes(".")?p:h)} return ""}
+const savedToken=store.get("se-token");
+if(savedToken && $("#repo").value){cfg={repo:$("#repo").value,branch:$("#branch").value,token:savedToken}; connect(true)}
+
+$("#connectForm").addEventListener("submit",e=>{e.preventDefault();
+  cfg={repo:$("#repo").value.trim().replace(/^https?:\/\/github\.com\//,"").replace(/\.git$/,"").replace(/\/+$/,""),branch:$("#branch").value.trim()||"main",token:$("#token").value.trim()};
+  connect(false)});
+
+async function connect(silent){
+  const msg=$("#connectMsg"); msg.hidden=true; $("#connectBtn").disabled=true; $("#connectBtn").textContent="Checking…";
+  try{
+    if(!/^[\w.-]+\/[\w.-]+$/.test(cfg.repo)) throw new Error("Write the repository as username/repository-name.");
+    const info=await gh(`/repos/${cfg.repo}`);
+    if(info.permissions && info.permissions.push===false) throw new Error("This key can read the repository but not save to it. Give it Contents: Read and write.");
+    const keep=$("#remember").checked;
+    store.set("se-repo",cfg.repo,true); store.set("se-branch",cfg.branch,true); store.set("se-token",cfg.token,keep);
+    $("#connect").hidden=true; $("#app").hidden=false; $("#repoLabel").textContent=cfg.repo+" · "+cfg.branch;
+    await loadPageList();
+  }catch(err){
+    if(silent){store.del("se-token")}
+    msg.textContent=err.status===401?"GitHub did not accept this key. Check it was copied in full and has not expired."
+      :err.status===404?"Repository not found, or this key has no access to it. Check the name and the key's repository access."
+      :(err.message||"Could not connect."); msg.hidden=false;
+  }finally{$("#connectBtn").disabled=false; $("#connectBtn").textContent="Open editor"}
+}
+$("#signOut").addEventListener("click",()=>{if(!confirmLeave())return; store.del("se-token"); location.reload()});
+
+/* ---------- Pages ---------- */
+async function loadPageList(){
+  const items=await gh(`/repos/${cfg.repo}/contents/?ref=${encodeURIComponent(cfg.branch)}`);
+  const pages=items.filter(f=>f.type==="file"&&/\.html$/.test(f.name)&&!["index.html","admin.html"].includes(f.name)).map(f=>f.name);
+  pages.sort((a,b)=>(a==="home.html"?-1:b==="home.html"?1:Object.keys(PAGE_NAMES).indexOf(a)-Object.keys(PAGE_NAMES).indexOf(b)));
+  const sel=$("#pageSel"); sel.innerHTML=pages.map(p=>`<option value="${p}">${PAGE_NAMES[p]||p}</option>`).join("");
+  if(!pages.length){setStatus("No pages found in this repository. Upload the site files first.");return}
+  await openPage(pages[0]);
+}
+$("#pageSel").addEventListener("change",async e=>{
+  if(!confirmLeave()){e.target.value=state.path;return}
+  await openPage(e.target.value);
+});
+function confirmLeave(){return !hasChanges()||confirm("You have changes that are not published. Leave them?")}
+window.addEventListener("beforeunload",e=>{if(hasChanges()){e.preventDefault(); e.returnValue=""}});
+
+async function openPage(path){
+  $("#loading").hidden=false; $("#loading").textContent="Loading "+(PAGE_NAMES[path]||path)+"…";
+  state.dirty=new Set(); state.uploads=new Map(); state.sel=null; state.hov=null; state.path=path;
+  try{
+    const f=await getFile(path);
+    state.sha=f.sha; state.source=f.text;
+    renderFrame(f.text);
+  }catch(err){$("#loading").textContent="Could not load the page: "+err.message}
+  $("#modeLists").hidden=path!=="home.html";
+  if(path!=="home.html") setMode("page");
+  updateStatus(); showSide();
+}
+
+/* Scripts are taken out while editing (so the page stays still), and put back exactly when publishing */
+function renderFrame(src){
+  const scripts=[];
+  let html=src.replace(/<script\b[\s\S]*?<\/script\s*>/gi,m=>{scripts.push(m); return "<!--cmsS:"+(scripts.length-1)+"-->"});
+  state.scripts=scripts;
+  const hi=html.search(/<html[\s>]/i); state.prefix=hi>0?html.slice(0,hi):"<!doctype html>\n";
+  const frame=$("#frame");
+  frame.onload=()=>{setupFrame(frame.contentDocument); $("#loading").hidden=true};
+  frame.srcdoc=html;
+}
+function setupFrame(doc){
+  const st=doc.createElement("style"); st.setAttribute("data-cmsx","1");
+  st.textContent=`#loader,#csGate,#extHit{display:none!important}
+  .rv{opacity:1!important;transform:none!important}
+  html{scroll-behavior:auto!important}
+  [data-cmsx-hov]{outline:2px dashed #8B4FD0!important;outline-offset:2px;cursor:text}
+  img[data-cmsx-hov]{cursor:pointer}
+  [data-cmsx-dirty]{outline:2px dashed #D68C00!important;outline-offset:2px}
+  [data-cmsx-sel]{outline:2.5px solid #8B4FD0!important;outline-offset:3px;background-color:rgba(139,79,208,.10)}
+  [contenteditable]{cursor:text}
+  html[data-cmsx-showhidden] [hidden]:not(#loader):not(#csGate){display:block!important}`;
+  doc.head.appendChild(st);
+  if($("#showHidden").checked) doc.documentElement.setAttribute("data-cmsx-showhidden","");
+  doc.addEventListener("mousedown",e=>{
+    if(e.button!==0) return;
+    const t=pick(e.target); if(t!==state.sel) select(t,true);
+    if(t&&t.tagName==="IMG") e.preventDefault();
+  },true);
+  doc.addEventListener("click",e=>{e.preventDefault(); e.stopPropagation()},true);
+  doc.addEventListener("submit",e=>e.preventDefault(),true);
+  doc.addEventListener("mouseover",e=>{
+    const t=pick(e.target);
+    if(state.hov&&state.hov!==t) state.hov.removeAttribute("data-cmsx-hov");
+    if(t&&t!==state.sel){t.setAttribute("data-cmsx-hov",""); state.hov=t}
+  });
+  doc.addEventListener("mouseout",e=>{if(state.hov&&!state.hov.contains(e.relatedTarget)){state.hov.removeAttribute("data-cmsx-hov"); state.hov=null}});
+  doc.addEventListener("input",e=>{const el=e.target.closest?e.target.closest("[contenteditable]"):null; if(el){markDirty(el)}});
+  doc.addEventListener("keydown",e=>{
+    if(!state.sel||state.sel.tagName==="IMG") return;
+    if(e.key==="Enter"){e.preventDefault(); if(e.shiftKey) doc.execCommand("insertLineBreak")}
+    if(e.key==="Escape"){select(null)}
+  });
+  doc.addEventListener("paste",e=>{
+    if(!state.sel) return; e.preventDefault();
+    const t=(e.clipboardData.getData("text/plain")||"").replace(/\s+/g," ");
+    doc.execCommand("insertText",false,t);
+  });
+  doc.addEventListener("drop",e=>e.preventDefault(),true);
+}
+function pick(t){
+  if(!t||t.nodeType!==1) return null;
+  if(t.tagName==="IMG") return t;
+  const svg=t.closest("svg"); if(svg) t=svg.parentElement;
+  for(let el=t; el && el.tagName!=="BODY" && el.tagName!=="HTML"; el=el.parentElement){
+    if(/^(SCRIPT|STYLE|NOSCRIPT|SVG|IFRAME|VIDEO|AUDIO|CANVAS|SELECT|TEXTAREA|INPUT)$/.test(el.tagName)) return null;
+    for(const n of el.childNodes){ if(n.nodeType===3 && n.nodeValue.trim()) return el }
+  }
+  return null;
+}
+function select(el,fromMouse){
+  const prev=state.sel;
+  if(prev&&prev!==el){prev.removeAttribute("data-cmsx-sel"); prev.removeAttribute("contenteditable"); prev.removeAttribute("spellcheck")}
+  state.sel=el;
+  if(el){
+    el.removeAttribute("data-cmsx-hov"); el.setAttribute("data-cmsx-sel","");
+    if(el.tagName!=="IMG" && el!==prev){
+      try{el.contentEditable="plaintext-only"}catch(e){el.contentEditable="true"}
+      if(el.contentEditable!=="plaintext-only") el.contentEditable="true";
+      el.spellcheck=true; if(!fromMouse) el.focus();
+    }
+  }
+  showSide();
+}
+function markDirty(el){el.setAttribute("data-cmsx-dirty",""); state.dirty.add(el); updateStatus()}
+
+/* ---------- Side panel ---------- */
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+const KIND={H1:"Main heading",H2:"Heading",H3:"Heading",H4:"Heading",H5:"Heading",H6:"Heading",P:"Paragraph",LI:"List item",A:"Link",BUTTON:"Button",IMG:"Image",FIGCAPTION:"Caption",BLOCKQUOTE:"Quote",LABEL:"Label"};
+function showSide(){
+  const side=$("#side"), el=state.sel;
+  if(!el){
+    side.innerHTML=`<h2>How to edit</h2><ul class="tips">
+      <li><b>Text:</b> click it and type. Press Esc when done. Enter is turned off so the layout stays intact (Shift+Enter adds a line break).</li>
+      <li><b>Images:</b> click an image, then <b>Replace image</b> here.</li>
+      <li><b>Links:</b> click the link text; its address appears here.</li>
+      <li>Edited parts show an orange outline until you publish.</li>
+      <li><b>Show hidden parts</b> reveals tabs and popups that are closed at first (for example the About tabs).</li>
+      <li>Testimonials, process steps, principles and industries are under <b>Lists</b> (home page).</li>
+      <li>Not editable here: the hand-drawn logo and quote, the ring around the photo, icons, and background art.</li>
+    </ul>`;
+    return;
+  }
+  if(el.tagName==="IMG"){
+    const shown=el.currentSrc||el.src;
+    const dark=el.classList.contains("b-dark"), light=el.classList.contains("b-light");
+    side.innerHTML=`<span class="kind">Image</span><h2>${esc(el.getAttribute("data-cms-src")||el.getAttribute("src"))}</h2>
+      <img class="thumb" src="${esc(shown)}" alt="">
+      <p class="hint">${el.naturalWidth}×${el.naturalHeight}px${dark?" · shown in dark theme only":light?" · shown in light theme only (it has a dark-theme twin)":""}</p>
+      <p style="margin:.9rem 0 0"><button class="btn primary" type="button" id="replImg">Replace image…</button></p>
+      <input type="file" id="imgFile" accept="image/png,image/jpeg,image/webp,image/gif,image/svg+xml" hidden>
+      <p class="hint">PNG, JPG, WebP, GIF or SVG. Large photos are resized to 2400px wide automatically.</p>
+      <label for="altTxt">Description for screen readers (alt text)</label>
+      <textarea id="altTxt" ${el.getAttribute("aria-hidden")==="true"?'placeholder="Decorative image: leave empty"':""}>${esc(el.getAttribute("alt")||"")}</textarea>
+      <p style="margin:.8rem 0 0"><button class="btn small" type="button" id="doneSel">Done</button></p>`;
+    $("#replImg").onclick=()=>$("#imgFile").click();
+    $("#imgFile").onchange=e=>{const f=e.target.files[0]; if(f) replaceImage(el,f)};
+    $("#altTxt").oninput=e=>{el.setAttribute("alt",e.target.value); markDirty(el)};
+  }else{
+    const a=el.closest("a");
+    side.innerHTML=`<span class="kind">${KIND[el.tagName]||"Text"}</span><h2>Editing text</h2>
+      <p class="hint">Type straight on the page. Press Esc or Done when finished.</p>
+      ${a?`<label for="hrefTxt">Link address</label><input type="url" id="hrefTxt" value="${esc(a.getAttribute("href")||"")}" spellcheck="false">
+        <p class="hint">Full web address (https://…), an email as mailto:name@example.com, or a page on this site such as home.html#contact.</p>`:""}
+      <p style="margin:.9rem 0 0"><button class="btn small" type="button" id="doneSel">Done</button></p>`;
+    if(a) $("#hrefTxt").oninput=e=>{a.setAttribute("href",e.target.value.trim()); markDirty(el)};
+  }
+  $("#doneSel").onclick=()=>select(null);
+}
+
+/* ---------- Images ---------- */
+function loadImg(url){return new Promise((res,rej)=>{const i=new Image(); i.onload=()=>res(i); i.onerror=()=>rej(new Error("This file could not be read as an image.")); i.src=url})}
+function toBlob(c,type,q){return new Promise(r=>c.toBlob(r,type,q))}
+async function replaceImage(el,file){
+  try{
+    if(file.size>20*1024*1024) throw new Error("That file is over 20 MB. Please pick a smaller one.");
+    let blob=file, ext=(file.name.split(".").pop()||"").toLowerCase();
+    const url0=URL.createObjectURL(file); const img=await loadImg(url0);
+    let w=img.naturalWidth||el.naturalWidth, h=img.naturalHeight||el.naturalHeight;
+    const raster=/^image\/(png|jpeg|webp)$/.test(file.type);
+    if(raster && (w>2400 || file.size>1.5*1024*1024)){
+      const s=Math.min(1,2400/w); const c=document.createElement("canvas"); c.width=Math.round(w*s); c.height=Math.round(h*s);
+      c.getContext("2d").drawImage(img,0,0,c.width,c.height);
+      let b=await toBlob(c,"image/webp",.85);
+      if(b&&b.type==="image/webp"){blob=b; ext="webp"}
+      else{const t=file.type==="image/png"?"image/png":"image/jpeg"; b=await toBlob(c,t,.86); if(b){blob=b; ext=t==="image/png"?"png":"jpg"}}
+      w=c.width; h=c.height;
+    }
+    URL.revokeObjectURL(url0);
+    if(ext==="jpeg") ext="jpg";
+    const base=(file.name.replace(/\.[^.]+$/,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")||"image").slice(0,40);
+    const path="uploads/"+base+"-"+Date.now().toString(36)+"."+ext;
+    state.uploads.set(path,blob);
+    el.setAttribute("data-cms-src",path);
+    el.removeAttribute("srcset"); el.removeAttribute("sizes");
+    if(el.parentElement&&el.parentElement.tagName==="PICTURE") el.parentElement.querySelectorAll("source").forEach(s=>s.remove());
+    if(el.hasAttribute("width")&&el.hasAttribute("height")&&w&&h){el.setAttribute("width",w); el.setAttribute("height",h)}
+    el.src=URL.createObjectURL(blob);
+    markDirty(el); el.onload=()=>showSide(); showSide();
+  }catch(err){setStatus(err.message,"err")}
+}
+
+/* ---------- Lists (content.json on the home page) ---------- */
+function setMode(m){
+  state.mode=m; $("#modePage").setAttribute("aria-pressed",String(m==="page")); $("#modeLists").setAttribute("aria-pressed",String(m==="lists"));
+  $("#pageView").hidden=m!=="page"; $("#listsView").hidden=m!=="lists";
+  if(m==="lists") loadLists();
+}
+$("#modePage").onclick=()=>setMode("page");
+$("#modeLists").onclick=()=>setMode("lists");
+
+function getDefaults(){
+  /* Run the home page once, out of sight, to read its built-in lists */
+  return new Promise(res=>{
+    const f=document.createElement("iframe"); f.setAttribute("aria-hidden","true"); f.tabIndex=-1;
+    f.style.cssText="position:fixed;left:-9999px;top:0;width:1200px;height:800px;visibility:hidden";
+    const src=state.path==="home.html"?state.source:null;
+    let done=false; const finish=v=>{if(done)return; done=true; f.remove(); res(v)};
+    f.onload=()=>{
+      let n=0; const t=setInterval(()=>{n++;
+        try{const w=f.contentWindow; if(w.__cmsDefaults&&w.__cmsDefaults.testimonials&&w.__cmsDefaults.process){clearInterval(t); finish({d:JSON.parse(JSON.stringify(w.__cmsDefaults)),icons:[...(w.__cmsIcons||[])]})}}catch(e){}
+        if(n>60){clearInterval(t); finish(null)}
+      },150);
+    };
+    document.body.appendChild(f);
+    f.srcdoc=(src||"").replace(/<head>/i,'<head><script>window.__cmsPreview=true;window.__cmsPreviewData={};<\/script>');
+  });
+}
+async function loadLists(){
+  const box=$("#listsBody"), msg=$("#listsMsg");
+  if(state.lists){renderLists(); return}
+  box.innerHTML='<p class="hint">Loading lists…</p>'; msg.innerHTML="";
+  try{
+    const [def,cj]=await Promise.all([getDefaults(),getFile("content.json",true)]);
+    if(!def) throw new Error("Could not read the lists from the home page.");
+    state.defaults=def.d; state.icons=def.icons;
+    let data={}; if(cj){state.listsSha=cj.sha; try{data=JSON.parse(cj.text||"{}")||{}}catch(e){data={}}}
+    data=data.data||data;
+    const pickL=(k,map)=>Array.isArray(data[k])&&data[k].length?data[k].map(map):JSON.parse(JSON.stringify(state.defaults[k]||[])).map(map);
+    state.lists={
+      testimonials:pickL("testimonials",t=>({q:t.q||"",full:t.full||"",n:t.n||"",r:t.r||""})),
+      process:pickL("process",t=>({t:t.t||"",d:t.d||""})),
+      principles:pickL("principles",t=>({t:t.t||"",d:t.d||""})),
+      industries:pickL("industries",t=>[t[0]||"",t[1]||"gear"]),
+      _rest:Object.fromEntries(Object.entries(data).filter(([k])=>!["testimonials","process","principles","industries"].includes(k)))
+    };
+    renderLists();
+  }catch(err){box.innerHTML=""; msg.innerHTML=`<div class="msg err">${esc(err.message)}</div>`}
+}
+const LIST_DEF=[
+  {k:"testimonials",title:"Testimonials",note:"“What others say” cards",fields:[["q","Short quote (on the card)","area"],["full","Full quote (opens in Read more)","area"],["n","Name or role of the person","text"],["r","Project","text"]],blank:{q:"",full:"",n:"",r:""}},
+  {k:"process",title:"How I work: process steps",note:"About → How I work",fields:[["t","Step title","text"],["d","Description","area"]],blank:{t:"",d:""}},
+  {k:"principles",title:"How I work: principles",note:"About → How I work, below the steps",fields:[["t","Principle","text"],["d","Description","area"]],blank:{t:"",d:""}},
+];
+function renderLists(){
+  const L=state.lists, box=$("#listsBody"), open=[...box.querySelectorAll("details[open]")].map(d=>d.dataset.k);
+  let h="";
+  for(const def of LIST_DEF){
+    h+=`<details data-k="${def.k}" ${open.includes(def.k)?"open":""}><summary>${def.title}<span>${def.note} · ${L[def.k].length} items</span></summary><div class="body">`;
+    L[def.k].forEach((it,i)=>{
+      h+=`<div class="item"><div class="num">${i+1}</div>`;
+      for(const [f,lab,type] of def.fields){
+        const id=`${def.k}-${i}-${f}`;
+        h+=`<label for="${id}">${lab}</label>`+(type==="area"?`<textarea id="${id}" data-l="${def.k}" data-i="${i}" data-f="${f}">${esc(it[f])}</textarea>`:`<input type="text" id="${id}" data-l="${def.k}" data-i="${i}" data-f="${f}" value="${esc(it[f])}">`);
+      }
+      h+=`<div class="row"><button class="btn small" type="button" data-act="up" data-l="${def.k}" data-i="${i}" ${i===0?"disabled":""}>Move up</button><button class="btn small" type="button" data-act="down" data-l="${def.k}" data-i="${i}" ${i===L[def.k].length-1?"disabled":""}>Move down</button><button class="btn small danger" type="button" data-act="del" data-l="${def.k}" data-i="${i}">Remove</button></div></div>`;
+    });
+    h+=`<button class="btn small" type="button" data-act="add" data-l="${def.k}">+ Add item</button></div></details>`;
+  }
+  const opts=state.icons.map(k=>`<option value="${k}">${k}</option>`).join("");
+  h+=`<details data-k="industries" ${open.includes("industries")?"open":""}><summary>Industries<span>About → Industries &amp; regions · ${L.industries.length} items</span></summary><div class="body">`;
+  L.industries.forEach((it,i)=>{
+    h+=`<div class="ind"><input type="text" aria-label="Industry ${i+1}" data-l="industries" data-i="${i}" data-f="0" value="${esc(it[0])}"><select aria-label="Icon for industry ${i+1}" data-l="industries" data-i="${i}" data-f="1">${opts.replace(`value="${it[1]}"`,`value="${it[1]}" selected`)}</select><button class="btn small danger" type="button" data-act="del" data-l="industries" data-i="${i}">Remove</button></div>`;
+  });
+  h+=`<button class="btn small" type="button" data-act="add" data-l="industries" style="margin-top:.5rem">+ Add industry</button></div></details>`;
+  box.innerHTML=h;
+}
+$("#listsBody").addEventListener("input",e=>{
+  const t=e.target, k=t.dataset.l; if(!k) return; const i=+t.dataset.i, f=t.dataset.f;
+  if(k==="industries") state.lists.industries[i][+f]=t.value; else state.lists[k][i][f]=t.value;
+  state.listsDirty=true; updateStatus();
+});
+$("#listsBody").addEventListener("click",e=>{
+  const b=e.target.closest("button[data-act]"); if(!b) return;
+  const k=b.dataset.l, i=+b.dataset.i, arr=state.lists[k], act=b.dataset.act;
+  if(act==="add"){ if(k==="industries") arr.push(["New industry","gear"]); else arr.push({...LIST_DEF.find(d=>d.k===k).blank}) }
+  if(act==="del"){ if(arr.length<=1){setStatus("A list needs at least one item.","err");return} if(!confirm("Remove this item?")) return; arr.splice(i,1) }
+  if(act==="up"&&i>0) [arr[i-1],arr[i]]=[arr[i],arr[i-1]];
+  if(act==="down"&&i<arr.length-1) [arr[i+1],arr[i]]=[arr[i],arr[i+1]];
+  state.listsDirty=true; renderLists(); updateStatus();
+  const d=$(`#listsBody details[data-k="${k}"]`); if(d) d.open=true;
+});
+
+/* ---------- Status, discard, publish ---------- */
+function hasChanges(){return state.dirty.size>0||state.listsDirty}
+function updateStatus(){
+  const n=state.dirty.size+(state.listsDirty?1:0);
+  $("#publishBtn").disabled=!n; $("#discardBtn").disabled=!n;
+  setStatus(n?`<b>${n} unpublished change${n>1?"s":""}</b>`:"No changes",null,true);
+}
+function setStatus(t,kind,html){const s=$("#status"); if(html) s.innerHTML=t; else s.textContent=t; s.style.color=kind==="err"?"var(--err)":kind==="ok"?"var(--ok)":""}
+$("#discardBtn").onclick=()=>{ if(!confirm("Throw away all unpublished changes?")) return; state.lists=null; state.listsDirty=false; openPage(state.path); if(state.mode==="lists") loadLists() };
+$("#showHidden").onchange=e=>{const d=$("#frame").contentDocument; if(d&&d.documentElement) d.documentElement.toggleAttribute("data-cmsx-showhidden",e.target.checked)};
+
+function serialize(){
+  const doc=$("#frame").contentDocument;
+  const root=doc.documentElement.cloneNode(true);
+  root.querySelectorAll("[data-cmsx]").forEach(n=>n.remove());
+  const all=[root,...root.querySelectorAll("*")];
+  for(const el of all){
+    for(const a of [...el.attributes]){ if(a.name.startsWith("data-cmsx")) el.removeAttribute(a.name) }
+    if(el.hasAttribute("contenteditable")) el.removeAttribute("contenteditable");
+    if(el.hasAttribute("data-cms-src")){ el.setAttribute("src",el.getAttribute("data-cms-src")); el.removeAttribute("data-cms-src") }
+  }
+  let html=state.prefix+root.outerHTML+"\n";
+  html=html.replace(/<!--cmsS:(\d+)-->/g,(m,i)=>state.scripts[+i]);
+  return html;
+}
+window.__cmsSerialize=serialize;
+
+$("#publishBtn").onclick=async()=>{
+  if(!hasChanges()) return;
+  const btn=$("#publishBtn"); btn.disabled=true; $("#discardBtn").disabled=true;
+  try{
+    if(state.sel) select(null);
+    for(const [path,blob] of state.uploads){
+      setStatus("Uploading "+path.split("/").pop()+"…");
+      const b64=b64FromBytes(new Uint8Array(await blob.arrayBuffer()));
+      await putFile(path,b64,null,"Site editor: add image "+path);
+      state.uploads.delete(path);
+    }
+    if(state.dirty.size){
+      setStatus("Saving "+(PAGE_NAMES[state.path]||state.path)+"…");
+      const html=serialize();
+      state.sha=await putFile(state.path,b64FromBytes(new TextEncoder().encode(html)),state.sha,"Site editor: update "+state.path);
+      state.source=html;
+      $("#frame").contentDocument.querySelectorAll("[data-cmsx-dirty]").forEach(el=>el.removeAttribute("data-cmsx-dirty"));
+      state.dirty=new Set();
+    }
+    if(state.listsDirty){
+      setStatus("Saving lists…");
+      const L=state.lists;
+      const out={...L._rest,testimonials:L.testimonials.filter(t=>t.q.trim()||t.full.trim()),process:L.process.filter(t=>t.t.trim()),principles:L.principles.filter(t=>t.t.trim()),industries:L.industries.filter(t=>t[0].trim())};
+      const json=JSON.stringify(out,null,2)+"\n";
+      state.listsSha=await putFile("content.json",b64FromBytes(new TextEncoder().encode(json)),state.listsSha,"Site editor: update lists");
+      state.listsDirty=false;
+    }
+    updateStatus(); setStatus("Published. The live site shows it in about a minute.","ok");
+  }catch(err){
+    updateStatus();
+    setStatus(err.status===409||err.status===422&&/sha/i.test(err.message)?"This page was changed on GitHub since you opened it. Copy your text, press Discard, and redo the change."
+      :err.status===401?"GitHub no longer accepts your key (expired?). Sign out and sign in with a new key."
+      :"Publish failed: "+err.message,"err");
+  }
+};
+})();
+</script>
+</body>
+</html>
