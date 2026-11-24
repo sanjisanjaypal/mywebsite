@@ -1388,6 +1388,23 @@ footer .foot-resume:focus-visible{outline:3px solid #B98CFF; outline-offset:3px;
 .socials a.li-btn:focus-visible{outline:3px solid #fff !important; outline-offset:3px}
 :root[data-theme="dark"] .socials a.li-btn:hover,:root[data-theme="dark"] .socials a.li-btn:active,:root[data-theme="dark"] .socials a.li-btn.hl{box-shadow:inset 0 1px 0 rgba(255,255,255,.18), 0 6px 18px rgba(30,215,96,.42) !important}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .socials a.li-btn:hover,:root:not([data-theme="light"]) .socials a.li-btn:active,:root:not([data-theme="light"]) .socials a.li-btn.hl{box-shadow:inset 0 1px 0 rgba(255,255,255,.18), 0 6px 18px rgba(30,215,96,.42) !important}}
+/* "♪ Tap for sound" hint beside the music button */
+.sound-hint{position:absolute; right:calc(100% + 10px); bottom:3px; display:inline-flex; align-items:center; gap:.4rem; white-space:nowrap;
+  min-height:36px; padding:.35rem .9rem .35rem .75rem; border-radius:999px; border:1px solid var(--line, rgba(0,0,0,.12));
+  background:var(--surface,#fff); color:var(--ink); font:600 .85rem/1.2 "Instrument Sans",system-ui,sans-serif; cursor:pointer;
+  box-shadow:0 6px 18px rgba(0,0,0,.14); opacity:0; transform:translateX(6px); transition:opacity .4s ease, transform .4s ease}
+.sound-hint.show{opacity:1; transform:none}
+.sound-hint .note{font-size:1.05rem; color:#E53935; display:inline-block; animation:shNote 1.6s ease-in-out infinite}
+.sound-hint::after{content:""; position:absolute; right:-6px; top:50%; width:10px; height:10px; margin-top:-5px; background:inherit; border-right:1px solid var(--line, rgba(0,0,0,.12)); border-top:1px solid var(--line, rgba(0,0,0,.12)); transform:rotate(45deg)}
+.sound-hint:hover{border-color:currentColor}
+.sound-hint:focus-visible{outline:3px solid #8B4FD0; outline-offset:2px}
+@keyframes shNote{0%,100%{transform:translateY(0) rotate(0)} 50%{transform:translateY(-3px) rotate(-8deg)}}
+@media (prefers-reduced-motion: reduce){.sound-hint{transition:none} .sound-hint .note{animation:none}}
+:root.a11y-motion .sound-hint{transition:none} :root.a11y-motion .sound-hint .note{animation:none}
+.site-loading .sound-hint{visibility:hidden}
+:root[data-theme="dark"] .sound-hint .note{color:#FF6B6B}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .sound-hint .note{color:#FF6B6B}}
+.sound-hint .note{font-size:1.15rem; font-weight:700}
 </style>
 <style>
 html,body{margin:0; height:100%; overflow:hidden; background:var(--bg)}
@@ -1410,6 +1427,7 @@ document.documentElement.classList.add("site-loading");</script>
   <button class="sound-btn" id="soundBtn" type="button" aria-label="Mute music">
     <svg id="soundIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"></svg>
   </button>
+  <button class="sound-hint" id="soundHint" type="button" hidden><span class="note" aria-hidden="true">♪</span> <span class="sh-t">Tap for sound</span></button>
 </div>
 <script>
 /* ---------- Background music: rotating start, plays all three on repeat ---------- */
@@ -1447,6 +1465,8 @@ document.documentElement.classList.add("site-loading");</script>
   const OFF='<path class="cone" d="M11 5L6 9H3v6h3l5 4z" fill="currentColor" stroke="none"/><path class="mute-x" d="M16 9l5 6M21 9l-5 6"/>';
   function render(){
     const playing=started&&!muted&&vol>0;
+    const hint=document.getElementById("soundHint");
+    if(hint){ const show=!started&&!muted; if(!show) hint.classList.remove("show"); hint.hidden=!show; }
     icon.innerHTML=(muted||vol===0)?OFF:ON;
     btn.dataset.state=playing?"on":"off";
     btn.setAttribute("aria-label",muted?"Unmute music":(started?"Mute music":"Play music"));
@@ -1483,6 +1503,13 @@ document.documentElement.classList.add("site-loading");</script>
     play(true);   // works where the browser allows autoplay
   }
 
+  /* "♪ Tap for sound" hint beside the speaker button: shown until the music starts (browsers block sound until the visitor interacts) */
+  (function(){
+    const hint=document.getElementById("soundHint"); if(!hint) return;
+    const t=hint.querySelector(".sh-t"); if(t&&matchMedia("(hover:hover) and (pointer:fine)").matches) t.textContent="Click for sound";
+    hint.addEventListener("click",()=>{ play(true) });
+    setTimeout(()=>{ if(!started&&!muted){ hint.hidden=false; requestAnimationFrame(()=>hint.classList.add("show")) } },2200);
+  })();
   btn.addEventListener("click",()=>{
     if(!started&&!muted){play(true); return}
     muted=!muted; ls.set("sp-music-muted",muted?"1":"0");

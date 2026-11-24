@@ -91,6 +91,65 @@ details.help ol{padding-left:1.2rem; margin:.6rem 0 0} details.help li{margin:.3
   .ind{grid-template-columns:1fr 120px}
   .ind .btn{grid-column:1/-1; justify-self:end}
 }
+
+/* ---------- Analytics ---------- */
+:root{--bar:#6B3FA0; --bar-hi:#4A1D7A; --grid:#E3E7DC}
+@media (prefers-color-scheme: dark){:root{--bar:#A070E8; --bar-hi:#C9A6FF; --grid:#26362B}}
+.an{flex:1; overflow:auto; padding:1.2rem max(16px, env(safe-area-inset-left,0px)) 3rem}
+.an .inner{max-width:1180px; margin:0 auto}
+.an-top{display:flex; flex-wrap:wrap; gap:.6rem 1rem; align-items:center; margin-bottom:1rem}
+.an-top h2{font-size:1.4rem; margin-right:.4rem}
+.an-top .grow{flex:1}
+.seg.small button{padding:.25rem .7rem; font-size:.85rem}
+#anPeriods{flex-wrap:wrap; border-radius:14px}
+.an-kpis{display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:.8rem; margin-bottom:.9rem}
+.an-kpi{background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:.85rem 1rem}
+.an-kpi .l{font-size:.82rem; font-weight:600; color:var(--muted)}
+.an-kpi .v{font-size:1.9rem; font-weight:700; line-height:1.15; margin:.2rem 0; font-variant-numeric:tabular-nums}
+.an-kpi .an-ch{display:block; font-size:.82rem; font-weight:600}
+.an-kpi .an-ch span,.an-kpi .h{font-weight:400; color:var(--muted); font-size:.8rem}
+.an-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.9rem}
+.an-card{background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:1rem 1.1rem 1.1rem; min-width:0}
+.an-card.wide{grid-column:1/-1}
+.an > .inner > .an-card.wide{margin-bottom:.9rem}
+.an-card h3{font-size:1.05rem}
+.an-card h4{font-size:.9rem; margin:1rem 0 .2rem}
+.an-card h4 small{font-weight:400; color:var(--muted)}
+.an-head{display:flex; justify-content:space-between; align-items:center; gap:.6rem; flex-wrap:wrap; margin-bottom:.4rem}
+.an-sub,.an-hint{color:var(--muted); font-size:.85rem; margin:.25rem 0 .6rem}
+.an-note{background:var(--accent-soft); border-radius:10px; padding:.55rem .8rem; font-size:.88rem; margin:0 0 .9rem}
+.an-empty{color:var(--muted); font-size:.9rem; margin:.5rem 0}
+.an-link{margin:.8rem 0 0; font-weight:600}
+.an-bars{width:100%; border-collapse:collapse}
+.an-bars th{font-weight:500; text-align:left; font-size:.88rem; padding:.3rem .6rem .3rem 0; width:42%; vertical-align:middle; overflow-wrap:anywhere}
+.an-bars th small{display:block; color:var(--muted); font-weight:400}
+.an-bars td{padding:.3rem 0; vertical-align:middle}
+.an-bars .bar{display:block; height:12px; background:var(--bar); border-radius:0 4px 4px 0}
+.an-bars .num{width:4.5rem; text-align:right; font-variant-numeric:tabular-nums; font-size:.88rem; padding-left:.6rem}
+.an-stuck{list-style:none; padding:0; margin:.4rem 0 0}
+.an-stuck li{padding:.55rem 0; border-top:1px solid var(--line); font-size:.92rem}
+.an-stuck li:first-child{border-top:0}
+.an-stuck li span{color:var(--muted)}
+.an-stuck small{display:block; color:var(--muted); font-size:.82rem; margin-top:.15rem}
+.an-scroll{overflow-x:auto}
+.an-table{width:100%; border-collapse:collapse; font-size:.88rem; font-variant-numeric:tabular-nums}
+.an-table th,.an-table td{padding:.45rem .55rem; text-align:right; border-bottom:1px solid var(--line); white-space:nowrap}
+.an-table th:first-child{text-align:left}
+.an-table thead th{font-size:.8rem; color:var(--muted); font-weight:600}
+.an-chart{position:relative}
+.an-chart svg{width:100%; height:auto; display:block}
+.an-chart .grid{stroke:var(--grid); stroke-width:1}
+.an-chart .base{stroke:var(--muted); stroke-width:1; opacity:.6}
+.an-chart .ax{fill:var(--muted); font-size:11px; font-family:inherit}
+.an-chart .b{fill:var(--bar)}
+.an-chart .hit{fill:transparent}
+.an-chart .col{cursor:default}
+.an-chart .col.on .b{fill:var(--bar-hi)}
+.an-chart .col.on .hit{fill:var(--grid); opacity:.5}
+.an-tip{position:absolute; pointer-events:none; background:var(--ink); color:var(--bg); font-size:.8rem; font-weight:600; padding:.3rem .6rem; border-radius:8px; white-space:nowrap; transform:translateY(-110%)}
+.an .setup{max-width:640px}
+.an .setup code{font-size:.85em}
+@media (max-width:860px){ .an-grid{grid-template-columns:minmax(0,1fr)} .an-bars th{width:46%} .an-kpi .v{font-size:1.6rem} }
 </style>
 </head>
 <body>
@@ -124,7 +183,7 @@ details.help ol{padding-left:1.2rem; margin:.6rem 0 0} details.help li{margin:.3
         <li>At the bottom of the left menu, click <b>Developer settings</b>, then <b>Personal access tokens</b>, then <b>Fine-grained tokens</b>.</li>
         <li>Click <b>Generate new token</b>. Name it "Site editor" and pick an expiry (for example 1 year).</li>
         <li>Under <b>Repository access</b>, choose <b>Only select repositories</b> and pick your site's repository.</li>
-        <li>Under <b>Permissions</b>, open <b>Repository permissions</b> and set <b>Contents</b> to <b>Read and write</b>.</li>
+        <li>Under <b>Permissions</b>, open <b>Repository permissions</b>, find <b>Contents</b> and change it from “Read-only” to <b>Read and write</b>. (Without this, Publish fails with “Resource not accessible by personal access token”.)</li>
         <li>Click <b>Generate token</b> and copy it (it starts with <code>github_pat_</code>). Paste it above.</li>
       </ol>
     </details>
@@ -139,8 +198,9 @@ details.help ol{padding-left:1.2rem; margin:.6rem 0 0} details.help li{margin:.3
     <div class="seg" role="group" aria-label="What to edit">
       <button type="button" id="modePage" aria-pressed="true">Page</button>
       <button type="button" id="modeLists" aria-pressed="false">Lists</button>
+      <button type="button" id="modeAn" aria-pressed="false">Analytics</button>
     </div>
-    <label class="check" style="margin:0"><input type="checkbox" id="showHidden"> <span style="font-weight:500">Show hidden parts</span></label>
+    <label class="check" id="showHiddenWrap" style="margin:0"><input type="checkbox" id="showHidden"> <span style="font-weight:500">Show hidden parts</span></label>
     <span class="grow"></span>
     <span class="status" id="status" aria-live="polite">No changes</span>
     <button class="btn" type="button" id="discardBtn" disabled>Discard</button>
@@ -159,6 +219,20 @@ details.help ol{padding-left:1.2rem; margin:.6rem 0 0} details.help li{margin:.3
       <p>These parts of the home page are built from lists. Edit, add, remove or reorder items here, then press Publish.</p>
       <div id="listsMsg"></div>
       <div id="listsBody"></div>
+    </div>
+  </div>
+  <div class="an" id="anView" hidden>
+    <div class="inner">
+      <div class="an-top">
+        <h2>Visitors</h2>
+        <div class="seg" id="anPeriods" role="group" aria-label="Period">
+          <button type="button" data-p="today" aria-pressed="false">Today</button><button type="button" data-p="7d" aria-pressed="false">7 days</button><button type="button" data-p="30d" aria-pressed="true">30 days</button><button type="button" data-p="month" aria-pressed="false">This month</button><button type="button" data-p="6m" aria-pressed="false">6 months</button><button type="button" data-p="year" aria-pressed="false">This year</button><button type="button" data-p="all" aria-pressed="false">All time</button>
+        </div>
+        <span class="grow"></span>
+        <button class="btn small" type="button" id="anRefresh">Refresh</button>
+        <button class="btn small" type="button" id="anSetup">Setup</button>
+      </div>
+      <div id="anBody"></div>
     </div>
   </div>
 </section>
@@ -263,7 +337,7 @@ async function openPage(path){
     renderFrame(f.text);
   }catch(err){$("#loading").textContent="Could not load the page: "+err.message}
   $("#modeLists").hidden=path!=="home.html";
-  if(path!=="home.html") setMode("page");
+  if(path!=="home.html" && state.mode==="lists") setMode("page");
   updateStatus(); showSide();
 }
 
@@ -420,10 +494,13 @@ async function replaceImage(el,file){
 
 /* ---------- Lists (content.json on the home page) ---------- */
 function setMode(m){
-  state.mode=m; $("#modePage").setAttribute("aria-pressed",String(m==="page")); $("#modeLists").setAttribute("aria-pressed",String(m==="lists"));
-  $("#pageView").hidden=m!=="page"; $("#listsView").hidden=m!=="lists";
+  state.mode=m; $("#modePage").setAttribute("aria-pressed",String(m==="page")); $("#modeLists").setAttribute("aria-pressed",String(m==="lists")); $("#modeAn").setAttribute("aria-pressed",String(m==="analytics"));
+  $("#pageView").hidden=m!=="page"; $("#listsView").hidden=m!=="lists"; $("#anView").hidden=m!=="analytics";
+  $("#pageSel").hidden=m==="analytics"; $("#showHiddenWrap").hidden=m!=="page";
   if(m==="lists") loadLists();
+  if(m==="analytics" && window.__seAnalytics) window.__seAnalytics.open();
 }
+$("#modeAn").onclick=()=>setMode("analytics");
 $("#modePage").onclick=()=>setMode("page");
 $("#modeLists").onclick=()=>setMode("lists");
 
@@ -535,6 +612,7 @@ function serialize(){
   return html;
 }
 window.__cmsSerialize=serialize;
+window.__se={getFile,putFile,b64:t=>b64FromBytes(new TextEncoder().encode(t))};
 
 $("#publishBtn").onclick=async()=>{
   if(!hasChanges()) return;
@@ -568,10 +646,13 @@ $("#publishBtn").onclick=async()=>{
     updateStatus();
     setStatus(err.status===409||err.status===422&&/sha/i.test(err.message)?"This page was changed on GitHub since you opened it. Copy your text, press Discard, and redo the change."
       :err.status===401?"GitHub no longer accepts your key (expired?). Sign out and sign in with a new key."
+      :err.status===403&&/personal access token|not accessible/i.test(err.message)?"Your GitHub key can read but not save. On GitHub, edit the key and set Repository permissions → Contents to “Read and write” for this repository, then press Publish again (nothing is lost)."
+      :err.status===403?"GitHub refused to save ("+err.message+"). Check the key's Contents permission is “Read and write”, then press Publish again."
       :"Publish failed: "+err.message,"err");
   }
 };
 })();
 </script>
+<script src="admin-analytics.js"></script>
 </body>
 </html>

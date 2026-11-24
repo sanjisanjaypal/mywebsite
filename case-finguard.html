@@ -8,6 +8,8 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="theme-color" content="#4A1D7A">
 <title>FinGuard Banking Case Study</title>
+<script src="analytics-config.js"></script>
+<script src="analytics.js" defer></script>
 <script>
 /* Always show pages inside the site shell, so music keeps playing across pages */
 (function(){var inShell=false;try{inShell=window.parent!==window&&!!window.parent.__musicShell}catch(e){}
@@ -60,6 +62,7 @@ return H.map(function(x){return("00000000"+(x>>>0).toString(16)).slice(-8)}).joi
     /* Request access opens the visitor's email app with a draft to Sanjay; handed to the top window because browsers block mailto: inside the site frame */
     g.querySelector("#gateReq").addEventListener("click",function(ev){
       ev.preventDefault();
+      window.spTrack&&spTrack("gate:request:"+location.pathname.split("/").pop().replace(/^case-|\.html.*$/g,""));
       var name=document.title.replace(/\s*case study.*$/i,"").trim()||"this";
       var url="mailto:sanji.sanjaypal@gmail.com?subject="+encodeURIComponent("Password request: "+name)+
         "&body="+encodeURIComponent("Hi Sanjay,\n\nI came across your portfolio and would like to view the \""+name+"\" case study. Could you please share the password?\n\nA little about me:\nName: \nCompany / role: \nReason for viewing: \n\nThank you,\n");
@@ -71,8 +74,8 @@ return H.map(function(x){return("00000000"+(x>>>0).toString(16)).slice(-8)}).joi
     f.addEventListener("submit",function(ev){ev.preventDefault();
       var v=i.value; if(!v){e.textContent="Please enter the password."; i.focus(); return}
       Promise.resolve(window.__sha256(v.trim())).then(function(h){
-        if(h===H){ try{sessionStorage.setItem(K,H)}catch(x){} g.remove(); document.documentElement.classList.remove("cs-locked"); var m=document.getElementById("main"); if(m) m.focus(); }
-        else{ e.textContent="That password isn’t right. Please try again."; i.select(); i.setAttribute("aria-invalid","true"); }
+        if(h===H){ try{sessionStorage.setItem(K,H)}catch(x){} window.spTrack&&spTrack("gate:ok:"+location.pathname.split("/").pop().replace(/^case-|\.html.*$/g,"")); g.remove(); document.documentElement.classList.remove("cs-locked"); var m=document.getElementById("main"); if(m) m.focus(); }
+        else{ window.spTrack&&spTrack("gate:wrong:"+location.pathname.split("/").pop().replace(/^case-|\.html.*$/g,"")); e.textContent="That password isn’t right. Please try again."; i.select(); i.setAttribute("aria-invalid","true"); }
       });
     });
   });
@@ -1469,6 +1472,23 @@ footer .foot-resume:focus-visible{outline:3px solid #B98CFF; outline-offset:3px;
 .socials a.li-btn:focus-visible{outline:3px solid #fff !important; outline-offset:3px}
 :root[data-theme="dark"] .socials a.li-btn:hover,:root[data-theme="dark"] .socials a.li-btn:active,:root[data-theme="dark"] .socials a.li-btn.hl{box-shadow:inset 0 1px 0 rgba(255,255,255,.18), 0 6px 18px rgba(30,215,96,.42) !important}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .socials a.li-btn:hover,:root:not([data-theme="light"]) .socials a.li-btn:active,:root:not([data-theme="light"]) .socials a.li-btn.hl{box-shadow:inset 0 1px 0 rgba(255,255,255,.18), 0 6px 18px rgba(30,215,96,.42) !important}}
+/* "♪ Tap for sound" hint beside the music button */
+.sound-hint{position:absolute; right:calc(100% + 10px); bottom:3px; display:inline-flex; align-items:center; gap:.4rem; white-space:nowrap;
+  min-height:36px; padding:.35rem .9rem .35rem .75rem; border-radius:999px; border:1px solid var(--line, rgba(0,0,0,.12));
+  background:var(--surface,#fff); color:var(--ink); font:600 .85rem/1.2 "Instrument Sans",system-ui,sans-serif; cursor:pointer;
+  box-shadow:0 6px 18px rgba(0,0,0,.14); opacity:0; transform:translateX(6px); transition:opacity .4s ease, transform .4s ease}
+.sound-hint.show{opacity:1; transform:none}
+.sound-hint .note{font-size:1.05rem; color:#E53935; display:inline-block; animation:shNote 1.6s ease-in-out infinite}
+.sound-hint::after{content:""; position:absolute; right:-6px; top:50%; width:10px; height:10px; margin-top:-5px; background:inherit; border-right:1px solid var(--line, rgba(0,0,0,.12)); border-top:1px solid var(--line, rgba(0,0,0,.12)); transform:rotate(45deg)}
+.sound-hint:hover{border-color:currentColor}
+.sound-hint:focus-visible{outline:3px solid #8B4FD0; outline-offset:2px}
+@keyframes shNote{0%,100%{transform:translateY(0) rotate(0)} 50%{transform:translateY(-3px) rotate(-8deg)}}
+@media (prefers-reduced-motion: reduce){.sound-hint{transition:none} .sound-hint .note{animation:none}}
+:root.a11y-motion .sound-hint{transition:none} :root.a11y-motion .sound-hint .note{animation:none}
+.site-loading .sound-hint{visibility:hidden}
+:root[data-theme="dark"] .sound-hint .note{color:#FF6B6B}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .sound-hint .note{color:#FF6B6B}}
+.sound-hint .note{font-size:1.15rem; font-weight:700}
 </style>
 <style>
 /* ================= Case study page ================= */
